@@ -6,17 +6,18 @@ import StaggerText from "../StaggerText";
 import ParallaxElement from "../ParallaxElement";
 import Magnetic from "../Magnetic";
 import { dreamRealtyEmail } from "../../config/siteMode";
-import { submitContactForm } from "../../lib/contact";
 
 export default function Contact() {
-  const [submissionState, setSubmissionState] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [submissionState, setSubmissionState] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
   const [submissionMessage, setSubmissionMessage] = useState("");
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
     if (submissionState === "submitting") return;
-    
-    // 1. Capture the form reference before any async operations
+
     const form = event.currentTarget;
 
     if (!form.checkValidity()) {
@@ -28,18 +29,111 @@ export default function Contact() {
     setSubmissionMessage("");
 
     try {
-      // 2. Pass the saved form reference
-      await submitContactForm(form);
-      
-      // 3. Reset using the saved form reference
+      const formData = new FormData(form);
+
+      const name = String(formData.get("name") || "").trim();
+      const email = String(formData.get("email") || "").trim();
+      const message = String(formData.get("message") || "").trim();
+      const website = String(formData.get("website") || "").trim();
+
+      const originalProjectType = String(
+        formData.get("projectType") || "",
+      ).trim();
+
+      /*
+       * Backend currently accepts:
+       * Space Capsule
+       * Hotel or Retreat
+       * Private Project
+       * Commercial Space
+       * Workplace
+       * Community Amenity
+       *
+       * Keep the existing UI exactly as it is and only normalize
+       * additional frontend choices before sending.
+       */
+      const projectTypeMap: Record<string, string> = {
+        "Modular Home": "Private Project",
+        "Modular Hotel or Retreat": "Hotel or Retreat",
+        "Modular Office": "Workplace",
+
+        "Space Capsule": "Space Capsule",
+        "Hotel or Retreat": "Hotel or Retreat",
+        "Private Project": "Private Project",
+        "Commercial Space": "Commercial Space",
+        Workplace: "Workplace",
+        "Community Amenity": "Community Amenity",
+
+        "Café, Bar, or Restaurant": "Commercial Space",
+        "Retail or Pop-Up": "Commercial Space",
+        "Pool or Outdoor Amenity": "Community Amenity",
+      };
+
+      const projectType =
+        projectTypeMap[originalProjectType] || originalProjectType;
+
+      const response = await fetch(
+        "https://modular-design-backend.vercel.app/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+
+          body: JSON.stringify({
+            name,
+            email,
+
+            // Backend-required field
+            projectType,
+
+            // Your backend expects brief, while this form uses message
+            brief: message,
+
+            // Keep message too for compatibility
+            message,
+
+            // Honeypot
+            website,
+
+            // Optional fields not present in this form
+            phone: "",
+            company: "",
+            estimatedUnits: "",
+            projectTimeline: "",
+          }),
+        },
+      );
+
+      const result = (await response.json().catch(() => ({}))) as {
+        ok?: boolean;
+        success?: boolean;
+        message?: string;
+      };
+
+      if (!response.ok || (result.ok !== true && result.success !== true)) {
+        throw new Error(
+          result.message ||
+            "We couldn't send your enquiry right now. Please try again.",
+        );
+      }
+
       form.reset();
-      
+
       setSubmissionState("success");
-      setSubmissionMessage("Thank you. Your project enquiry has been sent successfully.");
-    } catch (error: any) {
-      setSubmissionState("error");
+
       setSubmissionMessage(
-        error.message || "We couldn't send your enquiry right now. Please try again."
+        "Thank you. Your project enquiry has been sent successfully.",
+      );
+    } catch (error) {
+      console.error("Contact form submission error:", error);
+
+      setSubmissionState("error");
+
+      setSubmissionMessage(
+        error instanceof Error
+          ? error.message
+          : "We couldn't send your enquiry right now. Please try again.",
       );
     }
   };
@@ -169,19 +263,78 @@ export default function Contact() {
                         required
                         className="w-full min-h-14 bg-transparent border-b border-white/20 py-4 outline-none focus:border-gold transition-all duration-500 text-ivory/90 text-lg font-light appearance-none"
                       >
-                        <option value="" className="bg-ink text-ivory">Select Sector</option>
-                        <option value="Modular Home" className="bg-ink text-ivory">Modular Home</option>
-                        <option value="Modular Hotel or Retreat" className="bg-ink text-ivory">Modular Hotel or Retreat</option>
-                        <option value="Modular Office" className="bg-ink text-ivory">Modular Office</option>
-                        <option value="Space Capsule" className="bg-ink text-ivory">Space Capsule</option>
-                        <option value="Hotel or Retreat" className="bg-ink text-ivory">Hotel or Retreat</option>
-                        <option value="Private Project" className="bg-ink text-ivory">Private Project</option>
-                        <option value="Commercial Space" className="bg-ink text-ivory">Commercial Space</option>
-                        <option value="Workplace" className="bg-ink text-ivory">Workplace</option>
-                        <option value="Community Amenity" className="bg-ink text-ivory">Community Amenity</option>
-                        <option value="Café, Bar, or Restaurant" className="bg-ink text-ivory">Café, Bar, or Restaurant</option>
-                        <option value="Retail or Pop-Up" className="bg-ink text-ivory">Retail or Pop-Up</option>
-                        <option value="Pool or Outdoor Amenity" className="bg-ink text-ivory">Pool or Outdoor Amenity</option>
+                        <option value="" className="bg-ink text-ivory">
+                          Select Sector
+                        </option>
+                        <option
+                          value="Modular Home"
+                          className="bg-ink text-ivory"
+                        >
+                          Modular Home
+                        </option>
+                        <option
+                          value="Modular Hotel or Retreat"
+                          className="bg-ink text-ivory"
+                        >
+                          Modular Hotel or Retreat
+                        </option>
+                        <option
+                          value="Modular Office"
+                          className="bg-ink text-ivory"
+                        >
+                          Modular Office
+                        </option>
+                        <option
+                          value="Space Capsule"
+                          className="bg-ink text-ivory"
+                        >
+                          Space Capsule
+                        </option>
+                        <option
+                          value="Hotel or Retreat"
+                          className="bg-ink text-ivory"
+                        >
+                          Hotel or Retreat
+                        </option>
+                        <option
+                          value="Private Project"
+                          className="bg-ink text-ivory"
+                        >
+                          Private Project
+                        </option>
+                        <option
+                          value="Commercial Space"
+                          className="bg-ink text-ivory"
+                        >
+                          Commercial Space
+                        </option>
+                        <option value="Workplace" className="bg-ink text-ivory">
+                          Workplace
+                        </option>
+                        <option
+                          value="Community Amenity"
+                          className="bg-ink text-ivory"
+                        >
+                          Community Amenity
+                        </option>
+                        <option
+                          value="Café, Bar, or Restaurant"
+                          className="bg-ink text-ivory"
+                        >
+                          Café, Bar, or Restaurant
+                        </option>
+                        <option
+                          value="Retail or Pop-Up"
+                          className="bg-ink text-ivory"
+                        >
+                          Retail or Pop-Up
+                        </option>
+                        <option
+                          value="Pool or Outdoor Amenity"
+                          className="bg-ink text-ivory"
+                        >
+                          Pool or Outdoor Amenity
+                        </option>
                       </select>
                     </div>
 
@@ -212,7 +365,9 @@ export default function Contact() {
                         className="mobile-no-hover w-full py-6 bg-gold text-ink uppercase tracking-[0.1em] font-semibold text-xs flex items-center justify-center gap-6 group overflow-hidden relative"
                       >
                         <span className="relative z-10">
-                          {submissionState === "submitting" ? "Sending..." : "Start a project"}
+                          {submissionState === "submitting"
+                            ? "Sending..."
+                            : "Start a project"}
                         </span>
                         <Send
                           size={16}
@@ -222,15 +377,20 @@ export default function Contact() {
                       </motion.button>
                     </Magnetic>
 
-                    {(submissionState === "submitting" || submissionMessage) && (
+                    {(submissionState === "submitting" ||
+                      submissionMessage) && (
                       <p
                         role="status"
                         aria-live="polite"
                         className={`text-sm leading-relaxed ${
-                          submissionState === "success" ? "text-gold" : "text-ivory/75"
+                          submissionState === "success"
+                            ? "text-gold"
+                            : "text-ivory/75"
                         }`}
                       >
-                        {submissionState === "submitting" ? "Sending..." : submissionMessage}
+                        {submissionState === "submitting"
+                          ? "Sending..."
+                          : submissionMessage}
                       </p>
                     )}
                   </form>

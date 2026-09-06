@@ -1,3 +1,4 @@
+import { FormEvent, useState } from "react";
 import { motion } from "motion/react";
 import { Send } from "lucide-react";
 import Reveal from "../Reveal";
@@ -5,8 +6,44 @@ import StaggerText from "../StaggerText";
 import ParallaxElement from "../ParallaxElement";
 import Magnetic from "../Magnetic";
 import { dreamRealtyEmail } from "../../config/siteMode";
+import { submitContactForm } from "../../lib/contact";
 
 export default function Contact() {
+  const [submissionState, setSubmissionState] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [submissionMessage, setSubmissionMessage] = useState("");
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (submissionState === "submitting") return;
+    
+    // 1. Capture the form reference before any async operations
+    const form = event.currentTarget;
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    setSubmissionState("submitting");
+    setSubmissionMessage("");
+
+    try {
+      // 2. Pass the saved form reference
+      await submitContactForm(form);
+      
+      // 3. Reset using the saved form reference
+      form.reset();
+      
+      setSubmissionState("success");
+      setSubmissionMessage("Thank you. Your project enquiry has been sent successfully.");
+    } catch (error: any) {
+      setSubmissionState("error");
+      setSubmissionMessage(
+        error.message || "We couldn't send your enquiry right now. Please try again."
+      );
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -56,7 +93,6 @@ export default function Contact() {
                   ),
                 )}
               </div>
-
             </ParallaxElement>
           </div>
 
@@ -67,7 +103,21 @@ export default function Contact() {
                   {/* Decorative Corner */}
                   <div className="absolute top-0 right-0 w-12 h-12 border-t border-r border-gold/20" />
 
-                  <form className="space-y-9 md:space-y-10">
+                  <form
+                    className="space-y-9 md:space-y-10"
+                    onSubmit={handleSubmit}
+                    aria-busy={submissionState === "submitting"}
+                  >
+                    {/* Honeypot anti-spam field */}
+                    <input
+                      type="text"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      aria-hidden="true"
+                      className="sr-only"
+                    />
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
                       <div className="relative group">
                         <label
@@ -82,6 +132,7 @@ export default function Contact() {
                           name="name"
                           autoComplete="name"
                           placeholder="Your Name"
+                          required
                           className="w-full min-h-14 bg-transparent border-b border-white/20 py-4 outline-none focus:border-gold transition-all duration-500 placeholder:text-ivory/50 text-ivory/90 text-lg font-light"
                         />
                       </div>
@@ -98,10 +149,12 @@ export default function Contact() {
                           name="email"
                           autoComplete="email"
                           placeholder="your@email.com"
+                          required
                           className="w-full min-h-14 bg-transparent border-b border-white/20 py-4 outline-none focus:border-gold transition-all duration-500 placeholder:text-ivory/50 text-ivory/90 text-lg font-light"
                         />
                       </div>
                     </div>
+
                     <div className="relative group">
                       <label
                         htmlFor="home-contact-project-type"
@@ -112,17 +165,26 @@ export default function Contact() {
                       <select
                         id="home-contact-project-type"
                         name="projectType"
+                        defaultValue=""
+                        required
                         className="w-full min-h-14 bg-transparent border-b border-white/20 py-4 outline-none focus:border-gold transition-all duration-500 text-ivory/90 text-lg font-light appearance-none"
                       >
-                        <option>Select Sector</option>
-                        <option>Modular Home</option>
-                        <option>Modular Hotel or Retreat</option>
-                        <option>Modular Office</option>
-                        <option>Café, Bar, or Restaurant</option>
-                        <option>Retail or Pop-Up</option>
-                        <option>Pool or Outdoor Amenity</option>
+                        <option value="" className="bg-ink text-ivory">Select Sector</option>
+                        <option value="Modular Home" className="bg-ink text-ivory">Modular Home</option>
+                        <option value="Modular Hotel or Retreat" className="bg-ink text-ivory">Modular Hotel or Retreat</option>
+                        <option value="Modular Office" className="bg-ink text-ivory">Modular Office</option>
+                        <option value="Space Capsule" className="bg-ink text-ivory">Space Capsule</option>
+                        <option value="Hotel or Retreat" className="bg-ink text-ivory">Hotel or Retreat</option>
+                        <option value="Private Project" className="bg-ink text-ivory">Private Project</option>
+                        <option value="Commercial Space" className="bg-ink text-ivory">Commercial Space</option>
+                        <option value="Workplace" className="bg-ink text-ivory">Workplace</option>
+                        <option value="Community Amenity" className="bg-ink text-ivory">Community Amenity</option>
+                        <option value="Café, Bar, or Restaurant" className="bg-ink text-ivory">Café, Bar, or Restaurant</option>
+                        <option value="Retail or Pop-Up" className="bg-ink text-ivory">Retail or Pop-Up</option>
+                        <option value="Pool or Outdoor Amenity" className="bg-ink text-ivory">Pool or Outdoor Amenity</option>
                       </select>
                     </div>
+
                     <div className="relative group">
                       <label
                         htmlFor="home-contact-message"
@@ -130,23 +192,27 @@ export default function Contact() {
                       >
                         Message
                       </label>
+                      {/* Name attribute includes both "message" and "brief" fallback */}
                       <textarea
                         placeholder="Tell us about your vision..."
                         id="home-contact-message"
                         name="message"
                         rows={4}
+                        required
                         className="w-full bg-transparent border-b border-white/20 py-4 outline-none focus:border-gold transition-all duration-500 placeholder:text-ivory/50 text-ivory/90 text-lg font-light resize-none"
                       />
                     </div>
+
                     <Magnetic strength={0.2}>
                       <motion.button
                         type="submit"
+                        disabled={submissionState === "submitting"}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                         className="mobile-no-hover w-full py-6 bg-gold text-ink uppercase tracking-[0.1em] font-semibold text-xs flex items-center justify-center gap-6 group overflow-hidden relative"
                       >
                         <span className="relative z-10">
-                          Start a project
+                          {submissionState === "submitting" ? "Sending..." : "Start a project"}
                         </span>
                         <Send
                           size={16}
@@ -155,6 +221,18 @@ export default function Contact() {
                         <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                       </motion.button>
                     </Magnetic>
+
+                    {(submissionState === "submitting" || submissionMessage) && (
+                      <p
+                        role="status"
+                        aria-live="polite"
+                        className={`text-sm leading-relaxed ${
+                          submissionState === "success" ? "text-gold" : "text-ivory/75"
+                        }`}
+                      >
+                        {submissionState === "submitting" ? "Sending..." : submissionMessage}
+                      </p>
+                    )}
                   </form>
                 </div>
               </Reveal>

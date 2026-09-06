@@ -9,6 +9,7 @@ import CinematicSection from "../components/CinematicSection";
 import SEO from "../components/SEO";
 import Magnetic from "../components/Magnetic";
 import { dreamRealtyEmail } from "../config/siteMode";
+import { submitContactForm } from "../lib/contact";
 
 const inquiryTypes = [
   "Space Capsule",
@@ -21,20 +22,52 @@ const inquiryTypes = [
 
 export default function ContactPage() {
   const [selectedInquiry, setSelectedInquiry] = useState("");
+  const [submissionState, setSubmissionState] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
+  const [submissionMessage, setSubmissionMessage] = useState("");
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    const form = event.currentTarget;
+
+    if (submissionState === "submitting") return;
+
     if (!selectedInquiry) {
+      setSubmissionState("error");
+      setSubmissionMessage("Please choose what you are exploring.");
       return;
     }
 
-    if (!event.currentTarget.checkValidity()) {
-      event.currentTarget.reportValidity();
+    if (!form.checkValidity()) {
+      form.reportValidity();
       return;
     }
 
-    event.currentTarget.reset();
-    setSelectedInquiry("");
+    setSubmissionState("submitting");
+    setSubmissionMessage("");
+
+    try {
+      await submitContactForm(form);
+
+      form.reset();
+      setSelectedInquiry("");
+
+      setSubmissionState("success");
+
+      setSubmissionMessage(
+        "Thank you. Your project enquiry has been sent successfully.",
+      );
+    } catch (error) {
+      setSubmissionState("error");
+
+      setSubmissionMessage(
+        error instanceof Error
+          ? error.message
+          : "We couldn't send your enquiry right now. Please try again.",
+      );
+    }
   };
 
   return (
@@ -88,10 +121,25 @@ export default function ContactPage() {
                   Start a conversation
                 </h2>
 
-                <form className="space-y-10" onSubmit={handleSubmit}>
+                <form
+                  className="space-y-10"
+                  onSubmit={handleSubmit}
+                  aria-busy={submissionState === "submitting"}
+                >
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    className="sr-only"
+                  />
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
                     <div className="space-y-4">
-                      <label htmlFor="contact-name" className="text-xs uppercase tracking-[0.1em] text-gold-text font-semibold">
+                      <label
+                        htmlFor="contact-name"
+                        className="text-xs uppercase tracking-[0.1em] text-gold-text font-semibold"
+                      >
                         Full name <span aria-hidden="true">*</span>
                       </label>
                       <input
@@ -105,7 +153,10 @@ export default function ContactPage() {
                       />
                     </div>
                     <div className="space-y-4">
-                      <label htmlFor="contact-email" className="text-xs uppercase tracking-[0.1em] text-gold-text font-semibold">
+                      <label
+                        htmlFor="contact-email"
+                        className="text-xs uppercase tracking-[0.1em] text-gold-text font-semibold"
+                      >
                         Email address <span aria-hidden="true">*</span>
                       </label>
                       <input
@@ -122,7 +173,10 @@ export default function ContactPage() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
                     <div className="space-y-4">
-                      <label htmlFor="contact-phone" className="text-xs uppercase tracking-[0.1em] text-gold-text font-semibold">
+                      <label
+                        htmlFor="contact-phone"
+                        className="text-xs uppercase tracking-[0.1em] text-gold-text font-semibold"
+                      >
                         Phone / WhatsApp
                       </label>
                       <input
@@ -136,7 +190,10 @@ export default function ContactPage() {
                       />
                     </div>
                     <div className="space-y-4">
-                      <label htmlFor="contact-company" className="text-xs uppercase tracking-[0.1em] text-gold-text font-semibold">
+                      <label
+                        htmlFor="contact-company"
+                        className="text-xs uppercase tracking-[0.1em] text-gold-text font-semibold"
+                      >
                         Company / Organization
                       </label>
                       <input
@@ -151,30 +208,43 @@ export default function ContactPage() {
                   </div>
 
                   <div className="space-y-4">
-                    <div id="contact-inquiry-label" className="text-xs uppercase tracking-[0.1em] text-gold-text font-semibold">
+                    <div
+                      id="contact-inquiry-label"
+                      className="text-xs uppercase tracking-[0.1em] text-gold-text font-semibold"
+                    >
                       What are you exploring? <span aria-hidden="true">*</span>
                     </div>
                     <select
                       id="contact-project-type"
                       name="projectType"
                       value={selectedInquiry}
-                      onChange={(event) => setSelectedInquiry(event.target.value)}
-                      required
+                      onChange={(event) =>
+                        setSelectedInquiry(event.target.value)
+                      }
                       tabIndex={-1}
                       aria-hidden="true"
                       className="sr-only"
                     >
                       <option value="">Select an enquiry type</option>
-                      {inquiryTypes.map((type) => <option key={type} value={type}>{type}</option>)}
+                      {inquiryTypes.map((type) => (
+                        <option key={type} value={type}>
+                          {type}
+                        </option>
+                      ))}
                     </select>
-                    <div className="grid grid-cols-1 gap-3 sm:flex sm:flex-wrap sm:gap-4" role="group" aria-labelledby="contact-inquiry-label" aria-required="true">
+                    <div
+                      className="grid grid-cols-1 gap-3 sm:flex sm:flex-wrap sm:gap-4"
+                      role="group"
+                      aria-labelledby="contact-inquiry-label"
+                      aria-required="true"
+                    >
                       {inquiryTypes.map((type) => (
                         <button
                           key={type}
                           type="button"
                           onClick={() => setSelectedInquiry(type)}
                           aria-pressed={selectedInquiry === type}
-                            className={`min-h-11 w-full justify-start px-5 py-2 border rounded-sm text-left text-xs uppercase tracking-[0.08em] transition-all sm:w-auto sm:justify-center sm:text-center ${
+                          className={`min-h-11 w-full justify-start px-5 py-2 border rounded-sm text-left text-xs uppercase tracking-[0.08em] transition-all sm:w-auto sm:justify-center sm:text-center ${
                             selectedInquiry === type
                               ? "border-gold bg-gold text-ink"
                               : "border-stone/30 hover:border-gold hover:text-gold"
@@ -188,7 +258,10 @@ export default function ContactPage() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
                     <div className="space-y-4">
-                      <label htmlFor="contact-estimated-units" className="text-xs uppercase tracking-[0.1em] text-gold-text font-semibold">
+                      <label
+                        htmlFor="contact-estimated-units"
+                        className="text-xs uppercase tracking-[0.1em] text-gold-text font-semibold"
+                      >
                         Estimated number of units
                       </label>
                       <select
@@ -208,7 +281,10 @@ export default function ContactPage() {
                       </select>
                     </div>
                     <div className="space-y-4">
-                      <label htmlFor="contact-project-timeline" className="text-xs uppercase tracking-[0.1em] text-gold-text font-semibold">
+                      <label
+                        htmlFor="contact-project-timeline"
+                        className="text-xs uppercase tracking-[0.1em] text-gold-text font-semibold"
+                      >
                         Project timeline
                       </label>
                       <select
@@ -218,7 +294,9 @@ export default function ContactPage() {
                         className="w-full min-h-14 max-w-full bg-transparent border-b border-stone/35 py-4 outline-none focus:border-gold transition-all duration-500 text-stone text-lg font-light appearance-none"
                       >
                         <option value="">Select timeline</option>
-                        <option value="exploring">Exploring / No fixed timeline</option>
+                        <option value="exploring">
+                          Exploring / No fixed timeline
+                        </option>
                         <option value="within-3-months">Within 3 months</option>
                         <option value="3-6-months">3–6 months</option>
                         <option value="6-12-months">6–12 months</option>
@@ -228,7 +306,10 @@ export default function ContactPage() {
                   </div>
 
                   <div className="space-y-4">
-                    <label htmlFor="contact-brief" className="text-xs uppercase tracking-[0.1em] text-gold-text font-semibold">
+                    <label
+                      htmlFor="contact-brief"
+                      className="text-xs uppercase tracking-[0.1em] text-gold-text font-semibold"
+                    >
                       Your brief <span aria-hidden="true">*</span>
                     </label>
                     <textarea
@@ -244,11 +325,16 @@ export default function ContactPage() {
                   <Magnetic strength={0.2}>
                     <motion.button
                       type="submit"
+                      disabled={submissionState === "submitting"}
                       whileHover={{ scale: 1.01 }}
                       whileTap={{ scale: 0.99 }}
                       className="mobile-no-hover w-full min-h-14 py-5 bg-gold text-ink uppercase tracking-[0.1em] font-semibold text-xs flex items-center justify-center gap-6 group relative overflow-hidden"
                     >
-                      <span className="relative z-10">Send project enquiry</span>
+                      <span className="relative z-10">
+                        {submissionState === "submitting"
+                          ? "Sending..."
+                          : "Send project enquiry"}
+                      </span>
                       <ArrowRight
                         size={16}
                         className="relative z-10 group-hover:translate-x-2 transition-transform duration-500"
@@ -256,6 +342,17 @@ export default function ContactPage() {
                       <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-0 transition-transform duration-700" />
                     </motion.button>
                   </Magnetic>
+                  {(submissionState === "submitting" || submissionMessage) && (
+                    <p
+                      role="status"
+                      aria-live="polite"
+                      className={`text-sm leading-relaxed ${submissionState === "success" ? "text-gold-text" : "text-stone/75"}`}
+                    >
+                      {submissionState === "submitting"
+                        ? "Sending..."
+                        : submissionMessage}
+                    </p>
+                  )}
                 </form>
               </div>
             </Reveal>
@@ -291,19 +388,21 @@ export default function ContactPage() {
                 Direct access
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                {[{ label: "Sales enquiries", email: dreamRealtyEmail() }].map((item) => (
-                  <div key={item.label} className="group">
-                    <h3 className="text-xs uppercase tracking-[0.08em] text-stone/65 mb-2">
-                      {item.label}
-                    </h3>
-                    <a
-                      href={`mailto:${item.email}`}
-                      className="text-lg font-light hover:text-gold transition-colors"
-                    >
-                      {item.email}
-                    </a>
-                  </div>
-                ))}
+                {[{ label: "Sales enquiries", email: dreamRealtyEmail() }].map(
+                  (item) => (
+                    <div key={item.label} className="group">
+                      <h3 className="text-xs uppercase tracking-[0.08em] text-stone/65 mb-2">
+                        {item.label}
+                      </h3>
+                      <a
+                        href={`mailto:${item.email}`}
+                        className="text-lg font-light hover:text-gold transition-colors"
+                      >
+                        {item.email}
+                      </a>
+                    </div>
+                  ),
+                )}
               </div>
             </div>
           </Reveal>

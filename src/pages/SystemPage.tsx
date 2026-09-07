@@ -58,6 +58,8 @@ const qualityChecks = [
   ['04', 'Final completion', 'A pre-dispatch check of the agreed finished scope.'],
 ];
 
+const lifecycleStages = ['Materials', 'Factory', 'Transport', 'Installation', 'Operation', 'Reuse / end of life'];
+
 export default function SystemPage() {
   return (
     <div className="min-h-screen bg-ink pt-28 text-ivory md:pt-36">
@@ -240,6 +242,44 @@ export default function SystemPage() {
             <Reveal direction="left" delay={0.3} className="mt-7 border-l border-gold/60 pl-5 md:mt-8 md:pl-6">
               <span className="text-xs font-semibold uppercase tracking-[0.1em] text-gold">Serviceable systems</span>
               <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ivory/65">Where the model permits, technical equipment can be grouped into accessible service zones so electrical, water, climate, and control components can be inspected with minimal disturbance to occupied spaces.</p>
+            </Reveal>
+          </div>
+        </div>
+      </CinematicSection>
+
+      <CinematicSection parallax={false} overlay={false} className="border-b border-stone/15 bg-light-secondary py-12 text-stone md:py-16">
+        <div className="site-container">
+          <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-end md:gap-12">
+            <Reveal direction="right">
+              <span className="eyebrow text-gold-text">Sustainability · whole-life carbon</span>
+              <h2 className="mt-5 type-section">Lower impact starts with the system.</h2>
+            </Reveal>
+            <Reveal direction="left">
+              <p className="max-w-2xl text-base leading-relaxed text-stone/75">A capsule’s environmental impact extends beyond the energy it uses on site. Materials, manufacturing, transport, installation, and operation all contribute to whole-life carbon. Actual performance depends on the model, material specification, manufacturing location, transport distance, climate, and energy source.</p>
+            </Reveal>
+          </div>
+
+          <Reveal direction="up" delay={0.12} className="mt-8 grid grid-cols-2 border-l border-t border-stone/20 sm:grid-cols-3 lg:grid-cols-6">
+            {lifecycleStages.map((stage, index) => (
+              <div key={stage} className="border-b border-r border-stone/20 px-4 py-4 md:px-5">
+                <span className="font-mono text-xs text-gold-text">0{index + 1}</span>
+                <p className="mt-3 text-xs font-semibold uppercase tracking-[0.08em] text-stone">{stage}</p>
+              </div>
+            ))}
+          </Reveal>
+
+          <div className="mt-8 grid gap-7 border-t border-stone/20 pt-7 md:grid-cols-3 md:gap-10">
+            <Reveal direction="up">
+              <h3 className="text-xs font-semibold uppercase tracking-[0.1em] text-gold-text">Embodied carbon</h3>
+              <p className="mt-3 text-sm leading-relaxed text-stone/70">Materials, manufacturing, transport, and installation all contribute to a building’s upfront impact. Controlled off-site production can improve material use and reduce site waste and rework, while material selection and logistics remain important variables.</p>
+            </Reveal>
+            <Reveal direction="up" delay={0.08}>
+              <h3 className="text-xs font-semibold uppercase tracking-[0.1em] text-gold-text">Operational carbon</h3>
+              <p className="mt-3 text-sm leading-relaxed text-stone/70">Insulation, insulated Low-E glazing, efficient climate systems, LED lighting, and intelligent controls can help reduce energy demand during use where specified.</p>
+            </Reveal>
+            <Reveal direction="up" delay={0.16}>
+              <h3 className="text-xs font-semibold uppercase tracking-[0.1em] text-gold-text">Reuse + adaptability</h3>
+              <p className="mt-3 text-sm leading-relaxed text-stone/70">Where the model and project allow, a relocatable modular structure can support refurbishment, reuse, or deployment at a new site rather than complete demolition and replacement.</p>
             </Reveal>
           </div>
         </div>

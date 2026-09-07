@@ -275,7 +275,7 @@ export default function SystemPage() {
             </Reveal>
             <Reveal direction="up" delay={0.08}>
               <h3 className="text-xs font-semibold uppercase tracking-[0.1em] text-gold-text">Operational carbon</h3>
-              <p className="mt-3 text-sm leading-relaxed text-stone/70">Insulation, insulated Low-E glazing, efficient climate systems, LED lighting, and intelligent controls can help reduce energy demand during use where specified.</p>
+              <p className="mt-3 text-sm leading-relaxed text-stone/70">Insulation, insulated or Low-E glazing where specified, efficient climate systems, LED lighting, and intelligent controls can help reduce energy demand during use.</p>
             </Reveal>
             <Reveal direction="up" delay={0.16}>
               <h3 className="text-xs font-semibold uppercase tracking-[0.1em] text-gold-text">Reuse + adaptability</h3>
@@ -285,7 +285,7 @@ export default function SystemPage() {
         </div>
       </CinematicSection>
 
-      <CinematicSection parallax={false} overlay={false} className="bg-light-secondary text-stone section-space-compact">
+      <CinematicSection parallax={false} overlay={false} className="bg-light text-stone section-space-compact">
         <div className="site-container">
           <Reveal direction="up" className="max-w-3xl">
             <span className="eyebrow text-gold-text">Safety + comfort</span>
@@ -331,20 +331,20 @@ export default function SystemPage() {
         </div>
       </CinematicSection>
 
-      <CinematicSection parallax={false} overlay={false} className="border-b border-stone/15 bg-light-secondary py-12 text-stone md:py-16">
+      <CinematicSection parallax={false} overlay={false} className="border-b border-stone/15 bg-light-secondary py-10 text-stone md:py-12">
         <div className="site-container">
-          <Reveal direction="up" className="grid gap-7 border-b border-stone/20 pb-8 md:grid-cols-[0.8fr_1.2fr] md:items-end md:gap-12 md:pb-10">
+          <Reveal direction="up" className="grid gap-5 border-b border-stone/20 pb-6 md:grid-cols-[0.8fr_1.2fr] md:items-end md:gap-10 md:pb-8">
             <div>
               <span className="eyebrow text-gold-text">Quality before delivery</span>
-              <h2 className="mt-5 type-section">Built off-site. Checked before dispatch.</h2>
+              <h2 className="mt-4 text-[clamp(1.5rem,2.2vw,2.25rem)] font-display font-semibold leading-[1.05] tracking-[-0.025em]">Built off-site. Checked before dispatch.</h2>
             </div>
-            <p className="max-w-2xl text-base leading-relaxed text-stone/75">Factory completion allows the structure, envelope, installed services, and finishes to be reviewed before the capsule leaves production.</p>
+            <p className="max-w-2xl text-sm leading-relaxed text-stone/75 md:text-base">Factory completion allows the structure, envelope, installed services, and finishes to be reviewed before the capsule leaves production.</p>
           </Reveal>
           <div className="grid border-l border-stone/20 sm:grid-cols-2 lg:grid-cols-4">
             {qualityChecks.map(([number, title, copy], index) => (
-              <Reveal key={title} direction="up" delay={0.06 + index * 0.06} className="border-b border-r border-stone/20 p-5 md:p-6">
+              <Reveal key={title} direction="up" delay={0.06 + index * 0.06} className="border-b border-r border-stone/20 p-4 md:p-5">
                 <span className="font-mono text-xs text-gold-text">{number}</span>
-                <h3 className="mt-5 text-base font-semibold tracking-tight">{title}</h3>
+                <h3 className="mt-4 text-sm font-semibold tracking-tight">{title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-stone/70">{copy}</p>
               </Reveal>
             ))}

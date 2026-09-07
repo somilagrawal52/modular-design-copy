@@ -134,7 +134,7 @@ export default function ConceptToCommissioning() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.14 }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
-                className="grid grid-cols-1 gap-y-6 border-t border-stone/20 pt-8 md:gap-y-8 md:pt-10 lg:grid-cols-12 lg:grid-rows-[auto_auto] lg:gap-x-10 lg:gap-y-0 xl:gap-x-16"
+                className="grid grid-cols-1 gap-y-6 pt-8 md:gap-y-8 md:pt-10 lg:grid-cols-12 lg:grid-rows-[auto_auto] lg:gap-x-10 lg:gap-y-0 xl:gap-x-16"
               >
                 <div className="order-1 lg:hidden">
                   <StageHeading stage={stage} compact />

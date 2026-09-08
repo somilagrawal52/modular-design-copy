@@ -5,8 +5,12 @@ import { Link } from "react-router-dom";
 import Reveal from "../Reveal";
 import StaggerText from "../StaggerText";
 import { MANAGER_DEMO_MODE, SITE_NAME } from "../../config/siteMode";
+import { responsiveImageSrcSet } from "../../lib/responsiveImages";
+
+const HERO_IMAGE = "/images/modular-capsule-forest-retreat-hero-v2.png";
 
 export default function Hero() {
+  const heroWebpSrcSet = responsiveImageSrcSet(HERO_IMAGE);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -36,19 +40,23 @@ export default function Hero() {
   return (
     <section className="relative isolate flex min-h-[620px] h-[100svh] max-h-[900px] items-center overflow-hidden bg-ink sm:min-h-[680px]">
       <motion.div className="absolute inset-0 z-0">
-        <motion.img
-          src="/images/modular-capsule-forest-retreat-hero-v2.png"
-          alt="Premium modular space capsule residence in a forest landscape"
-          className="h-full w-full scale-[1.025] object-cover object-[62%_center] md:object-[66%_center]"
-          loading="eager"
-          fetchPriority="high"
-          decoding="async"
-          referrerPolicy="no-referrer"
-          style={{ x: moveX, y: moveY }}
-          initial={{ scale: 1.025 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
-        />
+        <picture className="block h-full w-full">
+          {heroWebpSrcSet && <source type="image/webp" srcSet={heroWebpSrcSet} sizes="100vw" />}
+          <motion.img
+            src={HERO_IMAGE}
+            alt="Premium modular space capsule residence in a forest landscape"
+            className="h-full w-full scale-[1.025] object-cover object-[62%_center] md:object-[66%_center]"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            sizes="100vw"
+            referrerPolicy="no-referrer"
+            style={{ x: moveX, y: moveY }}
+            initial={{ scale: 1.025 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+          />
+        </picture>
         <div
           className="absolute inset-0 z-10"
           style={{

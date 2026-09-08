@@ -7,6 +7,7 @@ import StaggerText from '../components/StaggerText';
 import ParallaxElement from '../components/ParallaxElement';
 import SEO from '../components/SEO';
 import NotFound from './NotFound';
+import { responsiveImageSrcSet } from '../lib/responsiveImages';
 
 import CinematicSection from '../components/CinematicSection';
 import { MANAGER_DEMO_MODE, demoItems } from '../config/siteMode';
@@ -22,6 +23,7 @@ export default function ProjectDetail() {
   const project = PROJECTS.find(p => p.id === id);
   if (!project) return <NotFound />;
   const technicalSpecs = project.technicalSpecs ?? [];
+  const projectWebpSrcSet = responsiveImageSrcSet(project.image);
   const productType = project.details.find((detail) => detail.label === 'Type')?.value ?? project.category;
   const modelDetails = [
     { label: 'Product type', value: productType },
@@ -47,15 +49,19 @@ export default function ProjectDetail() {
       <CinematicSection parallax={false} className="isolate h-[100svh] max-h-[960px] min-h-[680px] bg-ink">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute inset-0">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-full object-cover"
-              loading="eager"
-              fetchPriority="high"
-              decoding="async"
-              referrerPolicy="no-referrer"
-            />
+            <picture className="block h-full w-full">
+              {projectWebpSrcSet && <source type="image/webp" srcSet={projectWebpSrcSet} sizes="100vw" />}
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                sizes="100vw"
+                referrerPolicy="no-referrer"
+              />
+            </picture>
             <div
               className="absolute inset-0"
               style={{

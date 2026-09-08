@@ -199,6 +199,7 @@ export default function Work() {
                       src={featuredProject.image}
                       alt={featuredProject.title}
                       speed={0.08}
+                      sizes="100vw"
                       className="w-full h-full group-hover/featured:scale-105 transition-all duration-1000 ease-out"
                     />
                     <div className="absolute inset-0 z-20 bg-gradient-to-t from-ink/90 via-ink/10 to-transparent" />
@@ -257,6 +258,7 @@ export default function Work() {
                         src={project.image}
                         alt={project.title}
                         speed={0.04}
+                        sizes="(min-width: 768px) 50vw, 100vw"
                         className="w-full h-full group-hover/card:scale-105 transition-all duration-1000 ease-out"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent opacity-70 group-hover/card:opacity-100 transition-opacity duration-500" />

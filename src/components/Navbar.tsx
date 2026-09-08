@@ -47,8 +47,13 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             className="text-sm sm:text-base md:text-lg font-brand font-semibold tracking-[0.08em] md:tracking-[0.1em] text-ivory flex items-center gap-2 md:gap-3 py-2 whitespace-nowrap"
           >
-            <div className="w-6 h-6 md:w-8 md:h-8 border border-gold/40 flex items-center justify-center">
-              <div className="w-1 h-1 bg-gold" />
+            <div className="relative h-8 w-12 shrink-0 overflow-hidden md:h-10 md:w-16" aria-hidden="true">
+              <img
+                src="/images/dvr-monogram-logo.png"
+                alt=""
+                className="absolute left-1/2 top-1/2 w-[60px] max-w-none -translate-x-1/2 -translate-y-1/2 md:w-[78px]"
+                style={{ clipPath: "inset(0 0 30% 0)" }}
+              />
             </div>
             {SITE_NAME}
           </motion.div>

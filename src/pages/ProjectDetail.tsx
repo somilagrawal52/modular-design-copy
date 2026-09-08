@@ -44,7 +44,7 @@ export default function ProjectDetail() {
         image={project.image}
       />
       {/* Hero */}
-      <CinematicSection parallax={false} className="h-[100svh] min-h-[680px]">
+      <CinematicSection parallax={false} className="isolate h-[100svh] max-h-[960px] min-h-[680px] bg-ink">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute inset-0">
             <img
@@ -56,7 +56,13 @@ export default function ProjectDetail() {
               decoding="async"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 bg-ink/40 mix-blend-multiply" />
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(90deg, rgba(13, 14, 14, 0.78) 0%, rgba(13, 14, 14, 0.42) 43%, rgba(13, 14, 14, 0.08) 75%)",
+              }}
+            />
           </div>
         </div>
         

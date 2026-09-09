@@ -134,7 +134,7 @@ const lowerCarbonBenefits = [
   {
     icon: Clock3,
     title: "Shorter installation window",
-    copy: "Faster installation can reduce prolonged site activity and temporary works. The current modular installation approach targets roughly 30–60 days, versus 8–18 months for conventional construction in its target applications.",
+    copy: "Completing more work off-site can reduce prolonged site activity and temporary works. Installation timing remains subject to the model, site access, foundations, utilities, and approvals.",
   },
 ];
 
@@ -380,7 +380,7 @@ export default function SystemPage() {
           <div className="grid gap-8 md:grid-cols-[0.85fr_1.15fr] md:items-end md:gap-14">
             <Reveal direction="right">
               <span className="eyebrow text-gold-text">
-                Lower-carbon by design · carbon-neutral pathway
+                Lower-carbon by design
               </span>
               <h2 className="mt-5 type-section">
                 Luxury modular living with a lighter environmental footprint.
@@ -392,8 +392,8 @@ export default function SystemPage() {
                 production, high-performance insulation, transportable
                 components, and solar-ready electrical infrastructure to reduce
                 waste, site disruption, and operating energy. The next step is
-                to measure the full life-cycle footprint and systematically
-                drive it toward verified carbon neutrality.
+                to measure the full life-cycle footprint and use those findings
+                to guide verified reductions.
               </p>
               <p className="mt-6 max-w-2xl border-l border-gold/60 pl-5 text-sm leading-relaxed text-stone/70">
                 Modular does not automatically mean carbon neutral. Carbon
@@ -582,38 +582,6 @@ export default function SystemPage() {
               </p>
             </div>
           </div>
-          <Reveal
-            direction="up"
-            className="mt-12 grid gap-7 border-y border-stone/20 py-8 md:mt-16 md:grid-cols-[0.8fr_1.2fr] md:items-start md:gap-12 md:py-10"
-          >
-            <div>
-              <span className="eyebrow text-gold-text">
-                Documentation for project coordination
-              </span>
-              <h2 className="mt-5 text-[clamp(1.5rem,2.2vw,2.25rem)] font-display font-semibold leading-[1.05] tracking-[-0.025em]">
-                Technical information, ready for the project team.
-              </h2>
-            </div>
-            <div>
-              <p className="max-w-2xl text-base leading-relaxed text-stone/75">
-                Commercial modular projects may require drawings,
-                specifications, structural information, and supporting product
-                documentation for coordination with consultants, contractors,
-                and local authorities.
-              </p>
-              <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs font-semibold uppercase tracking-[0.08em] text-gold-text">
-                <span>Model data</span>
-                <span>Technical drawings</span>
-                <span>System information</span>
-                <span>Project documentation</span>
-              </div>
-              <p className="mt-5 text-sm leading-relaxed text-stone/65">
-                Available documentation varies by model, supplier, and
-                destination. Local approvals, permits, and code compliance
-                remain project- and jurisdiction-specific.
-              </p>
-            </div>
-          </Reveal>
           <Reveal direction="up" className="mt-14 text-center md:mt-20">
             <span className="eyebrow text-gold-text">
               Technical information by model

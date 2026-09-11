@@ -15,6 +15,28 @@ const ServicesPage = lazy(() => import('./pages/ServicesPage'));
 const About = lazy(() => import('./pages/About'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const SystemPage = lazy(() => import('./pages/SystemPage'));
+const ThemePreview = lazy(() => import('./pages/ThemePreview'));
+
+const themeIds = new Set(['coastal', 'white', 'minimal', 'natural', 'mono']);
+
+function ThemeController() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const requestedTheme = new URLSearchParams(location.search).get('theme');
+    const storedTheme = window.localStorage.getItem('dvr-theme');
+    const theme = themeIds.has(requestedTheme ?? '')
+      ? requestedTheme!
+      : themeIds.has(storedTheme ?? '')
+        ? storedTheme!
+        : 'coastal';
+
+    document.documentElement.dataset.theme = theme;
+    window.localStorage.setItem('dvr-theme', theme);
+  }, [location.search]);
+
+  return null;
+}
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -45,6 +67,7 @@ export default function App() {
   return (
     <Layout>
       <ScrollToTop />
+      <ThemeController />
       <Suspense fallback={<RouteFallback />}>
         <Routes location={location}>
           <Route path="/" element={<Home />} />
@@ -53,6 +76,7 @@ export default function App() {
           <Route path="/system" element={<SystemPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/about" element={<About />} />
+          <Route path="/themes" element={<ThemePreview />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

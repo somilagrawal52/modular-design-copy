@@ -31,7 +31,7 @@ export default function SEO({
       <meta name="description" content={description} />
       <link rel="canonical" href={canonicalUrl} />
       <meta name="robots" content={robots} />
-      <meta name="theme-color" content="#0D0E0E" />
+      <meta name="theme-color" content="#173E5C" />
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content={name} />
       <meta property="og:title" content={fullTitle} />

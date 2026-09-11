@@ -23,7 +23,7 @@ const footerGroups = [
 
 export default function Footer() {
   return (
-    <footer className="bg-ink border-t border-stone/10 pt-16 md:pt-24 pb-10 relative overflow-hidden">
+    <footer className="bg-ink border-t border-white/10 pt-16 md:pt-24 pb-10 relative overflow-hidden">
       <div className="site-container grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 relative z-10">
         <div className="lg:col-span-7">
           <Reveal direction="right">
@@ -38,7 +38,7 @@ export default function Footer() {
               className="group inline-flex flex-wrap items-center gap-4 md:gap-6 text-xl md:text-3xl font-light tracking-tight hover:text-gold transition-all duration-500"
             >
               {dreamRealtyEmail()}
-              <div className="w-12 h-12 rounded-full border border-stone/20 flex items-center justify-center group-hover:bg-gold group-hover:border-gold transition-all duration-500">
+              <div className="w-12 h-12 rounded-full border border-white/25 flex items-center justify-center group-hover:bg-gold group-hover:border-gold transition-all duration-500">
                 <ArrowUpRight className="group-hover:text-ink transition-colors" size={24} />
               </div>
             </a>
@@ -65,7 +65,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="site-container mt-14 md:mt-20 pt-8 border-t border-stone/10 flex justify-center md:justify-start text-center md:text-left text-[11px] uppercase tracking-[0.1em] text-ivory/60 font-brand font-semibold relative z-10">
+      <div className="site-container mt-14 md:mt-20 pt-8 border-t border-white/10 flex justify-center md:justify-start text-center md:text-left text-[11px] uppercase tracking-[0.1em] text-ivory/60 font-brand font-semibold relative z-10">
         <Reveal direction="up" delay={0.5}>
           <p>© {new Date().getFullYear()} {SITE_STUDIO_NAME}. ALL RIGHTS RESERVED.</p>
         </Reveal>

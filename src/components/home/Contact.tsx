@@ -193,7 +193,7 @@ export default function Contact() {
           <div className="lg:col-span-7 lg:pl-24">
             <ParallaxElement speed={-0.02}>
               <Reveal direction="left" delay={0.2}>
-                <div className="bg-stone/5 p-6 md:p-12 xl:p-16 border border-stone/10 relative">
+                <div className="bg-white/[0.045] p-6 md:p-12 xl:p-16 border border-white/15 relative">
                   {/* Decorative Corner */}
                   <div className="absolute top-0 right-0 w-12 h-12 border-t border-r border-gold/20" />
 

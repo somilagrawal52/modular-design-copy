@@ -189,7 +189,7 @@ export default function Work() {
                       className="absolute inset-0 z-10 opacity-20 pointer-events-none"
                       style={{
                         backgroundImage:
-                          "radial-gradient(circle, #D4AF37 1px, transparent 1px)",
+                          "radial-gradient(circle, #E3B85E 1px, transparent 1px)",
                         backgroundSize: "40px 40px",
                       }}
                     />

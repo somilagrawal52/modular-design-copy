@@ -26,9 +26,9 @@ export default function BackgroundEffect() {
       const ratioX = (x as number) / (windowSize.width || 1);
       const ratioY = (y as number) / (windowSize.height || 1);
       // Shift between gold and a deeper bronze/amber
-      const r = Math.floor(212 + ratioX * 20);
-      const g = Math.floor(175 - ratioY * 30);
-      const b = Math.floor(55 + ratioX * 10);
+      const r = Math.floor(227 + ratioX * 12);
+      const g = Math.floor(184 - ratioY * 20);
+      const b = Math.floor(94 + ratioX * 8);
       return `rgba(${r}, ${g}, ${b}, 0.15)`;
     }
   );
@@ -112,7 +112,7 @@ export default function BackgroundEffect() {
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         const alpha = distance < 200 ? p.opacity * 1.5 : p.opacity;
-        ctx.fillStyle = `rgba(212, 175, 55, ${alpha})`;
+        ctx.fillStyle = `rgba(227, 184, 94, ${alpha})`;
         ctx.fill();
       });
 
@@ -155,7 +155,7 @@ export default function BackgroundEffect() {
       <motion.div 
         className="absolute inset-0 opacity-[0.02]" 
         style={{ 
-          backgroundImage: 'radial-gradient(circle, #D4AF37 1px, transparent 1px)', 
+          backgroundImage: 'radial-gradient(circle, #E3B85E 1px, transparent 1px)',
           backgroundSize: '80px 80px',
           x: useTransform(springX, (x) => (x as number) * -0.02),
           y: useTransform(springY, (y) => (y as number) * -0.02),

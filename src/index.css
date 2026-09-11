@@ -141,6 +141,38 @@
   --color-clay: #6A7073;
 }
 
+:root[data-theme="peach"] {
+  --color-dark: #3A231A;
+  --color-dark-secondary: #523427;
+  --color-light: #FAF6F2;
+  --color-light-secondary: #F3E8DF;
+  --color-white: #FFFFFF;
+  --color-text-dark: #3A231A;
+  --color-text-light: #FAF6F2;
+  --color-muted-dark: #8A6351;
+  --color-muted-light: #EBDAD0;
+  --color-ink: #3A231A;
+  --color-ivory: #FAF6F2;
+  --color-gold: #DE7556;
+  --color-gold-text: #B85336;
+  --color-stone: #3A231A;
+  --color-clay: #8A6351;
+}
+
+:root[data-theme="peach"] .site-nav-shell {
+  background-color: rgba(250, 246, 242, 0.92);
+  border-bottom-color: rgba(58, 35, 26, 0.15);
+}
+
+:root[data-theme="peach"] footer {
+  background-color: #F3E8DF;
+  border-top-color: rgba(58, 35, 26, 0.15);
+}
+
+:root[data-theme="peach"] .hero-overlay {
+  background: linear-gradient(90deg, rgba(58, 35, 26, 0.82) 0%, rgba(58, 35, 26, 0.62) 35%, rgba(58, 35, 26, 0.25) 61%, rgba(58, 35, 26, 0.05) 100%) !important;
+}
+
 @media (min-width: 390px) and (max-width: 479px) {
   :root { --layout-gutter: 1.5rem; }
 }
@@ -159,7 +191,7 @@
   }
 
   body {
-    @apply bg-ink text-ivory font-sans selection:bg-gold selection:text-ink antialiased;
+    @apply bg-light text-stone font-sans selection:bg-gold selection:text-light antialiased;
     cursor: auto;
     line-height: 1.6;
   }
@@ -282,7 +314,7 @@
   }
   
   .glass {
-    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+    @apply bg-white/80 backdrop-blur-xl border border-stone/15 shadow-sm;
   }
 
   .grain {
@@ -352,9 +384,9 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-ink;
+  @apply bg-light;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-stone hover:bg-gold transition-colors;
+  @apply bg-stone/20 hover:bg-gold transition-colors;
 }

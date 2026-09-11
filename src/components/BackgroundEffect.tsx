@@ -129,7 +129,7 @@ export default function BackgroundEffect() {
   }, [mouseX, mouseY]);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden bg-ink">
+    <div className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden bg-light">
       {/* Particle Canvas */}
       <canvas
         ref={canvasRef}
@@ -148,14 +148,11 @@ export default function BackgroundEffect() {
         }}
       />
       
-      {/* Ambient Vignette */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-ink/80" />
-      
       {/* Subtle Grid Interaction */}
       <motion.div 
         className="absolute inset-0 opacity-[0.02]" 
         style={{ 
-          backgroundImage: 'radial-gradient(circle, #E3B85E 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(circle, var(--color-gold) 1px, transparent 1px)',
           backgroundSize: '80px 80px',
           x: useTransform(springX, (x) => (x as number) * -0.02),
           y: useTransform(springY, (y) => (y as number) * -0.02),

@@ -140,21 +140,21 @@ const lowerCarbonBenefits = [
 
 export default function SystemPage() {
   return (
-    <div className="min-h-screen bg-ink pt-28 text-ivory md:pt-36">
+    <div className="min-h-screen bg-light pt-28 text-stone md:pt-36">
       <SEO
         title="Technology Behind It"
         description="Explore the structure, envelope, lower-carbon approach, quality checks, and site interfaces behind DVR modular capsule building systems."
         image="/images/modular-capsule-visitor-gateway-installation.png"
       />
 
-      <CinematicSection parallax={false} className="pb-20 md:pb-28">
+      <CinematicSection parallax={false} overlay={false} className="pb-20 md:pb-28">
         <div className="site-container grid items-end gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
           <div className="relative z-10 pb-4 md:pb-10">
             <Reveal direction="right">
               <div className="mb-8 flex items-center gap-4">
                 <span className="font-mono text-xs text-gold">SYSTEM / 01</span>
                 <div className="h-px w-14 bg-gold" />
-                <span className="text-xs font-semibold uppercase tracking-[0.1em] text-ivory/65">
+                <span className="text-xs font-semibold uppercase tracking-[0.1em] text-stone/65">
                   Integrated building systems
                 </span>
               </div>
@@ -162,12 +162,12 @@ export default function SystemPage() {
             <StaggerText
               el="h1"
               text="Technology behind it."
-              className="type-page-title max-w-xl"
+              className="type-page-title max-w-xl text-stone"
               delay={0.1}
               stagger={0.045}
             />
             <Reveal direction="up" delay={0.3}>
-              <p className="mt-10 max-w-xl text-base leading-relaxed text-ivory/70 md:text-lg">
+              <p className="mt-10 max-w-xl text-base leading-relaxed text-stone/75 md:text-lg">
                 A capsule is more than a finished shell. Structure, envelope,
                 services, and site interfaces are developed as one compact
                 building system. Final materials and scope vary by model and
@@ -177,7 +177,7 @@ export default function SystemPage() {
             <Reveal direction="up" delay={0.45}>
               <Link
                 to="/contact"
-                className="mt-10 inline-flex min-h-11 items-center gap-4 border-b border-gold/50 pb-1 text-xs font-semibold uppercase tracking-[0.1em] text-gold transition-colors hover:border-ivory hover:text-ivory"
+                className="mt-10 inline-flex min-h-11 items-center gap-4 border-b border-gold/60 pb-1 text-xs font-semibold uppercase tracking-[0.1em] text-gold-text transition-colors hover:border-stone hover:text-stone"
               >
                 Discuss a capsule system <ArrowUpRight size={16} />
               </Link>
@@ -195,13 +195,13 @@ export default function SystemPage() {
               priority
               className="h-full w-full"
             />
-            <div className="pointer-events-none absolute inset-2 bg-gradient-to-t from-ink/75 via-transparent to-transparent" />
+            <div className="pointer-events-none absolute inset-2 bg-gradient-to-t from-stone/75 via-transparent to-transparent" />
             <div className="absolute bottom-8 left-8 right-8 flex items-end justify-between gap-6">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.1em] text-gold">
                   Designed as a system
                 </p>
-                <p className="mt-2 text-sm text-ivory/75">
+                <p className="mt-2 text-sm text-light/85">
                   A precise relationship between module and place.
                 </p>
               </div>
@@ -226,8 +226,8 @@ export default function SystemPage() {
                 alt="Panoramic modular capsule residence showing its exterior shell and glazing"
                 className="h-full w-full"
               />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink/25 to-transparent" />
-              <div className="absolute left-5 top-5 border border-gold/40 bg-ink/85 px-3 py-2 text-xs font-semibold uppercase tracking-[0.08em] text-gold md:left-7 md:top-7">
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-stone/30 to-transparent" />
+              <div className="absolute left-5 top-5 border border-gold/40 bg-stone/85 px-3 py-2 text-xs font-semibold uppercase tracking-[0.08em] text-light md:left-7 md:top-7">
                 Layered assembly
               </div>
               <div className="absolute bottom-5 left-5 hidden gap-3 lg:flex lg:flex-col">
@@ -235,7 +235,7 @@ export default function SystemPage() {
                   (label, index) => (
                     <div
                       key={label}
-                      className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.08em] text-ivory"
+                      className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.08em] text-light"
                     >
                       <span className="flex h-5 w-5 items-center justify-center border border-gold/50 font-mono text-[10px] text-gold">
                         0{index + 1}
@@ -319,7 +319,7 @@ export default function SystemPage() {
                 alt="Panoramic capsule retreat with large insulated glazing in a forest setting"
                 className="h-full w-full"
               />
-              <div className="pointer-events-none absolute inset-0 bg-ink/25" />
+              <div className="pointer-events-none absolute inset-0 bg-stone/25" />
               <div className="absolute inset-x-4 bottom-4 grid grid-cols-2 gap-2 sm:inset-x-6 sm:bottom-6 sm:grid-cols-4 sm:gap-4">
                 {[
                   "01 Glazing",
@@ -329,7 +329,7 @@ export default function SystemPage() {
                 ].map((label) => (
                   <span
                     key={label}
-                    className="border border-ivory/30 bg-ink/75 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.08em] text-ivory sm:px-4 sm:py-3 sm:text-xs"
+                    className="border border-light/30 bg-stone/80 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.08em] text-light sm:px-4 sm:py-3 sm:text-xs"
                   >
                     {label}
                   </span>
@@ -534,12 +534,12 @@ export default function SystemPage() {
                 alt="Prepared capsule site with support locations and access route"
                 className="h-full w-full"
               />
-              <div className="pointer-events-none absolute inset-2 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
+              <div className="pointer-events-none absolute inset-2 bg-gradient-to-t from-stone/70 via-transparent to-transparent" />
               <div className="absolute inset-x-5 bottom-5 grid grid-cols-2 gap-2 sm:inset-x-7 sm:bottom-7 sm:grid-cols-4 sm:gap-3">
                 {["Power", "Water", "Drainage", "Support"].map((label) => (
                   <span
                     key={label}
-                    className="border border-ivory/25 bg-ink/80 px-2 py-2 text-center text-[10px] font-semibold uppercase tracking-[0.08em] text-ivory sm:px-3 sm:text-xs"
+                    className="border border-light/25 bg-stone/85 px-2 py-2 text-center text-[10px] font-semibold uppercase tracking-[0.08em] text-light sm:px-3 sm:text-xs"
                   >
                     {label}
                   </span>

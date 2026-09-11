@@ -93,10 +93,9 @@ function StageHeading({
 
 export default function ConceptToCommissioning() {
   return (
-    <CinematicSection
-      minHeight={false}
-      overlay={false}
-      className="section-space border-y border-stone/15 bg-light text-stone"
+    <section
+      id="concept-stages"
+      className="section-space border-y border-stone/15 bg-light text-stone relative overflow-hidden"
     >
       <div className="site-container relative z-20">
         <div className="max-w-4xl border-b border-stone/20 pb-14 md:pb-16">
@@ -141,7 +140,7 @@ export default function ConceptToCommissioning() {
                 </div>
 
                 <motion.figure
-                  className={`order-2 overflow-hidden bg-ink lg:row-span-2 lg:col-span-7 ${imagePlacement}`}
+                  className={`order-2 overflow-hidden bg-light border border-stone/10 lg:row-span-2 lg:col-span-7 ${imagePlacement}`}
                   initial={{ clipPath: "inset(8% 0 8% 0)" }}
                   whileInView={{ clipPath: "inset(0% 0 0% 0)" }}
                   viewport={{ once: true, amount: 0.2 }}
@@ -155,8 +154,8 @@ export default function ConceptToCommissioning() {
                       decoding="async"
                       className="h-full w-full object-cover transition-transform duration-700 motion-safe:group-hover:scale-[1.02]"
                     />
-                    <div className="absolute inset-0 bg-ink/10" />
-                    <span className="absolute bottom-4 left-4 border border-gold/30 bg-ink/80 px-3 py-2 text-xs font-semibold uppercase tracking-[0.08em] text-gold backdrop-blur-sm md:bottom-5 md:left-5">
+                    <div className="absolute inset-0 bg-stone/10" />
+                    <span className="absolute bottom-4 left-4 border border-gold/40 bg-stone/80 px-3 py-2 text-xs font-semibold uppercase tracking-[0.08em] text-light backdrop-blur-sm md:bottom-5 md:left-5">
                       Stage {stage.step}
                     </span>
                   </div>
@@ -177,6 +176,6 @@ export default function ConceptToCommissioning() {
           })}
         </div>
       </div>
-    </CinematicSection>
+    </section>
   );
 }

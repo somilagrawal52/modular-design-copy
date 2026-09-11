@@ -67,12 +67,12 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
               speed={0.05}
               className="w-full h-full transition-all duration-1000"
             />
-            <div className="absolute inset-0 bg-ink/20 group-hover:bg-transparent transition-colors duration-1000 z-10" />
+            <div className="absolute inset-0 bg-stone/15 group-hover:bg-transparent transition-colors duration-1000 z-10" />
 
             {/* Hover Overlay */}
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-20">
               <div className="w-20 h-20 rounded-full glass flex items-center justify-center scale-50 group-hover:scale-100 transition-transform duration-700">
-                <ArrowUpRight size={24} className="text-ivory" />
+                <ArrowUpRight size={24} className="text-stone" />
               </div>
             </div>
           </div>

@@ -200,28 +200,28 @@ export default function Work() {
                       sizes="100vw"
                       className="w-full h-full group-hover/featured:scale-105 transition-all duration-1000 ease-out"
                     />
-                    <div className="absolute inset-0 z-20 bg-gradient-to-t from-ink/90 via-ink/10 to-transparent" />
+                    <div className="absolute inset-0 z-20 bg-gradient-to-t from-stone/95 via-stone/35 to-transparent" />
                     <div className="absolute inset-x-0 bottom-0 z-30 p-6 md:p-10">
                       <div className="flex items-center justify-between gap-8 mb-5">
                         <span className="text-xs uppercase tracking-[0.1em] text-gold font-semibold">
                           Featured model — {featuredProject.category}
                         </span>
-                        <span className="hidden md:block text-xs uppercase tracking-[0.08em] text-ivory/60">
+                        <span className="hidden md:block text-xs uppercase tracking-[0.08em] text-light/70">
                           {projectSummary(featuredProject).type}
                         </span>
                       </div>
                       <div className="flex items-end justify-between gap-8">
                         <div>
-                          <h2 className="type-section text-ivory group-hover/featured:text-gold transition-colors duration-500">
+                          <h2 className="type-section text-light group-hover/featured:text-gold transition-colors duration-500">
                             {featuredProject.title}
                           </h2>
-                          <p className="hidden md:block mt-5 max-w-3xl text-base lg:text-lg text-ivory/70 font-light leading-relaxed">
+                          <p className="hidden md:block mt-5 max-w-3xl text-base lg:text-lg text-light/85 font-light leading-relaxed">
                             {featuredProject.description}
                           </p>
                         </div>
                         <ArrowUpRight
                           size={48}
-                          className="hidden md:block shrink-0 text-ivory/30 group-hover/featured:text-gold group-hover/featured:translate-x-2 group-hover/featured:-translate-y-2 transition-all duration-700"
+                          className="hidden md:block shrink-0 text-light/30 group-hover/featured:text-gold group-hover/featured:translate-x-2 group-hover/featured:-translate-y-2 transition-all duration-700"
                         />
                       </div>
                     </div>

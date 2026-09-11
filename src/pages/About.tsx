@@ -23,21 +23,21 @@ const directorExperience = [
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-ink pt-28 text-ivory md:pt-36">
+    <div className="min-h-screen bg-light pt-28 text-stone md:pt-36">
       <SEO
         title="About Us"
         description="Learn how Dream Ventures Realty combines hospitality, luxury tourism, marine, and project consultancy experience with next-generation modular architecture."
         image="/images/modular-capsule-desert-retreat-hero.png"
       />
 
-      <CinematicSection parallax={false} className="pb-20 md:pb-28">
+      <CinematicSection parallax={false} overlay={false} className="pb-20 md:pb-28">
         <div className="site-container grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
           <div className="relative z-10 py-6 md:py-10">
             <Reveal direction="right">
               <div className="mb-8 flex items-center gap-4">
                 <span className="font-mono text-xs text-gold">DVR / 01</span>
                 <div className="h-px w-14 bg-gold" />
-                <span className="text-xs font-semibold uppercase tracking-[0.1em] text-ivory/65">
+                <span className="text-xs font-semibold uppercase tracking-[0.1em] text-stone/65">
                   About us
                 </span>
               </div>
@@ -45,7 +45,7 @@ export default function About() {
             <StaggerText
               el="h1"
               text="About Dream Ventures Realty."
-              className="type-page-title max-w-xl"
+              className="type-page-title max-w-xl text-stone"
               delay={0.1}
               stagger={0.04}
             />
@@ -62,9 +62,9 @@ export default function About() {
               priority
               className="h-full w-full"
             />
-            <div className="pointer-events-none absolute inset-2 bg-gradient-to-t from-ink/75 via-transparent to-transparent" />
+            <div className="pointer-events-none absolute inset-2 bg-gradient-to-t from-stone/75 via-transparent to-transparent" />
             <div className="absolute bottom-8 left-8 right-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.1em] text-gold">
+              <p className="text-xs font-semibold uppercase tracking-[0.1em] text-light">
                 Hospitality · modular architecture · place
               </p>
             </div>
@@ -155,21 +155,21 @@ export default function About() {
         </div>
       </CinematicSection>
 
-      <CinematicSection parallax={false} className="section-space text-center">
+      <CinematicSection parallax={false} overlay={false} className="section-space text-center bg-light-secondary text-stone border-t border-stone/15">
         <div className="site-container relative z-10">
           <Reveal direction="up">
-            <span className="eyebrow text-gold">Our vision</span>
-            <h2 className="mx-auto mt-6 max-w-4xl type-section">
+            <span className="eyebrow text-gold-text">Our vision</span>
+            <h2 className="mx-auto mt-6 max-w-4xl type-section text-stone">
               Designed for the future.
             </h2>
-            <p className="mx-auto mt-7 max-w-3xl text-base leading-relaxed text-ivory/70">
+            <p className="mx-auto mt-7 max-w-3xl text-base leading-relaxed text-stone/75">
               At DVR, we combine hospitality expertise, international standards,
               innovative technology and a strong sense of environmental
               responsibility to deliver solutions designed for the future.
             </p>
             <Link
               to="/contact"
-              className="mt-10 inline-flex min-h-11 items-center gap-4 border-b border-gold/60 pb-1 text-xs font-semibold uppercase tracking-[0.1em] text-gold transition-colors hover:border-ivory hover:text-ivory"
+              className="mt-10 inline-flex min-h-12 items-center gap-4 bg-gold px-7 py-3 text-xs font-semibold uppercase tracking-[0.1em] text-light transition-colors duration-300 hover:bg-gold-text shadow-sm"
             >
               Discuss your project <ArrowUpRight size={16} />
             </Link>

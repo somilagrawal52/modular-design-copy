@@ -17,7 +17,7 @@ const ContactPage = lazy(() => import('./pages/ContactPage'));
 const SystemPage = lazy(() => import('./pages/SystemPage'));
 const ThemePreview = lazy(() => import('./pages/ThemePreview'));
 
-const themeIds = new Set(['coastal', 'white', 'minimal', 'natural', 'mono']);
+const themeIds = new Set(['coastal', 'white', 'minimal', 'natural', 'mono', 'peach']);
 
 function ThemeController() {
   const location = useLocation();
@@ -29,7 +29,7 @@ function ThemeController() {
       ? requestedTheme!
       : themeIds.has(storedTheme ?? '')
         ? storedTheme!
-        : 'coastal';
+        : 'peach';
 
     document.documentElement.dataset.theme = theme;
     window.localStorage.setItem('dvr-theme', theme);
@@ -55,8 +55,8 @@ function ScrollToTop() {
 
 function RouteFallback() {
   return (
-    <div className="flex min-h-[50vh] items-center justify-center bg-ink text-ivory" role="status" aria-live="polite">
-      <span className="text-xs uppercase tracking-[0.14em] text-gold">Loading</span>
+    <div className="flex min-h-[50vh] items-center justify-center bg-light text-stone" role="status" aria-live="polite">
+      <span className="text-xs uppercase tracking-[0.14em] text-gold-text">Loading</span>
     </div>
   );
 }

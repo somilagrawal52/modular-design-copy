@@ -5,59 +5,90 @@ import StaggerText from "../components/StaggerText";
 import ParallaxElement from "../components/ParallaxElement";
 import CinematicSection from "../components/CinematicSection";
 import ConceptToCommissioning from "../components/services/ConceptToCommissioning";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
 import { demoItems } from "../config/siteMode";
+import { responsiveImageSrcSet } from "../lib/responsiveImages";
+
+const SERVICES_HERO_IMAGE = "/images/modular-residence-pool-hero.png";
 
 export default function ServicesPage() {
   const visibleServices = demoItems(SERVICES, SERVICES.slice(0, 2));
+  const heroWebpSrcSet = responsiveImageSrcSet(SERVICES_HERO_IMAGE);
+
   return (
-    <div className="bg-ink min-h-screen">
+    <div className="bg-light text-stone min-h-screen">
       <SEO
         title="Our Services"
         description="Explore modular home design, commercial container spaces, and modular amenities built for flexible modern use."
+        image={SERVICES_HERO_IMAGE}
       />
       {/* Hero Section */}
-      <CinematicSection
-        parallax={false}
-        className="h-[88svh] min-h-[520px] flex items-center justify-center md:h-screen md:min-h-0"
-      >
+      <section className="relative isolate flex min-h-[600px] h-[92svh] max-h-[860px] items-center overflow-hidden bg-light sm:min-h-[660px]">
         <div className="absolute inset-0 z-0">
-          <ParallaxImage
-            src="/images/modular-home-garden-hero.jpg"
-            alt="Contemporary modular residence"
-            priority
-            speed={0.2}
-            className="w-full h-full"
+          <picture className="block h-full w-full">
+            {heroWebpSrcSet && <source type="image/webp" srcSet={heroWebpSrcSet} sizes="100vw" />}
+            <img
+              src={SERVICES_HERO_IMAGE}
+              alt="Premium modular architectural residence with illuminated pool"
+              className="h-full w-full object-cover object-[center_35%] md:object-[center_30%]"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              sizes="100vw"
+              referrerPolicy="no-referrer"
+            />
+          </picture>
+          {/* Editorial warm peach-bark gradient overlay */}
+          <div
+            className="absolute inset-0 z-10"
+            style={{
+              background:
+                "linear-gradient(90deg, rgba(58, 35, 26, 0.84) 0%, rgba(58, 35, 26, 0.6) 45%, rgba(58, 35, 26, 0.22) 75%, rgba(58, 35, 26, 0.05) 100%)",
+            }}
           />
-          <div className="absolute inset-0 bg-ink/60 z-10" />
         </div>
 
-        <div className="absolute inset-0 z-20 flex items-center justify-center text-center px-4">
-          <div>
-            <Reveal direction="up">
-              <span className="text-xs uppercase tracking-[0.12em] text-gold font-semibold mb-6 block">
-                Our Capabilities
-              </span>
+        <div className="site-container relative z-20 w-full pt-28 sm:pt-32 md:pt-28">
+          <div className="max-w-[48rem] text-left">
+            <Reveal direction="right">
+              <div className="mb-7 flex items-center gap-4">
+                <div className="h-[1px] w-8 md:w-12 bg-gold" />
+                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-gold">
+                  Our Capabilities
+                </span>
+                <div className="hidden h-[1px] w-8 bg-gold/40 sm:block md:w-12" />
+              </div>
             </Reveal>
+
             <StaggerText
               el="h1"
               text="Dream Ventures Realty (DVR) Services."
-              className="type-display mt-7 max-w-5xl"
-              delay={0.4}
-              stagger={0.08}
+              className="type-hero-title max-w-4xl font-display font-semibold leading-[0.98] tracking-[-0.035em] text-light mb-8"
+              delay={0.2}
+              stagger={0.04}
             />
+
+            <div className="mt-8 flex flex-wrap items-center gap-4 sm:gap-6 md:mt-10">
+              <Link
+                to="/contact"
+                className="inline-flex min-h-12 items-center gap-3 bg-gold px-7 py-3 text-xs font-semibold uppercase tracking-[0.1em] text-light transition-colors duration-300 hover:bg-gold-text shadow-sm"
+              >
+                Start your project
+                <ArrowUpRight size={15} />
+              </Link>
+              <a
+                href="#concept-stages"
+                className="inline-flex min-h-12 items-center gap-2 border border-light/30 px-6 py-3 text-xs font-semibold uppercase tracking-[0.1em] text-light/90 transition-colors duration-300 hover:border-gold hover:text-gold"
+              >
+                Explore Services
+                <ArrowDown size={14} />
+              </a>
+            </div>
           </div>
         </div>
-
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-4">
-          <span className="text-xs uppercase tracking-[0.1em] text-ivory/60">
-            Explore Services
-          </span>
-          <ArrowDown size={16} className="text-gold motion-safe:animate-bounce" />
-        </div>
-      </CinematicSection>
+      </section>
 
       <ConceptToCommissioning />
 
@@ -160,10 +191,10 @@ export default function ServicesPage() {
       </div>
 
       {/* CTA Section */}
-      <CinematicSection className="section-space-compact text-center">
+      <CinematicSection overlay={false} className="section-space-compact text-center bg-light-secondary text-stone border-t border-stone/15">
         <ParallaxElement speed={0.05}>
           <Reveal direction="up">
-            <span className="text-xs uppercase tracking-[0.12em] text-ivory/60 mb-6 block">
+            <span className="text-xs uppercase tracking-[0.12em] text-stone/65 mb-6 block">
               From first idea to final installation.
             </span>
             <Link to="/contact" className="group inline-block">
@@ -172,6 +203,15 @@ export default function ServicesPage() {
                 <span className="font-sans font-medium">project.</span>
               </h2>
             </Link>
+            <div className="mt-8 flex justify-center">
+              <Link
+                to="/contact"
+                className="inline-flex min-h-12 items-center gap-3 bg-gold px-7 py-3 text-xs font-semibold uppercase tracking-[0.1em] text-light transition-colors duration-300 hover:bg-gold-text shadow-sm"
+              >
+                Start your project
+                <ArrowUpRight size={15} />
+              </Link>
+            </div>
           </Reveal>
         </ParallaxElement>
       </CinematicSection>

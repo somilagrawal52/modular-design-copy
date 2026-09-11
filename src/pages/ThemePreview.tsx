@@ -33,6 +33,12 @@ const themes = [
     description: "A product-first white and charcoal system with one quiet brass brand accent.",
     swatches: ["#171819", "#FFFFFF", "#F5F5F3", "#B18A47"],
   },
+  {
+    id: "peach",
+    name: "Off-White & Peach",
+    description: "Warm off-white canvas with radiant peach accents and deep warm typography (no grey/black/blue).",
+    swatches: ["#FAF6F2", "#F3E8DF", "#DE7556", "#3A231A"],
+  },
 ];
 
 export default function ThemePreview() {
@@ -54,7 +60,7 @@ export default function ThemePreview() {
           the Home, Technology, About, Work, and Contact experiences fairly.
         </p>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 md:mt-16 lg:grid-cols-3 2xl:grid-cols-5">
+        <div className="mt-12 grid gap-6 md:grid-cols-2 md:mt-16 lg:grid-cols-3">
           {themes.map((theme) => {
             const selected = activeTheme === theme.id;
             return (

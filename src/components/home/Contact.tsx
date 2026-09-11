@@ -141,7 +141,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="section-space-compact relative overflow-hidden"
+      className="section-space-compact relative overflow-hidden bg-light text-stone"
     >
       <div className="site-container relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
@@ -151,7 +151,7 @@ export default function Contact() {
                 <div className="flex items-center gap-4 mb-12">
                   <span className="text-gold font-mono text-xs">05</span>
                   <div className="h-[1px] w-12 bg-gold" />
-                  <span className="text-xs uppercase tracking-[0.1em] text-ivory/60 font-semibold">
+                  <span className="text-xs uppercase tracking-[0.1em] text-stone/60 font-semibold">
                     Inquiries
                   </span>
                 </div>
@@ -159,7 +159,7 @@ export default function Contact() {
               <StaggerText
                 el="h2"
                 text="Let's define the future."
-                className="type-section mb-10"
+                className="type-section mb-10 text-stone"
                 delay={0.2}
                 stagger={0.08}
               />
@@ -176,10 +176,10 @@ export default function Contact() {
                         href={`mailto:${item.value}`}
                         className="group block w-fit"
                       >
-                        <h4 className="text-xs uppercase tracking-[0.1em] text-ivory/75 font-medium mb-3 group-hover:text-gold transition-colors">
+                        <h4 className="text-xs uppercase tracking-[0.1em] text-stone/75 font-medium mb-3 group-hover:text-gold transition-colors">
                           {item.label}
                         </h4>
-                        <p className="text-2xl font-light tracking-tight group-hover:translate-x-2 transition-transform duration-500">
+                        <p className="text-2xl font-light tracking-tight text-stone group-hover:text-gold group-hover:translate-x-2 transition-all duration-500">
                           {item.value}
                         </p>
                       </a>
@@ -193,7 +193,7 @@ export default function Contact() {
           <div className="lg:col-span-7 lg:pl-24">
             <ParallaxElement speed={-0.02}>
               <Reveal direction="left" delay={0.2}>
-                <div className="bg-white/[0.045] p-6 md:p-12 xl:p-16 border border-white/15 relative">
+                <div className="bg-light-secondary p-6 md:p-12 xl:p-16 border border-stone/15 relative">
                   {/* Decorative Corner */}
                   <div className="absolute top-0 right-0 w-12 h-12 border-t border-r border-gold/20" />
 
@@ -216,7 +216,7 @@ export default function Contact() {
                       <div className="relative group">
                         <label
                           htmlFor="home-contact-name"
-                          className="text-xs uppercase tracking-[0.08em] text-ivory/75 font-medium mb-3 block"
+                          className="text-xs uppercase tracking-[0.08em] text-stone/75 font-medium mb-3 block"
                         >
                           Full Name
                         </label>
@@ -227,13 +227,13 @@ export default function Contact() {
                           autoComplete="name"
                           placeholder="Your Name"
                           required
-                          className="w-full min-h-14 bg-transparent border-b border-white/20 py-4 outline-none focus:border-gold transition-all duration-500 placeholder:text-ivory/50 text-ivory/90 text-lg font-light"
+                          className="w-full min-h-14 bg-transparent border-b border-stone/25 py-4 outline-none focus:border-gold transition-all duration-300 placeholder:text-stone/40 text-stone text-lg font-light"
                         />
                       </div>
                       <div className="relative group">
                         <label
                           htmlFor="home-contact-email"
-                          className="text-xs uppercase tracking-[0.08em] text-ivory/75 font-medium mb-3 block"
+                          className="text-xs uppercase tracking-[0.08em] text-stone/75 font-medium mb-3 block"
                         >
                           Email Address
                         </label>
@@ -244,7 +244,7 @@ export default function Contact() {
                           autoComplete="email"
                           placeholder="your@email.com"
                           required
-                          className="w-full min-h-14 bg-transparent border-b border-white/20 py-4 outline-none focus:border-gold transition-all duration-500 placeholder:text-ivory/50 text-ivory/90 text-lg font-light"
+                          className="w-full min-h-14 bg-transparent border-b border-stone/25 py-4 outline-none focus:border-gold transition-all duration-300 placeholder:text-stone/40 text-stone text-lg font-light"
                         />
                       </div>
                     </div>
@@ -252,7 +252,7 @@ export default function Contact() {
                     <div className="relative group">
                       <label
                         htmlFor="home-contact-project-type"
-                        className="text-xs uppercase tracking-[0.08em] text-ivory/75 font-medium mb-3 block"
+                        className="text-xs uppercase tracking-[0.08em] text-stone/75 font-medium mb-3 block"
                       >
                         Project Type
                       </label>
@@ -261,77 +261,77 @@ export default function Contact() {
                         name="projectType"
                         defaultValue=""
                         required
-                        className="w-full min-h-14 bg-transparent border-b border-white/20 py-4 outline-none focus:border-gold transition-all duration-500 text-ivory/90 text-lg font-light appearance-none"
+                        className="w-full min-h-14 bg-transparent border-b border-stone/25 py-4 outline-none focus:border-gold transition-all duration-300 text-stone text-lg font-light appearance-none"
                       >
-                        <option value="" className="bg-ink text-ivory">
+                        <option value="" className="bg-light text-stone">
                           Select Sector
                         </option>
                         <option
                           value="Modular Home"
-                          className="bg-ink text-ivory"
+                          className="bg-light text-stone"
                         >
                           Modular Home
                         </option>
                         <option
                           value="Modular Hotel or Retreat"
-                          className="bg-ink text-ivory"
+                          className="bg-light text-stone"
                         >
                           Modular Hotel or Retreat
                         </option>
                         <option
                           value="Modular Office"
-                          className="bg-ink text-ivory"
+                          className="bg-light text-stone"
                         >
                           Modular Office
                         </option>
                         <option
                           value="Space Capsule"
-                          className="bg-ink text-ivory"
+                          className="bg-light text-stone"
                         >
                           Space Capsule
                         </option>
                         <option
                           value="Hotel or Retreat"
-                          className="bg-ink text-ivory"
+                          className="bg-light text-stone"
                         >
                           Hotel or Retreat
                         </option>
                         <option
                           value="Private Project"
-                          className="bg-ink text-ivory"
+                          className="bg-light text-stone"
                         >
                           Private Project
                         </option>
                         <option
                           value="Commercial Space"
-                          className="bg-ink text-ivory"
+                          className="bg-light text-stone"
                         >
                           Commercial Space
                         </option>
-                        <option value="Workplace" className="bg-ink text-ivory">
+                        <option value="Workplace" className="bg-light text-stone">
                           Workplace
                         </option>
                         <option
                           value="Community Amenity"
-                          className="bg-ink text-ivory"
+                          className="bg-light text-stone"
                         >
                           Community Amenity
                         </option>
                         <option
                           value="Café, Bar, or Restaurant"
-                          className="bg-ink text-ivory"
+                          className="bg-light text-stone"
                         >
                           Café, Bar, or Restaurant
                         </option>
                         <option
                           value="Retail or Pop-Up"
-                          className="bg-ink text-ivory"
+                          className="bg-light text-stone"
                         >
                           Retail or Pop-Up
                         </option>
                         <option
                           value="Pool or Outdoor Amenity"
-                          className="bg-ink text-ivory"
+                          className="bg-light text-stone"
                         >
                           Pool or Outdoor Amenity
                         </option>
@@ -341,7 +341,7 @@ export default function Contact() {
                     <div className="relative group">
                       <label
                         htmlFor="home-contact-message"
-                        className="text-xs uppercase tracking-[0.08em] text-ivory/75 font-medium mb-3 block"
+                        className="text-xs uppercase tracking-[0.08em] text-stone/75 font-medium mb-3 block"
                       >
                         Message
                       </label>
@@ -352,7 +352,7 @@ export default function Contact() {
                         name="message"
                         rows={4}
                         required
-                        className="w-full bg-transparent border-b border-white/20 py-4 outline-none focus:border-gold transition-all duration-500 placeholder:text-ivory/50 text-ivory/90 text-lg font-light resize-none"
+                        className="w-full bg-transparent border-b border-stone/25 py-4 outline-none focus:border-gold transition-all duration-300 placeholder:text-stone/40 text-stone text-lg font-light resize-none"
                       />
                     </div>
 
@@ -362,7 +362,7 @@ export default function Contact() {
                         disabled={submissionState === "submitting"}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="mobile-no-hover w-full py-6 bg-gold text-ink uppercase tracking-[0.1em] font-semibold text-xs flex items-center justify-center gap-6 group overflow-hidden relative"
+                        className="mobile-no-hover w-full py-5 bg-gold text-light uppercase tracking-[0.1em] font-semibold text-xs flex items-center justify-center gap-6 group overflow-hidden relative shadow-md hover:bg-gold-text transition-colors duration-300"
                       >
                         <span className="relative z-10">
                           {submissionState === "submitting"
@@ -384,8 +384,8 @@ export default function Contact() {
                         aria-live="polite"
                         className={`text-sm leading-relaxed ${
                           submissionState === "success"
-                            ? "text-gold"
-                            : "text-ivory/75"
+                            ? "text-gold-text font-semibold"
+                            : "text-stone/75"
                         }`}
                       >
                         {submissionState === "submitting"

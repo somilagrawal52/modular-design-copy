@@ -38,7 +38,7 @@ export default function Hero() {
   }, [mouseX, mouseY]);
 
   return (
-    <section className="relative isolate flex min-h-[620px] h-[100svh] max-h-[900px] items-center overflow-hidden bg-ink sm:min-h-[680px]">
+    <section className="relative isolate flex min-h-[620px] h-[100svh] max-h-[900px] items-center overflow-hidden bg-light sm:min-h-[680px]">
       <motion.div className="absolute inset-0 z-0">
         <picture className="block h-full w-full">
           {heroWebpSrcSet && <source type="image/webp" srcSet={heroWebpSrcSet} sizes="100vw" />}
@@ -58,14 +58,13 @@ export default function Hero() {
           />
         </picture>
         <div
-          className="absolute inset-0 z-10"
+          className="absolute inset-0 z-10 hero-overlay"
           style={{
             background:
-              "linear-gradient(90deg, rgba(13, 14, 14, 0.9) 0%, rgba(13, 14, 14, 0.72) 35%, rgba(13, 14, 14, 0.28) 61%, rgba(13, 14, 14, 0.08) 100%)",
+              "linear-gradient(90deg, rgba(58, 35, 26, 0.82) 0%, rgba(58, 35, 26, 0.62) 35%, rgba(58, 35, 26, 0.25) 61%, rgba(58, 35, 26, 0.05) 100%)",
           }}
         />
-        <div className="absolute inset-x-0 bottom-0 z-10 h-[42%] bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
-        <div className="absolute inset-0 z-10 bg-ink/10 md:hidden" />
+        <div className="absolute inset-0 z-10 bg-stone/5 md:hidden" />
       </motion.div>
 
       <div className="site-container relative z-20 w-full pt-24 sm:pt-28 md:pt-24">
@@ -87,21 +86,21 @@ export default function Hero() {
           </Reveal>
 
           <h1 className="mb-6 max-w-[16ch] font-display font-semibold leading-[0.98] tracking-[-0.035em] md:mb-7">
-            <span className="block type-hero-title text-ivory md:whitespace-nowrap">
+            <span className="block type-hero-title text-light md:whitespace-nowrap">
               Turning Dreams
             </span>
-            <span className="block type-hero-title text-ivory md:whitespace-nowrap">
+            <span className="block type-hero-title text-light md:whitespace-nowrap">
               into <span className="text-gold">Reality</span>
             </span>
           </h1>
 
           <div className="max-w-[36rem]">
-            <span className="mb-5 block text-[clamp(1.25rem,2vw,1.75rem)] font-medium tracking-[-0.025em] text-ivory/95 md:mb-6">
+            <span className="mb-5 block text-[clamp(1.25rem,2vw,1.75rem)] font-medium tracking-[-0.025em] text-light/95 md:mb-6">
               Breaking the Imagination Barriers
             </span>
             <StaggerText
               text={`${SITE_NAME} (DVR) presents premium capsule models and modular living solutions for hospitality, resorts, commercial developments, and private projects.`}
-              className="max-w-[35rem] text-sm font-light leading-relaxed tracking-[0.005em] text-ivory/80 sm:text-base md:text-lg"
+              className="max-w-[35rem] text-sm font-light leading-relaxed tracking-[0.005em] text-light/80 sm:text-base md:text-lg"
               delay={1.2}
               stagger={0.02}
             />
@@ -110,7 +109,7 @@ export default function Hero() {
           <Reveal delay={1.45}>
             <Link
               to="/work"
-              className="group mt-8 inline-flex min-h-12 items-center gap-4 border border-gold/55 bg-ink/10 px-6 py-3 text-xs font-semibold uppercase tracking-[0.1em] text-ivory transition-colors duration-300 hover:bg-gold hover:text-ink md:mt-10"
+              className="group mt-8 inline-flex min-h-12 items-center gap-4 bg-gold px-7 py-3 text-xs font-semibold uppercase tracking-[0.1em] text-light transition-colors duration-300 hover:bg-gold-text md:mt-10 shadow-sm"
             >
               View models
               <ArrowUpRight

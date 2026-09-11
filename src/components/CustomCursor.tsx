@@ -59,7 +59,7 @@ export default function CustomCursor() {
     <>
       {/* Main Dot */}
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-gold rounded-full pointer-events-none z-[10000] mix-blend-difference"
+        className="fixed top-0 left-0 w-2 h-2 bg-gold rounded-full pointer-events-none z-[10000] shadow-sm"
         animate={{
           scale: isClicking ? 0.8 : 1,
         }}
@@ -73,12 +73,12 @@ export default function CustomCursor() {
       
       {/* Trailing Ring */}
       <motion.div
-        className="fixed top-0 left-0 w-10 h-10 border border-gold/30 rounded-full pointer-events-none z-[10000] flex items-center justify-center overflow-hidden"
+        className="fixed top-0 left-0 w-10 h-10 border border-gold/40 rounded-full pointer-events-none z-[10000] flex items-center justify-center overflow-hidden"
         animate={{
           scale: isProjectHover ? 2.5 : isHovering ? 1.8 : isClicking ? 0.9 : 1,
           borderWidth: isHovering ? '1px' : '1px',
-          borderColor: isProjectHover ? 'rgba(212, 175, 55, 1)' : isHovering ? 'rgba(212, 175, 55, 0.8)' : 'rgba(212, 175, 55, 0.3)',
-          backgroundColor: isProjectHover ? 'rgba(212, 175, 55, 0.1)' : 'transparent',
+          borderColor: isProjectHover ? 'var(--color-gold)' : isHovering ? 'var(--color-gold)' : 'var(--color-gold)',
+          backgroundColor: isProjectHover ? 'rgba(222, 117, 86, 0.1)' : 'transparent',
         }}
         style={{
           x: trailX,

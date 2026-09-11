@@ -14,12 +14,14 @@ CONSTANTS = ROOT / "src" / "constants.ts"
 MANIFEST = ROOT / "src" / "lib" / "responsiveImageManifest.ts"
 TARGET_WIDTHS = (640, 1024, 1536)
 HOME_HERO = "/images/modular-capsule-forest-retreat-hero-v2.png"
+SERVICES_HERO = "/images/modular-residence-pool-hero.png"
 
 
 def project_images() -> list[str]:
     source = CONSTANTS.read_text(encoding="utf-8")
     images = set(re.findall(r"\bimage:\s*'(/images/[^']+)'", source))
     images.add(HOME_HERO)
+    images.add(SERVICES_HERO)
     return sorted(images)
 
 

@@ -367,12 +367,12 @@ export default function ContactPage() {
                   className="w-full h-full"
                   objectPosition="68% center"
                 />
-                <div className="absolute inset-0 bg-ink/45" />
+                <div className="absolute inset-0 bg-stone/40" />
                 <div className="absolute bottom-12 left-12 right-12">
                   <span className="text-xs uppercase tracking-[0.1em] text-gold font-semibold">
                     Choose the right starting point
                   </span>
-                  <p className="mt-5 text-xl font-sans font-medium leading-tight text-ivory">
+                  <p className="mt-5 text-xl font-sans font-medium leading-tight text-light">
                     A model, an application, or a project question.
                   </p>
                 </div>

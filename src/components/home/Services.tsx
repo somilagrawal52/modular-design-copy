@@ -61,7 +61,7 @@ export default function Services() {
                     <Magnetic strength={0.5}>
                       <div className={`w-11 h-11 rounded-full border border-stone/25 flex items-center justify-center transition-all duration-500 ${activeId === service.id ? 'bg-gold border-gold rotate-45' : 'group-hover:border-gold'}`}>
                         <Plus 
-                          className={`transition-colors duration-500 ${activeId === service.id ? 'text-ink' : 'text-stone/50 group-hover:text-gold'}`}
+                          className={`transition-colors duration-500 ${activeId === service.id ? 'text-light' : 'text-stone/50 group-hover:text-gold'}`}
                           size={24} 
                         />
                       </div>

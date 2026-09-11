@@ -39,14 +39,14 @@ export default function ProjectDetail() {
   const visibleGallery = demoItems(completeGallery, completeGallery.slice(0, 2));
 
   return (
-    <div className="bg-ink">
+    <div className="bg-light text-stone min-h-screen">
       <SEO 
         title={project.title} 
         description={project.description} 
         image={project.image}
       />
       {/* Hero */}
-      <CinematicSection parallax={false} className="isolate h-[100svh] max-h-[960px] min-h-[680px] bg-ink">
+      <CinematicSection parallax={false} overlay={false} className="isolate h-[100svh] max-h-[960px] min-h-[680px] bg-light">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute inset-0">
             <picture className="block h-full w-full">
@@ -66,13 +66,12 @@ export default function ProjectDetail() {
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(90deg, rgba(13, 14, 14, 0.78) 0%, rgba(13, 14, 14, 0.42) 43%, rgba(13, 14, 14, 0.08) 75%)",
+                  "linear-gradient(90deg, rgba(58, 35, 26, 0.82) 0%, rgba(58, 35, 26, 0.5) 45%, rgba(58, 35, 26, 0.18) 75%)",
               }}
             />
           </div>
         </div>
-        
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-stone/90 via-stone/35 to-transparent z-10" />
         
         <div className="absolute bottom-16 md:bottom-20 left-[var(--layout-gutter)] right-[var(--layout-gutter)] z-20 max-w-5xl">
           <ParallaxElement speed={0.05}>
@@ -85,14 +84,14 @@ export default function ProjectDetail() {
             <StaggerText
               el="h1"
               text={project.title}
-              className="type-display max-w-5xl mb-7"
+              className="type-display max-w-5xl mb-7 text-light"
               delay={0.2}
               stagger={0.08}
             />
             <div className="flex flex-wrap gap-4 items-center">
               <Reveal direction="up" delay={0.6}>
-                <div className="px-4 py-2 border border-gold/30 rounded-full">
-                  <span className="text-xs uppercase tracking-[0.08em] text-gold font-semibold">Product model · {project.category}</span>
+                <div className="px-4 py-2 border border-gold/40 bg-stone/40 backdrop-blur-sm rounded-full">
+                  <span className="text-xs uppercase tracking-[0.08em] text-light font-semibold">Product model · {project.category}</span>
                 </div>
               </Reveal>
             </div>
@@ -183,26 +182,26 @@ export default function ProjectDetail() {
 
       {/* Materiality Section */}
       {project.materiality && (
-        <CinematicSection className="section-space bg-ink text-ivory">
+        <CinematicSection overlay={false} className="section-space bg-light-secondary text-stone border-t border-stone/15">
           <div className="site-container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <ParallaxElement speed={0.02}>
                 <Reveal direction="right">
                   <div className="flex items-center gap-4 mb-12">
-                    <span className="text-gold font-mono text-xs">02</span>
+                    <span className="text-gold-text font-mono text-xs">02</span>
                     <div className="h-[1px] w-12 bg-gold" />
-                    <span className="text-xs uppercase tracking-[0.1em] text-ivory/65 font-semibold">Exterior & interior finish</span>
+                    <span className="text-xs uppercase tracking-[0.1em] text-stone/65 font-semibold">Exterior & interior finish</span>
                   </div>
                 </Reveal>
                 <StaggerText
                   text={`"${project.materiality}"`}
-                  className="text-[clamp(2rem,3.8vw,3rem)] font-display font-medium tracking-tight leading-[1.08] text-ivory/85"
+                  className="text-[clamp(2rem,3.8vw,3rem)] font-display font-medium tracking-tight leading-[1.08] text-stone/90"
                   delay={0.2}
                   stagger={0.03}
                 />
               </ParallaxElement>
               <ParallaxElement speed={-0.02}>
-                <div className="aspect-square bg-stone/5 p-4">
+                <div className="aspect-square bg-stone/5 p-4 border border-stone/10">
                   <ParallaxImage
                     src={project.gallery[0] ?? project.image}
                     alt={`${project.title} material palette`}
@@ -239,7 +238,7 @@ export default function ProjectDetail() {
                           className="w-full h-full transition-all duration-1000"
                         />
                         <div className="absolute bottom-8 right-8 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                          <span className="text-xs uppercase tracking-[0.08em] text-ivory font-semibold bg-ink/50 backdrop-blur-md px-4 py-2">
+                          <span className="text-xs uppercase tracking-[0.08em] text-light font-semibold bg-stone/80 backdrop-blur-md px-4 py-2">
                             PLATE_{i + 1}
                           </span>
                         </div>
@@ -254,15 +253,15 @@ export default function ProjectDetail() {
       </CinematicSection>
 
       {/* Model enquiry CTA */}
-      <CinematicSection className="section-space text-center bg-ink border-t border-stone/10">
+      <CinematicSection overlay={false} className="section-space text-center bg-light text-stone border-t border-stone/15">
         <div className="relative z-10">
           <Reveal direction="up">
-            <span className="text-gold font-mono text-xs block mb-8">04</span>
-            <span className="text-xs uppercase tracking-[0.1em] text-ivory/65 font-semibold mb-7 block">Interested in this model?</span>
-            <h2 className="type-section text-ivory">
+            <span className="text-gold-text font-mono text-xs block mb-8">04</span>
+            <span className="text-xs uppercase tracking-[0.1em] text-stone/65 font-semibold mb-7 block">Interested in this model?</span>
+            <h2 className="type-section text-stone">
               Discuss your project with our team.
             </h2>
-            <Link to="/contact" className="group mt-10 inline-flex min-h-12 items-center gap-4 border border-gold/40 px-7 text-xs uppercase tracking-[0.1em] font-semibold text-ivory transition-colors duration-500 hover:bg-gold hover:text-ink">
+            <Link to="/contact" className="group mt-10 inline-flex min-h-12 items-center gap-4 bg-gold px-7 py-3 text-xs uppercase tracking-[0.1em] font-semibold text-light transition-colors duration-300 hover:bg-gold-text shadow-sm">
               Request pricing
               <ArrowUpRight size={16} className="transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1" />
             </Link>

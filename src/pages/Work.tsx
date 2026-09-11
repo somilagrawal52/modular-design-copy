@@ -41,7 +41,6 @@ const CAPSULE_PROJECT_ORDER = [
   "modular-capsule-garden-family-residence",
   "modular-capsule-lakeside-wellness-deck",
   "modular-capsule-mountain-trail-basecamp",
-  "modular-capsule-desert-adventure-lodge",
   "modular-capsule-coastal-leisure-pavilion",
   "modular-capsule-exhibition-pavilion",
   "modular-capsule-retail-kiosk",
@@ -58,7 +57,6 @@ const CAPSULE_PROJECT_ORDER = [
   "modular-capsule-alpine-retreat",
   "modular-capsule-desert-retreat",
   "modular-capsule-forest-retreat",
-  "modular-capsule-backwater-retreat",
 ];
 
 const orderProjectsForPortfolio = (projects: typeof PROJECTS) =>

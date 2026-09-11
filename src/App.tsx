@@ -12,6 +12,7 @@ const Home = lazy(() => import('./pages/Home'));
 const Work = lazy(() => import('./pages/Work'));
 const ProjectDetail = lazy(() => import('./pages/ProjectDetail'));
 const ServicesPage = lazy(() => import('./pages/ServicesPage'));
+const About = lazy(() => import('./pages/About'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const SystemPage = lazy(() => import('./pages/SystemPage'));
 
@@ -51,6 +52,7 @@ export default function App() {
           <Route path="/work/:id" element={<ProjectDetail />} />
           <Route path="/system" element={<SystemPage />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

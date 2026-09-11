@@ -56,22 +56,12 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://modular-design-flax.vercel.app/work/garden-pavilion</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://modular-design-flax.vercel.app/work/modular-restaurant</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://modular-design-flax.vercel.app/work/modular-living-campus</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://modular-design-flax.vercel.app/work/modular-capsule-backwater-retreat</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -131,11 +121,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://modular-design-flax.vercel.app/work/modular-capsule-desert-adventure-lodge</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://modular-design-flax.vercel.app/work/modular-capsule-mountain-trail-basecamp</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -156,32 +141,12 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://modular-design-flax.vercel.app/work/capsule-alpine-lake-lodge</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://modular-design-flax.vercel.app/work/capsule-desert-stargazing-suite</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://modular-design-flax.vercel.app/work/capsule-kerala-backwater-retreat</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://modular-design-flax.vercel.app/work/capsule-jaisalmer-courtyard-suite</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://modular-design-flax.vercel.app/work/capsule-rishikesh-riverside-retreat</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://modular-design-flax.vercel.app/work/capsule-munnar-tea-estate-lodge</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

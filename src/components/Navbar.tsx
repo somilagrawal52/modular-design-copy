@@ -32,11 +32,11 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Our Designs", href: "/work" },
+    { name: "Designs", href: "/work" },
     { name: "Technology", href: "/system" },
-    { name: "Our Services", href: "/services" },
+    { name: "Services", href: "/services" },
     { name: "About Us", href: "/about" },
-    { name: "Contact Us", href: "/contact" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -48,12 +48,18 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             className="text-sm sm:text-base md:text-lg font-brand font-semibold tracking-[0.08em] md:tracking-[0.1em] text-stone flex items-center gap-2 md:gap-3 py-2 whitespace-nowrap"
           >
-            <div className="relative h-8 w-12 shrink-0 overflow-hidden md:h-10 md:w-16" aria-hidden="true">
+            <div
+              className="relative h-8 w-12 shrink-0 overflow-hidden md:h-10 md:w-16"
+              aria-hidden="true"
+            >
               <img
                 src="/images/dvr-monogram-logo.png"
                 alt=""
                 className="absolute left-1/2 top-1/2 w-[60px] max-w-none -translate-x-1/2 -translate-y-1/2 md:w-[78px]"
-                style={{ clipPath: "inset(0 0 30% 0)", mixBlendMode: "multiply" }}
+                style={{
+                  clipPath: "inset(0 0 30% 0)",
+                  mixBlendMode: "multiply",
+                }}
               />
             </div>
             {SITE_NAME}
@@ -73,7 +79,9 @@ export default function Navbar() {
             <Magnetic>
               <Link
                 to={link.href}
-                aria-current={location.pathname === link.href ? "page" : undefined}
+                aria-current={
+                  location.pathname === link.href ? "page" : undefined
+                }
                 className={`text-[13px] 2xl:text-sm uppercase tracking-[0.08em] font-medium transition-all duration-300 relative group px-2.5 py-3 whitespace-nowrap ${location.pathname === link.href ? "text-gold font-semibold" : "text-stone/80 hover:text-gold"}`}
               >
                 {link.name}
@@ -150,7 +158,9 @@ export default function Navbar() {
                   <Link
                     to={link.href}
                     onClick={() => setIsOpen(false)}
-                    aria-current={location.pathname === link.href ? "page" : undefined}
+                    aria-current={
+                      location.pathname === link.href ? "page" : undefined
+                    }
                     className={`text-[clamp(2rem,9vw,2.75rem)] font-sans font-semibold tracking-[-0.03em] leading-none transition-all duration-300 block py-2.5 ${
                       location.pathname === link.href
                         ? "text-gold font-bold"

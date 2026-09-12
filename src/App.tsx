@@ -7,6 +7,7 @@ import { lazy, Suspense, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import NotFound from './pages/NotFound';
+import { getActiveTheme, applyTheme, THEME_IDS } from './lib/theme';
 
 const Home = lazy(() => import('./pages/Home'));
 const Work = lazy(() => import('./pages/Work'));
@@ -17,22 +18,17 @@ const ContactPage = lazy(() => import('./pages/ContactPage'));
 const SystemPage = lazy(() => import('./pages/SystemPage'));
 const ThemePreview = lazy(() => import('./pages/ThemePreview'));
 
-const themeIds = new Set(['coastal', 'white', 'minimal', 'natural', 'mono', 'peach']);
-
 function ThemeController() {
   const location = useLocation();
 
   useEffect(() => {
     const requestedTheme = new URLSearchParams(location.search).get('theme');
-    const storedTheme = window.localStorage.getItem('dvr-theme');
-    const theme = themeIds.has(requestedTheme ?? '')
-      ? requestedTheme!
-      : themeIds.has(storedTheme ?? '')
-        ? storedTheme!
-        : 'peach';
-
-    document.documentElement.dataset.theme = theme;
-    window.localStorage.setItem('dvr-theme', theme);
+    if (requestedTheme && THEME_IDS.has(requestedTheme)) {
+      applyTheme(requestedTheme);
+    } else {
+      const active = getActiveTheme();
+      applyTheme(active);
+    }
   }, [location.search]);
 
   return null;

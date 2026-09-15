@@ -57,14 +57,8 @@ export default function Hero() {
             transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
           />
         </picture>
-        <div
-          className="absolute inset-0 z-10 hero-overlay"
-          style={{
-            background:
-              "linear-gradient(90deg, rgba(58, 35, 26, 0.82) 0%, rgba(58, 35, 26, 0.62) 35%, rgba(58, 35, 26, 0.25) 61%, rgba(58, 35, 26, 0.05) 100%)",
-          }}
-        />
-        <div className="absolute inset-0 z-10 bg-stone/5 md:hidden" />
+        <div className="absolute inset-0 z-10 hero-overlay scrim-dark-twilight" />
+        <div className="absolute inset-0 z-10 bg-dark/25 md:hidden" />
       </motion.div>
 
       <div className="site-container relative z-20 w-full pt-24 sm:pt-28 md:pt-24">
@@ -77,11 +71,11 @@ export default function Hero() {
                   : "mb-7 flex items-center gap-4 md:mb-9"
               }
             >
-              <div className="h-[1px] w-8 md:w-12 bg-gold/40" />
+              <div className="rule-metallic-bronze w-8 md:w-12" />
               <span className="text-[10px] font-semibold uppercase tracking-[0.1em] text-gold sm:text-xs md:tracking-[0.12em]">
                 Premium space capsules · modular living solutions
               </span>
-              <div className="hidden h-[1px] w-8 bg-gold/40 sm:block md:w-12" />
+              <div className="hidden rule-metallic-bronze w-8 sm:block md:w-12 opacity-60" />
             </div>
           </Reveal>
 

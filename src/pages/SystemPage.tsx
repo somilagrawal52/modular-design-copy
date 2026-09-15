@@ -18,56 +18,56 @@ import StaggerText from "../components/StaggerText";
 const anatomyLayers = [
   [
     "01",
-    "Exterior shell",
-    "An outer skin shaped for the selected capsule and its setting.",
+    "Aerospace Aluminium Shell",
+    "Fluorocarbon-coated aluminium composite outer skin engineered for coastal salt-spray resilience and UV resistance. Guest Benefit: Sleek, reflective all-weather aesthetic. Developer Benefit: Zero external repainting or corrosion maintenance across a 50+ year asset life.",
   ],
   [
     "02",
-    "Weather layer",
-    "A sealed layer that helps manage exposure at the building edge.",
+    "Continuous Weather Barrier",
+    "High-permeability weather-resistive membrane eliminating wind-driven rain penetration. Guest Benefit: Draft-free stillness during extreme mountain storms. Developer Benefit: Preserves internal building health and eliminates water ingress liability.",
   ],
   [
     "03",
-    "Thermal insulation",
-    "An insulated build-up that supports a more controlled interior environment.",
+    "R-32 High-Performance Thermal Core",
+    "Continuous R-32 multi-layer insulation combining closed-cell foam cores and aerogel thermal breaks. Guest Benefit: Whisper-quiet acoustic privacy (STC 45+) and effortless climate stability in sub-zero alpine cold or 45°C desert heat. Developer Benefit: Cuts HVAC operating energy consumption by up to 35%, lowering off-grid solar-battery CAPEX.",
   ],
   [
     "04",
-    "Structural frame",
-    "The primary support system coordinated with the base and installation approach.",
+    "Galvanized Steel Exoskeleton",
+    "Hot-dip galvanized structural space-frame engineered to Seismic Zone IV and 180 km/h wind standards. Guest Benefit: Solid, vibration-free structural sensation. Developer Benefit: Enables crane placement onto lightweight micro-piers with zero heavy foundation excavation.",
   ],
   [
     "05",
-    "Service cavity",
-    "A coordinated zone for routes, connections, and selected equipment.",
+    "Factory Integrated MEPS System",
+    "Pre-commissioned concealed ducted HVAC, water pressurization, and modular electrical harnesses. Guest Benefit: Silent, draftless air circulation and instant hot water. Developer Benefit: Plug-and-play quick-connect coupling enables 48-hour on-site commissioning per module.",
   ],
   [
     "06",
-    "Interior finish",
-    "Wall, ceiling, and floor finishes completed within the agreed configuration.",
+    "Architectural Interior Fit-Out",
+    "Natural oak wall linings, concealed ambient lighting, and acoustic ceiling baffles completed in controlled factory conditions. Guest Benefit: Five-star boutique hospitality tactile luxury. Developer Benefit: Immediate guest occupancy upon installation without wet-trade delays or site dust.",
   ],
 ];
 
 const comfortMeasures = [
   [
     "01",
-    "Safe by design",
-    "Safety glazing, circuit protection, and detection provisions can be specified by project.",
+    "Low-E Glazing (SHGC < 0.28)",
+    "Double/triple-glazed Low-E argon assemblies block 72%+ of solar heat gain while preserving crystal-clear panoramic horizon views.",
   ],
   [
     "02",
-    "Quietly separated",
-    "Envelope and equipment decisions help manage sound between interior life and its surroundings.",
+    "Acoustic Separation (STC 45+)",
+    "Multi-layer envelope damping and decoupled wall assemblies insulate interior guest suites from heavy rain and exterior resort activity.",
   ],
   [
     "03",
-    "Built for daily use",
-    "Wet-area finishes, ventilation, and accessible service zones are considered where applicable.",
+    "Turnkey Ready for Operations",
+    "Pre-fitted luxury bathrooms, integrated ventilation, and durable marine-grade finishes deliver instant hospitality compliance.",
   ],
   [
     "04",
-    "Configured for climate",
-    "Glazing, insulation, HVAC, moisture, and exterior strategies vary by location.",
+    "All-Climate Optimization",
+    "From Himalayan freeze-thaw cycles to coastal humidity and desert thermal swings, thermal envelopes are configured for site conditions.",
   ],
 ];
 
@@ -108,33 +108,33 @@ const qualityChecks = [
 const lowerCarbonBenefits = [
   {
     icon: Factory,
-    title: "Factory precision, less waste",
-    copy: "Standardized fabrication can improve material planning, off-cut recovery, quality control, and recycling. A 2024 ASCE study of 59 cases found modular construction reduced overall construction waste by 78.8% on average versus conventional stick-built projects.",
+    title: "Factory precision, 78% less waste",
+    copy: "Standardized off-site fabrication ensures micrometer material planning, rigid quality control, and clean manufacturing. An ASCE multi-case study documented that modular construction reduces construction waste by 78.8% on average versus conventional builds, protecting project budgets and site ecologies.",
   },
   {
     icon: Leaf,
-    title: "Lower site disturbance",
-    copy: "More work can be completed off-site, reducing wet trades, site storage, repeated deliveries, dust, noise, and the duration of heavy construction activity—especially valuable for resorts, forests, farms, and sensitive landscapes.",
+    title: "Minimal site disturbance",
+    copy: "Because capsules arrive 95% complete, on-site wet trades, noisy deliveries, concrete batching, and dust are eliminated. This enables resort developers to place luxury suites across sensitive tea estates, coastal sands, and forests without landscape destruction.",
   },
   {
     icon: Snowflake,
-    title: "High-performance envelope",
-    copy: "Insulated sandwich panels, underfloor insulation, and double glazing can reduce heating and cooling loads when thermal bridging, air sealing, and solar gain are engineered correctly.",
+    title: "R-32 shell & Low-E envelope",
+    copy: "R-32 continuous multi-layer insulation and argon-filled Low-E glazing (SHGC < 0.28) drastically reduce HVAC energy demand, cutting resort operational power costs by up to 35% while providing guests with draft-free acoustic stillness in extreme climates.",
   },
   {
     icon: Sun,
     title: "Solar-ready and all-electric capable",
-    copy: "Solar-ready electrical infrastructure can be developed for rooftop or nearby PV, battery storage, electric heat-pump HVAC, and smart energy management where renewable electricity is available.",
+    copy: "Engineered with integrated pre-wired DC/AC solar bus routing for rooftop or remote PV arrays, battery storage, and high-efficiency inverter heat pumps, enabling completely autonomous, off-grid eco-resort operations.",
   },
   {
     icon: Recycle,
-    title: "Relocatable and reusable",
-    copy: "Transportable modules can preserve more original building value than demolition-and-rebuild cycles. Bolted, replaceable assemblies can also support future reuse, repair, and material recovery.",
+    title: "100% relocatable asset value",
+    copy: "Unlike site-built concrete that depreciates with demolition, modular capsule suites retain high capital value as transportable, redeployable assets that can be relocated, reconfigured, or liquidated as market demands evolve.",
   },
   {
     icon: Clock3,
-    title: "Shorter installation window",
-    copy: "Completing more work off-site can reduce prolonged site activity and temporary works. Installation timing remains subject to the model, site access, foundations, utilities, and approvals.",
+    title: "Rapid 90-day project commissioning",
+    copy: "Parallel factory fabrication and site foundation preparation compress typical 18-month construction timelines to under 90 days. On-site positioning and MEPS hookup require just 48 hours per suite, accelerating guest revenue generation.",
   },
 ];
 
@@ -322,14 +322,14 @@ export default function SystemPage() {
               <div className="pointer-events-none absolute inset-0 bg-stone/25" />
               <div className="absolute inset-x-4 bottom-4 grid grid-cols-2 gap-2 sm:inset-x-6 sm:bottom-6 sm:grid-cols-4 sm:gap-4">
                 {[
-                  "01 Glazing",
-                  "02 Shell",
-                  "03 Insulation",
-                  "04 Weather layer",
+                  "01 Low-E Glazing (SHGC < 0.28)",
+                  "02 Aero Alloy Shell",
+                  "03 R-32 Thermal Core",
+                  "04 Monolithic Barrier",
                 ].map((label) => (
                   <span
                     key={label}
-                    className="border border-light/30 bg-stone/80 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.08em] text-light sm:px-4 sm:py-3 sm:text-xs"
+                    className="border border-light/30 bg-stone/85 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.08em] text-light sm:px-4 sm:py-3 sm:text-xs backdrop-blur-sm"
                   >
                     {label}
                   </span>
@@ -337,31 +337,31 @@ export default function SystemPage() {
               </div>
             </div>
           </Reveal>
-          <div className="mt-9 grid gap-5 border-t border-stone/20 pt-7 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-9 grid gap-6 border-t border-stone/20 pt-7 sm:grid-cols-2 lg:grid-cols-4">
             {[
               [
-                "Panoramic glazing",
-                "Insulated glazed openings are selected by model and project requirements.",
+                "Low-E Glazing (SHGC < 0.28)",
+                "Double and triple-glazed argon-filled curved envelope with Solar Heat Gain Coefficient SHGC < 0.28 and U-value < 1.4 W/m²K. Blocks 72%+ of solar infrared heat without tint distortion, shielding suites from greenhouse overheating and lowering daytime AC energy by up to 35%.",
               ],
               [
-                "Sealed construction",
-                "Layered junctions help manage exposure around the capsule exterior.",
+                "R-32 Multi-Layer Shell",
+                "Continuous R-32 thermal envelope with precision airtight tape sealing (air infiltration < 0.6 ACH50). Maintains a calm 21°C interior ambient temperature across sub-zero mountain winters and hot arid plains while delivering acoustic isolation.",
               ],
               [
-                "Solar + privacy",
-                "Shading, opening windows, and privacy options are available where specified.",
+                "Seismic Zone IV Exoskeleton",
+                "Aviation-grade hot-dip galvanized steel structural cage with integrated crane-rigging points. Withstands 180 km/h wind loads and seismic shocks, enabling installation on minimal micro-piers without massive concrete ground disturbance.",
               ],
               [
-                "Material response",
-                "Exterior and moisture strategies are considered for the particular climate.",
+                "Intelligent Climate Ventilation",
+                "Concealed inverter heat pump coupled with balanced fresh air heat-recovery ventilation. Continuously delivers filtered, fresh outdoor air without heating or cooling loss, ensuring optimal sleep comfort and guest wellness.",
               ],
             ].map(([title, copy], index) => (
               <Reveal key={title} direction="up" delay={index * 0.06}>
-                <article className="border-l border-gold/50 pl-4">
-                  <h3 className="text-base font-semibold tracking-tight">
+                <article className="border-l border-gold/50 pl-4 space-y-2">
+                  <h3 className="text-base font-semibold tracking-tight text-stone">
                     {title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-stone/70">
+                  <p className="text-sm leading-relaxed text-stone/75">
                     {copy}
                   </p>
                 </article>

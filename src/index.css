@@ -28,6 +28,9 @@
   --color-gold-text: #6E542A;
   --color-stone: #181919;
   --color-clay: #6A7073;
+  --color-metallic-bronze: #B18A47;
+  --color-metallic-bronze-light: #C9A96E;
+  --color-metallic-titanium: #9CA3AF;
 
   --animate-shimmer: shimmer 2s linear infinite;
 }
@@ -271,6 +274,43 @@
 
   .shimmer-anim {
     animation: shimmer 2s linear infinite;
+  }
+
+  /* Subtle Metallic Accents (brushed bronze & titanium silver) */
+  .rule-metallic-bronze {
+    height: 1px;
+    background: linear-gradient(90deg, rgba(177, 138, 71, 0.5) 0%, rgba(201, 169, 110, 0.8) 45%, rgba(177, 138, 71, 0.25) 100%);
+  }
+
+  .rule-metallic-titanium {
+    height: 1px;
+    background: linear-gradient(90deg, rgba(156, 163, 175, 0.45) 0%, rgba(209, 213, 219, 0.75) 45%, rgba(156, 163, 175, 0.2) 100%);
+  }
+
+  .border-metallic-bronze {
+    border-color: rgba(177, 138, 71, 0.35);
+  }
+
+  .border-metallic-titanium {
+    border-color: rgba(156, 163, 175, 0.3);
+  }
+
+  .badge-metallic-bronze {
+    background: linear-gradient(135deg, rgba(177, 138, 71, 0.12) 0%, rgba(201, 169, 110, 0.04) 100%);
+    border: 1px solid rgba(177, 138, 71, 0.32);
+  }
+
+  .badge-metallic-titanium {
+    background: linear-gradient(135deg, rgba(156, 163, 175, 0.1) 0%, rgba(209, 213, 219, 0.04) 100%);
+    border: 1px solid rgba(156, 163, 175, 0.25);
+  }
+
+  .scrim-dark-twilight {
+    background: linear-gradient(90deg, rgba(23, 24, 25, 0.88) 0%, rgba(23, 24, 25, 0.68) 40%, rgba(23, 24, 25, 0.3) 72%, rgba(23, 24, 25, 0.08) 100%);
+  }
+
+  .scrim-dark-bottom {
+    background: linear-gradient(to top, rgba(23, 24, 25, 0.95) 0%, rgba(23, 24, 25, 0.55) 50%, transparent 100%);
   }
 }
 

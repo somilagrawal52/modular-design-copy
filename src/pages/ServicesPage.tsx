@@ -40,25 +40,20 @@ export default function ServicesPage() {
               referrerPolicy="no-referrer"
             />
           </picture>
-          {/* Editorial warm peach-bark gradient overlay */}
-          <div
-            className="absolute inset-0 z-10"
-            style={{
-              background:
-                "linear-gradient(90deg, rgba(58, 35, 26, 0.84) 0%, rgba(58, 35, 26, 0.6) 45%, rgba(58, 35, 26, 0.22) 75%, rgba(58, 35, 26, 0.05) 100%)",
-            }}
-          />
+          {/* High-contrast charcoal scrim overlay */}
+          <div className="absolute inset-0 z-10 scrim-dark-twilight" />
+          <div className="absolute inset-0 z-10 bg-stone/20" />
         </div>
 
         <div className="site-container relative z-20 w-full pt-28 sm:pt-32 md:pt-28">
           <div className="max-w-[48rem] text-left">
             <Reveal direction="right">
               <div className="mb-7 flex items-center gap-4">
-                <div className="h-[1px] w-8 md:w-12 bg-gold" />
+                <div className="rule-metallic-bronze w-8 md:w-12" />
                 <span className="text-xs font-semibold uppercase tracking-[0.12em] text-gold">
                   Our Capabilities
                 </span>
-                <div className="hidden h-[1px] w-8 bg-gold/40 sm:block md:w-12" />
+                <div className="hidden rule-metallic-bronze w-8 sm:block md:w-12 opacity-60" />
               </div>
             </Reveal>
 

@@ -21,7 +21,7 @@ export default function Services() {
               <Reveal direction="right">
                 <div className="flex items-center gap-4 mb-12">
                   <span className="text-gold font-mono text-xs">03</span>
-                  <div className="h-[1px] w-12 bg-gold" />
+                  <div className="rule-metallic-bronze w-12" />
                 <span className="text-xs uppercase tracking-[0.1em] text-stone/60 font-semibold">Expertise</span>
                 </div>
               </Reveal>

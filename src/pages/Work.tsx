@@ -177,22 +177,14 @@ export default function Work() {
               initial={{ opacity: 0, y: 80 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              className="mb-20 md:mb-28"
+              className="mb-24 md:mb-32"
             >
               <Link
                 to={`/work/${featuredProject.id}`}
                 className="block group/featured"
               >
-                <div className="relative overflow-hidden p-3 bg-stone/5 transition-shadow duration-700 group-hover/featured:shadow-[0_0_50px_rgba(212,175,55,0.1)]">
+                <div className="relative overflow-hidden rounded-[2px] bg-stone/5 transition-shadow duration-700 group-hover/featured:shadow-[0_10px_40px_rgba(177,138,71,0.14)]">
                   <div className="relative overflow-hidden aspect-[4/3] md:aspect-[16/7]">
-                    <div
-                      className="absolute inset-0 z-10 opacity-20 pointer-events-none"
-                      style={{
-                        backgroundImage:
-                          "radial-gradient(circle, #E3B85E 1px, transparent 1px)",
-                        backgroundSize: "40px 40px",
-                      }}
-                    />
                     <ParallaxImage
                       src={featuredProject.image}
                       alt={featuredProject.title}
@@ -200,29 +192,35 @@ export default function Work() {
                       sizes="100vw"
                       className="w-full h-full group-hover/featured:scale-105 transition-all duration-1000 ease-out"
                     />
-                    <div className="absolute inset-0 z-20 bg-gradient-to-t from-stone/95 via-stone/35 to-transparent" />
-                    <div className="absolute inset-x-0 bottom-0 z-30 p-6 md:p-10">
-                      <div className="flex items-center justify-between gap-8 mb-5">
-                        <span className="text-xs uppercase tracking-[0.1em] text-gold font-semibold">
-                          Featured model — {featuredProject.category}
-                        </span>
-                        <span className="hidden md:block text-xs uppercase tracking-[0.08em] text-light/70">
-                          {projectSummary(featuredProject).type}
+                    <div className="absolute inset-0 z-20 scrim-dark-bottom" />
+                    <div className="absolute inset-x-0 bottom-0 z-30 p-8 md:p-12">
+                      <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+                        <div className="inline-flex items-center gap-3 px-3 py-1.5 badge-metallic-bronze rounded-[2px]">
+                          <span className="text-[11px] uppercase tracking-[0.12em] text-gold font-semibold">
+                            {featuredProject.technicalSpecs?.[0]?.value ?? "Modular Capsule"}
+                          </span>
+                          <span className="text-light/40">·</span>
+                          <span className="text-[11px] uppercase tracking-[0.08em] text-light/80 font-medium">
+                            {featuredProject.category}
+                          </span>
+                        </div>
+                        <span className="hidden md:block text-xs uppercase tracking-[0.08em] text-light/70 font-mono">
+                          {projectSummary(featuredProject).status}
                         </span>
                       </div>
+                      <div className="rule-metallic-bronze w-24 mb-4" />
                       <div className="flex items-end justify-between gap-8">
                         <div>
                           <h2 className="type-section text-light group-hover/featured:text-gold transition-colors duration-500">
                             {featuredProject.title}
                           </h2>
-                          <p className="hidden md:block mt-5 max-w-3xl text-base lg:text-lg text-light/85 font-light leading-relaxed">
+                          <p className="hidden md:block mt-4 max-w-3xl text-base lg:text-lg text-light/85 font-light leading-relaxed">
                             {featuredProject.description}
                           </p>
                         </div>
-                        <ArrowUpRight
-                          size={48}
-                          className="hidden md:block shrink-0 text-light/30 group-hover/featured:text-gold group-hover/featured:translate-x-2 group-hover/featured:-translate-y-2 transition-all duration-700"
-                        />
+                        <div className="hidden md:flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-light/20 text-light/60 transition-all duration-500 group-hover/featured:border-gold group-hover/featured:text-gold group-hover/featured:scale-105">
+                          <ArrowUpRight size={24} />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -232,74 +230,95 @@ export default function Work() {
           )}
 
           {/* Consistent Project Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-12 gap-y-16 md:gap-y-20">
-            {gridProjects.map((project, i) => (
-              <motion.div
-                key={project.id}
-                layout
-                initial={{ opacity: 0, y: 60 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.97 }}
-                transition={{
-                  duration: 0.7,
-                  delay: Math.min(i * 0.04, 0.24),
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-              >
-                <Link
-                  to={`/work/${project.id}`}
-                  className="block group/card h-full"
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-14 gap-y-20 md:gap-y-28">
+            {gridProjects.map((project, i) => {
+              const modelSystem = project.technicalSpecs?.[0]?.value ?? "Modular Capsule";
+              return (
+                <motion.div
+                  key={project.id}
+                  layout
+                  initial={{ opacity: 0, y: 60 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.97 }}
+                  transition={{
+                    duration: 0.7,
+                    delay: Math.min(i * 0.04, 0.24),
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
                 >
-                  <div className="relative overflow-hidden mb-8 p-2 bg-stone/5 transition-shadow duration-700 group-hover/card:shadow-[0_0_40px_rgba(212,175,55,0.08)]">
-                    <div className="relative overflow-hidden aspect-[4/3]">
-                      <ParallaxImage
-                        src={project.image}
-                        alt={project.title}
-                        speed={0.04}
-                        sizes="(min-width: 768px) 50vw, 100vw"
-                        className="w-full h-full group-hover/card:scale-105 transition-all duration-1000 ease-out"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent opacity-70 group-hover/card:opacity-100 transition-opacity duration-500" />
+                  <Link
+                    to={`/work/${project.id}`}
+                    className="block group/card h-full"
+                  >
+                    {/* Render container with generous whitespace */}
+                    <div className="relative overflow-hidden mb-7 rounded-[2px] bg-stone/5 transition-all duration-700 group-hover/card:shadow-[0_8px_32px_rgba(177,138,71,0.12)]">
+                      <div className="relative overflow-hidden aspect-[4/3]">
+                        <ParallaxImage
+                          src={project.image}
+                          alt={project.title}
+                          speed={0.04}
+                          sizes="(min-width: 768px) 50vw, 100vw"
+                          className="w-full h-full group-hover/card:scale-105 transition-all duration-1000 ease-out"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent opacity-60 group-hover/card:opacity-90 transition-opacity duration-500" />
+                        
+                        {/* Model designation badge floating subtly on render */}
+                        <div className="absolute bottom-4 left-4 z-20">
+                          <span className="inline-block px-2.5 py-1 text-[10px] uppercase tracking-[0.1em] font-semibold text-light bg-dark/75 backdrop-blur-md border border-light/15 rounded-[2px]">
+                            {modelSystem}
+                          </span>
+                        </div>
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="flex items-start justify-between gap-6 px-1">
-                    <div>
-                      <span className="text-xs uppercase tracking-[0.1em] text-gold-text font-semibold mb-3 block">
-                        {project.category}
-                      </span>
+                    <div className="px-1 space-y-4">
+                      <div className="flex items-center justify-between gap-4">
+                        <span className="text-xs uppercase tracking-[0.1em] text-gold-text font-semibold">
+                          {project.category}
+                        </span>
+                        <span className="text-[11px] font-mono text-stone/50 uppercase tracking-[0.06em]">
+                          {project.year}
+                        </span>
+                      </div>
+
+                      {/* Prominent Model Title */}
                       <h3 className="type-card group-hover/card:text-gold transition-colors duration-500">
                         {project.title}
                       </h3>
-                      <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-x-5 gap-y-5 border-t border-stone/15 pt-5 text-xs uppercase tracking-[0.06em] text-stone/65 font-semibold">
-                        {[
-                          ["Product type", projectSummary(project).type],
-                          ["Model system", projectSummary(project).system],
-                          ["Application", project.category],
-                          ["Availability", "Enquire for details"],
-                        ].map(([label, value]) => (
-                          <div key={label} className="min-w-0">
-                              <span className="block text-gold-text mb-2">
-                              {label}
-                            </span>
-                            <span className="block min-h-[2.5rem] text-stone/80 normal-case tracking-normal text-xs font-medium leading-relaxed line-clamp-2 break-words">
-                              {value}
-                            </span>
-                          </div>
-                        ))}
+
+                      {/* Subtle metallic hairline rule */}
+                      <div className="rule-metallic-bronze opacity-60 group-hover/card:opacity-100 transition-opacity" />
+
+                      {/* Spacious two-column specification strip */}
+                      <div className="grid grid-cols-2 gap-4 pt-1 text-xs text-stone/70">
+                        <div>
+                          <span className="block text-[10px] uppercase tracking-[0.08em] text-stone/50 font-semibold mb-1">
+                            Configuration
+                          </span>
+                          <span className="block font-medium text-stone/85 text-xs">
+                            {project.details.find((d) => d.label === "Type")?.value ?? project.category}
+                          </span>
+                        </div>
+                        <div>
+                          <span className="block text-[10px] uppercase tracking-[0.08em] text-stone/50 font-semibold mb-1">
+                            Architecture
+                          </span>
+                          <span className="block font-medium text-stone/85 text-xs truncate">
+                            {project.location}
+                          </span>
+                        </div>
                       </div>
-                      <span className="mt-5 block text-xs uppercase tracking-[0.08em] text-gold">
-                        View model →
-                      </span>
+
+                      <div className="pt-2 flex items-center justify-between">
+                        <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.08em] font-medium text-gold group-hover:text-gold-text transition-colors">
+                          View model details <ArrowUpRight size={13} className="transition-transform duration-300 group-hover/card:translate-x-0.5 group-hover/card:-translate-y-0.5" />
+                        </span>
+                      </div>
                     </div>
-                    <ArrowUpRight
-                      size={28}
-                      className="mt-7 shrink-0 text-stone/30 group-hover/card:text-gold group-hover/card:translate-x-1 group-hover/card:-translate-y-1 transition-all duration-500"
-                    />
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
 
           {hasMoreProjects && (

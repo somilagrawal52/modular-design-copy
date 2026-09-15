@@ -7,7 +7,13 @@ export const PROJECTS: Project[] = [
     challenge: 'Create an all-season destination beside a fast mountain river while keeping the built edge light, serviceable, and respectful of the natural terrain.',
     solution: 'Two factory-finished E3 capsules are set on slim independent supports and linked by a raised service bridge, with the guest fit-out completed before installation.',
     materiality: 'Smooth white shells, dark-framed curved glazing, pale oak interiors, stainless support frames, and river-stone thresholds balance a compact capsule language with the landscape.',
-    technicalSpecs: [{ label: 'Capsule System', value: 'E3 Panoramic Capsule' }, { label: 'Configuration', value: 'Twin River Suites + Bridge' }, { label: 'Foundation', value: 'Raised Independent Supports' }],
+    technicalSpecs: [
+      { label: 'Capsule System', value: 'E3 Panoramic Capsule' },
+      { label: 'Thermal Envelope', value: 'R-32 Multi-layer Shell (Acoustic silence & climate stability)' },
+      { label: 'Glazing Performance', value: 'Low-E Curved (SHGC < 0.28 · Blocks 72% solar heat gain)' },
+      { label: 'Structural Chassis', value: 'Galvanized Exoskeleton (Seismic Zone IV & coastal rated)' },
+      { label: 'Foundation', value: 'Raised Independent Supports (Zero ground excavation)' }
+    ],
     details: [{ label: 'Type', value: 'Riverside Capsule Hospitality' }, { label: 'Location', value: 'Rishikesh, Uttarakhand, India' }, { label: 'Status', value: 'Concept Ready' }],
     gallery: ['/images/capsule-riverside-resort-hero.png', '/images/capsule-riverside-resort-evening.png', '/images/capsule-riverside-resort-interior.png']
   },
@@ -17,7 +23,12 @@ export const PROJECTS: Project[] = [
     challenge: 'Deliver a premium one-key stay to a sloping landscape while protecting the open character of the meadow and keeping construction time short.',
     solution: 'The fully fitted capsule is lifted onto small independent supports with services pre-routed, then paired with a minimal deck and stone path after placement.',
     materiality: 'A white weatherproof composite shell, deep black panoramic glazing, warm oak interior panels, and a slim dark plinth make the unit feel refined without adding visual weight to the site.',
-    technicalSpecs: [{ label: 'System', value: 'Compact Capsule Studio' }, { label: 'Foundation', value: 'Independent Micro-piers' }, { label: 'Envelope', value: 'Insulated Composite Shell' }],
+    technicalSpecs: [
+      { label: 'Capsule System', value: 'E3 Compact Studio' },
+      { label: 'Thermal Envelope', value: 'R-32 Insulated Shell (Maintains 21°C ambient in alpine mist)' },
+      { label: 'Glazing Performance', value: 'Argon Low-E (SHGC < 0.28 · Solar heat control)' },
+      { label: 'Foundation', value: 'Independent Micro-piers (Rapid 48-hr deployment)' }
+    ],
     details: [{ label: 'Type', value: 'Mountain Capsule Hospitality' }, { label: 'Location', value: 'Nainital, Uttarakhand, India' }, { label: 'Status', value: 'Concept Ready' }],
     gallery: ['/images/capsule-meadow-studio-hero.png', '/images/capsule-meadow-studio-evening.png', '/images/capsule-meadow-studio-interior.png']
   },
@@ -27,7 +38,12 @@ export const PROJECTS: Project[] = [
     challenge: 'Create a compact multi-key destination with a calm residential feel, strong privacy, and a modular system that can expand in phases.',
     solution: 'Complete rounded-cabin suites are positioned around a shared garden court, with prefabricated interiors and services ready before installation so the landscape can remain the focus.',
     materiality: 'White powder-coated composite panels, rounded corners, black framed panoramic windows, pale oak interiors, dark plinths, and lush planting give the village its composed identity.',
-    technicalSpecs: [{ label: 'System', value: 'Rounded Cabin Suite Modules' }, { label: 'Configuration', value: 'Four-key Courtyard Village' }, { label: 'Delivery', value: 'Factory-finished + Phased' }],
+    technicalSpecs: [
+      { label: 'Capsule System', value: 'Rounded Cabin Suite Modules' },
+      { label: 'Thermal Envelope', value: 'R-32 High-efficiency Envelope (Whisper-quiet acoustic STC 45+)' },
+      { label: 'Glazing Performance', value: 'Panoramic Low-E (SHGC < 0.28 · Year-round comfort)' },
+      { label: 'Delivery', value: 'Factory-finished + Phased (Minimal site disruption)' }
+    ],
     details: [{ label: 'Type', value: 'Garden Cabin Hospitality' }, { label: 'Location', value: 'Bengaluru, Karnataka, India' }, { label: 'Status', value: 'Concept Ready' }],
     gallery: ['/images/garden-cabin-village-hero.png', '/images/garden-cabin-village-garden.png', '/images/garden-cabin-village-interior.png']
   },
@@ -37,7 +53,12 @@ export const PROJECTS: Project[] = [
     challenge: 'Deliver an all-season guest room to a remote ridge without sacrificing the wide views that make the site special.',
     solution: 'A finished single capsule arrives as one transportable unit, with services pre-routed and a small entry deck assembled only after placement on the ridge.',
     materiality: 'White aluminium-composite panels, deep black window frames, integrated rooflight, pale interiors, and a low timber threshold keep the cabin crisp against the landscape.',
-    technicalSpecs: [{ label: 'System', value: 'Panoramic Capsule Suite' }, { label: 'Foundation', value: 'Screw-pile Supports' }, { label: 'Climate', value: 'High-altitude Thermal Envelope' }],
+    technicalSpecs: [
+      { label: 'Capsule System', value: 'Panoramic Capsule Suite' },
+      { label: 'Thermal Envelope', value: 'R-32 Sub-zero Alpine Envelope (Continuous thermal break)' },
+      { label: 'Glazing Performance', value: 'Triple Low-E (SHGC < 0.28 · Eliminates winter condensation)' },
+      { label: 'Foundation', value: 'Screw-pile Supports (Reversible terrain interface)' }
+    ],
     details: [{ label: 'Type', value: 'Mountain Capsule Hospitality' }, { label: 'Location', value: 'Himalayan Ridge, India' }, { label: 'Status', value: 'Concept Ready' }],
     gallery: ['/images/capsule-mountain-suite-panorama.png', '/images/capsule-mountain-suite-interior.jpeg']
   },
@@ -47,7 +68,12 @@ export const PROJECTS: Project[] = [
     challenge: 'Make a compact prefabricated home feel open to the garden while preserving privacy, day-to-day storage, and a refined interior finish.',
     solution: 'Two transportable cabin modules are positioned around a planted path, with the interior fit-out complete before delivery and the landscape finished around the installed units.',
     materiality: 'White powder-coated panels, black framed glass, pale oak cabinetry, soft interior lighting, and planted garden edges create a clean, durable garden residence.',
-    technicalSpecs: [{ label: 'System', value: 'Rounded Cabin Modules' }, { label: 'Foundation', value: 'Compact Pad Foundations' }, { label: 'Facade', value: 'Panoramic Insulated Glazing' }],
+    technicalSpecs: [
+      { label: 'Capsule System', value: 'Rounded Cabin Modules' },
+      { label: 'Thermal Envelope', value: 'R-32 Multi-layer Shell (Cuts HVAC cooling energy by 35%)' },
+      { label: 'Glazing Performance', value: 'Panoramic Low-E (SHGC < 0.28 · UV protection)' },
+      { label: 'Foundation', value: 'Compact Pad Foundations' }
+    ],
     details: [{ label: 'Type', value: 'Garden Modular Residence' }, { label: 'Location', value: 'Site-specific' }, { label: 'Status', value: 'Concept Ready' }],
     gallery: ['/images/capsule-rounded-garden-suite-hero.jpeg', '/images/capsule-rounded-garden-suite-exterior.jpeg', '/images/capsule-rounded-garden-suite-interior.png']
   },
@@ -57,7 +83,12 @@ export const PROJECTS: Project[] = [
     challenge: 'Create a high-impact seaside resort identity while using a modular system that can be deployed in phases along a sensitive coast.',
     solution: 'Prefinished capsule suites are set on compact elevated foundations and linked by a shared waterside path, allowing individual rooms and deck zones to grow with the resort.',
     materiality: 'Marine-grade white composite panels, black framed glazing, warm timber decks, integrated shading, and calm oak interiors suit the salt-air setting without losing the futuristic capsule character.',
-    technicalSpecs: [{ label: 'System', value: 'Faceted Capsule Suites' }, { label: 'Foundation', value: 'Raised Coastal Deck Supports' }, { label: 'Envelope', value: 'Marine-grade Composite Shell' }],
+    technicalSpecs: [
+      { label: 'Capsule System', value: 'Faceted Capsule Suites' },
+      { label: 'Thermal Envelope', value: 'R-32 Marine-grade Shell (Salt-air & humidity resistant)' },
+      { label: 'Glazing Performance', value: 'Curved Low-E (SHGC < 0.28 · Panoramic sea views without glare)' },
+      { label: 'Foundation', value: 'Raised Coastal Deck Supports' }
+    ],
     details: [{ label: 'Type', value: 'Coastal Capsule Hospitality' }, { label: 'Location', value: 'Konkan Coast, India' }, { label: 'Status', value: 'Concept Ready' }],
     gallery: ['/images/capsule-coastal-resort-hero.jpeg', '/images/capsule-coastal-resort-gallery.jpeg', '/images/capsule-coastal-resort-interior.png']
   },
@@ -85,7 +116,12 @@ export const PROJECTS: Project[] = [
     challenge: 'Place premium guest rooms across a planted hillside without extensive excavation or disturbance to the coffee-estate landscape.',
     solution: 'Factory-complete capsules are lifted onto independent pier supports and joined by light timber paths, allowing installation to move around mature planting and expand in measured phases.',
     materiality: 'White E3 shells, dark-framed panoramic glazing, compact oak-lined interiors, dark metal connections, and rain-ready timber decks keep the experience refined and resilient.',
-    technicalSpecs: [{ label: 'Capsule System', value: 'E3 Panoramic Capsule' }, { label: 'Accommodation', value: '4 Capsule Guest Suites' }, { label: 'Foundation', value: 'Independent Pier Supports' }],
+    technicalSpecs: [
+      { label: 'Capsule System', value: 'E3 Panoramic Capsule' },
+      { label: 'Thermal Envelope', value: 'R-32 Multi-layer Shell (Whisper-quiet canopy acoustic privacy)' },
+      { label: 'Glazing Performance', value: 'Low-E Panoramic (SHGC < 0.28 · Prevents solar heat gain)' },
+      { label: 'Foundation', value: 'Independent Pier Supports (Zero tree-root disturbance)' }
+    ],
     details: [{ label: 'Type', value: 'Forest Capsule Hospitality' }, { label: 'Region', value: 'Coorg, Karnataka, India' }, { label: 'Status', value: 'Concept Study' }],
     gallery: ['/images/modular-capsule-forest-retreat-hero-v2.png', '/images/modular-capsule-forest-retreat-interior-v2.png', '/images/modular-capsule-forest-retreat-installation-v2.png']
   },
@@ -95,7 +131,12 @@ export const PROJECTS: Project[] = [
     challenge: 'Create a premium desert experience that can withstand heat, sand, and open exposure while keeping permanent ground works to a minimum.',
     solution: 'Pre-finished E3 capsule modules are aligned on raised pier pads and connected by a low-impact boardwalk, with service zones integrated before delivery.',
     materiality: 'Smooth white E3 shells, dark rounded panoramic glazing, timber privacy screens, and durable raised decks bring a crisp counterpoint to the desert palette.',
-    technicalSpecs: [{ label: 'Capsule System', value: 'E3 Panoramic Capsule' }, { label: 'Foundation', value: 'Raised Pier Pads' }, { label: 'Climate', value: 'Heat + Sand-ready Envelope' }],
+    technicalSpecs: [
+      { label: 'Capsule System', value: 'E3 Panoramic Capsule' },
+      { label: 'Thermal Envelope', value: 'R-32 Extreme Heat Barrier (Cuts daytime cooling draw by 35%)' },
+      { label: 'Glazing Performance', value: 'Solar Low-E (SHGC < 0.28 · 270° dune view with zero greenhouse effect)' },
+      { label: 'Foundation', value: 'Raised Pier Pads (Sand and wind scour resistant)' }
+    ],
     details: [{ label: 'Type', value: 'Desert Capsule Hospitality' }, { label: 'Region', value: 'Jaisalmer, Rajasthan, India' }, { label: 'Status', value: 'Concept Study' }],
     gallery: ['/images/modular-capsule-desert-retreat-hero.png', '/images/modular-capsule-desert-retreat-interior.png', '/images/modular-capsule-desert-retreat-installation.png']
   },
@@ -105,7 +146,12 @@ export const PROJECTS: Project[] = [
     challenge: 'Deliver warm, comfortable accommodation on steep mountain terrain while limiting road work, earth movement, and impact on the forested site.',
     solution: 'Transport-ready A50 Ultra modules arrive complete with interior finishes and high-performance glazing, then are set onto stepped pier foundations and connected by a lightweight cedar boardwalk.',
     materiality: 'Pale grey and white A50 Ultra shells, dark rounded glazing, cedar-lined reveals, wool-rich interiors, and weathered timber paths bring warmth to a high-altitude setting.',
-    technicalSpecs: [{ label: 'Capsule System', value: 'A50 Panoramic Capsule' }, { label: 'Foundation', value: 'Stepped Pier Supports' }, { label: 'Delivery', value: 'Transport-ready Volumes' }],
+    technicalSpecs: [
+      { label: 'Capsule System', value: 'A50 Panoramic Capsule' },
+      { label: 'Thermal Envelope', value: 'R-32 Sub-zero Alpine Shell (Continuous cold bridge elimination)' },
+      { label: 'Glazing Performance', value: 'Triple Low-E (SHGC < 0.28 · All-season alpine comfort)' },
+      { label: 'Delivery', value: 'Transport-ready Volumes (Plug-and-play 48-hr commissioning)' }
+    ],
     details: [{ label: 'Type', value: 'Alpine Capsule Hospitality' }, { label: 'Region', value: 'Manali, Himachal Pradesh, India' }, { label: 'Status', value: 'Concept Study' }],
     gallery: ['/images/modular-capsule-alpine-retreat-hero.png', '/images/modular-capsule-alpine-retreat-interior.png', '/images/modular-capsule-alpine-retreat-installation.png']
   },
@@ -115,7 +161,12 @@ export const PROJECTS: Project[] = [
     challenge: 'Add premium guest accommodation to a planted tea-estate slope while preserving drainage, mature trees, and the layered views that define the setting.',
     solution: 'Factory-finished capsules are lifted onto independent supports and linked by narrow timber paths, allowing each suite to follow the contours of the hillside without heavy excavation.',
     materiality: 'White E8 shells, black geometric frame details, timber-lined interiors, and rain-ready decks establish a crisp capsule language across a humid mountain climate.',
-    technicalSpecs: [{ label: 'Capsule System', value: 'E8 Panoramic Capsule' }, { label: 'Accommodation', value: '4 Capsule Guest Suites' }, { label: 'Foundation', value: 'Independent Pier Supports' }],
+    technicalSpecs: [
+      { label: 'Capsule System', value: 'E8 Panoramic Capsule' },
+      { label: 'Thermal Envelope', value: 'R-32 Multi-layer Shell (Monsoon humidity barrier & quiet acoustics)' },
+      { label: 'Glazing Performance', value: 'Curved Low-E (SHGC < 0.28 · Fog-resistant panoramic glazing)' },
+      { label: 'Foundation', value: 'Independent Pier Supports (Protects tea plantation contours)' }
+    ],
     details: [{ label: 'Type', value: 'Tea Estate Capsule Hospitality' }, { label: 'Region', value: 'Munnar, Kerala, India' }, { label: 'Status', value: 'Concept Study' }],
     gallery: ['/images/modular-capsule-tea-estate-retreat-hero-v2.png', '/images/modular-capsule-tea-estate-retreat-interior-v2.png', '/images/modular-capsule-tea-estate-retreat-installation-v2.png']
   },
@@ -125,7 +176,12 @@ export const PROJECTS: Project[] = [
     challenge: 'Deliver a premium beach stay that respects the sand, coastal planting, and tropical exposure of a sensitive island site.',
     solution: 'Compact off-site volumes arrive with interiors complete, then sit on short adjustable supports behind the beach and connect through a raised timber path that protects the ground below.',
     materiality: 'White arched capsule shells, curved blue-black glazing, teak interiors, dark marine-grade trim, and shaded decks carry the capsule system into a tropical coastal setting.',
-    technicalSpecs: [{ label: 'Capsule System', value: 'Floating-House Capsule' }, { label: 'Foundation', value: 'Adjustable Raised Supports' }, { label: 'Climate', value: 'Tropical + Coastal-ready' }],
+    technicalSpecs: [
+      { label: 'Capsule System', value: 'Floating-House Capsule' },
+      { label: 'Thermal Envelope', value: 'R-32 Marine Shell (Tropical humidity & salt-mist proof)' },
+      { label: 'Glazing Performance', value: 'Curved Low-E (SHGC < 0.28 · Tropical solar heat deflection)' },
+      { label: 'Foundation', value: 'Adjustable Raised Supports (Zero beach ecosystem disturbance)' }
+    ],
     details: [{ label: 'Type', value: 'Island Capsule Hospitality' }, { label: 'Region', value: 'Havelock Island, Andaman & Nicobar, India' }, { label: 'Status', value: 'Concept Study' }],
     gallery: ['/images/modular-capsule-island-retreat-hero-v2.png', '/images/modular-capsule-island-retreat-interior-v2.png', '/images/modular-capsule-island-retreat-installation-v2.png']
   },
@@ -135,7 +191,12 @@ export const PROJECTS: Project[] = [
     challenge: 'Create comfortable, view-led accommodation on steep lakeside terrain while avoiding extensive earthworks and keeping access routes light.',
     solution: 'Transport-ready E3 suites are carefully lifted to stepped pier supports and linked by a lightweight boardwalk, allowing a phased build that protects the slope and frames the lake.',
     materiality: 'Smooth white E3 shells, dark rounded panoramic glazing, oak interiors, charcoal metal frames, and timber decks keep the collection cohesive in a mountain-lake setting.',
-    technicalSpecs: [{ label: 'Capsule System', value: 'E3 Panoramic Capsule' }, { label: 'Foundation', value: 'Stepped Pier Supports' }, { label: 'Delivery', value: 'Phased Hillside Installation' }],
+    technicalSpecs: [
+      { label: 'Capsule System', value: 'E3 Panoramic Capsule' },
+      { label: 'Thermal Envelope', value: 'R-32 Multi-layer Shell (Lake dampness barrier & thermal calm)' },
+      { label: 'Glazing Performance', value: 'Argon Low-E (SHGC < 0.28 · Prevents winter window condensation)' },
+      { label: 'Delivery', value: 'Phased Hillside Installation (Low-impact pier placement)' }
+    ],
     details: [{ label: 'Type', value: 'Lake Capsule Hospitality' }, { label: 'Region', value: 'Nainital, Uttarakhand, India' }, { label: 'Status', value: 'Concept Study' }],
     gallery: ['/images/modular-capsule-lake-retreat-hero.png', '/images/modular-capsule-lake-retreat-interior.png', '/images/modular-capsule-lake-retreat-installation.png']
   },

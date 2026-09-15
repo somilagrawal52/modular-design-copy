@@ -38,6 +38,8 @@ export default function ProjectDetail() {
   }
   const visibleGallery = demoItems(completeGallery, completeGallery.slice(0, 2));
 
+  const modelSystemName = technicalSpecs.find(s => s.label.toLowerCase().includes('system') || s.label.toLowerCase().includes('capsule'))?.value ?? `${project.category} Modular Capsule`;
+
   return (
     <div className="bg-light text-stone min-h-screen">
       <SEO 
@@ -62,36 +64,49 @@ export default function ProjectDetail() {
                 referrerPolicy="no-referrer"
               />
             </picture>
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(90deg, rgba(58, 35, 26, 0.82) 0%, rgba(58, 35, 26, 0.5) 45%, rgba(58, 35, 26, 0.18) 75%)",
-              }}
-            />
+            <div className="absolute inset-0 scrim-dark-twilight" />
           </div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-stone/90 via-stone/35 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-stone/95 via-stone/40 to-transparent z-10" />
         
-        <div className="absolute bottom-16 md:bottom-20 left-[var(--layout-gutter)] right-[var(--layout-gutter)] z-20 max-w-5xl">
+        <div className="absolute bottom-16 md:bottom-24 left-[var(--layout-gutter)] right-[var(--layout-gutter)] z-20 max-w-5xl">
           <ParallaxElement speed={0.05}>
             <Reveal direction="right">
-              <Link to="/work" className="group flex min-h-11 items-center gap-4 text-xs uppercase tracking-[0.1em] text-gold font-semibold mb-7 md:mb-10">
-                <div className="w-8 h-[1px] bg-gold group-hover:w-12 transition-all" />
+              <Link to="/work" className="group inline-flex min-h-11 items-center gap-4 text-xs uppercase tracking-[0.12em] text-gold font-semibold mb-6 md:mb-8">
+                <div className="w-8 h-[1px] bg-gold group-hover:w-12 transition-all duration-300" />
                 Back to models
               </Link>
             </Reveal>
+
+            {/* Model Designation Dominant Eyebrow */}
+            <Reveal direction="right" delay={0.1}>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-xs uppercase tracking-[0.14em] text-gold font-semibold font-mono">
+                  {modelSystemName}
+                </span>
+                <span className="text-light/40">·</span>
+                <span className="text-xs uppercase tracking-[0.1em] text-light/75 font-medium">
+                  {project.category}
+                </span>
+              </div>
+            </Reveal>
+
             <StaggerText
               el="h1"
               text={project.title}
-              className="type-display max-w-5xl mb-7 text-light"
+              className="type-display max-w-5xl mb-6 text-light font-semibold"
               delay={0.2}
               stagger={0.08}
             />
+
+            <div className="rule-metallic-bronze max-w-sm mb-6" />
+
             <div className="flex flex-wrap gap-4 items-center">
-              <Reveal direction="up" delay={0.6}>
-                <div className="px-4 py-2 border border-gold/40 bg-stone/40 backdrop-blur-sm rounded-full">
-                  <span className="text-xs uppercase tracking-[0.08em] text-light font-semibold">Product model · {project.category}</span>
+              <Reveal direction="up" delay={0.5}>
+                <div className="px-4 py-2 badge-metallic-bronze backdrop-blur-md rounded-[2px]">
+                  <span className="text-xs uppercase tracking-[0.1em] text-light font-medium">
+                    Architectural Model Reference · {project.year}
+                  </span>
                 </div>
               </Reveal>
             </div>
@@ -143,30 +158,49 @@ export default function ProjectDetail() {
 
             <div className="lg:col-span-4 lg:sticky lg:top-40">
               <ParallaxElement speed={0.04}>
-                <div className="bg-stone/5 p-6 md:p-8 border border-stone/10 space-y-9">
-                  <h3 className="text-xs uppercase tracking-[0.1em] text-stone font-semibold border-b border-stone/10 pb-5">Model information</h3>
-                  <div className="space-y-8">
-                    {visibleDetails.map((detail, i) => (
-                      <Reveal key={detail.label} direction="up" delay={i * 0.1}>
-                        <div className="flex justify-between items-end gap-4">
-                          <span className="text-xs uppercase tracking-[0.08em] text-stone/65 font-semibold">{detail.label}</span>
-                          <div className="flex-1 border-b border-stone/10 border-dotted mb-1" />
-                          <span className="text-sm font-semibold">{detail.value}</span>
-                        </div>
-                      </Reveal>
-                    ))}
+                <div className="bg-stone/5 p-7 md:p-9 border border-stone/10 rounded-[2px] space-y-8 shadow-sm">
+                  <div>
+                    <span className="text-[10px] font-mono uppercase tracking-[0.14em] text-gold font-semibold block mb-2">
+                      Architectural Model
+                    </span>
+                    <h3 className="text-xl font-display font-semibold tracking-tight text-stone">
+                      {modelSystemName}
+                    </h3>
+                    <div className="rule-metallic-bronze mt-4 mb-2" />
+                  </div>
+
+                  <div className="space-y-6">
+                    <span className="text-[11px] uppercase tracking-[0.1em] text-stone/50 font-semibold block">
+                      Model Information
+                    </span>
+                    <div className="space-y-5">
+                      {visibleDetails.map((detail, i) => (
+                        <Reveal key={detail.label} direction="up" delay={i * 0.08}>
+                          <div className="flex justify-between items-baseline gap-4">
+                            <span className="text-xs uppercase tracking-[0.06em] text-stone/55 font-medium">{detail.label}</span>
+                            <div className="flex-1 border-b border-stone/15 border-dotted mb-1" />
+                            <span className="text-xs font-semibold text-stone/90 text-right">{detail.value}</span>
+                          </div>
+                        </Reveal>
+                      ))}
+                    </div>
                   </div>
                   
                   {technicalSpecs.length > 0 && (
-                    <div className="pt-8 border-t border-stone/10 space-y-7">
-                      <h4 className="text-xs uppercase tracking-[0.1em] text-gold-text font-semibold">Key configuration</h4>
-                      <div className="space-y-6">
+                    <div className="pt-6 border-t border-stone/15 space-y-5">
+                      <div className="flex items-center gap-2">
+                        <span className="text-[11px] uppercase tracking-[0.1em] text-gold-text font-semibold">
+                          Technical Specifications
+                        </span>
+                        <div className="rule-metallic-titanium flex-1" />
+                      </div>
+                      <div className="space-y-4">
                         {visibleSpecs.map((spec, i) => (
-                          <Reveal key={spec.label} direction="up" delay={i * 0.1}>
-                            <div className="flex justify-between items-end gap-4">
-                              <span className="text-xs uppercase tracking-[0.08em] text-stone/65 font-semibold">{spec.label}</span>
-                              <div className="flex-1 border-b border-stone/10 border-dotted mb-1" />
-                              <span className="text-sm font-semibold">{spec.value}</span>
+                          <Reveal key={spec.label} direction="up" delay={i * 0.08}>
+                            <div className="flex justify-between items-baseline gap-4">
+                              <span className="text-xs uppercase tracking-[0.06em] text-stone/55 font-medium">{spec.label}</span>
+                              <div className="flex-1 border-b border-stone/15 border-dotted mb-1" />
+                              <span className="text-xs font-mono text-stone/85 text-right font-medium">{spec.value}</span>
                             </div>
                           </Reveal>
                         ))}
@@ -201,7 +235,7 @@ export default function ProjectDetail() {
                 />
               </ParallaxElement>
               <ParallaxElement speed={-0.02}>
-                <div className="aspect-square bg-stone/5 p-4 border border-stone/10">
+                <div className="aspect-square bg-stone/5 p-4 border border-stone/10 rounded-[2px]">
                   <ParallaxImage
                     src={project.gallery[0] ?? project.image}
                     alt={`${project.title} material palette`}
@@ -214,14 +248,15 @@ export default function ProjectDetail() {
         </CinematicSection>
       )}
 
-      {/* Gallery */}
+      {/* Gallery with increased white space */}
       <CinematicSection overlay={false} className="section-space bg-light-secondary text-stone">
         <div className="site-container">
-          <Reveal direction="up" className="mb-12 md:mb-16 text-center">
+          <Reveal direction="up" className="mb-14 md:mb-20 text-center">
             <span className="text-gold-text font-mono text-xs block mb-4">03</span>
-            <h2 className="text-xs uppercase tracking-[0.1em] text-stone/65 font-semibold">Exterior, installation & interior</h2>
+            <h2 className="text-xs uppercase tracking-[0.12em] text-stone/65 font-semibold">Exterior, installation & interior</h2>
+            <div className="rule-metallic-bronze max-w-xs mx-auto mt-4" />
           </Reveal>
-          <div className="grid grid-cols-12 gap-6 md:gap-10">
+          <div className="grid grid-cols-12 gap-8 md:gap-12 lg:gap-16">
             {visibleGallery.map((img, i) => {
               const isFull = i % 3 === 0;
               const colSpan = isFull ? 'col-span-12' : 'col-span-12 md:col-span-6';
@@ -231,7 +266,7 @@ export default function ProjectDetail() {
                 <div key={i} className={colSpan}>
                   <ParallaxElement speed={i % 2 === 0 ? 0.02 : -0.02}>
                     <Reveal direction="up" delay={i * 0.1}>
-                      <div className={`relative overflow-hidden ${aspect} p-2 bg-stone/5 group`}>
+                      <div className={`relative overflow-hidden ${aspect} rounded-[2px] bg-stone/5 group shadow-sm transition-all duration-700 hover:shadow-md`}>
                         <ParallaxImage
                           src={img}
                           alt={`${project.title} gallery ${i}`}

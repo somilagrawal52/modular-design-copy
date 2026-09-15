@@ -14,7 +14,7 @@ export default function Philosophy() {
               <Reveal direction="right">
                 <div className="flex items-center gap-4 mb-8">
                   <span className="text-gold-text font-mono text-xs">01</span>
-                  <div className="h-[1px] w-12 bg-gold" />
+                  <div className="rule-metallic-bronze w-12" />
                 <span className="text-xs uppercase tracking-[0.1em] text-stone/70 font-semibold">Why modular</span>
                 </div>
               </Reveal>

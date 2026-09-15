@@ -16,12 +16,16 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
     project.details?.find(
       (detail: { label: string }) => detail.label === "Type",
     )?.value ?? project.category;
+  const modelSystem =
+    project.technicalSpecs?.find(
+      (s: { label: string }) => s.label.toLowerCase().includes("system") || s.label.toLowerCase().includes("capsule"),
+    )?.value ?? "Modular Capsule";
 
   const mouseXSpring = useSpring(x);
   const mouseYSpring = useSpring(y);
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["7deg", "-7deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-7deg", "7deg"]);
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["5deg", "-5deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-5deg", "5deg"]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -44,7 +48,7 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
     <Reveal
       direction="up"
       delay={index * 0.1}
-      className={`group cursor-pointer ${index % 2 === 1 ? "md:mt-16" : ""}`}
+      className={`group cursor-pointer ${index % 2 === 1 ? "md:mt-20" : ""}`}
     >
       <Link
         to={`/work/${project.id}`}
@@ -55,7 +59,7 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
       >
         <motion.div
           style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-          className="relative aspect-[4/3] overflow-hidden mb-7 md:mb-9 p-2 bg-stone/5 transition-colors duration-500"
+          className="relative aspect-[4/3] overflow-hidden mb-8 md:mb-10 rounded-[2px] bg-stone/5 transition-all duration-700 group-hover:shadow-[0_8px_32px_rgba(177,138,71,0.12)]"
         >
           <div
             style={{ transform: "translateZ(50px)" }}
@@ -69,35 +73,51 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
             />
             <div className="absolute inset-0 bg-stone/15 group-hover:bg-transparent transition-colors duration-1000 z-10" />
 
+            {/* Model Badge on Render */}
+            <div className="absolute bottom-4 left-4 z-20">
+              <span className="inline-block px-2.5 py-1 text-[10px] uppercase tracking-[0.12em] font-semibold text-light bg-dark/75 backdrop-blur-md border border-light/15 rounded-[2px]">
+                {modelSystem}
+              </span>
+            </div>
+
             {/* Hover Overlay */}
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-20">
-              <div className="w-20 h-20 rounded-full glass flex items-center justify-center scale-50 group-hover:scale-100 transition-transform duration-700">
-                <ArrowUpRight size={24} className="text-stone" />
+              <div className="w-16 h-16 rounded-full glass flex items-center justify-center scale-50 group-hover:scale-100 transition-transform duration-700">
+                <ArrowUpRight size={22} className="text-stone" />
               </div>
             </div>
           </div>
-
         </motion.div>
 
-        <div className="space-y-4">
-          <div className="flex items-center gap-4">
-            <span className="text-gold-text font-mono text-xs">
-              0{index + 1}
-            </span>
-            <div className="h-[1px] flex-1 bg-stone/10" />
-            <span className="text-xs uppercase tracking-[0.1em] text-stone/60 font-semibold">
+        <div className="space-y-4 px-1">
+          <div className="flex items-center justify-between gap-4">
+            <div className="inline-flex items-center gap-2">
+              <span className="text-gold-text font-mono text-xs font-semibold">
+                0{index + 1}
+              </span>
+              <span className="text-stone/30">/</span>
+              <span className="text-[11px] uppercase tracking-[0.12em] text-gold font-semibold font-mono">
+                {modelSystem}
+              </span>
+            </div>
+            <span className="text-[11px] uppercase tracking-[0.08em] text-stone/55 font-medium">
               {productType}
             </span>
           </div>
+
+          <div className="rule-metallic-bronze opacity-60 group-hover:opacity-100 transition-opacity" />
+
           <StaggerText
             el="h3"
             text={project.title}
-            className="type-card group-hover:text-gold transition-colors"
+            className="type-card group-hover:text-gold transition-colors duration-500 font-semibold"
             delay={0.2}
           />
-          <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.08em] font-medium text-stone/65 group-hover:text-gold transition-colors">
-            View model <ArrowUpRight size={14} />
-          </span>
+          <div className="pt-1 flex items-center justify-between">
+            <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.08em] font-medium text-stone/65 group-hover:text-gold transition-colors">
+              View model details <ArrowUpRight size={14} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </span>
+          </div>
         </div>
       </Link>
     </Reveal>
@@ -134,8 +154,8 @@ export default function FeaturedWork() {
           <div className="max-w-2xl">
             <Reveal direction="right">
               <div className="flex items-center gap-4 mb-8">
-                <span className="text-gold-text font-mono text-xs">02</span>
-                <div className="h-[1px] w-12 bg-gold" />
+                <span className="text-gold-text font-mono text-xs font-semibold">02</span>
+                <div className="rule-metallic-bronze w-12" />
                 <span className="text-xs uppercase tracking-[0.1em] text-stone/60 font-semibold">
                   Featured models
                 </span>
@@ -164,7 +184,7 @@ export default function FeaturedWork() {
         </div>
 
         <div
-          className={`grid grid-cols-1 gap-14 ${visibleProjects.length > 1 ? "md:grid-cols-2 md:gap-16 lg:gap-20" : "max-w-xl"}`}
+          className={`grid grid-cols-1 gap-16 ${visibleProjects.length > 1 ? "md:grid-cols-2 md:gap-20 lg:gap-24" : "max-w-xl"}`}
         >
           {visibleProjects.map((project, i) => (
             <div key={project.id}>

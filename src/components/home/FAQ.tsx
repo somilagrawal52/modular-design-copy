@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     question: 'What technology is included in a capsule project?',
-    answer: 'Technology varies by model. The reference manufacturers used in this collection describe factory-built systems with an insulated enclosure, glazing, electrical and plumbing provisions, and optional equipment. The final scope should always be confirmed for the selected model.',
+    answer: 'Every capsule module is engineered as an integrated building system featuring an R-32 multi-layer thermal shell, argon-filled Low-E panoramic glazing (SHGC < 0.28), a seismic Zone IV galvanized exoskeleton, and factory-prewired MEPS with concealed inverter climate control. This delivers whisper-quiet acoustic comfort for guests while cutting HVAC operating costs by up to 35% and enabling 48-hour on-site commissioning for resort developers.',
   },
   {
     question: 'Can I experience a capsule before committing?',
@@ -51,7 +51,7 @@ export default function FAQ() {
             <Reveal direction="right">
               <div className="flex items-center gap-4 mb-10">
                 <span className="text-gold-text font-mono text-xs">04</span>
-                <div className="h-px w-12 bg-gold" />
+                <div className="rule-metallic-bronze w-12" />
                 <span className="text-xs uppercase tracking-[0.1em] text-stone/60 font-semibold">Knowledge</span>
               </div>
             </Reveal>

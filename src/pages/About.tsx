@@ -26,7 +26,7 @@ export default function About() {
     <div className="min-h-screen bg-light pt-28 text-stone md:pt-36">
       <SEO
         title="About Us"
-        description="Learn how Dream Ventures Realty combines hospitality, luxury tourism, marine, and project consultancy experience with next-generation modular architecture."
+        description="Learn how RP Exotic Homes combines hospitality, luxury tourism, marine, and project consultancy experience with next-generation modular architecture."
         image="/images/modular-capsule-desert-retreat-hero.png"
       />
 
@@ -35,7 +35,7 @@ export default function About() {
           <div className="relative z-10 py-6 md:py-10">
             <Reveal direction="right">
               <div className="mb-8 flex items-center gap-4">
-                <span className="font-mono text-xs text-gold">DVR / 01</span>
+                <span className="font-mono text-xs text-gold">RP / 01</span>
                 <div className="h-px w-14 bg-gold" />
                 <span className="text-xs font-semibold uppercase tracking-[0.1em] text-stone/65">
                   About us
@@ -44,7 +44,7 @@ export default function About() {
             </Reveal>
             <StaggerText
               el="h1"
-              text="About Dream Ventures Realty."
+              text="About RP Exotic Homes."
               className="type-page-title max-w-xl text-stone"
               delay={0.1}
               stagger={0.04}
@@ -58,7 +58,7 @@ export default function About() {
           >
             <ParallaxImage
               src="/images/modular-capsule-desert-retreat-hero.png"
-              alt="DVR modular capsule in a considered landscape setting"
+              alt="RP Exotic Homes modular capsule in a considered landscape setting"
               priority
               className="h-full w-full"
             />
@@ -86,7 +86,7 @@ export default function About() {
           </Reveal>
           <Reveal direction="left" className="space-y-6 text-base leading-relaxed text-stone/75 md:text-lg">
             <p>
-              DVR was established by two Directors with several decades of
+              RP Exotic Homes was established by two Directors with several decades of
               combined experience in the hospitality, luxury tourism, marine,
               and project consultancy sectors.
             </p>
@@ -163,7 +163,7 @@ export default function About() {
               Designed for the future.
             </h2>
             <p className="mx-auto mt-7 max-w-3xl text-base leading-relaxed text-stone/75">
-              At DVR, we combine hospitality expertise, international standards,
+              At RP Exotic Homes, we combine hospitality expertise, international standards,
               innovative technology and a strong sense of environmental
               responsibility to deliver solutions designed for the future.
             </p>

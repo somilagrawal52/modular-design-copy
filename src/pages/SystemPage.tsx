@@ -143,7 +143,7 @@ export default function SystemPage() {
     <div className="min-h-screen bg-light pt-28 text-stone md:pt-36">
       <SEO
         title="Technology Behind It"
-        description="Explore the structure, envelope, lower-carbon approach, quality checks, and site interfaces behind DVR modular capsule building systems."
+        description="Explore the structure, envelope, lower-carbon approach, quality checks, and site interfaces behind RP Exotic Homes modular capsule building systems."
         image="/images/modular-capsule-visitor-gateway-installation.png"
       />
 

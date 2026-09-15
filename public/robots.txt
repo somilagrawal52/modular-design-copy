@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://modular-design-flax.vercel.app/sitemap.xml
+Sitemap: https://www.rpexotichomes.com/sitemap.xml

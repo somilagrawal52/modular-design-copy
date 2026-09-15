@@ -59,7 +59,7 @@ export default function ServicesPage() {
 
             <StaggerText
               el="h1"
-              text="Dream Ventures Realty (DVR) Services."
+              text="RP Exotic Homes Services."
               className="type-hero-title max-w-4xl font-display font-semibold leading-[0.98] tracking-[-0.035em] text-light mb-8"
               delay={0.2}
               stagger={0.04}

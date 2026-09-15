@@ -29,7 +29,7 @@ export default function Philosophy() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10">
                 <StaggerText
-                  text="Dream Ventures Realty (DVR) presents design-led space capsules and modular living solutions for hospitality, retreats, commercial spaces, and private projects."
+                  text="RP Exotic Homes presents design-led space capsules and modular living solutions for hospitality, retreats, commercial spaces, and private projects."
                   className="text-base md:text-lg text-stone/80 font-light leading-relaxed"
                   delay={0.6}
                   stagger={0.02}

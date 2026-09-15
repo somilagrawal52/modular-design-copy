@@ -93,7 +93,7 @@ export default function Hero() {
               Breaking the Imagination Barriers
             </span>
             <StaggerText
-              text={`${SITE_NAME} (DVR) presents premium capsule models and modular living solutions for hospitality, resorts, commercial developments, and private projects.`}
+              text={`${SITE_NAME} presents premium capsule models and modular living solutions for hospitality, resorts, commercial developments, and private projects.`}
               className="max-w-[35rem] text-sm font-light leading-relaxed tracking-[0.005em] text-light/80 sm:text-base md:text-lg"
               delay={1.2}
               stagger={0.02}

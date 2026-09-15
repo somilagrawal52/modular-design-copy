@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import 'dotenv/config';
 
-const siteUrl = (process.env.VITE_SITE_URL || 'https://modular-design-flax.vercel.app').replace(/\/$/, '');
+const siteUrl = (process.env.VITE_SITE_URL || 'https://www.rpexotichomes.com').replace(/\/$/, '');
 const constants = readFileSync(resolve('src/constants.ts'), 'utf8');
 const projectSource = constants.split('export const SERVICES')[0];
 const projectIds = [...projectSource.matchAll(/^\s*id:\s*'([^']+)'/gm)].map((match) => match[1]);

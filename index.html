@@ -1,19 +1,16 @@
 <!doctype html>
-<html lang="en" data-theme="peach">
+<html lang="en" data-theme="mono">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Premium space capsules and modular living solutions designed for hospitality, resorts, commercial developments and private projects." />
-    <meta name="theme-color" content="#FAF6F2" />
+    <meta name="theme-color" content="#FFFFFF" />
     <title>Dream Ventures Realty — Premium Space Capsule & Modular Living Solutions</title>
     <script>
       (function() {
         try {
-          var validThemes = ['peach', 'coastal', 'white', 'minimal', 'natural', 'mono'];
-          var searchTheme = new URLSearchParams(window.location.search).get('theme');
-          var storedTheme = window.localStorage.getItem('dvr-theme');
-          var selectedTheme = (validThemes.indexOf(searchTheme) !== -1) ? searchTheme : ((validThemes.indexOf(storedTheme) !== -1) ? storedTheme : 'peach');
-          document.documentElement.dataset.theme = selectedTheme;
+          document.documentElement.dataset.theme = 'mono';
+          window.localStorage.setItem('dvr-theme', 'mono');
         } catch (e) {}
       })();
     </script>

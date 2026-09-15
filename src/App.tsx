@@ -7,8 +7,6 @@ import { lazy, Suspense, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import NotFound from './pages/NotFound';
-import { getActiveTheme, applyTheme, THEME_IDS } from './lib/theme';
-
 const Home = lazy(() => import('./pages/Home'));
 const Work = lazy(() => import('./pages/Work'));
 const ProjectDetail = lazy(() => import('./pages/ProjectDetail'));
@@ -16,23 +14,6 @@ const ServicesPage = lazy(() => import('./pages/ServicesPage'));
 const About = lazy(() => import('./pages/About'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const SystemPage = lazy(() => import('./pages/SystemPage'));
-const ThemePreview = lazy(() => import('./pages/ThemePreview'));
-
-function ThemeController() {
-  const location = useLocation();
-
-  useEffect(() => {
-    const requestedTheme = new URLSearchParams(location.search).get('theme');
-    if (requestedTheme && THEME_IDS.has(requestedTheme)) {
-      applyTheme(requestedTheme);
-    } else {
-      const active = getActiveTheme();
-      applyTheme(active);
-    }
-  }, [location.search]);
-
-  return null;
-}
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -63,7 +44,6 @@ export default function App() {
   return (
     <Layout>
       <ScrollToTop />
-      <ThemeController />
       <Suspense fallback={<RouteFallback />}>
         <Routes location={location}>
           <Route path="/" element={<Home />} />
@@ -72,7 +52,6 @@ export default function App() {
           <Route path="/system" element={<SystemPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/about" element={<About />} />
-          <Route path="/themes" element={<ThemePreview />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

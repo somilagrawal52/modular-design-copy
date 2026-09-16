@@ -7,16 +7,17 @@ const footerGroups = [
   {
     title: 'Explore',
     links: [
-      { label: 'Capsule Collection', to: '/work' },
-      { label: 'Our Services', to: '/services' },
+      { label: 'Capsule Collection', to: '/work', isDownload: false },
+      { label: 'Our Services', to: '/services', isDownload: false },
+      { label: 'Download Brochure (PDF)', to: '/rp-exotic-homes-architectural-brochure.pdf', isDownload: true },
     ],
   },
   {
     title: 'Company',
     links: [
-      { label: 'About Us', to: '/about' },
-      { label: 'Technology Behind It', to: '/system' },
-      { label: 'Contact Us', to: '/contact' },
+      { label: 'About Us', to: '/about', isDownload: false },
+      { label: 'Technology Behind It', to: '/system', isDownload: false },
+      { label: 'Contact Us', to: '/contact', isDownload: false },
     ],
   },
 ];
@@ -51,13 +52,26 @@ export default function Footer() {
               <h4 className="text-xs uppercase tracking-[0.12em] text-gold-text font-semibold mb-5">{group.title}</h4>
               <div className="flex flex-col items-start gap-1">
                 {group.links.map((link) => (
-                  <Link
-                    key={link.to}
-                    to={link.to}
-                    className="inline-flex min-h-11 items-center text-xs uppercase tracking-[0.08em] font-semibold text-stone/75 transition-colors duration-500 hover:text-gold"
-                  >
-                    {link.label}
-                  </Link>
+                  link.isDownload ? (
+                    <a
+                      key={link.to}
+                      href={link.to}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      download="RP-Exotic-Homes-Architectural-Brochure.pdf"
+                      className="inline-flex min-h-11 items-center text-xs uppercase tracking-[0.08em] font-semibold text-stone/75 transition-colors duration-500 hover:text-gold"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={link.to}
+                      to={link.to}
+                      className="inline-flex min-h-11 items-center text-xs uppercase tracking-[0.08em] font-semibold text-stone/75 transition-colors duration-500 hover:text-gold"
+                    >
+                      {link.label}
+                    </Link>
+                  )
                 ))}
               </div>
             </Reveal>
@@ -65,10 +79,20 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="site-container mt-14 md:mt-20 pt-8 border-t border-stone/15 flex justify-center md:justify-start text-center md:text-left text-[11px] uppercase tracking-[0.1em] text-stone/60 font-brand font-semibold relative z-10">
+      <div className="site-container mt-14 md:mt-20 pt-8 border-t border-stone/15 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] uppercase tracking-[0.1em] text-stone/60 font-brand font-semibold relative z-10">
         <Reveal direction="up" delay={0.5}>
-          <p>© {new Date().getFullYear()} {SITE_STUDIO_NAME}. ALL RIGHTS RESERVED.</p>
+          <div className="flex items-center gap-3">
+            <img
+              src="/images/rp-monogram-emblem.png"
+              alt="RP Exotic Homes"
+              className="h-8 w-12 sm:h-9 sm:w-14 shrink-0 object-contain"
+            />
+            <span>© {new Date().getFullYear()} {SITE_STUDIO_NAME}. ALL RIGHTS RESERVED.</span>
+          </div>
         </Reveal>
+        <span className="text-[10px] font-mono tracking-widest text-gold-text">
+          Modular Capsules & Architectural Suites
+        </span>
       </div>
     </footer>
   );

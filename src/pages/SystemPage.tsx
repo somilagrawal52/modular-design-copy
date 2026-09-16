@@ -15,38 +15,59 @@ import Reveal from "../components/Reveal";
 import SEO from "../components/SEO";
 import StaggerText from "../components/StaggerText";
 
-const anatomyLayers = [
-  [
-    "01",
-    "Aerospace Aluminium Shell",
-    "Fluorocarbon-coated aluminium composite outer skin engineered for coastal salt-spray resilience and UV resistance. Guest Benefit: Sleek, reflective all-weather aesthetic. Developer Benefit: Zero external repainting or corrosion maintenance across a 50+ year asset life.",
-  ],
-  [
-    "02",
-    "Continuous Weather Barrier",
-    "High-permeability weather-resistive membrane eliminating wind-driven rain penetration. Guest Benefit: Draft-free stillness during extreme mountain storms. Developer Benefit: Preserves internal building health and eliminates water ingress liability.",
-  ],
-  [
-    "03",
-    "R-32 High-Performance Thermal Core",
-    "Continuous R-32 multi-layer insulation combining closed-cell foam cores and aerogel thermal breaks. Guest Benefit: Whisper-quiet acoustic privacy (STC 45+) and effortless climate stability in sub-zero alpine cold or 45°C desert heat. Developer Benefit: Cuts HVAC operating energy consumption by up to 35%, lowering off-grid solar-battery CAPEX.",
-  ],
-  [
-    "04",
-    "Galvanized Steel Exoskeleton",
-    "Hot-dip galvanized structural space-frame engineered to Seismic Zone IV and 180 km/h wind standards. Guest Benefit: Solid, vibration-free structural sensation. Developer Benefit: Enables crane placement onto lightweight micro-piers with zero heavy foundation excavation.",
-  ],
-  [
-    "05",
-    "Factory Integrated MEPS System",
-    "Pre-commissioned concealed ducted HVAC, water pressurization, and modular electrical harnesses. Guest Benefit: Silent, draftless air circulation and instant hot water. Developer Benefit: Plug-and-play quick-connect coupling enables 48-hour on-site commissioning per module.",
-  ],
-  [
-    "06",
-    "Architectural Interior Fit-Out",
-    "Natural oak wall linings, concealed ambient lighting, and acoustic ceiling baffles completed in controlled factory conditions. Guest Benefit: Five-star boutique hospitality tactile luxury. Developer Benefit: Immediate guest occupancy upon installation without wet-trade delays or site dust.",
-  ],
+interface AnatomyLayer {
+  number: string;
+  title: string;
+  spec: string;
+  guestBenefit: string;
+  developerBenefit: string;
+}
+
+const anatomyLayers: AnatomyLayer[] = [
+  {
+    number: "01",
+    title: "Aerospace Aluminium Shell",
+    spec: "Fluorocarbon-coated aluminium composite outer skin engineered for coastal salt-spray resilience and UV resistance.",
+    guestBenefit: "Sleek, reflective all-weather architectural aesthetic that mirrors natural surroundings.",
+    developerBenefit: "Zero external repainting or corrosion maintenance across a 50+ year asset lifespan.",
+  },
+  {
+    number: "02",
+    title: "Continuous Weather Barrier",
+    spec: "High-permeability weather-resistive membrane eliminating wind-driven rain penetration while allowing moisture vapor to escape.",
+    guestBenefit: "Draft-free stillness and complete weather security during extreme monsoons or mountain storms.",
+    developerBenefit: "Preserves internal building envelope health and completely eliminates water-ingress liability.",
+  },
+  {
+    number: "03",
+    title: "R-32 High-Performance Thermal Core",
+    spec: "Continuous R-32 multi-layer insulation combining high-density closed-cell cores and aerogel thermal breaks.",
+    guestBenefit: "Whisper-quiet acoustic privacy (STC 45+) and effortless 21°C climate stability across -15°C alpine cold or 45°C desert heat.",
+    developerBenefit: "Cuts HVAC operating energy demand by up to 35%, dramatically lowering required solar-battery array CAPEX.",
+  },
+  {
+    number: "04",
+    title: "Galvanized Steel Exoskeleton",
+    spec: "Hot-dip galvanized structural space-frame engineered to Seismic Zone IV and 180 km/h wind resistance.",
+    guestBenefit: "Solid, deflection-free structural sensation with zero floor vibration or creaking.",
+    developerBenefit: "Enables crane placement onto lightweight micro-piers with zero heavy foundation excavation or site alteration.",
+  },
+  {
+    number: "05",
+    title: "Factory Integrated MEPS System",
+    spec: "Pre-commissioned concealed ducted inverter HVAC, pressurization pumps, and modular plug-and-play wiring harnesses.",
+    guestBenefit: "Concealed draftless climate delivery and immediate, continuous hot water.",
+    developerBenefit: "Quick-connect utility coupling delivers 48-hour on-site commissioning per module, slashing wet-trade delays.",
+  },
+  {
+    number: "06",
+    title: "Architectural Interior Fit-Out",
+    spec: "Natural oak wall linings, concealed warm ambient LED coves, and acoustic ceiling baffles installed under clean factory supervision.",
+    guestBenefit: "Five-star boutique hospitality tactile luxury and serene atmospheric lighting from day one.",
+    developerBenefit: "Immediate guest occupancy upon installation without weeks of punch-list fixes or on-site painting dust.",
+  },
 ];
+
 
 const comfortMeasures = [
   [
@@ -265,27 +286,47 @@ export default function SystemPage() {
               </p>
             </Reveal>
             <div className="mt-10 divide-y divide-stone/15 border-t border-stone/15">
-              {anatomyLayers.map(([number, title, copy], index) => (
-                <Reveal
-                  key={title}
-                  direction="left"
-                  delay={0.08 + index * 0.045}
-                >
-                  <article className="grid grid-cols-[2.75rem_1fr] gap-3 py-4 md:grid-cols-[3.5rem_1fr] md:gap-5 md:py-5">
-                    <span className="font-mono text-xs text-gold-text">
-                      {number}
-                    </span>
-                    <div>
-                      <h3 className="text-lg font-semibold tracking-tight">
-                        {title}
-                      </h3>
-                      <p className="mt-1 text-sm leading-relaxed text-stone/70">
-                        {copy}
-                      </p>
-                    </div>
-                  </article>
-                </Reveal>
-              ))}
+              {anatomyLayers.map(
+                ({ number, title, spec, guestBenefit, developerBenefit }, index) => (
+                  <Reveal
+                    key={title}
+                    direction="left"
+                    delay={0.08 + index * 0.045}
+                  >
+                    <article className="grid grid-cols-[2.75rem_1fr] gap-3 py-5 md:grid-cols-[3.5rem_1fr] md:gap-5 md:py-6">
+                      <span className="font-mono text-xs text-gold-text font-semibold">
+                        {number}
+                      </span>
+                      <div className="space-y-3">
+                        <h3 className="text-lg font-semibold tracking-tight text-stone">
+                          {title}
+                        </h3>
+                        <p className="text-sm leading-relaxed text-stone/75 font-light">
+                          {spec}
+                        </p>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+                          <div className="bg-stone/5 border border-stone/10 p-2.5 rounded-[2px]">
+                            <span className="text-[10px] font-mono uppercase tracking-wider text-gold-text font-semibold block mb-0.5">
+                              Guest Benefit
+                            </span>
+                            <span className="text-xs text-stone/80 font-light leading-snug">
+                              {guestBenefit}
+                            </span>
+                          </div>
+                          <div className="bg-stone/5 border border-stone/10 p-2.5 rounded-[2px]">
+                            <span className="text-[10px] font-mono uppercase tracking-wider text-stone/60 font-semibold block mb-0.5">
+                              Developer Benefit
+                            </span>
+                            <span className="text-xs text-stone/80 font-light leading-snug">
+                              {developerBenefit}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </Reveal>
+                ),
+              )}
             </div>
           </div>
         </div>
@@ -339,29 +380,36 @@ export default function SystemPage() {
           </Reveal>
           <div className="mt-9 grid gap-6 border-t border-stone/20 pt-7 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              [
-                "Low-E Glazing (SHGC < 0.28)",
-                "Double and triple-glazed argon-filled curved envelope with Solar Heat Gain Coefficient SHGC < 0.28 and U-value < 1.4 W/m²K. Blocks 72%+ of solar infrared heat without tint distortion, shielding suites from greenhouse overheating and lowering daytime AC energy by up to 35%.",
-              ],
-              [
-                "R-32 Multi-Layer Shell",
-                "Continuous R-32 thermal envelope with precision airtight tape sealing (air infiltration < 0.6 ACH50). Maintains a calm 21°C interior ambient temperature across sub-zero mountain winters and hot arid plains while delivering acoustic isolation.",
-              ],
-              [
-                "Seismic Zone IV Exoskeleton",
-                "Aviation-grade hot-dip galvanized steel structural cage with integrated crane-rigging points. Withstands 180 km/h wind loads and seismic shocks, enabling installation on minimal micro-piers without massive concrete ground disturbance.",
-              ],
-              [
-                "Intelligent Climate Ventilation",
-                "Concealed inverter heat pump coupled with balanced fresh air heat-recovery ventilation. Continuously delivers filtered, fresh outdoor air without heating or cooling loss, ensuring optimal sleep comfort and guest wellness.",
-              ],
-            ].map(([title, copy], index) => (
+              {
+                title: "Low-E Glazing (SHGC < 0.28)",
+                subtitle: "Panoramic views without solar overheating",
+                copy: "Double and triple-glazed argon-filled curved envelope with Solar Heat Gain Coefficient SHGC < 0.28 and U-value < 1.4 W/m²K. Blocks 72%+ of solar infrared heat without tint distortion, shielding suites from greenhouse overheating and lowering daytime AC energy by up to 35%.",
+              },
+              {
+                title: "R-32 Multi-Layer Shell",
+                subtitle: "Silent climate control & year-round comfort",
+                copy: "Continuous R-32 thermal envelope with precision airtight tape sealing (air infiltration < 0.6 ACH50). Maintains a calm 21°C interior ambient temperature across sub-zero mountain winters and hot arid plains while delivering whisper-quiet acoustic isolation (STC 45+).",
+              },
+              {
+                title: "Seismic Zone IV Exoskeleton",
+                subtitle: "Zero-excavation micro-pier stability",
+                copy: "Aviation-grade hot-dip galvanized steel structural cage with integrated crane-rigging points. Withstands 180 km/h wind loads and seismic shocks, enabling installation on minimal micro-piers without massive concrete ground disturbance.",
+              },
+              {
+                title: "Diurnal Climate Ventilation",
+                subtitle: "Whisper-quiet filtered fresh air & sleep comfort",
+                copy: "Concealed inverter heat pump coupled with balanced fresh air heat-recovery ventilation (MERV 13). Continuously delivers filtered, fresh outdoor air without heating or cooling loss, ensuring optimal sleep comfort through day-to-night transitions.",
+              },
+            ].map(({ title, subtitle, copy }, index) => (
               <Reveal key={title} direction="up" delay={index * 0.06}>
-                <article className="border-l border-gold/50 pl-4 space-y-2">
+                <article className="border-l-2 border-gold/60 pl-4 space-y-2">
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-gold-text font-semibold block">
+                    {subtitle}
+                  </span>
                   <h3 className="text-base font-semibold tracking-tight text-stone">
                     {title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-stone/75">
+                  <p className="text-sm leading-relaxed text-stone/75 font-light">
                     {copy}
                   </p>
                 </article>

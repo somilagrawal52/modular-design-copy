@@ -10,7 +10,8 @@ export const SITE_STUDIO_NAME = 'RP EXOTIC HOMES';
 export const SITE_URL = (import.meta.env.VITE_SITE_URL || 'https://www.rpexotichomes.com').replace(/\/$/, '');
 export const EMAIL_DOMAIN = 'rpexotichomes.com';
 export const SALES_EMAIL = `sales@${EMAIL_DOMAIN}`;
-export const dreamRealtyEmail = (_mailbox?: string) => SALES_EMAIL;
+export const siteContactEmail = (_mailbox?: string) => SALES_EMAIL;
+export const dreamRealtyEmail = siteContactEmail;
 
 export function demoItems<T>(items: T[], demoSelection: T[]): T[] {
   return MANAGER_DEMO_MODE ? demoSelection : items;

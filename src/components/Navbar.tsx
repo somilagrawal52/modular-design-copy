@@ -53,13 +53,9 @@ export default function Navbar() {
               aria-hidden="true"
             >
               <img
-                src="/images/dvr-monogram-logo.png"
-                alt=""
-                className="absolute left-1/2 top-1/2 w-[60px] max-w-none -translate-x-1/2 -translate-y-1/2 md:w-[78px]"
-                style={{
-                  clipPath: "inset(0 0 30% 0)",
-                  mixBlendMode: "multiply",
-                }}
+                src="/images/rp-monogram-emblem.png"
+                alt="RP Exotic Homes emblem"
+                className="h-full w-full object-contain"
               />
             </div>
             {SITE_NAME}
@@ -141,6 +137,26 @@ export default function Navbar() {
             aria-label="Mobile navigation"
             className="fixed inset-0 w-full h-[100dvh] bg-light/98 backdrop-blur-2xl z-[1000] flex flex-col items-center justify-center xl:hidden overflow-y-auto px-6 py-20"
           >
+            {/* Branded Mobile Drawer Header */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4 }}
+              className="mb-8 flex flex-col items-center gap-2 text-center"
+            >
+              <img
+                src="/images/rp-monogram-emblem.png"
+                alt="RP Exotic Homes"
+                className="h-14 w-24 object-contain filter drop-shadow-[0_4px_12px_rgba(177,138,71,0.25)]"
+              />
+              <span className="text-xs font-brand font-semibold tracking-[0.14em] text-stone">
+                {SITE_NAME}
+              </span>
+              <span className="text-[10px] font-mono text-gold-text tracking-widest uppercase">
+                Modular Capsules & Living
+              </span>
+            </motion.div>
+
             <div className="flex flex-col items-center gap-2 sm:gap-3 w-full">
               {navLinks.map((link, i) => (
                 <motion.div

@@ -306,11 +306,11 @@
   }
 
   .scrim-dark-twilight {
-    background: linear-gradient(90deg, rgba(23, 24, 25, 0.88) 0%, rgba(23, 24, 25, 0.68) 40%, rgba(23, 24, 25, 0.3) 72%, rgba(23, 24, 25, 0.08) 100%);
+    background: linear-gradient(90deg, rgba(23, 24, 25, 0.94) 0%, rgba(23, 24, 25, 0.78) 42%, rgba(23, 24, 25, 0.4) 75%, rgba(23, 24, 25, 0.12) 100%);
   }
 
   .scrim-dark-bottom {
-    background: linear-gradient(to top, rgba(23, 24, 25, 0.95) 0%, rgba(23, 24, 25, 0.55) 50%, transparent 100%);
+    background: linear-gradient(to top, rgba(23, 24, 25, 0.96) 0%, rgba(23, 24, 25, 0.68) 50%, transparent 100%);
   }
 }
 

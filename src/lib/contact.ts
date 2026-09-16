@@ -38,6 +38,6 @@ export async function submitContactForm(form: HTMLFormElement): Promise<void> {
   const isSuccessful = result.ok === true || result.success === true;
 
   if (!response.ok || !isSuccessful) {
-    throw new Error(result.message || 'Unable to send your enquiry right now. Please try again.');
+    throw new Error(result.message || 'Unable to submit your advisory brief right now. Please try again.');
   }
 }

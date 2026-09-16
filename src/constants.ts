@@ -15,7 +15,22 @@ export const PROJECTS: Project[] = [
       { label: 'Foundation', value: 'Raised Independent Supports (Zero ground excavation)' }
     ],
     details: [{ label: 'Type', value: 'Riverside Capsule Hospitality' }, { label: 'Location', value: 'Rishikesh, Uttarakhand, India' }, { label: 'Status', value: 'Concept Ready' }],
-    gallery: ['/images/capsule-riverside-resort-hero.png', '/images/capsule-riverside-resort-evening.png', '/images/capsule-riverside-resort-interior.png']
+    gallery: ['/images/capsule-riverside-resort-hero.png', '/images/capsule-riverside-resort-evening.png', '/images/capsule-riverside-resort-interior.png'],
+    scaleMetrics: {
+      footprint: '38 m² (409 sq.ft)',
+      clearHeight: '2.70 m (8\' 10")',
+      capacity: '2–4 Guests (Master King Suite)',
+      glazingArc: '270° Continuous Curved Arc',
+      dimensions: '11.50 m (L) × 3.30 m (W) × 3.20 m (H)'
+    },
+    diurnalExperience: {
+      dayImage: '/images/capsule-riverside-resort-hero.png',
+      nightImage: '/images/capsule-riverside-resort-evening.png',
+      dayTitle: 'Daylight Solar Rejection & Horizon Clarity',
+      dayDescription: 'Curved Low-E panoramic glazing (SHGC < 0.28) deflects 72% of solar heat gain while bathing the master suite in clean natural daylight with complete exterior guest privacy.',
+      nightTitle: 'Twilight Architectural Lantern & Nocturnal Immersion',
+      nightDescription: 'At dusk, integrated 2700K warm architectural lighting illuminates the pale oak interior, turning the capsule into an illuminated beacon in the landscape with uninterrupted stargazing.'
+    }
   },
   {
     id: 'modular-capsule-meadow-studio', title: 'Meadow Capsule Studio', category: 'Hospitality', location: 'Nainital, Uttarakhand, India', year: '2026', image: '/images/capsule-meadow-studio-hero.png',
@@ -30,7 +45,22 @@ export const PROJECTS: Project[] = [
       { label: 'Foundation', value: 'Independent Micro-piers (Rapid 48-hr deployment)' }
     ],
     details: [{ label: 'Type', value: 'Mountain Capsule Hospitality' }, { label: 'Location', value: 'Nainital, Uttarakhand, India' }, { label: 'Status', value: 'Concept Ready' }],
-    gallery: ['/images/capsule-meadow-studio-hero.png', '/images/capsule-meadow-studio-evening.png', '/images/capsule-meadow-studio-interior.png']
+    gallery: ['/images/capsule-meadow-studio-hero.png', '/images/capsule-meadow-studio-evening.png', '/images/capsule-meadow-studio-interior.png'],
+    scaleMetrics: {
+      footprint: '28 m² (301 sq.ft)',
+      clearHeight: '2.65 m (8\' 8")',
+      capacity: '2 Guests (Studio Suite)',
+      glazingArc: '180° Panoramic Glazing Frontage',
+      dimensions: '8.50 m (L) × 3.30 m (W) × 3.15 m (H)'
+    },
+    diurnalExperience: {
+      dayImage: '/images/capsule-meadow-studio-hero.png',
+      nightImage: '/images/capsule-meadow-studio-evening.png',
+      dayTitle: 'Daylight Mist & All-Weather Thermal Balance',
+      dayDescription: 'Continuous R-32 insulation and double Low-E argon glazing keep the studio at a comfortable 21°C as mountain mist rolls across the meadow.',
+      nightTitle: 'Twilight Mountain Haven & Intimate Hearth Glow',
+      nightDescription: 'Recessed ambient lighting and bedside reading points create an inviting, private mountain cocoon framed by the darkening forest silhouette.'
+    }
   },
   {
     id: 'modular-rounded-cabin-courtyard-village', title: 'Garden Cabin Courtyard Village', category: 'Hospitality', location: 'Bengaluru, Karnataka, India', year: '2026', image: '/images/garden-cabin-village-hero.png',
@@ -45,7 +75,14 @@ export const PROJECTS: Project[] = [
       { label: 'Delivery', value: 'Factory-finished + Phased (Minimal site disruption)' }
     ],
     details: [{ label: 'Type', value: 'Garden Cabin Hospitality' }, { label: 'Location', value: 'Bengaluru, Karnataka, India' }, { label: 'Status', value: 'Concept Ready' }],
-    gallery: ['/images/garden-cabin-village-hero.png', '/images/garden-cabin-village-garden.png', '/images/garden-cabin-village-interior.png']
+    gallery: ['/images/garden-cabin-village-hero.png', '/images/garden-cabin-village-garden.png', '/images/garden-cabin-village-interior.png'],
+    scaleMetrics: {
+      footprint: '32 m² (344 sq.ft per cabin)',
+      clearHeight: '2.65 m (8\' 8")',
+      capacity: '2 Guests per Key',
+      glazingArc: 'Curved Corner Panoramic Vista',
+      dimensions: '9.20 m (L) × 3.50 m (W) × 3.20 m (H)'
+    }
   },
   {
     id: 'modular-capsule-mountain-panorama-suite', title: 'Mountain Panorama Capsule Suite', category: 'Hospitality', location: 'Himalayan Ridge, India', year: '2026', image: '/images/capsule-mountain-suite-panorama.png',
@@ -60,7 +97,14 @@ export const PROJECTS: Project[] = [
       { label: 'Foundation', value: 'Screw-pile Supports (Reversible terrain interface)' }
     ],
     details: [{ label: 'Type', value: 'Mountain Capsule Hospitality' }, { label: 'Location', value: 'Himalayan Ridge, India' }, { label: 'Status', value: 'Concept Ready' }],
-    gallery: ['/images/capsule-mountain-suite-panorama.png', '/images/capsule-mountain-suite-interior.jpeg']
+    gallery: ['/images/capsule-mountain-suite-panorama.png', '/images/capsule-mountain-suite-interior.jpeg', '/images/modular-capsule-alpine-retreat-installation.png'],
+    scaleMetrics: {
+      footprint: '42 m² (452 sq.ft)',
+      clearHeight: '2.75 m (9\' 0")',
+      capacity: '2–4 Guests',
+      glazingArc: 'Faceted 270° Mountain Horizon',
+      dimensions: '12.00 m (L) × 3.50 m (W) × 3.25 m (H)'
+    }
   },
   {
     id: 'modular-capsule-rounded-garden-suite', title: 'Rounded Garden Cabin Suite', category: 'Residential', location: 'Site-specific', year: '2026', image: '/images/capsule-rounded-garden-suite-hero.jpeg',
@@ -75,7 +119,14 @@ export const PROJECTS: Project[] = [
       { label: 'Foundation', value: 'Compact Pad Foundations' }
     ],
     details: [{ label: 'Type', value: 'Garden Modular Residence' }, { label: 'Location', value: 'Site-specific' }, { label: 'Status', value: 'Concept Ready' }],
-    gallery: ['/images/capsule-rounded-garden-suite-hero.jpeg', '/images/capsule-rounded-garden-suite-exterior.jpeg', '/images/capsule-rounded-garden-suite-interior.png']
+    gallery: ['/images/capsule-rounded-garden-suite-hero.jpeg', '/images/capsule-rounded-garden-suite-exterior.jpeg', '/images/capsule-rounded-garden-suite-interior.png'],
+    scaleMetrics: {
+      footprint: '34 m² (366 sq.ft)',
+      clearHeight: '2.65 m (8\' 8")',
+      capacity: '2–3 Guests',
+      glazingArc: 'Panoramic Garden Glazing',
+      dimensions: '9.80 m (L) × 3.50 m (W) × 3.20 m (H)'
+    }
   },
   {
     id: 'modular-capsule-coastal-resort', title: 'Coastal Capsule Resort', category: 'Hospitality', location: 'Konkan Coast, India', year: '2026', image: '/images/capsule-coastal-resort-hero.jpeg',
@@ -90,7 +141,14 @@ export const PROJECTS: Project[] = [
       { label: 'Foundation', value: 'Raised Coastal Deck Supports' }
     ],
     details: [{ label: 'Type', value: 'Coastal Capsule Hospitality' }, { label: 'Location', value: 'Konkan Coast, India' }, { label: 'Status', value: 'Concept Ready' }],
-    gallery: ['/images/capsule-coastal-resort-hero.jpeg', '/images/capsule-coastal-resort-gallery.jpeg', '/images/capsule-coastal-resort-interior.png']
+    gallery: ['/images/capsule-coastal-resort-hero.jpeg', '/images/capsule-coastal-resort-gallery.jpeg', '/images/capsule-coastal-resort-interior.png'],
+    scaleMetrics: {
+      footprint: '36 m² (387 sq.ft)',
+      clearHeight: '2.70 m (8\' 10")',
+      capacity: '2–3 Guests',
+      glazingArc: 'Frameless Marine Ocean Vista',
+      dimensions: '10.80 m (L) × 3.30 m (W) × 3.20 m (H)'
+    }
   },
   {
     id: 'modular-restaurant', title: 'Modular Restaurant', category: 'Commercial', location: 'Site-specific', year: '2026', image: '/images/modular-restaurant-realistic.jpg',
@@ -123,7 +181,22 @@ export const PROJECTS: Project[] = [
       { label: 'Foundation', value: 'Independent Pier Supports (Zero tree-root disturbance)' }
     ],
     details: [{ label: 'Type', value: 'Forest Capsule Hospitality' }, { label: 'Region', value: 'Coorg, Karnataka, India' }, { label: 'Status', value: 'Concept Study' }],
-    gallery: ['/images/modular-capsule-forest-retreat-hero-v2.png', '/images/modular-capsule-forest-retreat-interior-v2.png', '/images/modular-capsule-forest-retreat-installation-v2.png']
+    gallery: ['/images/modular-capsule-forest-retreat-hero-v2.png', '/images/modular-capsule-forest-retreat-interior-v2.png', '/images/modular-capsule-forest-retreat-installation-v2.png'],
+    scaleMetrics: {
+      footprint: '38 m² (409 sq.ft)',
+      clearHeight: '2.70 m (8\' 10")',
+      capacity: '2–4 Guests (Canopy Suite)',
+      glazingArc: '270° Panoramic Curved Vista',
+      dimensions: '11.50 m (L) × 3.30 m (W) × 3.20 m (H)'
+    },
+    diurnalExperience: {
+      dayImage: '/images/modular-capsule-forest-retreat-hero-v2.png',
+      nightImage: '/images/capsule-showcase/capsule-forest-spa-retreat.png',
+      dayTitle: 'Daylight Canopy Shading & Mountain Mist',
+      dayDescription: 'Curved Low-E double glazing (SHGC < 0.28) deflects tropical solar glare while framing 270° mist-covered coffee plantation canopies with acoustic silence.',
+      nightTitle: 'Twilight Forest Hearth & Illuminated Lantern Glow',
+      nightDescription: 'At dusk, integrated 2700K ambient LED coves turn the elevated capsule into an illuminated sanctuary, reflected in the surrounding tree canopy and sunken deck lounge.'
+    }
   },
   {
     id: 'modular-capsule-desert-retreat', title: 'Modular Capsule Desert Retreat', category: 'Hospitality', location: 'Jaisalmer, Rajasthan, India', year: '2026', image: '/images/modular-capsule-desert-retreat-hero.png',
@@ -138,7 +211,22 @@ export const PROJECTS: Project[] = [
       { label: 'Foundation', value: 'Raised Pier Pads (Sand and wind scour resistant)' }
     ],
     details: [{ label: 'Type', value: 'Desert Capsule Hospitality' }, { label: 'Region', value: 'Jaisalmer, Rajasthan, India' }, { label: 'Status', value: 'Concept Study' }],
-    gallery: ['/images/modular-capsule-desert-retreat-hero.png', '/images/modular-capsule-desert-retreat-interior.png', '/images/modular-capsule-desert-retreat-installation.png']
+    gallery: ['/images/modular-capsule-desert-retreat-hero.png', '/images/modular-capsule-desert-retreat-interior.png', '/images/modular-capsule-desert-retreat-installation.png'],
+    scaleMetrics: {
+      footprint: '28 m² (301 sq.ft)',
+      clearHeight: '2.65 m (8\' 8")',
+      capacity: '2 Guests (Desert Stargazer Suite)',
+      glazingArc: '180° Dune Panoramic Glazing',
+      dimensions: '8.50 m (L) × 3.30 m (W) × 3.15 m (H)'
+    },
+    diurnalExperience: {
+      dayImage: '/images/modular-capsule-desert-retreat-hero.png',
+      nightImage: '/images/capsule-showcase/capsule-desert-stargazing-suite.png',
+      dayTitle: 'Daylight Extreme Thermal Shielding & Horizon Clarity',
+      dayDescription: 'Continuous R-32 thermal core and Solar Low-E glazing block 72%+ infrared heat gain, maintaining a serene 21°C interior amid 45°C Thar desert daytime heat.',
+      nightTitle: 'Nocturnal Stargazing & Warm Lantern Immersion',
+      nightDescription: 'Under crisp desert night skies, panoramic curved glass provides uninterrupted stargazing while warm interior illumination creates an inviting dune haven.'
+    }
   },
   {
     id: 'modular-capsule-alpine-retreat', title: 'Modular Capsule Alpine Retreat', category: 'Hospitality', location: 'Manali, Himachal Pradesh, India', year: '2026', image: '/images/modular-capsule-alpine-retreat-hero.png',
@@ -153,7 +241,14 @@ export const PROJECTS: Project[] = [
       { label: 'Delivery', value: 'Transport-ready Volumes (Plug-and-play 48-hr commissioning)' }
     ],
     details: [{ label: 'Type', value: 'Alpine Capsule Hospitality' }, { label: 'Region', value: 'Manali, Himachal Pradesh, India' }, { label: 'Status', value: 'Concept Study' }],
-    gallery: ['/images/modular-capsule-alpine-retreat-hero.png', '/images/modular-capsule-alpine-retreat-interior.png', '/images/modular-capsule-alpine-retreat-installation.png']
+    gallery: ['/images/modular-capsule-alpine-retreat-hero.png', '/images/modular-capsule-alpine-retreat-interior.png', '/images/modular-capsule-alpine-retreat-installation.png'],
+    scaleMetrics: {
+      footprint: '48 m² (516 sq.ft)',
+      clearHeight: '2.80 m (9\' 2")',
+      capacity: '2–4 Guests (Alpine Suite)',
+      glazingArc: 'Faceted 270° Glazing Arc',
+      dimensions: '12.50 m (L) × 3.80 m (W) × 3.30 m (H)'
+    }
   },
   {
     id: 'modular-capsule-tea-estate-retreat', title: 'Modular Capsule Tea Estate Retreat', category: 'Hospitality', location: 'Munnar, Kerala, India', year: '2026', image: '/images/modular-capsule-tea-estate-retreat-hero-v2.png',
@@ -168,7 +263,14 @@ export const PROJECTS: Project[] = [
       { label: 'Foundation', value: 'Independent Pier Supports (Protects tea plantation contours)' }
     ],
     details: [{ label: 'Type', value: 'Tea Estate Capsule Hospitality' }, { label: 'Region', value: 'Munnar, Kerala, India' }, { label: 'Status', value: 'Concept Study' }],
-    gallery: ['/images/modular-capsule-tea-estate-retreat-hero-v2.png', '/images/modular-capsule-tea-estate-retreat-interior-v2.png', '/images/modular-capsule-tea-estate-retreat-installation-v2.png']
+    gallery: ['/images/modular-capsule-tea-estate-retreat-hero-v2.png', '/images/modular-capsule-tea-estate-retreat-interior-v2.png', '/images/modular-capsule-tea-estate-retreat-installation-v2.png'],
+    scaleMetrics: {
+      footprint: '38 m² (409 sq.ft)',
+      clearHeight: '2.70 m (8\' 10")',
+      capacity: '2–4 Guests (Estate Suite)',
+      glazingArc: '270° Panoramic Curved Vista',
+      dimensions: '11.50 m (L) × 3.30 m (W) × 3.20 m (H)'
+    }
   },
   {
     id: 'modular-capsule-island-retreat', title: 'Modular Capsule Island Retreat', category: 'Hospitality', location: 'Havelock Island, Andaman & Nicobar, India', year: '2026', image: '/images/modular-capsule-island-retreat-hero-v2.png',
@@ -183,7 +285,14 @@ export const PROJECTS: Project[] = [
       { label: 'Foundation', value: 'Adjustable Raised Supports (Zero beach ecosystem disturbance)' }
     ],
     details: [{ label: 'Type', value: 'Island Capsule Hospitality' }, { label: 'Region', value: 'Havelock Island, Andaman & Nicobar, India' }, { label: 'Status', value: 'Concept Study' }],
-    gallery: ['/images/modular-capsule-island-retreat-hero-v2.png', '/images/modular-capsule-island-retreat-interior-v2.png', '/images/modular-capsule-island-retreat-installation-v2.png']
+    gallery: ['/images/modular-capsule-island-retreat-hero-v2.png', '/images/modular-capsule-island-retreat-interior-v2.png', '/images/modular-capsule-island-retreat-installation-v2.png'],
+    scaleMetrics: {
+      footprint: '30 m² (323 sq.ft)',
+      clearHeight: '2.60 m (8\' 6")',
+      capacity: '2 Guests (Beach Suite)',
+      glazingArc: '180° Arched Coastal Horizon',
+      dimensions: '9.00 m (L) × 3.30 m (W) × 3.10 m (H)'
+    }
   },
   {
     id: 'modular-capsule-lake-retreat', title: 'Modular Capsule Lake Retreat', category: 'Hospitality', location: 'Nainital, Uttarakhand, India', year: '2026', image: '/images/modular-capsule-lake-retreat-hero.png',
@@ -198,7 +307,14 @@ export const PROJECTS: Project[] = [
       { label: 'Delivery', value: 'Phased Hillside Installation (Low-impact pier placement)' }
     ],
     details: [{ label: 'Type', value: 'Lake Capsule Hospitality' }, { label: 'Region', value: 'Nainital, Uttarakhand, India' }, { label: 'Status', value: 'Concept Study' }],
-    gallery: ['/images/modular-capsule-lake-retreat-hero.png', '/images/modular-capsule-lake-retreat-interior.png', '/images/modular-capsule-lake-retreat-installation.png']
+    gallery: ['/images/modular-capsule-lake-retreat-hero.png', '/images/modular-capsule-lake-retreat-interior.png', '/images/modular-capsule-lake-retreat-installation.png'],
+    scaleMetrics: {
+      footprint: '28 m² (301 sq.ft)',
+      clearHeight: '2.65 m (8\' 8")',
+      capacity: '2 Guests (Lakeside Studio)',
+      glazingArc: '180° Panoramic Water Vista',
+      dimensions: '8.50 m (L) × 3.30 m (W) × 3.15 m (H)'
+    }
   },
   {
     id: 'modular-capsule-courtyard-residence', title: 'Modular Capsule Courtyard Residence', category: 'Residential', location: 'India', year: '2026', image: '/images/modular-capsule-courtyard-residence-hero-v2.png',
@@ -267,7 +383,14 @@ export const PROJECTS: Project[] = [
     materiality: 'Dark metal, warm timber, soft lighting, and planted borders create a refined atmosphere after sunset.',
     technicalSpecs: [{ label: 'Format', value: 'Rooftop Module' }, { label: 'Service', value: 'Bar & Events' }, { label: 'Lighting', value: 'Integrated Ambient System' }],
     details: [{ label: 'Type', value: 'Hospitality Module' }, { label: 'Use', value: 'Bar & Events' }, { label: 'Status', value: 'Concept Study' }],
-    gallery: ['/images/container-cafe-rooftop.jpeg', '/images/modular-rooftop-bar-interior.png']
+    gallery: ['/images/container-cafe-rooftop.jpeg', '/images/modular-rooftop-bar-interior.png', '/images/rooftop-bar-extra.png'],
+    scaleMetrics: {
+      footprint: '30 m² + 30 m² Terrace (60 m² total)',
+      clearHeight: '2.60 m (8\' 6")',
+      capacity: '20+ Guests (Rooftop Dining & Social Lounge)',
+      glazingArc: '360° Open Horizon Vista',
+      dimensions: '12.00 m (L) × 2.50 m (W) × 5.20 m (H)'
+    }
   },
   {
     id: 'modular-office', title: 'Modular Office', category: 'Workplace', location: 'Bengaluru Region, India', year: '2026', image: '/images/modular-office-india-exterior.jpg',
@@ -283,7 +406,7 @@ export const PROJECTS: Project[] = [
   { id: 'darjeeling-tea-cafe', title: 'Darjeeling Tea Café', category: 'Commercial', location: 'Darjeeling, India', year: '2026', image: '/images/darjeeling-tea-cafe.png', description: 'A compact modular tea café with warm timber interiors and misty hillside views.', details: [{ label: 'Type', value: 'Café Module' }, { label: 'Status', value: 'Reference Proposal' }], gallery: ['/images/darjeeling-tea-cafe.png', '/images/darjeeling-tea-cafe-interior.png', '/images/darjeeling-tea-cafe-terrace.png'] },
   { id: 'darjeeling-tea-pavilion', title: 'Darjeeling Tea Pavilion', category: 'Hospitality', location: 'Darjeeling, India', year: '2026', image: '/images/darjeeling-tea-pavilion.png', description: 'A compact modular tea pavilion with one guest suite, framed by misty hillside views.', details: [{ label: 'Type', value: 'Tea Pavilion' }, { label: 'Status', value: 'Reference Proposal' }], gallery: ['/images/darjeeling-tea-pavilion.png', '/images/darjeeling-tea-pavilion-gallery.png', '/images/darjeeling-tea-pavilion-detail.png'] },
   { id: 'manali-mountain-cafe', title: 'Manali Mountain Café', category: 'Commercial', location: 'Manali, Himachal Pradesh, India', year: '2026', image: '/images/manali-mountain-cafe.png', description: 'A compact modular café with warm interiors and panoramic mountain views.', details: [{ label: 'Type', value: 'Café Module' }, { label: 'Status', value: 'Reference Proposal' }], gallery: ['/images/manali-mountain-cafe.png', '/images/manali-mountain-cafe-gallery.png', '/images/manali-mountain-cafe-detail.png'] },
-  { id: 'modular-gym', title: 'Modular Gym', category: 'Amenities', location: 'Site-specific', year: '2026', image: '/images/modular-gym.jpg', description: 'A practical prefabricated fitness studio for communities, hotels, and workplaces.', details: [{ label: 'Type', value: 'Fitness' }, { label: 'Status', value: 'Concept Study' }], gallery: ['/images/modular-gym.jpg'] },
+  { id: 'modular-gym', title: 'Modular Gym', category: 'Amenities', location: 'Site-specific', year: '2026', image: '/images/modular-gym.jpg', description: 'A practical prefabricated fitness studio for communities, hotels, and workplaces.', details: [{ label: 'Type', value: 'Fitness' }, { label: 'Status', value: 'Concept Study' }], gallery: ['/images/modular-gym.jpg', '/images/modular-gym-interior.png', '/images/modular-gym-exterior.png'] },
   {
     id: 'capsule-forest-spa-suite', title: 'Capsule Forest Spa Suite', category: 'Hospitality', location: 'Coorg, Karnataka, India', year: '2026', image: '/images/capsule-showcase/capsule-forest-spa-retreat.png',
     description: 'A secluded forest spa suite that pairs a panoramic capsule room with a sunken fire-circle lounge and a low-impact timber terrace.',

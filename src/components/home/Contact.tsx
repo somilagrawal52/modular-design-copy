@@ -114,7 +114,7 @@ export default function Contact() {
       if (!response.ok || (result.ok !== true && result.success !== true)) {
         throw new Error(
           result.message ||
-            "We couldn't send your enquiry right now. Please try again.",
+            "We couldn't submit your advisory request right now. Please try again or reach out to sales@rpexotichomes.com.",
         );
       }
 
@@ -123,7 +123,7 @@ export default function Contact() {
       setSubmissionState("success");
 
       setSubmissionMessage(
-        "Thank you. Your project enquiry has been sent successfully.",
+        "Thank you. Your advisory request has been sent successfully. Our executive advisory team will review your brief and respond within 24 business hours.",
       );
     } catch (error) {
       console.error("Contact form submission error:", error);
@@ -133,7 +133,7 @@ export default function Contact() {
       setSubmissionMessage(
         error instanceof Error
           ? error.message
-          : "We couldn't send your enquiry right now. Please try again.",
+          : "We couldn't submit your advisory request right now. Please try again or reach out to sales@rpexotichomes.com.",
       );
     }
   };
@@ -148,44 +148,65 @@ export default function Contact() {
           <div className="lg:col-span-5">
             <ParallaxElement speed={0.02}>
               <Reveal direction="right">
-                <div className="flex items-center gap-4 mb-12">
-                  <span className="text-gold font-mono text-xs">05</span>
-                  <div className="h-[1px] w-12 bg-gold" />
-                  <span className="text-xs uppercase tracking-[0.1em] text-stone/60 font-semibold">
-                    Inquiries
+                <div className="flex items-center gap-4 mb-10">
+                  <span className="text-gold font-mono text-xs font-semibold">05</span>
+                  <div className="rule-metallic-bronze w-12" />
+                  <span className="text-xs uppercase tracking-[0.14em] text-gold-text font-semibold">
+                    Inquiries & Advisory
                   </span>
                 </div>
               </Reveal>
               <StaggerText
                 el="h2"
-                text="Let's define the future."
-                className="type-section mb-10 text-stone"
+                text="Bespoke advisory for developers, hoteliers & architects."
+                className="type-section mb-8 text-stone"
                 delay={0.2}
-                stagger={0.08}
+                stagger={0.06}
               />
+              <p className="text-base md:text-lg text-stone/75 font-light leading-relaxed mb-10">
+                Whether assessing terrain feasibility for an off-grid resort or procuring turnkey capsule suites for a commercial development, our advisory team provides complete specification, logistics, and CAPEX modeling.
+              </p>
 
-              <div className="space-y-10 md:space-y-12">
-                {[{ label: "Sales enquiries", value: dreamRealtyEmail() }].map(
-                  (item, i) => (
-                    <Reveal
-                      key={item.label}
-                      direction="right"
-                      delay={i * 0.1 + 0.2}
-                    >
-                      <a
-                        href={`mailto:${item.value}`}
-                        className="group block w-fit"
-                      >
-                        <h4 className="text-xs uppercase tracking-[0.1em] text-stone/75 font-medium mb-3 group-hover:text-gold transition-colors">
-                          {item.label}
-                        </h4>
-                        <p className="text-2xl font-light tracking-tight text-stone group-hover:text-gold group-hover:translate-x-2 transition-all duration-500">
-                          {item.value}
-                        </p>
-                      </a>
-                    </Reveal>
-                  ),
-                )}
+              {/* Advisory Pillars */}
+              <div className="space-y-6 pt-6 pb-8 border-y border-stone/15 mb-10">
+                <div className="flex items-start gap-4">
+                  <div className="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0" />
+                  <div>
+                    <h4 className="text-xs uppercase tracking-[0.1em] text-stone font-semibold">1. Siting & Feasibility Assessment</h4>
+                    <p className="text-xs text-stone/70 font-light mt-0.5">Topography, micro-pier foundations, off-grid utilities, and crane placement logistics.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0" />
+                  <div>
+                    <h4 className="text-xs uppercase tracking-[0.1em] text-stone font-semibold">2. Model Selection & Configuration</h4>
+                    <p className="text-xs text-stone/70 font-light mt-0.5">E3, E8, A50 envelope sizing, R-32 thermal rating, and turnkey bespoke interior palettes.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0" />
+                  <div>
+                    <h4 className="text-xs uppercase tracking-[0.1em] text-stone font-semibold">3. Turnkey CAPEX & Commissioning</h4>
+                    <p className="text-xs text-stone/70 font-light mt-0.5">Transparent fixed manufacturing pricing and 48-hour on-site plug-and-play commissioning.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-xs uppercase tracking-[0.1em] text-stone/60 font-semibold mb-2">
+                    Executive Advisory
+                  </h4>
+                  <a
+                    href={`mailto:${dreamRealtyEmail()}`}
+                    className="text-xl md:text-2xl font-light tracking-tight text-stone hover:text-gold transition-colors inline-flex items-center gap-2"
+                  >
+                    {dreamRealtyEmail()}
+                  </a>
+                  <span className="block text-[11px] font-mono text-stone/50 mt-1">
+                    Response SLA: Within 24 business hours
+                  </span>
+                </div>
               </div>
             </ParallaxElement>
           </div>
@@ -196,6 +217,15 @@ export default function Contact() {
                 <div className="bg-light-secondary p-6 md:p-12 xl:p-16 border border-stone/15 relative">
                   {/* Decorative Corner */}
                   <div className="absolute top-0 right-0 w-12 h-12 border-t border-r border-gold/20" />
+
+                  <div className="mb-8">
+                    <span className="text-[11px] font-mono uppercase tracking-[0.12em] text-gold font-semibold block mb-1">
+                      Turnkey B2B Engagement
+                    </span>
+                    <h3 className="text-2xl font-display font-semibold text-stone">
+                      Initiate Project Advisory
+                    </h3>
+                  </div>
 
                   <form
                     className="space-y-9 md:space-y-10"
@@ -366,8 +396,8 @@ export default function Contact() {
                       >
                         <span className="relative z-10">
                           {submissionState === "submitting"
-                            ? "Sending..."
-                            : "Start a project"}
+                            ? "Submitting Brief..."
+                            : "Submit Advisory Request"}
                         </span>
                         <Send
                           size={16}

@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { FormEvent, useState } from "react";
-import { ArrowRight, Globe, Mail } from "lucide-react";
+import { ArrowRight, Download, Globe, Mail, Phone, ShieldCheck } from "lucide-react";
 import ParallaxElement from "../components/ParallaxElement";
 import ParallaxImage from "../components/ParallaxImage";
 import StaggerText from "../components/StaggerText";
@@ -12,12 +12,12 @@ import { dreamRealtyEmail } from "../config/siteMode";
 import { submitContactForm } from "../lib/contact";
 
 const inquiryTypes = [
-  "Space Capsule",
-  "Hotel or Retreat",
-  "Private Project",
-  "Commercial Space",
-  "Workplace",
-  "Community Amenity",
+  "Modular Space Capsule",
+  "Resort & Hospitality Enclave",
+  "Private Estate Retreat",
+  "Commercial & Wellness Space",
+  "Architectural Partnership",
+  "Masterplan Community Amenity",
 ];
 
 export default function ContactPage() {
@@ -36,7 +36,7 @@ export default function ContactPage() {
 
     if (!selectedInquiry) {
       setSubmissionState("error");
-      setSubmissionMessage("Please choose what you are exploring.");
+      setSubmissionMessage("Please choose an advisory focus.");
       return;
     }
 
@@ -57,7 +57,7 @@ export default function ContactPage() {
       setSubmissionState("success");
 
       setSubmissionMessage(
-        "Thank you. Your project enquiry has been sent successfully.",
+        "Thank you. Your advisory brief has been submitted successfully. Our executive advisory team will review your requirements and respond within 24 business hours.",
       );
     } catch (error) {
       setSubmissionState("error");
@@ -65,7 +65,7 @@ export default function ContactPage() {
       setSubmissionMessage(
         error instanceof Error
           ? error.message
-          : "We couldn't send your enquiry right now. Please try again.",
+          : "We couldn't submit your advisory brief right now. Please try again or reach out directly to sales@rpexotichomes.com.",
       );
     }
   };
@@ -73,8 +73,8 @@ export default function ContactPage() {
   return (
     <div className="bg-light text-stone min-h-screen pt-28 md:pt-36 relative overflow-hidden">
       <SEO
-        title="Contact"
-        description="Discuss premium space capsules and modular living solutions for hospitality, resorts, commercial developments and private projects."
+        title="Inquiries & Advisory"
+        description="Engage RP Exotic Homes project advisory for custom space capsule configurations, resort masterplanning, siting feasibility, and turnkey delivery."
       />
 
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -83,33 +83,78 @@ export default function ContactPage() {
       </div>
 
       <div className="site-container relative z-10">
-        <div className="mb-16 md:mb-24">
+        <div className="mb-14 md:mb-20">
           <ParallaxElement speed={0.02}>
             <Reveal direction="right">
-              <div className="flex items-center gap-4 mb-12">
-                <span className="text-gold-text font-mono text-xs">04</span>
-                <div className="h-[1px] w-12 bg-gold" />
-                <span className="text-xs uppercase tracking-[0.1em] text-stone/65 font-semibold">
-                  Contact
+              <div className="flex items-center gap-4 mb-10">
+                <span className="text-gold-text font-mono text-xs font-semibold">04</span>
+                <div className="rule-metallic-bronze w-12" />
+                <span className="text-xs uppercase tracking-[0.14em] text-gold-text font-semibold">
+                  Inquiries & Advisory
                 </span>
               </div>
             </Reveal>
             <StaggerText
               el="h1"
-              text="Let’s discuss your expectations."
-              className="type-display mb-10 max-w-5xl"
+              text="Project Advisory & Siting Feasibility."
+              className="type-display mb-8 max-w-5xl text-stone"
               delay={0.2}
-              stagger={0.08}
+              stagger={0.06}
             />
             <div className="max-w-3xl">
               <StaggerText
-                text="Tell us what you want to create. We’ll start with the right capsule model or modular application and the information that matters for your brief."
+                text="Direct consultation for commercial developers, hospitality operators, architects, and private commissioners. We structure every engagement around site topography, model selection, thermal envelope grading, and turnkey deployment."
                 className="text-base md:text-lg text-stone/75 font-light leading-relaxed"
-                delay={0.8}
+                delay={0.6}
                 stagger={0.02}
               />
             </div>
           </ParallaxElement>
+
+          {/* Three B2B Advisory Pathways */}
+          <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 pt-10 border-t border-stone/15">
+            <Reveal direction="up" delay={0.1}>
+              <div className="bg-light-secondary p-7 border border-stone/15 rounded-[2px] h-full">
+                <span className="text-[10px] font-mono uppercase tracking-[0.14em] text-gold font-semibold block mb-2">
+                  Pathway 01
+                </span>
+                <h3 className="text-base font-display font-semibold text-stone mb-3">
+                  Resorts & Destination Developers
+                </h3>
+                <p className="text-xs text-stone/70 font-light leading-relaxed">
+                  Multi-key masterplanning, off-grid energy and water integration, and fixed CAPEX modeling for rapid ROI.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal direction="up" delay={0.2}>
+              <div className="bg-light-secondary p-7 border border-stone/15 rounded-[2px] h-full">
+                <span className="text-[10px] font-mono uppercase tracking-[0.14em] text-gold font-semibold block mb-2">
+                  Pathway 02
+                </span>
+                <h3 className="text-base font-display font-semibold text-stone mb-3">
+                  Hoteliers & Boutique Operators
+                </h3>
+                <p className="text-xs text-stone/70 font-light leading-relaxed">
+                  Fast 48-hour on-site commissioning, R-32 acoustic isolation (STC 45+), and premium RevPAR performance.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal direction="up" delay={0.3}>
+              <div className="bg-light-secondary p-7 border border-stone/15 rounded-[2px] h-full">
+                <span className="text-[10px] font-mono uppercase tracking-[0.14em] text-gold font-semibold block mb-2">
+                  Pathway 03
+                </span>
+                <h3 className="text-base font-display font-semibold text-stone mb-3">
+                  Architects & Private Commissioners
+                </h3>
+                <p className="text-xs text-stone/70 font-light leading-relaxed">
+                  Independent micro-pier foundation engineering, site terrain adaptation, and complete BIM/CAD specification packages.
+                </p>
+              </div>
+            </Reveal>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-24 md:mb-32">
@@ -117,9 +162,14 @@ export default function ContactPage() {
             <Reveal direction="right" delay={0.4}>
               <div className="bg-light-secondary p-6 md:p-10 border border-stone/15 relative">
                 <div className="absolute top-0 right-0 w-16 h-16 border-t border-r border-gold/20" />
-                <h2 className="text-2xl font-sans font-semibold mb-10 tracking-tight">
-                  Start a conversation
-                </h2>
+                <div className="mb-8">
+                  <span className="text-[11px] font-mono uppercase tracking-[0.12em] text-gold font-semibold block mb-1">
+                    B2B Project Brief
+                  </span>
+                  <h2 className="text-2xl font-display font-semibold text-stone tracking-tight">
+                    Initiate Project Advisory Brief
+                  </h2>
+                </div>
 
                 <form
                   className="space-y-10"
@@ -212,7 +262,7 @@ export default function ContactPage() {
                       id="contact-inquiry-label"
                       className="text-xs uppercase tracking-[0.1em] text-gold-text font-semibold"
                     >
-                      What are you exploring? <span aria-hidden="true">*</span>
+                      Advisory Focus <span aria-hidden="true">*</span>
                     </div>
                     <select
                       id="contact-project-type"
@@ -225,7 +275,7 @@ export default function ContactPage() {
                       aria-hidden="true"
                       className="sr-only"
                     >
-                      <option value="">Select an enquiry type</option>
+                      <option value="">Select advisory focus</option>
                       {inquiryTypes.map((type) => (
                         <option key={type} value={type}>
                           {type}
@@ -332,8 +382,8 @@ export default function ContactPage() {
                     >
                       <span className="relative z-10">
                         {submissionState === "submitting"
-                          ? "Sending..."
-                          : "Send project enquiry"}
+                          ? "Submitting Advisory Brief..."
+                          : "Submit Advisory Brief"}
                       </span>
                       <ArrowRight
                         size={16}
@@ -381,49 +431,118 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 pb-24 md:pb-32">
-          <Reveal direction="right">
-            <div className="space-y-12">
-              <h2 className="text-xs uppercase tracking-[0.1em] text-gold-text font-semibold">
-                Direct access
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                {[{ label: "Sales enquiries", email: dreamRealtyEmail() }].map(
-                  (item) => (
-                    <div key={item.label} className="group">
-                      <h3 className="text-xs uppercase tracking-[0.08em] text-stone/65 mb-2">
-                        {item.label}
-                      </h3>
-                      <a
-                        href={`mailto:${item.email}`}
-                        className="text-lg font-light hover:text-gold transition-colors"
-                      >
-                        {item.email}
-                      </a>
-                    </div>
-                  ),
-                )}
+        {/* DEDICATED PROMINENT BOXED INQUIRIES & ARCHITECTURAL ADVISORY CARD */}
+        <div className="pb-24 md:pb-32">
+          <Reveal direction="up">
+            <div className="border border-gold/40 bg-stone/5 relative overflow-hidden shadow-sm">
+              {/* Metallic Bronze Header Ribbon */}
+              <div className="bg-gold px-6 py-3.5 md:px-8 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-stone font-semibold">
+                <div className="flex items-center gap-2.5">
+                  <ShieldCheck size={16} className="text-stone" />
+                  <span className="text-xs uppercase tracking-[0.14em] font-mono">
+                    Inquiries & Architectural Advisory
+                  </span>
+                </div>
+                <span className="text-[11px] uppercase tracking-[0.12em] font-mono text-stone/85">
+                  Executive Desk • 24H SLA Response Guarantee
+                </span>
               </div>
-            </div>
-          </Reveal>
 
-          <Reveal direction="left">
-            <div className="bg-gold/5 p-12 border border-gold/10">
-              <Globe className="text-gold-text mb-8" size={32} />
-              <h2 className="text-2xl font-sans font-semibold mb-6 tracking-tight">
-                Model-led conversations
-              </h2>
-              <p className="text-stone/75 font-light leading-relaxed mb-8">
-                Start with a model or application. From there, the relevant
-                configuration, finish, delivery, and project information can be
-                considered against your requirements.
-              </p>
-              <a
-                href={`mailto:${dreamRealtyEmail()}`}
-                className="inline-flex min-h-11 items-center gap-3 text-xs uppercase tracking-[0.1em] font-semibold text-gold-text hover:text-stone transition-colors"
-              >
-                <Mail size={14} /> {dreamRealtyEmail()}
-              </a>
+              {/* Card Body */}
+              <div className="p-8 md:p-12 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14">
+                {/* Column 1: Commercial & Executive Access */}
+                <div className="space-y-8 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="h-px w-5 bg-gold" />
+                      <span className="text-[10px] font-mono uppercase tracking-widest text-gold-text font-semibold">
+                        Commercial & Resort Inquiries
+                      </span>
+                    </div>
+                    <h3 className="text-xs uppercase tracking-[0.08em] text-stone/60 mb-2 font-semibold">
+                      Executive Advisory Desk
+                    </h3>
+                    <a
+                      href={`mailto:${dreamRealtyEmail()}`}
+                      className="text-xl md:text-3xl font-light hover:text-gold transition-colors block text-stone font-sans"
+                    >
+                      {dreamRealtyEmail()}
+                    </a>
+                    <p className="mt-2.5 text-xs font-mono text-gold-text font-medium flex items-center gap-2">
+                      <span>✓</span> Turnkey CAPEX Budgeting • Siting Feasibility • Guaranteed 24h SLA
+                    </p>
+                  </div>
+
+                  <div className="pt-6 border-t border-stone/15 space-y-4">
+                    <div className="flex items-start gap-4">
+                      <div className="p-2.5 bg-gold/10 border border-gold/20 text-gold-text">
+                        <Phone size={18} />
+                      </div>
+                      <div>
+                        <span className="text-[11px] font-mono uppercase tracking-wider text-stone/60 block font-semibold">
+                          Direct Advisory Telephone
+                        </span>
+                        <a
+                          href="tel:+14169482577"
+                          className="text-base md:text-lg font-semibold text-stone hover:text-gold transition-colors"
+                        >
+                          +1 (416) 948-2577
+                        </a>
+                        <span className="text-xs text-stone/60 block font-light">
+                          Monday – Saturday • 9:00 AM – 7:00 PM IST
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Column 2: Technical Siting & Developer Partnerships */}
+                <div className="space-y-8 flex flex-col justify-between lg:border-l lg:border-stone/15 lg:pl-10">
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center gap-2">
+                        <Globe className="text-gold-text" size={16} />
+                        <span className="text-[10px] font-mono uppercase tracking-widest text-gold-text font-semibold">
+                          B2B Commercial Desk
+                        </span>
+                      </div>
+                      <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 bg-gold/10 border border-gold/20 text-gold-text">
+                        Global Dispatch
+                      </span>
+                    </div>
+
+                    <h3 className="text-xl md:text-2xl font-sans font-semibold mb-3 tracking-tight text-stone">
+                      Architectural & Developer Partnerships
+                    </h3>
+                    <p className="text-stone/75 font-light leading-relaxed text-sm">
+                      Whether specifying a single bespoke model or master-planning a 30-key eco-resort, our team coordinates factory-controlled manufacturing, custom R-32 thermal envelope packages, and rapid 48-hour plug-and-play crane commissioning.
+                    </p>
+                  </div>
+
+                  <div className="pt-6 border-t border-stone/15 flex flex-wrap items-center justify-between gap-4">
+                    <a
+                      href="/rp-exotic-homes-architectural-brochure.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      download="RP-Exotic-Homes-Architectural-Brochure.pdf"
+                      className="inline-flex min-h-11 items-center gap-2 px-5 py-2.5 bg-stone text-light text-xs uppercase tracking-[0.1em] font-semibold hover:bg-gold hover:text-stone transition-all"
+                    >
+                      <Download size={14} /> Download Brochure (PDF)
+                    </a>
+                    <span className="text-xs font-mono text-stone/50">
+                      Zero Excavation • 48-Hour Setup
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom Reassurance Strip */}
+              <div className="px-6 py-3.5 md:px-8 border-t border-stone/15 bg-stone/5 flex flex-wrap items-center justify-between gap-3 text-[11px] font-mono text-stone/60">
+                <span className="text-gold-text font-semibold uppercase tracking-wider">
+                  Factory Direct Procurement • Aerospace Alloy Cladding • Seismic Zone IV Rigidity
+                </span>
+                <span>www.rpexotichomes.com</span>
+              </div>
             </div>
           </Reveal>
         </div>

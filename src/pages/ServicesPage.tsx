@@ -122,30 +122,56 @@ export default function ServicesPage() {
                     stagger={0.02}
                   />
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    {demoItems(
-                      service.features,
-                      service.features.slice(0, 2),
-                    ).map((feature, j) => (
+                  {/* Human Scale & Lifestyle Context */}
+                  {service.id === 'cafes-bars-restaurants' && (
+                    <Reveal direction="up" delay={0.45}>
+                      <div className="p-4 bg-gold/5 border-l-2 border-gold rounded-[2px] mb-8">
+                        <span className="text-[10px] font-mono uppercase tracking-widest text-gold-text font-semibold block mb-1">
+                          Human Scale & Social Hospitality
+                        </span>
+                        <p className="text-xs text-stone/80 font-light leading-relaxed">
+                          Rooftop observation terraces engineered for social gathering and dining, accommodating 20+ guests with unobstructed 360° horizon sightlines.
+                        </p>
+                      </div>
+                    </Reveal>
+                  )}
+                  {service.id === 'modular-hotels-retreats' && (
+                    <Reveal direction="up" delay={0.45}>
+                      <div className="p-4 bg-gold/5 border-l-2 border-gold rounded-[2px] mb-8">
+                        <span className="text-[10px] font-mono uppercase tracking-widest text-gold-text font-semibold block mb-1">
+                          Guest Scale & Nature Immersion
+                        </span>
+                        <p className="text-xs text-stone/80 font-light leading-relaxed">
+                          Turnkey capsule suites tailored for 2–4 guests, featuring integrated acoustic isolation (STC 45+) and panoramic glazing for luxury resort enclaves.
+                        </p>
+                      </div>
+                    </Reveal>
+                  )}
+                  {service.id === 'modular-home-design' && (
+                    <Reveal direction="up" delay={0.45}>
+                      <div className="p-4 bg-gold/5 border-l-2 border-gold rounded-[2px] mb-8">
+                        <span className="text-[10px] font-mono uppercase tracking-widest text-gold-text font-semibold block mb-1">
+                          Residential Ergonomics
+                        </span>
+                        <p className="text-xs text-stone/80 font-light leading-relaxed">
+                          Thoughtfully planned spatial suites with full master bedroom, kitchen amenities, and R-32 thermal core for off-grid estate living.
+                        </p>
+                      </div>
+                    </Reveal>
+                  )}
+
+                  {/* Decluttered Architectural Feature Badges */}
+                  <div className="flex flex-wrap gap-2.5">
+                    {service.features.map((feature, j) => (
                       <Reveal
                         key={feature}
                         direction="up"
-                        delay={j * 0.1 + 0.6}
+                        delay={j * 0.05 + 0.5}
                       >
-                        <div className="group flex items-start gap-4 p-5 border border-stone/10 bg-stone/5 hover:border-gold/30 transition-colors duration-500">
-                          <div className="w-1.5 h-1.5 bg-gold rounded-full mt-1.5 group-hover:scale-150 transition-transform" />
-                          <div>
-                            <StaggerText
-                              text={feature}
-                            className="text-sm uppercase tracking-[0.06em] text-stone/80 font-semibold mb-2"
-                              delay={0.2}
-                            />
-                            <p className="text-sm text-stone/75 font-light leading-relaxed">
-                              A key consideration when reviewing this
-                              application.
-                            </p>
-                          </div>
-                        </div>
+                        <span className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-stone/5 border border-stone/15 rounded-[2px] text-xs font-semibold text-stone/85 tracking-[0.03em] hover:border-gold/50 transition-colors">
+                          <span className="w-1.5 h-1.5 bg-gold rounded-full shrink-0" />
+                          {feature}
+                        </span>
                       </Reveal>
                     ))}
                   </div>

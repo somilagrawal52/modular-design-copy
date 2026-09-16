@@ -229,8 +229,8 @@ export default function Work() {
             </motion.div>
           )}
 
-          {/* Consistent Project Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-14 gap-y-20 md:gap-y-28">
+          {/* Consistent Project Grid with Generous White Space */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-16 gap-y-24 md:gap-y-32">
             {gridProjects.map((project, i) => {
               const modelSystem = project.technicalSpecs?.[0]?.value ?? "Modular Capsule";
               return (
@@ -262,19 +262,25 @@ export default function Work() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent opacity-60 group-hover/card:opacity-90 transition-opacity duration-500" />
                         
-                        {/* Model designation badge floating subtly on render */}
-                        <div className="absolute bottom-4 left-4 z-20">
+                        {/* Model designation & diurnal badges floating subtly on render */}
+                        <div className="absolute bottom-4 left-4 z-20 flex flex-wrap items-center gap-2">
                           <span className="inline-block px-2.5 py-1 text-[10px] uppercase tracking-[0.1em] font-semibold text-light bg-dark/75 backdrop-blur-md border border-light/15 rounded-[2px]">
                             {modelSystem}
                           </span>
+                          {project.diurnalExperience && (
+                            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 text-[9px] uppercase font-mono tracking-wider font-semibold text-gold bg-dark/85 backdrop-blur-md border border-gold/35 rounded-[2px]">
+                              <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
+                              Day-to-Night
+                            </span>
+                          )}
                         </div>
                       </div>
                     </div>
 
-                    <div className="px-1 space-y-4">
+                    <div className="px-1 space-y-3.5">
                       <div className="flex items-center justify-between gap-4">
-                        <span className="text-xs uppercase tracking-[0.1em] text-gold-text font-semibold">
-                          {project.category}
+                        <span className="text-xs uppercase tracking-[0.1em] text-gold-text font-semibold font-mono">
+                          {modelSystem}
                         </span>
                         <span className="text-[11px] font-mono text-stone/50 uppercase tracking-[0.06em]">
                           {project.year}
@@ -282,15 +288,32 @@ export default function Work() {
                       </div>
 
                       {/* Prominent Model Title */}
-                      <h3 className="type-card group-hover/card:text-gold transition-colors duration-500">
+                      <h3 className="type-card group-hover/card:text-gold transition-colors duration-500 font-display font-semibold text-lg md:text-xl text-stone">
                         {project.title}
                       </h3>
+
+                      {/* Spatial Footprint & Sub-specifications Hierarchy */}
+                      {project.scaleMetrics && (
+                        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-mono text-stone/70">
+                          {project.scaleMetrics.footprint && (
+                            <span className="font-semibold text-stone/90">
+                              {project.scaleMetrics.footprint.split('(')[0].trim()}
+                            </span>
+                          )}
+                          {project.scaleMetrics.clearHeight && (
+                            <span>· Ceiling {project.scaleMetrics.clearHeight.split(' ')[0]}</span>
+                          )}
+                          {project.scaleMetrics.capacity && (
+                            <span>· {project.scaleMetrics.capacity.split('(')[0].trim()}</span>
+                          )}
+                        </div>
+                      )}
 
                       {/* Subtle metallic hairline rule */}
                       <div className="rule-metallic-bronze opacity-60 group-hover/card:opacity-100 transition-opacity" />
 
                       {/* Spacious two-column specification strip */}
-                      <div className="grid grid-cols-2 gap-4 pt-1 text-xs text-stone/70">
+                      <div className="grid grid-cols-2 gap-4 pt-0.5 text-xs text-stone/70">
                         <div>
                           <span className="block text-[10px] uppercase tracking-[0.08em] text-stone/50 font-semibold mb-1">
                             Configuration

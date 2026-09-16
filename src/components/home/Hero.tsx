@@ -1,6 +1,6 @@
 import { motion, useTransform, useSpring, useMotionValue } from "motion/react";
 import { useEffect } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 import Reveal from "../Reveal";
 import StaggerText from "../StaggerText";
@@ -101,16 +101,31 @@ export default function Hero() {
           </div>
 
           <Reveal delay={1.45}>
-            <Link
-              to="/work"
-              className="group mt-8 inline-flex min-h-12 items-center gap-4 bg-gold px-7 py-3 text-xs font-semibold uppercase tracking-[0.1em] text-light transition-colors duration-300 hover:bg-gold-text md:mt-10 shadow-sm"
-            >
-              View models
-              <ArrowUpRight
-                size={15}
-                className="transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1"
-              />
-            </Link>
+            <div className="mt-8 flex flex-wrap items-center gap-4 sm:gap-6 md:mt-10">
+              <Link
+                to="/work"
+                className="group inline-flex min-h-12 items-center gap-4 bg-gold px-7 py-3 text-xs font-semibold uppercase tracking-[0.1em] text-light transition-colors duration-300 hover:bg-gold-text shadow-sm"
+              >
+                View models
+                <ArrowUpRight
+                  size={15}
+                  className="transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1"
+                />
+              </Link>
+              <a
+                href="/rp-exotic-homes-architectural-brochure.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download="RP-Exotic-Homes-Architectural-Brochure.pdf"
+                className="group inline-flex min-h-12 items-center gap-3 border border-light/30 px-6 py-3 text-xs font-semibold uppercase tracking-[0.1em] text-light/90 transition-all duration-300 hover:border-gold hover:text-gold hover:bg-light/5"
+              >
+                Download Brochure
+                <Download
+                  size={14}
+                  className="transition-transform duration-300 group-hover:translate-y-0.5"
+                />
+              </a>
+            </div>
           </Reveal>
         </motion.div>
       </div>

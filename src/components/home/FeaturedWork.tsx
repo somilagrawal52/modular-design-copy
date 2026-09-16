@@ -74,10 +74,16 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
             <div className="absolute inset-0 bg-stone/15 group-hover:bg-transparent transition-colors duration-1000 z-10" />
 
             {/* Model Badge on Render */}
-            <div className="absolute bottom-4 left-4 z-20">
+            <div className="absolute bottom-4 left-4 z-20 flex flex-wrap items-center gap-2">
               <span className="inline-block px-2.5 py-1 text-[10px] uppercase tracking-[0.12em] font-semibold text-light bg-dark/75 backdrop-blur-md border border-light/15 rounded-[2px]">
                 {modelSystem}
               </span>
+              {project.diurnalExperience && (
+                <span className="inline-flex items-center gap-1.5 px-2 py-0.5 text-[9px] uppercase font-mono tracking-wider font-semibold text-gold bg-dark/85 backdrop-blur-md border border-gold/35 rounded-[2px]">
+                  <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
+                  Day-to-Night Glazing
+                </span>
+              )}
             </div>
 
             {/* Hover Overlay */}
@@ -113,6 +119,15 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
             className="type-card group-hover:text-gold transition-colors duration-500 font-semibold"
             delay={0.2}
           />
+
+          {project.scaleMetrics && (
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] font-mono text-stone/60">
+              {project.scaleMetrics.footprint && <span>{project.scaleMetrics.footprint.split(' ')[0]} {project.scaleMetrics.footprint.split(' ')[1]}</span>}
+              {project.scaleMetrics.clearHeight && <span>· Ceiling {project.scaleMetrics.clearHeight.split(' ')[0]}</span>}
+              {project.scaleMetrics.capacity && <span>· {project.scaleMetrics.capacity.split('(')[0].trim()}</span>}
+            </div>
+          )}
+
           <div className="pt-1 flex items-center justify-between">
             <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.08em] font-medium text-stone/65 group-hover:text-gold transition-colors">
               View model details <ArrowUpRight size={14} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

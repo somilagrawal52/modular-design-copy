@@ -43,13 +43,27 @@ export default function SEO({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageUrl} />
       <script type="application/ld+json">
-        {JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'WebSite',
-          name,
-          url: SITE_URL,
-          description,
-        })}
+        {JSON.stringify([
+          {
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            name,
+            url: SITE_URL,
+            description,
+          },
+          {
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name,
+            url: SITE_URL,
+            logo: `${SITE_URL}/images/rp-logo-full.png`,
+            contactPoint: {
+              '@type': 'ContactPoint',
+              email: 'sales@rpexotichomes.com',
+              contactType: 'sales',
+            },
+          },
+        ])}
       </script>
     </Helmet>
   );

@@ -59,7 +59,7 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
       >
         <motion.div
           style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-          className="relative aspect-[4/3] overflow-hidden mb-8 md:mb-10 rounded-[2px] bg-stone/5 transition-all duration-700 group-hover:shadow-[0_8px_32px_rgba(177,138,71,0.12)]"
+          className="relative aspect-[16/10] overflow-hidden mb-8 md:mb-10 rounded-[2px] bg-stone/5 transition-all duration-700 group-hover:shadow-[0_8px_32px_rgba(177,138,71,0.12)]"
         >
           <div
             style={{ transform: "translateZ(50px)" }}
@@ -71,23 +71,23 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
               speed={0.05}
               className="w-full h-full transition-all duration-1000"
             />
-            <div className="absolute inset-0 bg-stone/15 group-hover:bg-transparent transition-colors duration-1000 z-10" />
+            <div className="absolute inset-0 bg-stone/15 group-hover:bg-transparent transition-colors duration-1000 z-10 pointer-events-none" />
 
             {/* Model Badge on Render */}
-            <div className="absolute bottom-4 left-4 z-20 flex flex-wrap items-center gap-2">
+            <div className="absolute bottom-4 left-4 z-20 flex flex-wrap items-center gap-2 pointer-events-none">
               <span className="inline-block px-2.5 py-1 text-[10px] uppercase tracking-[0.12em] font-semibold text-light bg-dark/75 backdrop-blur-md border border-light/15 rounded-[2px]">
                 {modelSystem}
               </span>
               {project.diurnalExperience && (
                 <span className="inline-flex items-center gap-1.5 px-2 py-0.5 text-[9px] uppercase font-mono tracking-wider font-semibold text-gold bg-dark/85 backdrop-blur-md border border-gold/35 rounded-[2px]">
                   <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-                  Day-to-Night Glazing
+                  Day-to-Night
                 </span>
               )}
             </div>
 
             {/* Hover Overlay */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-20">
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-20 pointer-events-none">
               <div className="w-16 h-16 rounded-full glass flex items-center justify-center scale-50 group-hover:scale-100 transition-transform duration-700">
                 <ArrowUpRight size={22} className="text-stone" />
               </div>

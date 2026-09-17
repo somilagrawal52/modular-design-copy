@@ -1,8 +1,8 @@
 import { motion } from "motion/react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { PROJECTS } from "../constants";
 import { Link } from "react-router-dom";
-import { ArrowDown, ArrowUpRight, Filter } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Filter, Maximize2 } from "lucide-react";
 import Reveal from "../components/Reveal";
 import ParallaxImage from "../components/ParallaxImage";
 import StaggerText from "../components/StaggerText";
@@ -10,6 +10,7 @@ import ParallaxElement from "../components/ParallaxElement";
 import CinematicSection from "../components/CinematicSection";
 import SEO from "../components/SEO";
 import { MANAGER_DEMO_MODE, demoItems } from "../config/siteMode";
+import ArchitecturalLightbox from "../components/ArchitecturalLightbox";
 
 const CATEGORIES = [
   "All",
@@ -72,11 +73,148 @@ const orderProjectsForPortfolio = (projects: typeof PROJECTS) =>
     return Number(second.year) - Number(first.year);
   });
 
+function WorkProjectCard({
+  project,
+  index,
+  onInspect,
+}: {
+  project: (typeof PROJECTS)[number];
+  index: number;
+  onInspect: (project: (typeof PROJECTS)[number]) => void;
+}) {
+  const modelSystem = project.technicalSpecs?.[0]?.value ?? "Modular Capsule";
+
+  return (
+    <motion.div
+      layout
+      initial={{ opacity: 0, y: 60 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, scale: 0.97 }}
+      transition={{
+        duration: 0.7,
+        delay: Math.min(index * 0.04, 0.24),
+        ease: [0.22, 1, 0.36, 1],
+      }}
+    >
+      <Link to={`/work/${project.id}`} className="block group/card h-full">
+        {/* Render container with generous whitespace & 16:10 wide architectural ratio */}
+        <div className="relative overflow-hidden mb-7 rounded-[2px] bg-stone/5 transition-all duration-700 group-hover/card:shadow-[0_8px_32px_rgba(177,138,71,0.12)]">
+          <div className="relative overflow-hidden aspect-[16/10]">
+            <ParallaxImage
+              src={project.image}
+              alt={project.title}
+              speed={0.04}
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="w-full h-full group-hover/card:scale-105 transition-all duration-1000 ease-out"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent opacity-60 group-hover/card:opacity-90 transition-opacity duration-500 pointer-events-none" />
+
+            {/* Model designation badge floating subtly on render */}
+            <div className="absolute bottom-4 left-4 z-20 flex flex-wrap items-center gap-2 pointer-events-none">
+              <span className="inline-block px-2.5 py-1 text-[10px] uppercase tracking-[0.1em] font-semibold text-light bg-dark/75 backdrop-blur-md border border-light/15 rounded-[2px]">
+                {modelSystem}
+              </span>
+              {project.diurnalExperience && (
+                <span className="inline-flex items-center gap-1.5 px-2 py-0.5 text-[9px] uppercase font-mono tracking-wider font-semibold text-gold bg-dark/85 backdrop-blur-md border border-gold/35 rounded-[2px]">
+                  <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
+                  Day-to-Night
+                </span>
+              )}
+            </div>
+
+            {/* Inspect Plate Button */}
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                onInspect(project);
+              }}
+              className="absolute top-3.5 right-3.5 z-30 p-2 text-light/80 hover:text-gold bg-dark/75 hover:bg-dark/95 backdrop-blur-md rounded-[2px] border border-light/15 opacity-0 group-hover/card:opacity-100 transition-all duration-300 shadow-sm"
+              title="Inspect architectural plate"
+              aria-label={`Inspect ${project.title} architectural plate`}
+            >
+              <Maximize2 size={13} />
+            </button>
+          </div>
+        </div>
+
+        <div className="px-1 space-y-3.5">
+          <div className="flex items-center justify-between gap-4">
+            <span className="text-xs uppercase tracking-[0.1em] text-gold-text font-semibold font-mono">
+              {modelSystem}
+            </span>
+            <span className="text-[11px] font-mono text-stone/50 uppercase tracking-[0.06em]">
+              {project.year}
+            </span>
+          </div>
+
+          {/* Prominent Model Title */}
+          <h3 className="type-card group-hover/card:text-gold transition-colors duration-500 font-display font-semibold text-lg md:text-xl text-stone">
+            {project.title}
+          </h3>
+
+          {/* Spatial Footprint & Sub-specifications Hierarchy */}
+          {project.scaleMetrics && (
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-mono text-stone/70">
+              {project.scaleMetrics.footprint && (
+                <span className="font-semibold text-stone/90">
+                  {project.scaleMetrics.footprint.split("(")[0].trim()}
+                </span>
+              )}
+              {project.scaleMetrics.clearHeight && (
+                <span>· Ceiling {project.scaleMetrics.clearHeight.split(" ")[0]}</span>
+              )}
+              {project.scaleMetrics.capacity && (
+                <span>· {project.scaleMetrics.capacity.split("(")[0].trim()}</span>
+              )}
+            </div>
+          )}
+
+          {/* Subtle metallic hairline rule */}
+          <div className="rule-metallic-bronze opacity-60 group-hover/card:opacity-100 transition-opacity" />
+
+          {/* Spacious two-column specification strip */}
+          <div className="grid grid-cols-2 gap-4 pt-0.5 text-xs text-stone/70">
+            <div>
+              <span className="block text-[10px] uppercase tracking-[0.08em] text-stone/50 font-semibold mb-1">
+                Configuration
+              </span>
+              <span className="block font-medium text-stone/85 text-xs">
+                {project.details.find((d) => d.label === "Type")?.value ?? project.category}
+              </span>
+            </div>
+            <div>
+              <span className="block text-[10px] uppercase tracking-[0.08em] text-stone/50 font-semibold mb-1">
+                Architecture
+              </span>
+              <span className="block font-medium text-stone/85 text-xs truncate">
+                {project.location}
+              </span>
+            </div>
+          </div>
+
+          <div className="pt-2 flex items-center justify-between">
+            <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.08em] font-medium text-gold group-hover:text-gold-text transition-colors">
+              View model details{" "}
+              <ArrowUpRight
+                size={13}
+                className="transition-transform duration-300 group-hover/card:translate-x-0.5 group-hover/card:-translate-y-0.5"
+              />
+            </span>
+          </div>
+        </div>
+      </Link>
+    </motion.div>
+  );
+}
+
 export default function Work() {
   const [filter, setFilter] = useState(
     MANAGER_DEMO_MODE ? "Residential" : "All",
   );
   const [visibleCount, setVisibleCount] = useState(INITIAL_PROJECT_COUNT);
+  const [selectedProject, setSelectedProject] = useState<(typeof PROJECTS)[number] | null>(null);
   const filteredProjects =
     filter === "All"
       ? PROJECTS
@@ -188,11 +326,12 @@ export default function Work() {
                     <ParallaxImage
                       src={featuredProject.image}
                       alt={featuredProject.title}
-                      speed={0.08}
-                      sizes="100vw"
+                      speed={0.05}
+                      priority
                       className="w-full h-full group-hover/featured:scale-105 transition-all duration-1000 ease-out"
                     />
-                    <div className="absolute inset-0 z-20 scrim-dark-bottom" />
+                    <div className="absolute inset-0 z-20 scrim-dark-bottom pointer-events-none" />
+
                     <div className="absolute inset-x-0 bottom-0 z-30 p-8 md:p-12">
                       <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
                         <div className="inline-flex items-center gap-3 px-3 py-1.5 badge-metallic-bronze rounded-[2px]">
@@ -231,117 +370,14 @@ export default function Work() {
 
           {/* Consistent Project Grid with Generous White Space */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-16 gap-y-24 md:gap-y-32">
-            {gridProjects.map((project, i) => {
-              const modelSystem = project.technicalSpecs?.[0]?.value ?? "Modular Capsule";
-              return (
-                <motion.div
-                  key={project.id}
-                  layout
-                  initial={{ opacity: 0, y: 60 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.97 }}
-                  transition={{
-                    duration: 0.7,
-                    delay: Math.min(i * 0.04, 0.24),
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                >
-                  <Link
-                    to={`/work/${project.id}`}
-                    className="block group/card h-full"
-                  >
-                    {/* Render container with generous whitespace */}
-                    <div className="relative overflow-hidden mb-7 rounded-[2px] bg-stone/5 transition-all duration-700 group-hover/card:shadow-[0_8px_32px_rgba(177,138,71,0.12)]">
-                      <div className="relative overflow-hidden aspect-[4/3]">
-                        <ParallaxImage
-                          src={project.image}
-                          alt={project.title}
-                          speed={0.04}
-                          sizes="(min-width: 768px) 50vw, 100vw"
-                          className="w-full h-full group-hover/card:scale-105 transition-all duration-1000 ease-out"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent opacity-60 group-hover/card:opacity-90 transition-opacity duration-500" />
-                        
-                        {/* Model designation & diurnal badges floating subtly on render */}
-                        <div className="absolute bottom-4 left-4 z-20 flex flex-wrap items-center gap-2">
-                          <span className="inline-block px-2.5 py-1 text-[10px] uppercase tracking-[0.1em] font-semibold text-light bg-dark/75 backdrop-blur-md border border-light/15 rounded-[2px]">
-                            {modelSystem}
-                          </span>
-                          {project.diurnalExperience && (
-                            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 text-[9px] uppercase font-mono tracking-wider font-semibold text-gold bg-dark/85 backdrop-blur-md border border-gold/35 rounded-[2px]">
-                              <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-                              Day-to-Night
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="px-1 space-y-3.5">
-                      <div className="flex items-center justify-between gap-4">
-                        <span className="text-xs uppercase tracking-[0.1em] text-gold-text font-semibold font-mono">
-                          {modelSystem}
-                        </span>
-                        <span className="text-[11px] font-mono text-stone/50 uppercase tracking-[0.06em]">
-                          {project.year}
-                        </span>
-                      </div>
-
-                      {/* Prominent Model Title */}
-                      <h3 className="type-card group-hover/card:text-gold transition-colors duration-500 font-display font-semibold text-lg md:text-xl text-stone">
-                        {project.title}
-                      </h3>
-
-                      {/* Spatial Footprint & Sub-specifications Hierarchy */}
-                      {project.scaleMetrics && (
-                        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-mono text-stone/70">
-                          {project.scaleMetrics.footprint && (
-                            <span className="font-semibold text-stone/90">
-                              {project.scaleMetrics.footprint.split('(')[0].trim()}
-                            </span>
-                          )}
-                          {project.scaleMetrics.clearHeight && (
-                            <span>· Ceiling {project.scaleMetrics.clearHeight.split(' ')[0]}</span>
-                          )}
-                          {project.scaleMetrics.capacity && (
-                            <span>· {project.scaleMetrics.capacity.split('(')[0].trim()}</span>
-                          )}
-                        </div>
-                      )}
-
-                      {/* Subtle metallic hairline rule */}
-                      <div className="rule-metallic-bronze opacity-60 group-hover/card:opacity-100 transition-opacity" />
-
-                      {/* Spacious two-column specification strip */}
-                      <div className="grid grid-cols-2 gap-4 pt-0.5 text-xs text-stone/70">
-                        <div>
-                          <span className="block text-[10px] uppercase tracking-[0.08em] text-stone/50 font-semibold mb-1">
-                            Configuration
-                          </span>
-                          <span className="block font-medium text-stone/85 text-xs">
-                            {project.details.find((d) => d.label === "Type")?.value ?? project.category}
-                          </span>
-                        </div>
-                        <div>
-                          <span className="block text-[10px] uppercase tracking-[0.08em] text-stone/50 font-semibold mb-1">
-                            Architecture
-                          </span>
-                          <span className="block font-medium text-stone/85 text-xs truncate">
-                            {project.location}
-                          </span>
-                        </div>
-                      </div>
-
-                      <div className="pt-2 flex items-center justify-between">
-                        <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.08em] font-medium text-gold group-hover:text-gold-text transition-colors">
-                          View model details <ArrowUpRight size={13} className="transition-transform duration-300 group-hover/card:translate-x-0.5 group-hover/card:-translate-y-0.5" />
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              );
-            })}
+            {gridProjects.map((project, i) => (
+              <WorkProjectCard
+                key={project.id}
+                project={project}
+                index={i}
+                onInspect={(p) => setSelectedProject(p)}
+              />
+            ))}
           </div>
 
           {hasMoreProjects && (
@@ -377,6 +413,18 @@ export default function Work() {
             </Reveal>
           </div>
         </div>
+
+        {/* Full-Screen Architectural Lightbox Modal */}
+        {selectedProject && (
+          <ArchitecturalLightbox
+            isOpen={Boolean(selectedProject)}
+            onClose={() => setSelectedProject(null)}
+            image={selectedProject.image}
+            title={selectedProject.title}
+            subtitle={selectedProject.technicalSpecs?.[0]?.value ?? selectedProject.category}
+            specs={selectedProject.scaleMetrics}
+          />
+        )}
       </CinematicSection>
     </div>
   );

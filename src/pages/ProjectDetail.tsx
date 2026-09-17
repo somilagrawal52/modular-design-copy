@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { PROJECTS } from '../constants';
-import { ArrowUpRight, Sun, Moon } from 'lucide-react';
+import { ArrowUpRight, Sun, Moon, Maximize2 } from 'lucide-react';
 import Reveal from '../components/Reveal';
 import ParallaxImage from '../components/ParallaxImage';
 import StaggerText from '../components/StaggerText';
@@ -9,19 +9,23 @@ import ParallaxElement from '../components/ParallaxElement';
 import SEO from '../components/SEO';
 import NotFound from './NotFound';
 import { responsiveImageSrcSet } from '../lib/responsiveImages';
+import ArchitecturalLightbox from '../components/ArchitecturalLightbox';
 
 import CinematicSection from '../components/CinematicSection';
 import { MANAGER_DEMO_MODE, demoItems, siteContactEmail } from '../config/siteMode';
 
 const EXTRA_GALLERY_IMAGES: Record<string, string[]> = {
   'garden-pavilion': ['/images/garden-pavilion-extra.png'],
-  'modular-rooftop-bar': ['/images/rooftop-bar-extra.png'],
-  'modular-gym': ['/images/modular-gym-interior.png', '/images/modular-gym-exterior.png'],
 };
 
 export default function ProjectDetail() {
   const { id } = useParams();
   const [diurnalMode, setDiurnalMode] = useState<'day' | 'night'>('day');
+  const [lightboxPlate, setLightboxPlate] = useState<{
+    image: string;
+    title: string;
+    subtitle?: string;
+  } | null>(null);
   const project = PROJECTS.find(p => p.id === id);
   if (!project) return <NotFound />;
   const technicalSpecs = project.technicalSpecs ?? [];
@@ -417,16 +421,32 @@ export default function ProjectDetail() {
                 <div key={i} className={colSpan}>
                   <ParallaxElement speed={i % 2 === 0 ? 0.02 : -0.02}>
                     <Reveal direction="up" delay={i * 0.1}>
-                      <div className={`relative overflow-hidden ${aspect} rounded-[2px] bg-stone/5 group shadow-sm transition-all duration-700 hover:shadow-md`}>
+                      <div
+                        onClick={() =>
+                          setLightboxPlate({
+                            image: img,
+                            title: `${project.title} — Plate 0${i + 1}`,
+                            subtitle: plateTag,
+                          })
+                        }
+                        className={`relative overflow-hidden ${aspect} rounded-[2px] bg-stone/5 group shadow-sm transition-all duration-700 hover:shadow-md cursor-pointer`}
+                      >
                         <ParallaxImage
                           src={img}
                           alt={`${project.title} gallery ${i}`}
-                          className="w-full h-full transition-all duration-1000"
+                          className="w-full h-full transition-all duration-1000 group-hover:scale-105"
                         />
                         {/* Top Plate Tag */}
                         <div className="absolute top-4 left-4 z-20">
                           <span className="inline-block px-2.5 py-1 text-[10px] uppercase font-mono tracking-wider font-semibold text-light bg-dark/85 backdrop-blur-md rounded-[2px] border border-light/15">
                             {plateTag}
+                          </span>
+                        </div>
+                        {/* Top Right Maximize Icon */}
+                        <div className="absolute top-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 text-[10px] uppercase font-mono tracking-wider font-semibold text-light bg-dark/85 backdrop-blur-md rounded-[2px] border border-light/15">
+                            <Maximize2 size={11} className="text-gold" />
+                            Inspect
                           </span>
                         </div>
                         {/* Bottom Plate Caption Bar */}
@@ -491,6 +511,18 @@ export default function ProjectDetail() {
           </Reveal>
         </div>
       </CinematicSection>
+
+      {/* Full-Screen Architectural Lightbox Inspection */}
+      {lightboxPlate && (
+        <ArchitecturalLightbox
+          isOpen={Boolean(lightboxPlate)}
+          onClose={() => setLightboxPlate(null)}
+          image={lightboxPlate.image}
+          title={lightboxPlate.title}
+          subtitle={lightboxPlate.subtitle}
+          specs={project.scaleMetrics}
+        />
+      )}
     </div>
   );
 }

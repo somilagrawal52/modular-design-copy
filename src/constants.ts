@@ -97,7 +97,7 @@ export const PROJECTS: Project[] = [
       { label: 'Foundation', value: 'Screw-pile Supports (Reversible terrain interface)' }
     ],
     details: [{ label: 'Type', value: 'Mountain Capsule Hospitality' }, { label: 'Location', value: 'Himalayan Ridge, India' }, { label: 'Status', value: 'Concept Ready' }],
-    gallery: ['/images/capsule-mountain-suite-panorama.png', '/images/capsule-mountain-suite-interior.jpeg', '/images/modular-capsule-alpine-retreat-installation.png'],
+    gallery: ['/images/capsule-mountain-suite-panorama.png', '/images/capsule-mountain-suite-terrace.png', '/images/capsule-mountain-suite-interior.jpeg'],
     scaleMetrics: {
       footprint: '42 m² (452 sq.ft)',
       clearHeight: '2.75 m (9\' 0")',
@@ -119,7 +119,7 @@ export const PROJECTS: Project[] = [
       { label: 'Foundation', value: 'Compact Pad Foundations' }
     ],
     details: [{ label: 'Type', value: 'Garden Modular Residence' }, { label: 'Location', value: 'Site-specific' }, { label: 'Status', value: 'Concept Ready' }],
-    gallery: ['/images/capsule-rounded-garden-suite-hero.jpeg', '/images/capsule-rounded-garden-suite-exterior.jpeg', '/images/capsule-rounded-garden-suite-interior.png'],
+    gallery: ['/images/capsule-rounded-garden-suite-hero.jpeg', '/images/capsule-rounded-garden-suite-exterior.png', '/images/capsule-rounded-garden-suite-interior.png'],
     scaleMetrics: {
       footprint: '34 m² (366 sq.ft)',
       clearHeight: '2.65 m (8\' 8")',
@@ -188,14 +188,6 @@ export const PROJECTS: Project[] = [
       capacity: '2–4 Guests (Canopy Suite)',
       glazingArc: '270° Panoramic Curved Vista',
       dimensions: '11.50 m (L) × 3.30 m (W) × 3.20 m (H)'
-    },
-    diurnalExperience: {
-      dayImage: '/images/modular-capsule-forest-retreat-hero-v2.png',
-      nightImage: '/images/capsule-showcase/capsule-forest-spa-retreat.png',
-      dayTitle: 'Daylight Canopy Shading & Mountain Mist',
-      dayDescription: 'Curved Low-E double glazing (SHGC < 0.28) deflects tropical solar glare while framing 270° mist-covered coffee plantation canopies with acoustic silence.',
-      nightTitle: 'Twilight Forest Hearth & Illuminated Lantern Glow',
-      nightDescription: 'At dusk, integrated 2700K ambient LED coves turn the elevated capsule into an illuminated sanctuary, reflected in the surrounding tree canopy and sunken deck lounge.'
     }
   },
   {
@@ -218,14 +210,6 @@ export const PROJECTS: Project[] = [
       capacity: '2 Guests (Desert Stargazer Suite)',
       glazingArc: '180° Dune Panoramic Glazing',
       dimensions: '8.50 m (L) × 3.30 m (W) × 3.15 m (H)'
-    },
-    diurnalExperience: {
-      dayImage: '/images/modular-capsule-desert-retreat-hero.png',
-      nightImage: '/images/capsule-showcase/capsule-desert-stargazing-suite.png',
-      dayTitle: 'Daylight Extreme Thermal Shielding & Horizon Clarity',
-      dayDescription: 'Continuous R-32 thermal core and Solar Low-E glazing block 72%+ infrared heat gain, maintaining a serene 21°C interior amid 45°C Thar desert daytime heat.',
-      nightTitle: 'Nocturnal Stargazing & Warm Lantern Immersion',
-      nightDescription: 'Under crisp desert night skies, panoramic curved glass provides uninterrupted stargazing while warm interior illumination creates an inviting dune haven.'
     }
   },
   {

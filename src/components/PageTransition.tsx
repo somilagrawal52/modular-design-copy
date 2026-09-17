@@ -113,7 +113,7 @@ const PageTransition = forwardRef<HTMLDivElement, PageTransitionProps>(
               {/* Shimmer Effect (CSS based) */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-ivory/10 to-transparent skew-x-12 shimmer-anim" />
               {/* Grain Texture */}
-              <div className="absolute inset-0 opacity-10 mix-blend-overlay pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+              <div className="absolute inset-0 opacity-10 mix-blend-overlay pointer-events-none bg-[url('/noise.svg')]" />
             </motion.div>
           ))}
           

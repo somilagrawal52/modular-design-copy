@@ -33,7 +33,7 @@ export default function Services() {
                 stagger={0.08}
               />
               <StaggerText
-                text="From prefab homes to container cafés and outdoor amenities, we create flexible spaces built for the way people live and gather."
+                text="From luxury capsule villas to destination cafés, wellness retreats, and outdoor amenities, we engineer precision modular environments built for extraordinary settings."
                 className="text-stone/75 text-lg font-light leading-relaxed max-w-xs"
                 delay={0.6}
                 stagger={0.02}

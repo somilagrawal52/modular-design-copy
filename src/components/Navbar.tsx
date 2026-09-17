@@ -207,18 +207,18 @@ export default function Navbar() {
                     <a
                       href={INDIA_CONTACT.tel}
                       onClick={() => setIsOpen(false)}
-                      className="inline-flex items-center justify-center gap-1.5 py-2 px-2 bg-stone text-light text-[11px] font-mono hover:bg-gold hover:text-ink transition-colors rounded-[2px]"
+                      className="inline-flex items-center justify-center gap-1.5 py-2 px-2 bg-stone text-light text-[11px] font-mono hover:bg-gold hover:text-ink transition-colors rounded-[2px] whitespace-nowrap"
                     >
-                      <Phone size={11} className="text-gold" /> Call Direct
+                      <Phone size={11} className="text-gold shrink-0" /> Call Direct
                     </a>
                     <a
                       href={INDIA_CONTACT.whatsapp}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => setIsOpen(false)}
-                      className="inline-flex items-center justify-center gap-1.5 py-2 px-2 bg-gold text-ink text-[11px] font-mono hover:bg-stone hover:text-light transition-colors rounded-[2px]"
+                      className="inline-flex items-center justify-center gap-1.5 py-2 px-2 bg-gold text-ink text-[11px] font-mono hover:bg-stone hover:text-light transition-colors rounded-[2px] whitespace-nowrap font-sans"
                     >
-                      <MessageCircle size={11} /> WhatsApp
+                      <MessageCircle size={11} className="shrink-0" /> WhatsApp
                     </a>
                   </div>
                 </div>
@@ -232,18 +232,18 @@ export default function Navbar() {
                     <a
                       href={CANADA_CONTACT.tel}
                       onClick={() => setIsOpen(false)}
-                      className="inline-flex items-center justify-center gap-1.5 py-2 px-2 bg-stone text-light text-[11px] font-mono hover:bg-gold hover:text-ink transition-colors rounded-[2px]"
+                      className="inline-flex items-center justify-center gap-1.5 py-2 px-2 bg-stone text-light text-[11px] font-mono hover:bg-gold hover:text-ink transition-colors rounded-[2px] whitespace-nowrap"
                     >
-                      <Phone size={11} className="text-gold" /> Call Direct
+                      <Phone size={11} className="text-gold shrink-0" /> Call Direct
                     </a>
                     <a
                       href={CANADA_CONTACT.whatsapp}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => setIsOpen(false)}
-                      className="inline-flex items-center justify-center gap-1.5 py-2 px-2 bg-gold text-ink text-[11px] font-mono hover:bg-stone hover:text-light transition-colors rounded-[2px]"
+                      className="inline-flex items-center justify-center gap-1.5 py-2 px-2 bg-gold text-ink text-[11px] font-mono hover:bg-stone hover:text-light transition-colors rounded-[2px] whitespace-nowrap font-sans"
                     >
-                      <MessageCircle size={11} /> WhatsApp
+                      <MessageCircle size={11} className="shrink-0" /> WhatsApp
                     </a>
                   </div>
                 </div>
@@ -251,9 +251,9 @@ export default function Navbar() {
                 <a
                   href={`mailto:${SALES_EMAIL}`}
                   onClick={() => setIsOpen(false)}
-                  className="inline-flex items-center justify-center gap-2 py-2 px-3 bg-gold text-stone text-xs font-mono tracking-wider hover:bg-gold-text transition-colors rounded-[2px] font-semibold"
+                  className="inline-flex items-center justify-center gap-2 py-2 px-3 bg-gold text-stone text-[11px] sm:text-xs font-mono tracking-wider hover:bg-gold-text transition-colors rounded-[2px] font-semibold break-all"
                 >
-                  <Mail size={12} /> {SALES_EMAIL}
+                  <Mail size={12} className="shrink-0" /> {SALES_EMAIL}
                 </a>
               </div>
               <span className="text-[10px] uppercase tracking-[0.1em] text-stone/50 font-mono">

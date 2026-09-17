@@ -436,24 +436,24 @@ export default function ContactPage() {
           <Reveal direction="up">
             <div className="border border-stone/20 bg-light-secondary relative overflow-hidden shadow-sm rounded-[2px]">
               {/* Refined Architectural Header Ribbon */}
-              <div className="bg-stone text-light px-6 py-4 md:px-8 flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-stone/20">
-                <div className="flex items-center gap-2.5">
-                  <ShieldCheck size={16} className="text-gold" />
-                  <span className="text-xs uppercase tracking-[0.14em] font-mono font-semibold text-light">
+              <div className="bg-stone text-light px-4 sm:px-6 md:px-8 py-3.5 sm:py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-stone/20">
+                <div className="flex items-center gap-2">
+                  <ShieldCheck size={15} className="text-gold shrink-0" />
+                  <span className="text-[11px] sm:text-xs uppercase tracking-[0.12em] sm:tracking-[0.14em] font-mono font-semibold text-light truncate">
                     RP Exotic Homes · Executive Advisory Desk
                   </span>
                 </div>
-                <span className="text-[11px] uppercase tracking-[0.12em] font-mono text-gold font-medium">
+                <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.1em] sm:tracking-[0.12em] font-mono text-gold font-medium shrink-0">
                   Guaranteed 24-Hour SLA Response
                 </span>
               </div>
 
               {/* Card Body */}
-              <div className="p-8 md:p-12 space-y-10">
+              <div className="p-3.5 sm:p-6 md:p-10 lg:p-12 space-y-6 sm:space-y-8 md:space-y-10">
                 {/* General Inquiry & Direct Email Desk */}
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-stone/15">
-                  <div>
-                    <div className="flex items-center gap-2 mb-2">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 sm:gap-6 pb-6 md:pb-8 border-b border-stone/15">
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-2 mb-1.5 sm:mb-2">
                       <span className="h-px w-5 bg-gold" />
                       <span className="text-[10px] font-mono uppercase tracking-widest text-gold-text font-semibold">
                         Commercial & Resort Advisory Desk
@@ -461,12 +461,12 @@ export default function ContactPage() {
                     </div>
                     <a
                       href={`mailto:${SALES_EMAIL}`}
-                      className="text-2xl md:text-3xl font-light hover:text-gold transition-colors block text-stone font-sans"
+                      className="text-base sm:text-2xl md:text-3xl font-light hover:text-gold transition-colors block text-stone font-sans tracking-tight break-all sm:break-normal"
                     >
                       {SALES_EMAIL}
                     </a>
                   </div>
-                  <div className="text-xs font-mono text-stone/70 md:text-right space-y-1">
+                  <div className="text-xs font-mono text-stone/70 md:text-right space-y-1 shrink-0">
                     <p className="text-gold-text font-semibold flex items-center md:justify-end gap-1.5">
                       <span>✓</span> Direct Executive Consultation
                     </p>
@@ -475,9 +475,9 @@ export default function ContactPage() {
                 </div>
 
                 {/* Dual Office Grid — Two Studio Locations & Contact Lines */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10">
                   {/* JAIPUR, INDIA */}
-                  <div className="p-6 md:p-8 bg-stone/[0.02] border border-stone/15 relative flex flex-col justify-between rounded-[2px] shadow-sm">
+                  <div className="p-3.5 sm:p-6 md:p-8 bg-stone/[0.02] border border-stone/15 relative flex flex-col justify-between rounded-[2px] shadow-sm">
                     <div>
                       <div className="pb-3 mb-4 border-b border-stone/15">
                         <span className="text-xs font-mono uppercase tracking-wider text-stone font-semibold">
@@ -485,69 +485,69 @@ export default function ContactPage() {
                         </span>
                       </div>
 
-                      <h3 className="text-xl md:text-2xl font-display font-semibold text-stone mb-6">
+                      <h3 className="text-xl md:text-2xl font-display font-semibold text-stone mb-4 sm:mb-5">
                         {INDIA_CONTACT.name}
                       </h3>
 
-                      <div className="space-y-5 pt-4 border-t border-stone/15">
-                        <div className="flex items-start gap-3.5">
-                          <div className="p-2.5 bg-stone/5 text-stone/70 border border-stone/15 mt-0.5 shrink-0 rounded-[2px]">
-                            <Phone size={16} />
-                          </div>
-                          <div className="flex-1">
-                            <span className="text-[10px] font-mono uppercase tracking-wider text-stone/50 block font-semibold mb-1">
+                      <div className="space-y-4 pt-4 border-t border-stone/15">
+                        <div>
+                          <div className="flex items-center gap-2 mb-2">
+                            <div className="p-1.5 bg-stone/5 text-stone/70 border border-stone/15 rounded-[2px]">
+                              <Phone size={13} className="text-gold" />
+                            </div>
+                            <span className="text-[10px] font-mono uppercase tracking-wider text-stone/60 font-semibold">
                               Direct Line & WhatsApp
                             </span>
-                            <div className="text-lg md:text-xl font-semibold font-mono text-stone mb-3">
-                              {INDIA_CONTACT.phone}
-                            </div>
-
-                            {/* Option 1 Dual-Action Architectural Buttons */}
-                            <div className="grid grid-cols-2 gap-2.5 max-w-md mb-2">
-                              <a
-                                href={INDIA_CONTACT.tel}
-                                className="inline-flex items-center justify-center gap-2 py-2.5 px-3.5 bg-stone text-light text-xs font-semibold uppercase tracking-[0.08em] rounded-[2px] shadow-sm hover:bg-gold hover:text-ink transition-all duration-300"
-                              >
-                                <Phone size={13} />
-                                <span>Call Direct</span>
-                              </a>
-                              <a
-                                href={INDIA_CONTACT.whatsapp}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center justify-center gap-2 py-2.5 px-3.5 bg-gold text-ink text-xs font-semibold uppercase tracking-[0.08em] rounded-[2px] shadow-sm hover:bg-stone hover:text-light transition-all duration-300 font-sans"
-                                title="Chat on WhatsApp"
-                              >
-                                <MessageCircle size={13} />
-                                <span>WhatsApp</span>
-                              </a>
-                            </div>
-
-                            <span className="text-[11px] text-stone/60 block font-light mt-1">
-                              {INDIA_CONTACT.hours}
-                            </span>
                           </div>
+                          <div className="text-base sm:text-lg md:text-xl font-semibold font-mono text-stone mb-3 tracking-tight whitespace-nowrap">
+                            {INDIA_CONTACT.phone}
+                          </div>
+
+                          {/* Option 1 Dual-Action Architectural Buttons */}
+                          <div className="grid grid-cols-2 gap-2 sm:gap-2.5 max-w-md mb-2.5">
+                            <a
+                              href={INDIA_CONTACT.tel}
+                              className="inline-flex items-center justify-center gap-1.5 sm:gap-2 py-2.5 px-2 sm:px-3.5 bg-stone text-light text-[11px] sm:text-xs font-semibold uppercase tracking-[0.04em] sm:tracking-[0.08em] rounded-[2px] shadow-sm hover:bg-gold hover:text-ink transition-all duration-300 whitespace-nowrap"
+                            >
+                              <Phone size={12} className="shrink-0" />
+                              <span>Call Direct</span>
+                            </a>
+                            <a
+                              href={INDIA_CONTACT.whatsapp}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center justify-center gap-1.5 sm:gap-2 py-2.5 px-2 sm:px-3.5 bg-gold text-ink text-[11px] sm:text-xs font-semibold uppercase tracking-[0.04em] sm:tracking-[0.08em] rounded-[2px] shadow-sm hover:bg-stone hover:text-light transition-all duration-300 font-sans whitespace-nowrap"
+                              title="Chat on WhatsApp"
+                            >
+                              <MessageCircle size={12} className="shrink-0" />
+                              <span>WhatsApp</span>
+                            </a>
+                          </div>
+
+                          <span className="text-[11px] text-stone/60 block font-light">
+                            {INDIA_CONTACT.hours}
+                          </span>
                         </div>
 
-                        <div className="flex items-start gap-3.5">
-                          <div className="p-2.5 bg-stone/5 text-stone/70 border border-stone/15 mt-0.5 shrink-0 rounded-[2px]">
-                            <MapPin size={16} />
-                          </div>
-                          <div>
-                            <span className="text-[10px] font-mono uppercase tracking-wider text-stone/50 block font-semibold">
+                        <div className="pt-3 border-t border-stone/10">
+                          <div className="flex items-center gap-2 mb-1.5">
+                            <div className="p-1.5 bg-stone/5 text-stone/70 border border-stone/15 rounded-[2px]">
+                              <MapPin size={13} className="text-stone/50" />
+                            </div>
+                            <span className="text-[10px] font-mono uppercase tracking-wider text-stone/60 font-semibold">
                               Studio Address
                             </span>
-                            <p className="text-sm font-medium text-stone/85 leading-relaxed mt-0.5">
-                              {INDIA_CONTACT.address}
-                            </p>
                           </div>
+                          <p className="text-xs sm:text-sm font-medium text-stone/85 leading-relaxed">
+                            {INDIA_CONTACT.address}
+                          </p>
                         </div>
                       </div>
                     </div>
                   </div>
 
                   {/* BOWMANVILLE, CANADA */}
-                  <div className="p-6 md:p-8 bg-stone/[0.02] border border-stone/15 relative flex flex-col justify-between rounded-[2px] shadow-sm">
+                  <div className="p-3.5 sm:p-6 md:p-8 bg-stone/[0.02] border border-stone/15 relative flex flex-col justify-between rounded-[2px] shadow-sm">
                     <div>
                       <div className="pb-3 mb-4 border-b border-stone/15">
                         <span className="text-xs font-mono uppercase tracking-wider text-stone font-semibold">
@@ -555,62 +555,62 @@ export default function ContactPage() {
                         </span>
                       </div>
 
-                      <h3 className="text-xl md:text-2xl font-display font-semibold text-stone mb-6">
+                      <h3 className="text-xl md:text-2xl font-display font-semibold text-stone mb-4 sm:mb-5">
                         {CANADA_CONTACT.name}
                       </h3>
 
-                      <div className="space-y-5 pt-4 border-t border-stone/15">
-                        <div className="flex items-start gap-3.5">
-                          <div className="p-2.5 bg-stone/5 text-stone/70 border border-stone/15 mt-0.5 shrink-0 rounded-[2px]">
-                            <Phone size={16} />
-                          </div>
-                          <div className="flex-1">
-                            <span className="text-[10px] font-mono uppercase tracking-wider text-stone/50 block font-semibold mb-1">
+                      <div className="space-y-4 pt-4 border-t border-stone/15">
+                        <div>
+                          <div className="flex items-center gap-2 mb-2">
+                            <div className="p-1.5 bg-stone/5 text-stone/70 border border-stone/15 rounded-[2px]">
+                              <Phone size={13} className="text-gold" />
+                            </div>
+                            <span className="text-[10px] font-mono uppercase tracking-wider text-stone/60 font-semibold">
                               Direct Line & WhatsApp
                             </span>
-                            <div className="text-lg md:text-xl font-semibold font-mono text-stone mb-3">
-                              {CANADA_CONTACT.phone}
-                            </div>
-
-                            {/* Option 1 Dual-Action Architectural Buttons */}
-                            <div className="grid grid-cols-2 gap-2.5 max-w-md mb-2">
-                              <a
-                                href={CANADA_CONTACT.tel}
-                                className="inline-flex items-center justify-center gap-2 py-2.5 px-3.5 bg-stone text-light text-xs font-semibold uppercase tracking-[0.08em] rounded-[2px] shadow-sm hover:bg-gold hover:text-ink transition-all duration-300"
-                              >
-                                <Phone size={13} />
-                                <span>Call Direct</span>
-                              </a>
-                              <a
-                                href={CANADA_CONTACT.whatsapp}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center justify-center gap-2 py-2.5 px-3.5 bg-gold text-ink text-xs font-semibold uppercase tracking-[0.08em] rounded-[2px] shadow-sm hover:bg-stone hover:text-light transition-all duration-300 font-sans"
-                                title="Chat on WhatsApp"
-                              >
-                                <MessageCircle size={13} />
-                                <span>WhatsApp</span>
-                              </a>
-                            </div>
-
-                            <span className="text-[11px] text-stone/60 block font-light mt-1">
-                              {CANADA_CONTACT.hours}
-                            </span>
                           </div>
+                          <div className="text-base sm:text-lg md:text-xl font-semibold font-mono text-stone mb-3 tracking-tight whitespace-nowrap">
+                            {CANADA_CONTACT.phone}
+                          </div>
+
+                          {/* Option 1 Dual-Action Architectural Buttons */}
+                          <div className="grid grid-cols-2 gap-2 sm:gap-2.5 max-w-md mb-2.5">
+                            <a
+                              href={CANADA_CONTACT.tel}
+                              className="inline-flex items-center justify-center gap-1.5 sm:gap-2 py-2.5 px-2 sm:px-3.5 bg-stone text-light text-[11px] sm:text-xs font-semibold uppercase tracking-[0.04em] sm:tracking-[0.08em] rounded-[2px] shadow-sm hover:bg-gold hover:text-ink transition-all duration-300 whitespace-nowrap"
+                            >
+                              <Phone size={12} className="shrink-0" />
+                              <span>Call Direct</span>
+                            </a>
+                            <a
+                              href={CANADA_CONTACT.whatsapp}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center justify-center gap-1.5 sm:gap-2 py-2.5 px-2 sm:px-3.5 bg-gold text-ink text-[11px] sm:text-xs font-semibold uppercase tracking-[0.04em] sm:tracking-[0.08em] rounded-[2px] shadow-sm hover:bg-stone hover:text-light transition-all duration-300 font-sans whitespace-nowrap"
+                              title="Chat on WhatsApp"
+                            >
+                              <MessageCircle size={12} className="shrink-0" />
+                              <span>WhatsApp</span>
+                            </a>
+                          </div>
+
+                          <span className="text-[11px] text-stone/60 block font-light">
+                            {CANADA_CONTACT.hours}
+                          </span>
                         </div>
 
-                        <div className="flex items-start gap-3.5">
-                          <div className="p-2.5 bg-stone/5 text-stone/70 border border-stone/15 mt-0.5 shrink-0 rounded-[2px]">
-                            <MapPin size={16} />
-                          </div>
-                          <div>
-                            <span className="text-[10px] font-mono uppercase tracking-wider text-stone/50 block font-semibold">
+                        <div className="pt-3 border-t border-stone/10">
+                          <div className="flex items-center gap-2 mb-1.5">
+                            <div className="p-1.5 bg-stone/5 text-stone/70 border border-stone/15 rounded-[2px]">
+                              <MapPin size={13} className="text-stone/50" />
+                            </div>
+                            <span className="text-[10px] font-mono uppercase tracking-wider text-stone/60 font-semibold">
                               Office Address
                             </span>
-                            <p className="text-sm font-medium text-stone/85 leading-relaxed mt-0.5">
-                              {CANADA_CONTACT.address}
-                            </p>
                           </div>
+                          <p className="text-xs sm:text-sm font-medium text-stone/85 leading-relaxed">
+                            {CANADA_CONTACT.address}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -635,7 +635,7 @@ export default function ContactPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     download="RP-Exotic-Homes-Architectural-Brochure.pdf"
-                    className="inline-flex min-h-11 items-center gap-2 px-5 py-2.5 bg-stone text-light text-xs uppercase tracking-[0.1em] font-semibold hover:bg-gold hover:text-stone transition-all shrink-0"
+                    className="inline-flex min-h-11 items-center justify-center gap-2 px-5 py-2.5 bg-stone text-light text-xs uppercase tracking-[0.1em] font-semibold hover:bg-gold hover:text-stone transition-all w-full sm:w-auto shrink-0"
                   >
                     <Download size={14} /> Download Brochure (PDF)
                   </a>
@@ -643,11 +643,11 @@ export default function ContactPage() {
               </div>
 
               {/* Bottom Reassurance Strip */}
-              <div className="px-6 py-3.5 md:px-8 border-t border-stone/15 bg-stone/5 flex flex-wrap items-center justify-between gap-3 text-[11px] font-mono text-stone/60">
+              <div className="px-4 sm:px-6 py-3.5 md:px-8 border-t border-stone/15 bg-stone/5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[10px] sm:text-[11px] font-mono text-stone/60">
                 <span className="text-gold-text font-semibold uppercase tracking-wider">
                   Factory Direct Procurement • Aerospace Alloy Cladding • Seismic Zone IV Rigidity
                 </span>
-                <span>www.rpexotichomes.com</span>
+                <span className="shrink-0">www.rpexotichomes.com</span>
               </div>
             </div>
           </Reveal>

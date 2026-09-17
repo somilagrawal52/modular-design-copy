@@ -21,7 +21,7 @@ export default function ServicesPage() {
     <div className="bg-light text-stone min-h-screen">
       <SEO
         title="Our Services"
-        description="Explore modular home design, commercial container spaces, and modular amenities built for flexible modern use."
+        description="Explore turnkey luxury space capsules, resort enclaves, and modular living solutions built for flexible modern living and hospitality."
         image={SERVICES_HERO_IMAGE}
       />
       {/* Hero Section */}

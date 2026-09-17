@@ -150,7 +150,7 @@ export default function Footer() {
               <div className="grid grid-cols-2 gap-1.5 pt-0.5 max-w-[200px]">
                 <a
                   href={INDIA_CONTACT.tel}
-                  className="inline-flex items-center justify-center gap-1 py-1.5 px-2 bg-stone text-light text-[10px] font-mono uppercase tracking-wider rounded-[2px] hover:bg-gold hover:text-ink transition-colors shadow-sm"
+                  className="inline-flex items-center justify-center gap-1 py-1.5 px-2 bg-stone text-light text-[10px] font-mono uppercase tracking-wider rounded-[2px] hover:bg-gold hover:text-ink transition-colors shadow-sm whitespace-nowrap"
                 >
                   <Phone size={10} className="text-gold shrink-0" />
                   <span>Call</span>
@@ -159,10 +159,10 @@ export default function Footer() {
                   href={INDIA_CONTACT.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-1 py-1.5 px-2 bg-gold text-ink text-[10px] font-mono uppercase tracking-wider font-semibold rounded-[2px] hover:bg-stone hover:text-light transition-colors shadow-sm font-sans"
+                  className="inline-flex items-center justify-center gap-1 py-1.5 px-2 bg-gold text-ink text-[10px] font-mono uppercase tracking-wider font-semibold rounded-[2px] hover:bg-stone hover:text-light transition-colors shadow-sm font-sans whitespace-nowrap"
                   title="Chat on WhatsApp"
                 >
-                  <MessageCircle size={10} />
+                  <MessageCircle size={10} className="shrink-0" />
                   <span>WhatsApp</span>
                 </a>
               </div>
@@ -191,7 +191,7 @@ export default function Footer() {
               <div className="grid grid-cols-2 gap-1.5 pt-0.5 max-w-[200px]">
                 <a
                   href={CANADA_CONTACT.tel}
-                  className="inline-flex items-center justify-center gap-1 py-1.5 px-2 bg-stone text-light text-[10px] font-mono uppercase tracking-wider rounded-[2px] hover:bg-gold hover:text-ink transition-colors shadow-sm"
+                  className="inline-flex items-center justify-center gap-1 py-1.5 px-2 bg-stone text-light text-[10px] font-mono uppercase tracking-wider rounded-[2px] hover:bg-gold hover:text-ink transition-colors shadow-sm whitespace-nowrap"
                 >
                   <Phone size={10} className="text-gold shrink-0" />
                   <span>Call</span>
@@ -200,10 +200,10 @@ export default function Footer() {
                   href={CANADA_CONTACT.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-1 py-1.5 px-2 bg-gold text-ink text-[10px] font-mono uppercase tracking-wider font-semibold rounded-[2px] hover:bg-stone hover:text-light transition-colors shadow-sm font-sans"
+                  className="inline-flex items-center justify-center gap-1 py-1.5 px-2 bg-gold text-ink text-[10px] font-mono uppercase tracking-wider font-semibold rounded-[2px] hover:bg-stone hover:text-light transition-colors shadow-sm font-sans whitespace-nowrap"
                   title="Chat on WhatsApp"
                 >
-                  <MessageCircle size={10} />
+                  <MessageCircle size={10} className="shrink-0" />
                   <span>WhatsApp</span>
                 </a>
               </div>

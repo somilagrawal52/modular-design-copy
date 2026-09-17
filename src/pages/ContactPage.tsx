@@ -1,6 +1,15 @@
 import { motion } from "motion/react";
 import { FormEvent, useState } from "react";
-import { ArrowRight, Download, Globe, Mail, MapPin, MessageCircle, Phone, ShieldCheck } from "lucide-react";
+import {
+  ArrowRight,
+  Download,
+  Globe,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Phone,
+  ShieldCheck,
+} from "lucide-react";
 import ParallaxElement from "../components/ParallaxElement";
 import ParallaxImage from "../components/ParallaxImage";
 import StaggerText from "../components/StaggerText";
@@ -87,7 +96,9 @@ export default function ContactPage() {
           <ParallaxElement speed={0.02}>
             <Reveal direction="right">
               <div className="flex items-center gap-4 mb-10">
-                <span className="text-gold-text font-mono text-xs font-semibold">04</span>
+                <span className="text-gold-text font-mono text-xs font-semibold">
+                  04
+                </span>
                 <div className="rule-metallic-bronze w-12" />
                 <span className="text-xs uppercase tracking-[0.14em] text-gold-text font-semibold">
                   Inquiries & Advisory
@@ -122,7 +133,8 @@ export default function ContactPage() {
                   Resorts & Destination Developers
                 </h3>
                 <p className="text-xs text-stone/70 font-light leading-relaxed">
-                  Multi-key masterplanning, off-grid energy and water integration, and fixed CAPEX modeling for rapid ROI.
+                  Multi-key masterplanning, off-grid energy and water
+                  integration, and fixed CAPEX modeling for rapid ROI.
                 </p>
               </div>
             </Reveal>
@@ -136,7 +148,8 @@ export default function ContactPage() {
                   Hoteliers & Boutique Operators
                 </h3>
                 <p className="text-xs text-stone/70 font-light leading-relaxed">
-                  Fast 48-hour on-site commissioning, R-32 acoustic isolation (STC 45+), and premium RevPAR performance.
+                  Fast 48-hour on-site commissioning, R-32 acoustic isolation
+                  (STC 45+), and premium RevPAR performance.
                 </p>
               </div>
             </Reveal>
@@ -150,7 +163,8 @@ export default function ContactPage() {
                   Architects & Private Commissioners
                 </h3>
                 <p className="text-xs text-stone/70 font-light leading-relaxed">
-                  Independent micro-pier foundation engineering, site terrain adaptation, and complete BIM/CAD specification packages.
+                  Independent micro-pier foundation engineering, site terrain
+                  adaptation, and complete BIM/CAD specification packages.
                 </p>
               </div>
             </Reveal>
@@ -470,7 +484,10 @@ export default function ContactPage() {
                     <p className="text-gold-text font-semibold flex items-center md:justify-end gap-1.5">
                       <span>✓</span> Direct Executive Consultation
                     </p>
-                    <p className="text-stone/60">Turnkey CAPEX Budgeting • Siting Feasibility • Direct Procurement</p>
+                    <p className="text-stone/60">
+                      Turnkey CAPEX Budgeting • Siting Feasibility • Direct
+                      Procurement
+                    </p>
                   </div>
                 </div>
 
@@ -535,7 +552,7 @@ export default function ContactPage() {
                               <MapPin size={13} className="text-stone/50" />
                             </div>
                             <span className="text-[10px] font-mono uppercase tracking-wider text-stone/60 font-semibold">
-                              Studio Address
+                              Indian Office Address
                             </span>
                           </div>
                           <p className="text-xs sm:text-sm font-medium text-stone/85 leading-relaxed">
@@ -605,7 +622,7 @@ export default function ContactPage() {
                               <MapPin size={13} className="text-stone/50" />
                             </div>
                             <span className="text-[10px] font-mono uppercase tracking-wider text-stone/60 font-semibold">
-                              Office Address
+                              International Office Address
                             </span>
                           </div>
                           <p className="text-xs sm:text-sm font-medium text-stone/85 leading-relaxed">
@@ -627,7 +644,11 @@ export default function ContactPage() {
                       </h4>
                     </div>
                     <p className="text-stone/75 font-light text-xs md:text-sm leading-relaxed">
-                      Whether specifying a single bespoke capsule or master-planning a multi-key eco-resort enclave, our advisory team coordinates factory-controlled manufacturing, custom R-32 thermal packages, and rapid 48-hour plug-and-play crane commissioning.
+                      Whether specifying a single bespoke capsule or
+                      master-planning a multi-key eco-resort enclave, our
+                      advisory team coordinates factory-controlled
+                      manufacturing, custom R-32 thermal packages, and rapid
+                      48-hour plug-and-play crane commissioning.
                     </p>
                   </div>
                   <a
@@ -645,7 +666,8 @@ export default function ContactPage() {
               {/* Bottom Reassurance Strip */}
               <div className="px-4 sm:px-6 py-3.5 md:px-8 border-t border-stone/15 bg-stone/5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[10px] sm:text-[11px] font-mono text-stone/60">
                 <span className="text-gold-text font-semibold uppercase tracking-wider">
-                  Factory Direct Procurement • Aerospace Alloy Cladding • Seismic Zone IV Rigidity
+                  Factory Direct Procurement • Aerospace Alloy Cladding •
+                  Seismic Zone IV Rigidity
                 </span>
                 <span className="shrink-0">www.rpexotichomes.com</span>
               </div>

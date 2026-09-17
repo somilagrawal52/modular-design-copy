@@ -1,11 +1,15 @@
 import { FormEvent, useState } from "react";
 import { motion } from "motion/react";
-import { Send, Phone, MapPin, Mail } from "lucide-react";
+import { Send, Phone, MapPin, Mail, MessageCircle } from "lucide-react";
 import Reveal from "../Reveal";
 import StaggerText from "../StaggerText";
 import ParallaxElement from "../ParallaxElement";
 import Magnetic from "../Magnetic";
-import { INDIA_CONTACT, CANADA_CONTACT, SALES_EMAIL } from "../../config/siteMode";
+import {
+  INDIA_CONTACT,
+  CANADA_CONTACT,
+  SALES_EMAIL,
+} from "../../config/siteMode";
 
 export default function Contact() {
   const [submissionState, setSubmissionState] = useState<
@@ -149,7 +153,9 @@ export default function Contact() {
             <ParallaxElement speed={0.02}>
               <Reveal direction="right">
                 <div className="flex items-center gap-4 mb-10">
-                  <span className="text-gold font-mono text-xs font-semibold">05</span>
+                  <span className="text-gold font-mono text-xs font-semibold">
+                    05
+                  </span>
                   <div className="rule-metallic-bronze w-12" />
                   <span className="text-xs uppercase tracking-[0.14em] text-gold-text font-semibold">
                     Inquiries & Advisory
@@ -164,7 +170,10 @@ export default function Contact() {
                 stagger={0.06}
               />
               <p className="text-base md:text-lg text-stone/75 font-light leading-relaxed mb-10">
-                Whether assessing terrain feasibility for an off-grid resort or procuring turnkey capsule suites for a commercial development, our advisory team provides complete specification, logistics, and CAPEX modeling.
+                Whether assessing terrain feasibility for an off-grid resort or
+                procuring turnkey capsule suites for a commercial development,
+                our advisory team provides complete specification, logistics,
+                and CAPEX modeling.
               </p>
 
               {/* Advisory Pillars */}
@@ -172,22 +181,37 @@ export default function Contact() {
                 <div className="flex items-start gap-4">
                   <div className="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0" />
                   <div>
-                    <h4 className="text-xs uppercase tracking-[0.1em] text-stone font-semibold">1. Siting & Feasibility Assessment</h4>
-                    <p className="text-xs text-stone/70 font-light mt-0.5">Topography, micro-pier foundations, off-grid utilities, and crane placement logistics.</p>
+                    <h4 className="text-xs uppercase tracking-[0.1em] text-stone font-semibold">
+                      1. Siting & Feasibility Assessment
+                    </h4>
+                    <p className="text-xs text-stone/70 font-light mt-0.5">
+                      Topography, micro-pier foundations, off-grid utilities,
+                      and crane placement logistics.
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0" />
                   <div>
-                    <h4 className="text-xs uppercase tracking-[0.1em] text-stone font-semibold">2. Model Selection & Configuration</h4>
-                    <p className="text-xs text-stone/70 font-light mt-0.5">E3, E8, A50 envelope sizing, R-32 thermal rating, and turnkey bespoke interior palettes.</p>
+                    <h4 className="text-xs uppercase tracking-[0.1em] text-stone font-semibold">
+                      2. Model Selection & Configuration
+                    </h4>
+                    <p className="text-xs text-stone/70 font-light mt-0.5">
+                      E3, E8, A50 envelope sizing, R-32 thermal rating, and
+                      turnkey bespoke interior palettes.
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0" />
                   <div>
-                    <h4 className="text-xs uppercase tracking-[0.1em] text-stone font-semibold">3. Turnkey CAPEX & Commissioning</h4>
-                    <p className="text-xs text-stone/70 font-light mt-0.5">Transparent fixed manufacturing pricing and 48-hour on-site plug-and-play commissioning.</p>
+                    <h4 className="text-xs uppercase tracking-[0.1em] text-stone font-semibold">
+                      3. Turnkey CAPEX & Commissioning
+                    </h4>
+                    <p className="text-xs text-stone/70 font-light mt-0.5">
+                      Transparent fixed manufacturing pricing and 48-hour
+                      on-site plug-and-play commissioning.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -207,51 +231,6 @@ export default function Contact() {
                   <span className="block text-[11px] font-mono text-stone/50 mt-1.5">
                     Response SLA: Guaranteed within 24 business hours
                   </span>
-                </div>
-
-                {/* Two Studio Offices & Contact Lines */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Jaipur, India */}
-                  <div className="p-4 bg-stone/[0.03] border border-stone/15 rounded-[2px] space-y-2">
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-stone/70 font-semibold block mb-1">
-                      Jaipur, India
-                    </span>
-                    <p className="text-sm font-semibold text-stone">
-                      {INDIA_CONTACT.name}
-                    </p>
-                    <a
-                      href={INDIA_CONTACT.tel}
-                      className="text-xs font-semibold text-stone hover:text-gold transition-colors font-mono flex items-center gap-1.5"
-                    >
-                      <Phone size={12} className="text-gold shrink-0" />
-                      <span>{INDIA_CONTACT.phone}</span>
-                    </a>
-                    <p className="text-[11px] text-stone/65 font-light leading-relaxed flex items-start gap-1 pt-0.5">
-                      <MapPin size={11} className="text-stone/40 mt-0.5 shrink-0" />
-                      <span>{INDIA_CONTACT.address}</span>
-                    </p>
-                  </div>
-
-                  {/* Bowmanville, Canada */}
-                  <div className="p-4 bg-stone/[0.03] border border-stone/15 rounded-[2px] space-y-2">
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-stone/70 font-semibold block mb-1">
-                      Bowmanville, Canada
-                    </span>
-                    <p className="text-sm font-semibold text-stone">
-                      {CANADA_CONTACT.name}
-                    </p>
-                    <a
-                      href={CANADA_CONTACT.tel}
-                      className="text-xs font-semibold text-stone hover:text-gold transition-colors font-mono flex items-center gap-1.5"
-                    >
-                      <Phone size={12} className="text-gold shrink-0" />
-                      <span>{CANADA_CONTACT.phone}</span>
-                    </a>
-                    <p className="text-[11px] text-stone/65 font-light leading-relaxed flex items-start gap-1 pt-0.5">
-                      <MapPin size={11} className="text-stone/40 mt-0.5 shrink-0" />
-                      <span>{CANADA_CONTACT.address}</span>
-                    </p>
-                  </div>
                 </div>
               </div>
             </ParallaxElement>
@@ -384,7 +363,10 @@ export default function Contact() {
                         >
                           Commercial Space
                         </option>
-                        <option value="Workplace" className="bg-light text-stone">
+                        <option
+                          value="Workplace"
+                          className="bg-light text-stone"
+                        >
                           Workplace
                         </option>
                         <option

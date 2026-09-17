@@ -20,6 +20,7 @@ export const INDIA_CONTACT = {
   name: 'Rishi Pal Singh',
   phone: '+91 98290 50002',
   tel: 'tel:+919829050002',
+  whatsapp: 'https://wa.me/919829050002?text=Hello%20Rishi%20Pal%20Singh%2C%20I%20would%20like%20to%20inquire%20about%20RP%20Exotic%20Homes%20modular%20capsule%20architecture.',
   address: 'R55 NRI Colony, Jaipur, Rajasthan, India',
   hours: 'Monday – Saturday • 9:00 AM – 7:00 PM IST',
 };
@@ -31,6 +32,7 @@ export const CANADA_CONTACT = {
   name: 'Praveer Singh',
   phone: '+1 (416) 948-2577',
   tel: 'tel:+14169482577',
+  whatsapp: 'https://wa.me/14169482577?text=Hello%20Praveer%20Singh%2C%20I%20would%20like%20to%20inquire%20about%20RP%20Exotic%20Homes%20modular%20capsule%20architecture.',
   address: '215 Port Darlington Rd, Bowmanville, ON, Canada',
   hours: 'Monday – Friday • 9:00 AM – 6:00 PM EST',
 };

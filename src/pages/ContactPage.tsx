@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { FormEvent, useState } from "react";
-import { ArrowRight, Download, Globe, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
+import { ArrowRight, Download, Globe, Mail, MapPin, MessageCircle, Phone, ShieldCheck } from "lucide-react";
 import ParallaxElement from "../components/ParallaxElement";
 import ParallaxImage from "../components/ParallaxImage";
 import StaggerText from "../components/StaggerText";
@@ -489,22 +489,41 @@ export default function ContactPage() {
                         {INDIA_CONTACT.name}
                       </h3>
 
-                      <div className="space-y-4 pt-4 border-t border-stone/15">
+                      <div className="space-y-5 pt-4 border-t border-stone/15">
                         <div className="flex items-start gap-3.5">
                           <div className="p-2.5 bg-stone/5 text-stone/70 border border-stone/15 mt-0.5 shrink-0 rounded-[2px]">
                             <Phone size={16} />
                           </div>
-                          <div>
-                            <span className="text-[10px] font-mono uppercase tracking-wider text-stone/50 block font-semibold">
-                              Telephone
+                          <div className="flex-1">
+                            <span className="text-[10px] font-mono uppercase tracking-wider text-stone/50 block font-semibold mb-1">
+                              Direct Line & WhatsApp
                             </span>
-                            <a
-                              href={INDIA_CONTACT.tel}
-                              className="text-lg md:text-xl font-semibold text-stone hover:text-gold transition-colors font-mono block mt-0.5"
-                            >
+                            <div className="text-lg md:text-xl font-semibold font-mono text-stone mb-3">
                               {INDIA_CONTACT.phone}
-                            </a>
-                            <span className="text-[11px] text-stone/60 block font-light mt-0.5">
+                            </div>
+
+                            {/* Option 1 Dual-Action Architectural Buttons */}
+                            <div className="grid grid-cols-2 gap-2.5 max-w-md mb-2">
+                              <a
+                                href={INDIA_CONTACT.tel}
+                                className="inline-flex items-center justify-center gap-2 py-2.5 px-3.5 bg-stone text-light text-xs font-semibold uppercase tracking-[0.08em] rounded-[2px] shadow-sm hover:bg-gold hover:text-ink transition-all duration-300"
+                              >
+                                <Phone size={13} />
+                                <span>Call Direct</span>
+                              </a>
+                              <a
+                                href={INDIA_CONTACT.whatsapp}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center gap-2 py-2.5 px-3.5 bg-gold text-ink text-xs font-semibold uppercase tracking-[0.08em] rounded-[2px] shadow-sm hover:bg-stone hover:text-light transition-all duration-300 font-sans"
+                                title="Chat on WhatsApp"
+                              >
+                                <MessageCircle size={13} />
+                                <span>WhatsApp</span>
+                              </a>
+                            </div>
+
+                            <span className="text-[11px] text-stone/60 block font-light mt-1">
                               {INDIA_CONTACT.hours}
                             </span>
                           </div>
@@ -540,22 +559,41 @@ export default function ContactPage() {
                         {CANADA_CONTACT.name}
                       </h3>
 
-                      <div className="space-y-4 pt-4 border-t border-stone/15">
+                      <div className="space-y-5 pt-4 border-t border-stone/15">
                         <div className="flex items-start gap-3.5">
                           <div className="p-2.5 bg-stone/5 text-stone/70 border border-stone/15 mt-0.5 shrink-0 rounded-[2px]">
                             <Phone size={16} />
                           </div>
-                          <div>
-                            <span className="text-[10px] font-mono uppercase tracking-wider text-stone/50 block font-semibold">
-                              Telephone
+                          <div className="flex-1">
+                            <span className="text-[10px] font-mono uppercase tracking-wider text-stone/50 block font-semibold mb-1">
+                              Direct Line & WhatsApp
                             </span>
-                            <a
-                              href={CANADA_CONTACT.tel}
-                              className="text-lg md:text-xl font-semibold text-stone hover:text-gold transition-colors font-mono block mt-0.5"
-                            >
+                            <div className="text-lg md:text-xl font-semibold font-mono text-stone mb-3">
                               {CANADA_CONTACT.phone}
-                            </a>
-                            <span className="text-[11px] text-stone/60 block font-light mt-0.5">
+                            </div>
+
+                            {/* Option 1 Dual-Action Architectural Buttons */}
+                            <div className="grid grid-cols-2 gap-2.5 max-w-md mb-2">
+                              <a
+                                href={CANADA_CONTACT.tel}
+                                className="inline-flex items-center justify-center gap-2 py-2.5 px-3.5 bg-stone text-light text-xs font-semibold uppercase tracking-[0.08em] rounded-[2px] shadow-sm hover:bg-gold hover:text-ink transition-all duration-300"
+                              >
+                                <Phone size={13} />
+                                <span>Call Direct</span>
+                              </a>
+                              <a
+                                href={CANADA_CONTACT.whatsapp}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center gap-2 py-2.5 px-3.5 bg-gold text-ink text-xs font-semibold uppercase tracking-[0.08em] rounded-[2px] shadow-sm hover:bg-stone hover:text-light transition-all duration-300 font-sans"
+                                title="Chat on WhatsApp"
+                              >
+                                <MessageCircle size={13} />
+                                <span>WhatsApp</span>
+                              </a>
+                            </div>
+
+                            <span className="text-[11px] text-stone/60 block font-light mt-1">
                               {CANADA_CONTACT.hours}
                             </span>
                           </div>

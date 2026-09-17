@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, Phone, Mail } from "lucide-react";
+import { Menu, X, Phone, Mail, MessageCircle } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Magnetic from "./Magnetic";
@@ -197,21 +197,57 @@ export default function Navbar() {
               className="mt-8 flex flex-col items-center gap-4 w-full max-w-xs text-center"
             >
               <div className="w-12 h-[1px] bg-gold/40" />
-              <div className="flex flex-col gap-2 w-full">
-                <a
-                  href={INDIA_CONTACT.tel}
-                  onClick={() => setIsOpen(false)}
-                  className="inline-flex items-center justify-center gap-2 py-2 px-3 border border-stone/20 text-stone text-xs font-mono tracking-wider hover:border-gold hover:text-gold transition-colors rounded-[2px]"
-                >
-                  <Phone size={12} className="text-gold" /> {INDIA_CONTACT.phone} (India)
-                </a>
-                <a
-                  href={CANADA_CONTACT.tel}
-                  onClick={() => setIsOpen(false)}
-                  className="inline-flex items-center justify-center gap-2 py-2 px-3 border border-stone/20 text-stone text-xs font-mono tracking-wider hover:border-gold hover:text-gold transition-colors rounded-[2px]"
-                >
-                  <Phone size={12} className="text-gold" /> {CANADA_CONTACT.phone} (Canada)
-                </a>
+              <div className="flex flex-col gap-2.5 w-full">
+                {/* India Actions */}
+                <div className="w-full text-left space-y-1">
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-stone/60 font-semibold block">
+                    Jaipur: {INDIA_CONTACT.phone}
+                  </span>
+                  <div className="grid grid-cols-2 gap-2 w-full">
+                    <a
+                      href={INDIA_CONTACT.tel}
+                      onClick={() => setIsOpen(false)}
+                      className="inline-flex items-center justify-center gap-1.5 py-2 px-2 bg-stone text-light text-[11px] font-mono hover:bg-gold hover:text-ink transition-colors rounded-[2px]"
+                    >
+                      <Phone size={11} className="text-gold" /> Call Direct
+                    </a>
+                    <a
+                      href={INDIA_CONTACT.whatsapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsOpen(false)}
+                      className="inline-flex items-center justify-center gap-1.5 py-2 px-2 bg-gold text-ink text-[11px] font-mono hover:bg-stone hover:text-light transition-colors rounded-[2px]"
+                    >
+                      <MessageCircle size={11} /> WhatsApp
+                    </a>
+                  </div>
+                </div>
+
+                {/* Canada Actions */}
+                <div className="w-full text-left space-y-1">
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-stone/60 font-semibold block">
+                    Bowmanville: {CANADA_CONTACT.phone}
+                  </span>
+                  <div className="grid grid-cols-2 gap-2 w-full">
+                    <a
+                      href={CANADA_CONTACT.tel}
+                      onClick={() => setIsOpen(false)}
+                      className="inline-flex items-center justify-center gap-1.5 py-2 px-2 bg-stone text-light text-[11px] font-mono hover:bg-gold hover:text-ink transition-colors rounded-[2px]"
+                    >
+                      <Phone size={11} className="text-gold" /> Call Direct
+                    </a>
+                    <a
+                      href={CANADA_CONTACT.whatsapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsOpen(false)}
+                      className="inline-flex items-center justify-center gap-1.5 py-2 px-2 bg-gold text-ink text-[11px] font-mono hover:bg-stone hover:text-light transition-colors rounded-[2px]"
+                    >
+                      <MessageCircle size={11} /> WhatsApp
+                    </a>
+                  </div>
+                </div>
+
                 <a
                   href={`mailto:${SALES_EMAIL}`}
                   onClick={() => setIsOpen(false)}

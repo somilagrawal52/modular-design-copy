@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, Download, Phone, Mail, MapPin } from 'lucide-react';
+import { ArrowUpRight, Download, Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 import Reveal from './Reveal';
 import { INDIA_CONTACT, CANADA_CONTACT, SALES_EMAIL, SITE_STUDIO_NAME } from '../config/siteMode';
 
@@ -144,18 +144,33 @@ export default function Footer() {
               <p className="text-sm font-semibold text-stone">
                 {INDIA_CONTACT.name}
               </p>
-              <a
-                href={INDIA_CONTACT.tel}
-                className="inline-flex items-center gap-2 text-sm font-semibold font-mono text-stone hover:text-gold transition-colors"
-              >
-                <Phone size={13} className="text-gold shrink-0" />
-                <span>{INDIA_CONTACT.phone}</span>
-              </a>
+              <div className="text-xs font-semibold font-mono text-stone">
+                {INDIA_CONTACT.phone}
+              </div>
+              <div className="grid grid-cols-2 gap-1.5 pt-0.5 max-w-[200px]">
+                <a
+                  href={INDIA_CONTACT.tel}
+                  className="inline-flex items-center justify-center gap-1 py-1.5 px-2 bg-stone text-light text-[10px] font-mono uppercase tracking-wider rounded-[2px] hover:bg-gold hover:text-ink transition-colors shadow-sm"
+                >
+                  <Phone size={10} className="text-gold shrink-0" />
+                  <span>Call</span>
+                </a>
+                <a
+                  href={INDIA_CONTACT.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-1 py-1.5 px-2 bg-gold text-ink text-[10px] font-mono uppercase tracking-wider font-semibold rounded-[2px] hover:bg-stone hover:text-light transition-colors shadow-sm font-sans"
+                  title="Chat on WhatsApp"
+                >
+                  <MessageCircle size={10} />
+                  <span>WhatsApp</span>
+                </a>
+              </div>
               <div className="flex items-start gap-2 pt-1 text-xs text-stone/65 font-light leading-relaxed">
                 <MapPin size={13} className="text-stone/40 mt-0.5 shrink-0" />
                 <span>{INDIA_CONTACT.address}</span>
               </div>
-              <p className="text-[11px] font-mono text-stone/50 pt-1">
+              <p className="text-[11px] font-mono text-stone/50 pt-0.5">
                 {INDIA_CONTACT.hours}
               </p>
             </div>
@@ -170,18 +185,33 @@ export default function Footer() {
               <p className="text-sm font-semibold text-stone">
                 {CANADA_CONTACT.name}
               </p>
-              <a
-                href={CANADA_CONTACT.tel}
-                className="inline-flex items-center gap-2 text-sm font-semibold font-mono text-stone hover:text-gold transition-colors"
-              >
-                <Phone size={13} className="text-gold shrink-0" />
-                <span>{CANADA_CONTACT.phone}</span>
-              </a>
+              <div className="text-xs font-semibold font-mono text-stone">
+                {CANADA_CONTACT.phone}
+              </div>
+              <div className="grid grid-cols-2 gap-1.5 pt-0.5 max-w-[200px]">
+                <a
+                  href={CANADA_CONTACT.tel}
+                  className="inline-flex items-center justify-center gap-1 py-1.5 px-2 bg-stone text-light text-[10px] font-mono uppercase tracking-wider rounded-[2px] hover:bg-gold hover:text-ink transition-colors shadow-sm"
+                >
+                  <Phone size={10} className="text-gold shrink-0" />
+                  <span>Call</span>
+                </a>
+                <a
+                  href={CANADA_CONTACT.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-1 py-1.5 px-2 bg-gold text-ink text-[10px] font-mono uppercase tracking-wider font-semibold rounded-[2px] hover:bg-stone hover:text-light transition-colors shadow-sm font-sans"
+                  title="Chat on WhatsApp"
+                >
+                  <MessageCircle size={10} />
+                  <span>WhatsApp</span>
+                </a>
+              </div>
               <div className="flex items-start gap-2 pt-1 text-xs text-stone/65 font-light leading-relaxed">
                 <MapPin size={13} className="text-stone/40 mt-0.5 shrink-0" />
                 <span>{CANADA_CONTACT.address}</span>
               </div>
-              <p className="text-[11px] font-mono text-stone/50 pt-1">
+              <p className="text-[11px] font-mono text-stone/50 pt-0.5">
                 {CANADA_CONTACT.hours}
               </p>
             </div>

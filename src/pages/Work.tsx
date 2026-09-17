@@ -73,15 +73,15 @@ const orderProjectsForPortfolio = (projects: typeof PROJECTS) =>
     return Number(second.year) - Number(first.year);
   });
 
-function WorkProjectCard({
-  project,
-  index,
-  onInspect,
-}: {
+const WorkProjectCard: React.FC<{
   project: (typeof PROJECTS)[number];
   index: number;
   onInspect: (project: (typeof PROJECTS)[number]) => void;
-}) {
+}> = ({
+  project,
+  index,
+  onInspect,
+}) => {
   const modelSystem = project.technicalSpecs?.[0]?.value ?? "Modular Capsule";
 
   return (

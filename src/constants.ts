@@ -189,7 +189,7 @@ export const PROJECTS: Project[] = [
       { label: 'Foundation', value: 'Independent Pier Supports (Zero tree-root disturbance)' }
     ],
     details: [{ label: 'Type', value: 'Forest Capsule Hospitality' }, { label: 'Region', value: 'Coorg, Karnataka, India' }, { label: 'Status', value: 'Concept Study' }],
-    gallery: ['/images/modular-capsule-forest-retreat-hero-v2.png', '/images/modular-capsule-forest-retreat-interior-v2.png', '/images/modular-capsule-forest-retreat-installation-v2.png'],
+    gallery: ['/images/modular-capsule-forest-retreat-hero-v2.png', '/images/modular-capsule-forest-retreat-lifestyle-interior.png', '/images/modular-capsule-forest-retreat-installation-v2.png'],
     scaleMetrics: {
       footprint: '38 m² (409 sq.ft)',
       clearHeight: '2.70 m (8\' 10")',
@@ -211,7 +211,7 @@ export const PROJECTS: Project[] = [
       { label: 'Foundation', value: 'Raised Pier Pads (Sand and wind scour resistant)' }
     ],
     details: [{ label: 'Type', value: 'Desert Capsule Hospitality' }, { label: 'Region', value: 'Jaisalmer, Rajasthan, India' }, { label: 'Status', value: 'Concept Study' }],
-    gallery: ['/images/modular-capsule-desert-retreat-hero.png', '/images/modular-capsule-desert-retreat-interior.png', '/images/modular-capsule-desert-retreat-installation.png'],
+    gallery: ['/images/modular-capsule-desert-retreat-hero.png', '/images/modular-capsule-desert-retreat-lifestyle-interior.png', '/images/modular-capsule-desert-retreat-installation.png'],
     scaleMetrics: {
       footprint: '28 m² (301 sq.ft)',
       clearHeight: '2.65 m (8\' 8")',
@@ -255,7 +255,7 @@ export const PROJECTS: Project[] = [
       { label: 'Foundation', value: 'Independent Pier Supports (Protects tea plantation contours)' }
     ],
     details: [{ label: 'Type', value: 'Tea Estate Capsule Hospitality' }, { label: 'Region', value: 'Munnar, Kerala, India' }, { label: 'Status', value: 'Concept Study' }],
-    gallery: ['/images/modular-capsule-tea-estate-retreat-hero-v2.png', '/images/modular-capsule-tea-estate-retreat-interior-v2.png', '/images/modular-capsule-tea-estate-retreat-installation-v2.png'],
+    gallery: ['/images/modular-capsule-tea-estate-retreat-hero-v2.png', '/images/modular-capsule-tea-estate-lifestyle-interior.png', '/images/modular-capsule-tea-estate-retreat-installation-v2.png'],
     scaleMetrics: {
       footprint: '38 m² (409 sq.ft)',
       clearHeight: '2.70 m (8\' 10")',
@@ -326,7 +326,7 @@ export const PROJECTS: Project[] = [
     materiality: 'White E8-style shells, panoramic black-framed glazing, oak work surfaces, acoustic lining, simple dark steel, and a timber courtyard deck create a durable, productive setting.',
     technicalSpecs: [{ label: 'Capsule System', value: 'E8 Panoramic Capsule' }, { label: 'Workplace', value: 'Desks + Meeting Rooms' }, { label: 'Growth', value: 'Plug-in Module Expansion' }],
     details: [{ label: 'Type', value: 'Capsule Co-working Studio' }, { label: 'Region', value: 'India' }, { label: 'Status', value: 'Concept Study' }],
-    gallery: ['/images/modular-capsule-coworking-studio-hero-v2.png', '/images/modular-capsule-coworking-studio-interior-v2.png', '/images/modular-capsule-coworking-studio-installation-v2.png']
+    gallery: ['/images/modular-capsule-coworking-studio-hero-v2.png', '/images/modular-capsule-coworking-lifestyle-interior.png', '/images/modular-capsule-coworking-studio-installation-v2.png']
   },
   {
     id: 'modular-capsule-wellness-pavilion', title: 'Modular Capsule Wellness Pavilion', category: 'Amenities', location: 'India', year: '2026', image: '/images/modular-capsule-wellness-pavilion-hero-v2.png',

@@ -1,13 +1,18 @@
 import { Link } from "react-router-dom";
 import {
+  Anchor,
   ArrowUpRight,
+  CheckCircle2,
   Clock3,
   Factory,
   Layers3,
   Leaf,
   Recycle,
+  ShieldCheck,
   Snowflake,
   Sun,
+  Truck,
+  Zap,
 } from "lucide-react";
 import CinematicSection from "../components/CinematicSection";
 import ParallaxImage from "../components/ParallaxImage";
@@ -22,6 +27,60 @@ interface AnatomyLayer {
   guestBenefit: string;
   developerBenefit: string;
 }
+
+const engineeringWarranties = [
+  {
+    icon: ShieldCheck,
+    badge: "50-YEAR STRUCTURAL FRAME",
+    title: "Galvanized Steel Exoskeleton",
+    spec: "Aviation-grade hot-dip galvanized steel structural space-frame engineered for zero structural fatigue, corrosion immunity, and a certified 50+ year asset life.",
+  },
+  {
+    icon: Snowflake,
+    badge: "15-YEAR WEATHERPROOF ENVELOPE",
+    title: "Fluorocarbon Alloy Shell",
+    spec: "Marine-certified fluorocarbon baked finish with continuous monolithic weather-resistive barrier, providing complete wind-driven rain and UV degradation immunity.",
+  },
+  {
+    icon: Zap,
+    badge: "SEISMIC ZONE IV & 180 KM/H WIND",
+    title: "Typhoon & Earthquake Resilience",
+    spec: "Rigid three-dimensional structural space-cage tested to withstand Class 12 typhoon wind velocities (180 km/h) and severe seismic ground movements.",
+  },
+  {
+    icon: Clock3,
+    badge: "48-HOUR COMMISSIONING",
+    title: "Turnkey Plug-and-Play MEPS",
+    spec: "Factory pre-commissioned inverter HVAC, pressurized sanitary pods, and quick-connect electrical harnesses allow complete operational handover in 48 hours.",
+  },
+];
+
+const logisticsRoadmap = [
+  {
+    step: "01",
+    phase: "Phase 1: 60–90 Days",
+    title: "Controlled Factory Fabrication",
+    desc: "Every capsule is manufactured in an aerospace-grade off-site facility. Structure, R-32 insulation, electrical harness, and luxury bathroom pods are completed in parallel, cutting conventional construction time by up to 70% with 78% less waste.",
+  },
+  {
+    step: "02",
+    phase: "Phase 2: Global Transit",
+    title: "Flat-Rack Maritime Logistics",
+    desc: "Engineered to fit standard 40ft Flat-Rack shipping containers. Units are moisture-sealed, shock-monitored, and transported seamlessly across maritime trade routes and regional flatbed carriers to any port worldwide.",
+  },
+  {
+    step: "03",
+    phase: "Phase 3: Day 1 Siting",
+    title: "Zero-Excavation Micro-Pier Siting",
+    desc: "Lightweight helical screw piles or concrete micro-piers are installed without destructive hillside terracing or heavy earthmoving machinery. A single mobile crane lifts each capsule into position in under 45 minutes.",
+  },
+  {
+    step: "04",
+    phase: "Phase 4: Day 2 Turnover",
+    title: "48-Hour Plug-and-Play Turnover",
+    desc: "Pre-routed quick-connect utility sleeves mate with site power, potable water, and wastewater lines. After air-balancing and smart automation calibration, the keys are handed over for immediate guest check-ins.",
+  },
+];
 
 const anatomyLayers: AnatomyLayer[] = [
   {
@@ -332,6 +391,65 @@ export default function SystemPage() {
         </div>
       </CinematicSection>
 
+      {/* Engineering Warranties & Resilience Trust Strip */}
+      <CinematicSection
+        parallax={false}
+        overlay={false}
+        className="bg-light-secondary text-stone border-b border-stone/15 py-12 md:py-16"
+      >
+        <div className="site-container">
+          <Reveal direction="up" className="max-w-3xl mb-10 md:mb-12">
+            <div className="flex items-center gap-4 mb-4">
+              <span className="font-mono text-xs text-gold">STRUCTURAL ASSURANCES</span>
+              <div className="h-px w-12 bg-gold" />
+              <span className="text-xs font-semibold uppercase tracking-[0.1em] text-stone/65">
+                Engineering durability & warranties
+              </span>
+            </div>
+            <h2 className="type-section text-stone">
+              Certified durability. Guaranteed asset longevity.
+            </h2>
+            <p className="mt-4 text-base text-stone/75 font-light leading-relaxed">
+              Engineered to aerospace and luxury marine standards. Every module is protected by verified structural, envelope, and mechanical warranties designed for commercial institutional investment.
+            </p>
+          </Reveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {engineeringWarranties.map(({ icon: Icon, badge, title, spec }, idx) => (
+              <Reveal key={badge} direction="up" delay={idx * 0.08}>
+                <div className="bg-light p-6 md:p-7 border border-stone/15 rounded-[2px] h-full flex flex-col justify-between shadow-sm relative group hover:border-gold/60 transition-colors duration-300">
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <div className="w-10 h-10 rounded-[2px] bg-stone/5 flex items-center justify-center text-gold-text">
+                        <Icon size={20} />
+                      </div>
+                      <span className="font-mono text-[10px] text-stone/40 font-semibold">
+                        0{idx + 1}
+                      </span>
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-gold-text block mb-1">
+                        {badge}
+                      </span>
+                      <h3 className="text-base font-semibold text-stone">
+                        {title}
+                      </h3>
+                    </div>
+                    <div className="rule-metallic-bronze" />
+                    <p className="text-xs leading-relaxed text-stone/75 font-light">
+                      {spec}
+                    </p>
+                  </div>
+                  <div className="pt-4 mt-4 border-t border-stone/10 flex items-center gap-2 text-[10px] font-mono text-stone/60">
+                    <CheckCircle2 size={12} className="text-gold" /> Certified Architectural Standard
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </CinematicSection>
+
       <CinematicSection
         parallax={false}
         overlay={false}
@@ -630,6 +748,51 @@ export default function SystemPage() {
               </p>
             </div>
           </div>
+
+          {/* Turnkey Logistics & Siting Roadmap */}
+          <div className="mt-20 md:mt-28 border-t border-stone/20 pt-16">
+            <Reveal direction="up" className="max-w-3xl mb-12">
+              <div className="flex items-center gap-4 mb-4">
+                <span className="font-mono text-xs text-gold">DEPLOYMENT ROADMAP</span>
+                <div className="h-px w-12 bg-gold" />
+                <span className="text-xs font-semibold uppercase tracking-[0.1em] text-stone/65">
+                  Turnkey logistics & siting
+                </span>
+              </div>
+              <h2 className="type-section text-stone">
+                From off-site fabrication to 48-hour guest turnover.
+              </h2>
+              <p className="mt-4 text-base text-stone/75 font-light leading-relaxed">
+                By eliminating on-site masonry, wet trades, and multi-month contractor delays, our 4-phase turnkey logistics framework delivers rapid project execution with zero landscape destruction.
+              </p>
+            </Reveal>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {logisticsRoadmap.map(({ step, phase, title, desc }, idx) => (
+                <Reveal key={step} direction="up" delay={idx * 0.08}>
+                  <div className="bg-stone/5 p-6 md:p-7 border border-stone/15 rounded-[2px] h-full flex flex-col justify-between relative group hover:border-gold/60 transition-colors duration-300">
+                    <div className="space-y-4">
+                      <div className="flex items-baseline justify-between border-b border-stone/15 pb-3">
+                        <span className="font-mono text-2xl font-semibold text-gold-text">
+                          {step}
+                        </span>
+                        <span className="text-[10px] font-mono uppercase tracking-wider text-stone/60 font-semibold">
+                          {phase}
+                        </span>
+                      </div>
+                      <h3 className="text-base font-semibold text-stone">
+                        {title}
+                      </h3>
+                      <p className="text-xs leading-relaxed text-stone/75 font-light">
+                        {desc}
+                      </p>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+
           <Reveal direction="up" className="mt-14 text-center md:mt-20">
             <span className="eyebrow text-gold-text">
               Technical information by model

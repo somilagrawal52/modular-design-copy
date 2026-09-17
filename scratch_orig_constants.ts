@@ -97,21 +97,13 @@ export const PROJECTS: Project[] = [
       { label: 'Foundation', value: 'Screw-pile Supports (Reversible terrain interface)' }
     ],
     details: [{ label: 'Type', value: 'Mountain Capsule Hospitality' }, { label: 'Location', value: 'Himalayan Ridge, India' }, { label: 'Status', value: 'Concept Ready' }],
-    gallery: ['/images/capsule-mountain-suite-panorama.png', '/images/capsule-mountain-suite-terrace.png', '/images/capsule-mountain-suite-interior.png'],
+    gallery: ['/images/capsule-mountain-suite-panorama.png', '/images/capsule-mountain-suite-terrace.png', '/images/capsule-mountain-suite-interior.jpeg'],
     scaleMetrics: {
       footprint: '42 m² (452 sq.ft)',
       clearHeight: '2.75 m (9\' 0")',
       capacity: '2–4 Guests',
       glazingArc: 'Faceted 270° Mountain Horizon',
       dimensions: '12.00 m (L) × 3.50 m (W) × 3.25 m (H)'
-    },
-    diurnalExperience: {
-      dayImage: '/images/capsule-mountain-suite-panorama.png',
-      nightImage: '/images/capsule-mountain-suite-terrace.png',
-      dayTitle: 'Daylight Horizon Clarity & Triple Low-E Thermal Calm',
-      dayDescription: 'Faceted 270° triple Low-E glazing eliminates winter draft and window condensation, framing snow-covered Himalayan peaks in crisp natural daylight.',
-      nightTitle: 'Alpine Peak Nocturnal Lantern & Cantilever Stargazing',
-      nightDescription: 'At twilight, warm 2700K interior lighting illuminates the mountain suite and cantilevered viewing deck, glowing against high-altitude snow and starlit alpine peaks.'
     }
   },
   {
@@ -127,7 +119,7 @@ export const PROJECTS: Project[] = [
       { label: 'Foundation', value: 'Compact Pad Foundations' }
     ],
     details: [{ label: 'Type', value: 'Garden Modular Residence' }, { label: 'Location', value: 'Site-specific' }, { label: 'Status', value: 'Concept Ready' }],
-    gallery: ['/images/capsule-rounded-garden-suite-hero.jpeg', '/images/capsule-rounded-garden-suite-terrace.png', '/images/capsule-rounded-garden-suite-interior.png'],
+    gallery: ['/images/capsule-rounded-garden-suite-hero.jpeg', '/images/capsule-rounded-garden-suite-exterior.png', '/images/capsule-rounded-garden-suite-interior.png'],
     scaleMetrics: {
       footprint: '34 m² (366 sq.ft)',
       clearHeight: '2.65 m (8\' 8")',
@@ -398,7 +390,7 @@ export const PROJECTS: Project[] = [
   { id: 'darjeeling-tea-cafe', title: 'Darjeeling Tea Café', category: 'Commercial', location: 'Darjeeling, India', year: '2026', image: '/images/darjeeling-tea-cafe.png', description: 'A compact modular tea café with warm timber interiors and misty hillside views.', details: [{ label: 'Type', value: 'Café Module' }, { label: 'Status', value: 'Reference Proposal' }], gallery: ['/images/darjeeling-tea-cafe.png', '/images/darjeeling-tea-cafe-interior.png', '/images/darjeeling-tea-cafe-terrace.png'] },
   { id: 'darjeeling-tea-pavilion', title: 'Darjeeling Tea Pavilion', category: 'Hospitality', location: 'Darjeeling, India', year: '2026', image: '/images/darjeeling-tea-pavilion.png', description: 'A compact modular tea pavilion with one guest suite, framed by misty hillside views.', details: [{ label: 'Type', value: 'Tea Pavilion' }, { label: 'Status', value: 'Reference Proposal' }], gallery: ['/images/darjeeling-tea-pavilion.png', '/images/darjeeling-tea-pavilion-gallery.png', '/images/darjeeling-tea-pavilion-detail.png'] },
   { id: 'manali-mountain-cafe', title: 'Manali Mountain Café', category: 'Commercial', location: 'Manali, Himachal Pradesh, India', year: '2026', image: '/images/manali-mountain-cafe.png', description: 'A compact modular café with warm interiors and panoramic mountain views.', details: [{ label: 'Type', value: 'Café Module' }, { label: 'Status', value: 'Reference Proposal' }], gallery: ['/images/manali-mountain-cafe.png', '/images/manali-mountain-cafe-gallery.png', '/images/manali-mountain-cafe-detail.png'] },
-  { id: 'modular-gym', title: 'Modular Gym', category: 'Amenities', location: 'Site-specific', year: '2026', image: '/images/modular-gym-exterior.png', description: 'A practical prefabricated fitness studio for communities, hotels, and workplaces.', details: [{ label: 'Type', value: 'Fitness' }, { label: 'Status', value: 'Concept Study' }], gallery: ['/images/modular-gym-exterior.png', '/images/modular-gym-interior.png', '/images/modular-gym-deck.png'] },
+  { id: 'modular-gym', title: 'Modular Gym', category: 'Amenities', location: 'Site-specific', year: '2026', image: '/images/modular-gym.jpg', description: 'A practical prefabricated fitness studio for communities, hotels, and workplaces.', details: [{ label: 'Type', value: 'Fitness' }, { label: 'Status', value: 'Concept Study' }], gallery: ['/images/modular-gym.jpg', '/images/modular-gym-interior.png', '/images/modular-gym-exterior.png'] },
   {
     id: 'capsule-forest-spa-suite', title: 'Capsule Forest Spa Suite', category: 'Hospitality', location: 'Coorg, Karnataka, India', year: '2026', image: '/images/capsule-showcase/capsule-forest-spa-retreat.png',
     description: 'A secluded forest spa suite that pairs a panoramic capsule room with a sunken fire-circle lounge and a low-impact timber terrace.',

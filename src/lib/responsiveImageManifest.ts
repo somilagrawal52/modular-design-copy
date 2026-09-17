@@ -27,7 +27,7 @@ export const RESPONSIVE_IMAGE_WIDTHS: Record<string, readonly number[]> = {
   "/images/modular-capsule-tea-estate-retreat-hero-v2.png": [640, 1024, 1536],
   "/images/modular-capsule-visitor-gateway-hero.png": [640, 1024, 1536],
   "/images/modular-capsule-wellness-pavilion-hero-v2.png": [640, 1024, 1536, 1663],
-  "/images/modular-gym.jpg": [640, 1024, 1536, 1672],
+  "/images/modular-gym-exterior.png": [640, 1024, 1536],
   "/images/modular-office-india-exterior.jpg": [640, 1024, 1536],
   "/images/modular-residence-pool-hero.png": [640, 1024, 1536, 1672],
   "/images/modular-restaurant-realistic.jpg": [640, 1024, 1536],

@@ -21,6 +21,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.rpexotichomes.com/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.rpexotichomes.com/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

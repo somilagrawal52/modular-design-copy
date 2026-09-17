@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { FormEvent, useState } from "react";
-import { ArrowRight, Download, Globe, Mail, Phone, ShieldCheck } from "lucide-react";
+import { ArrowRight, Download, Globe, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
 import ParallaxElement from "../components/ParallaxElement";
 import ParallaxImage from "../components/ParallaxImage";
 import StaggerText from "../components/StaggerText";
@@ -8,7 +8,7 @@ import Reveal from "../components/Reveal";
 import CinematicSection from "../components/CinematicSection";
 import SEO from "../components/SEO";
 import Magnetic from "../components/Magnetic";
-import { dreamRealtyEmail } from "../config/siteMode";
+import { INDIA_CONTACT, CANADA_CONTACT, SALES_EMAIL } from "../config/siteMode";
 import { submitContactForm } from "../lib/contact";
 
 const inquiryTypes = [
@@ -434,105 +434,173 @@ export default function ContactPage() {
         {/* DEDICATED PROMINENT BOXED INQUIRIES & ARCHITECTURAL ADVISORY CARD */}
         <div className="pb-24 md:pb-32">
           <Reveal direction="up">
-            <div className="border border-gold/40 bg-stone/5 relative overflow-hidden shadow-sm">
-              {/* Metallic Bronze Header Ribbon */}
-              <div className="bg-gold px-6 py-3.5 md:px-8 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-stone font-semibold">
+            <div className="border border-stone/20 bg-light-secondary relative overflow-hidden shadow-sm rounded-[2px]">
+              {/* Refined Architectural Header Ribbon */}
+              <div className="bg-stone text-light px-6 py-4 md:px-8 flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-stone/20">
                 <div className="flex items-center gap-2.5">
-                  <ShieldCheck size={16} className="text-stone" />
-                  <span className="text-xs uppercase tracking-[0.14em] font-mono">
-                    Inquiries & Architectural Advisory
+                  <ShieldCheck size={16} className="text-gold" />
+                  <span className="text-xs uppercase tracking-[0.14em] font-mono font-semibold text-light">
+                    RP Exotic Homes · Executive Advisory Desk
                   </span>
                 </div>
-                <span className="text-[11px] uppercase tracking-[0.12em] font-mono text-stone/85">
-                  Executive Desk • 24H SLA Response Guarantee
+                <span className="text-[11px] uppercase tracking-[0.12em] font-mono text-gold font-medium">
+                  Guaranteed 24-Hour SLA Response
                 </span>
               </div>
 
               {/* Card Body */}
-              <div className="p-8 md:p-12 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14">
-                {/* Column 1: Commercial & Executive Access */}
-                <div className="space-y-8 flex flex-col justify-between">
+              <div className="p-8 md:p-12 space-y-10">
+                {/* General Inquiry & Direct Email Desk */}
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-stone/15">
                   <div>
-                    <div className="flex items-center gap-2 mb-3">
+                    <div className="flex items-center gap-2 mb-2">
                       <span className="h-px w-5 bg-gold" />
                       <span className="text-[10px] font-mono uppercase tracking-widest text-gold-text font-semibold">
-                        Commercial & Resort Inquiries
+                        Commercial & Resort Advisory Desk
                       </span>
                     </div>
-                    <h3 className="text-xs uppercase tracking-[0.08em] text-stone/60 mb-2 font-semibold">
-                      Executive Advisory Desk
-                    </h3>
                     <a
-                      href={`mailto:${dreamRealtyEmail()}`}
-                      className="text-xl md:text-3xl font-light hover:text-gold transition-colors block text-stone font-sans"
+                      href={`mailto:${SALES_EMAIL}`}
+                      className="text-2xl md:text-3xl font-light hover:text-gold transition-colors block text-stone font-sans"
                     >
-                      {dreamRealtyEmail()}
+                      {SALES_EMAIL}
                     </a>
-                    <p className="mt-2.5 text-xs font-mono text-gold-text font-medium flex items-center gap-2">
-                      <span>✓</span> Turnkey CAPEX Budgeting • Siting Feasibility • Guaranteed 24h SLA
+                  </div>
+                  <div className="text-xs font-mono text-stone/70 md:text-right space-y-1">
+                    <p className="text-gold-text font-semibold flex items-center md:justify-end gap-1.5">
+                      <span>✓</span> Direct Executive Consultation
                     </p>
+                    <p className="text-stone/60">Turnkey CAPEX Budgeting • Siting Feasibility • Direct Procurement</p>
+                  </div>
+                </div>
+
+                {/* Dual Office Grid — Two Studio Locations & Contact Lines */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+                  {/* JAIPUR, INDIA */}
+                  <div className="p-6 md:p-8 bg-stone/[0.02] border border-stone/15 relative flex flex-col justify-between rounded-[2px] shadow-sm">
+                    <div>
+                      <div className="pb-3 mb-4 border-b border-stone/15">
+                        <span className="text-xs font-mono uppercase tracking-wider text-stone font-semibold">
+                          Jaipur, India
+                        </span>
+                      </div>
+
+                      <h3 className="text-xl md:text-2xl font-display font-semibold text-stone mb-6">
+                        {INDIA_CONTACT.name}
+                      </h3>
+
+                      <div className="space-y-4 pt-4 border-t border-stone/15">
+                        <div className="flex items-start gap-3.5">
+                          <div className="p-2.5 bg-stone/5 text-stone/70 border border-stone/15 mt-0.5 shrink-0 rounded-[2px]">
+                            <Phone size={16} />
+                          </div>
+                          <div>
+                            <span className="text-[10px] font-mono uppercase tracking-wider text-stone/50 block font-semibold">
+                              Telephone
+                            </span>
+                            <a
+                              href={INDIA_CONTACT.tel}
+                              className="text-lg md:text-xl font-semibold text-stone hover:text-gold transition-colors font-mono block mt-0.5"
+                            >
+                              {INDIA_CONTACT.phone}
+                            </a>
+                            <span className="text-[11px] text-stone/60 block font-light mt-0.5">
+                              {INDIA_CONTACT.hours}
+                            </span>
+                          </div>
+                        </div>
+
+                        <div className="flex items-start gap-3.5">
+                          <div className="p-2.5 bg-stone/5 text-stone/70 border border-stone/15 mt-0.5 shrink-0 rounded-[2px]">
+                            <MapPin size={16} />
+                          </div>
+                          <div>
+                            <span className="text-[10px] font-mono uppercase tracking-wider text-stone/50 block font-semibold">
+                              Studio Address
+                            </span>
+                            <p className="text-sm font-medium text-stone/85 leading-relaxed mt-0.5">
+                              {INDIA_CONTACT.address}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
-                  <div className="pt-6 border-t border-stone/15 space-y-4">
-                    <div className="flex items-start gap-4">
-                      <div className="p-2.5 bg-gold/10 border border-gold/20 text-gold-text">
-                        <Phone size={18} />
+                  {/* BOWMANVILLE, CANADA */}
+                  <div className="p-6 md:p-8 bg-stone/[0.02] border border-stone/15 relative flex flex-col justify-between rounded-[2px] shadow-sm">
+                    <div>
+                      <div className="pb-3 mb-4 border-b border-stone/15">
+                        <span className="text-xs font-mono uppercase tracking-wider text-stone font-semibold">
+                          Bowmanville, Canada
+                        </span>
                       </div>
-                      <div>
-                        <span className="text-[11px] font-mono uppercase tracking-wider text-stone/60 block font-semibold">
-                          Direct Advisory Telephone
-                        </span>
-                        <a
-                          href="tel:+14169482577"
-                          className="text-base md:text-lg font-semibold text-stone hover:text-gold transition-colors"
-                        >
-                          +1 (416) 948-2577
-                        </a>
-                        <span className="text-xs text-stone/60 block font-light">
-                          Monday – Saturday • 9:00 AM – 7:00 PM IST
-                        </span>
+
+                      <h3 className="text-xl md:text-2xl font-display font-semibold text-stone mb-6">
+                        {CANADA_CONTACT.name}
+                      </h3>
+
+                      <div className="space-y-4 pt-4 border-t border-stone/15">
+                        <div className="flex items-start gap-3.5">
+                          <div className="p-2.5 bg-stone/5 text-stone/70 border border-stone/15 mt-0.5 shrink-0 rounded-[2px]">
+                            <Phone size={16} />
+                          </div>
+                          <div>
+                            <span className="text-[10px] font-mono uppercase tracking-wider text-stone/50 block font-semibold">
+                              Telephone
+                            </span>
+                            <a
+                              href={CANADA_CONTACT.tel}
+                              className="text-lg md:text-xl font-semibold text-stone hover:text-gold transition-colors font-mono block mt-0.5"
+                            >
+                              {CANADA_CONTACT.phone}
+                            </a>
+                            <span className="text-[11px] text-stone/60 block font-light mt-0.5">
+                              {CANADA_CONTACT.hours}
+                            </span>
+                          </div>
+                        </div>
+
+                        <div className="flex items-start gap-3.5">
+                          <div className="p-2.5 bg-stone/5 text-stone/70 border border-stone/15 mt-0.5 shrink-0 rounded-[2px]">
+                            <MapPin size={16} />
+                          </div>
+                          <div>
+                            <span className="text-[10px] font-mono uppercase tracking-wider text-stone/50 block font-semibold">
+                              Office Address
+                            </span>
+                            <p className="text-sm font-medium text-stone/85 leading-relaxed mt-0.5">
+                              {CANADA_CONTACT.address}
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Column 2: Technical Siting & Developer Partnerships */}
-                <div className="space-y-8 flex flex-col justify-between lg:border-l lg:border-stone/15 lg:pl-10">
-                  <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center gap-2">
-                        <Globe className="text-gold-text" size={16} />
-                        <span className="text-[10px] font-mono uppercase tracking-widest text-gold-text font-semibold">
-                          B2B Commercial Desk
-                        </span>
-                      </div>
-                      <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 bg-gold/10 border border-gold/20 text-gold-text">
-                        Global Dispatch
-                      </span>
+                {/* Developer Partnerships & Brochure Download */}
+                <div className="pt-8 border-t border-stone/15 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+                  <div className="max-w-2xl">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Globe className="text-gold-text" size={16} />
+                      <h4 className="text-sm uppercase tracking-[0.1em] font-mono font-semibold text-stone">
+                        Architectural & Developer Partnerships
+                      </h4>
                     </div>
-
-                    <h3 className="text-xl md:text-2xl font-sans font-semibold mb-3 tracking-tight text-stone">
-                      Architectural & Developer Partnerships
-                    </h3>
-                    <p className="text-stone/75 font-light leading-relaxed text-sm">
-                      Whether specifying a single bespoke model or master-planning a 30-key eco-resort, our team coordinates factory-controlled manufacturing, custom R-32 thermal envelope packages, and rapid 48-hour plug-and-play crane commissioning.
+                    <p className="text-stone/75 font-light text-xs md:text-sm leading-relaxed">
+                      Whether specifying a single bespoke capsule or master-planning a multi-key eco-resort enclave, our advisory team coordinates factory-controlled manufacturing, custom R-32 thermal packages, and rapid 48-hour plug-and-play crane commissioning.
                     </p>
                   </div>
-
-                  <div className="pt-6 border-t border-stone/15 flex flex-wrap items-center justify-between gap-4">
-                    <a
-                      href="/rp-exotic-homes-architectural-brochure.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      download="RP-Exotic-Homes-Architectural-Brochure.pdf"
-                      className="inline-flex min-h-11 items-center gap-2 px-5 py-2.5 bg-stone text-light text-xs uppercase tracking-[0.1em] font-semibold hover:bg-gold hover:text-stone transition-all"
-                    >
-                      <Download size={14} /> Download Brochure (PDF)
-                    </a>
-                    <span className="text-xs font-mono text-stone/50">
-                      Zero Excavation • 48-Hour Setup
-                    </span>
-                  </div>
+                  <a
+                    href="/rp-exotic-homes-architectural-brochure.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    download="RP-Exotic-Homes-Architectural-Brochure.pdf"
+                    className="inline-flex min-h-11 items-center gap-2 px-5 py-2.5 bg-stone text-light text-xs uppercase tracking-[0.1em] font-semibold hover:bg-gold hover:text-stone transition-all shrink-0"
+                  >
+                    <Download size={14} /> Download Brochure (PDF)
+                  </a>
                 </div>
               </div>
 

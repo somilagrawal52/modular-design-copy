@@ -1,11 +1,11 @@
 import { FormEvent, useState } from "react";
 import { motion } from "motion/react";
-import { Send } from "lucide-react";
+import { Send, Phone, MapPin, Mail } from "lucide-react";
 import Reveal from "../Reveal";
 import StaggerText from "../StaggerText";
 import ParallaxElement from "../ParallaxElement";
 import Magnetic from "../Magnetic";
-import { dreamRealtyEmail } from "../../config/siteMode";
+import { INDIA_CONTACT, CANADA_CONTACT, SALES_EMAIL } from "../../config/siteMode";
 
 export default function Contact() {
   const [submissionState, setSubmissionState] = useState<
@@ -193,19 +193,65 @@ export default function Contact() {
               </div>
 
               <div className="space-y-6">
-                <div>
-                  <h4 className="text-xs uppercase tracking-[0.1em] text-stone/60 font-semibold mb-2">
-                    Executive Advisory
-                  </h4>
-                  <a
-                    href={`mailto:${dreamRealtyEmail()}`}
-                    className="text-xl md:text-2xl font-light tracking-tight text-stone hover:text-gold transition-colors inline-flex items-center gap-2"
-                  >
-                    {dreamRealtyEmail()}
-                  </a>
-                  <span className="block text-[11px] font-mono text-stone/50 mt-1">
-                    Response SLA: Within 24 business hours
+                <div className="p-5 bg-stone/[0.02] border border-stone/15 rounded-[2px]">
+                  <span className="text-[10px] font-mono uppercase tracking-[0.14em] text-gold-text font-semibold block mb-1.5">
+                    Executive Advisory Email
                   </span>
+                  <a
+                    href={`mailto:${SALES_EMAIL}`}
+                    className="text-lg md:text-xl font-light tracking-tight text-stone hover:text-gold transition-colors inline-flex items-center gap-2"
+                  >
+                    <Mail size={16} className="text-gold shrink-0" />
+                    <span>{SALES_EMAIL}</span>
+                  </a>
+                  <span className="block text-[11px] font-mono text-stone/50 mt-1.5">
+                    Response SLA: Guaranteed within 24 business hours
+                  </span>
+                </div>
+
+                {/* Two Studio Offices & Contact Lines */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {/* Jaipur, India */}
+                  <div className="p-4 bg-stone/[0.03] border border-stone/15 rounded-[2px] space-y-2">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-stone/70 font-semibold block mb-1">
+                      Jaipur, India
+                    </span>
+                    <p className="text-sm font-semibold text-stone">
+                      {INDIA_CONTACT.name}
+                    </p>
+                    <a
+                      href={INDIA_CONTACT.tel}
+                      className="text-xs font-semibold text-stone hover:text-gold transition-colors font-mono flex items-center gap-1.5"
+                    >
+                      <Phone size={12} className="text-gold shrink-0" />
+                      <span>{INDIA_CONTACT.phone}</span>
+                    </a>
+                    <p className="text-[11px] text-stone/65 font-light leading-relaxed flex items-start gap-1 pt-0.5">
+                      <MapPin size={11} className="text-stone/40 mt-0.5 shrink-0" />
+                      <span>{INDIA_CONTACT.address}</span>
+                    </p>
+                  </div>
+
+                  {/* Bowmanville, Canada */}
+                  <div className="p-4 bg-stone/[0.03] border border-stone/15 rounded-[2px] space-y-2">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-stone/70 font-semibold block mb-1">
+                      Bowmanville, Canada
+                    </span>
+                    <p className="text-sm font-semibold text-stone">
+                      {CANADA_CONTACT.name}
+                    </p>
+                    <a
+                      href={CANADA_CONTACT.tel}
+                      className="text-xs font-semibold text-stone hover:text-gold transition-colors font-mono flex items-center gap-1.5"
+                    >
+                      <Phone size={12} className="text-gold shrink-0" />
+                      <span>{CANADA_CONTACT.phone}</span>
+                    </a>
+                    <p className="text-[11px] text-stone/65 font-light leading-relaxed flex items-start gap-1 pt-0.5">
+                      <MapPin size={11} className="text-stone/40 mt-0.5 shrink-0" />
+                      <span>{CANADA_CONTACT.address}</span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </ParallaxElement>

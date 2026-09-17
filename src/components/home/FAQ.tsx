@@ -58,7 +58,7 @@ export default function FAQ() {
 
             <StaggerText
               el="h2"
-              text="QUESTIONS, ANSWERED."
+              text="Questions, answered."
               className="type-section"
               delay={0.1}
               stagger={0.05}

@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
-import { SITE_STUDIO_NAME, SITE_URL } from '../config/siteMode';
+import { SITE_STUDIO_NAME, SITE_URL, SALES_EMAIL, INDIA_CONTACT, CANADA_CONTACT } from '../config/siteMode';
 
 interface SEOProps {
   title?: string;
@@ -57,11 +57,39 @@ export default function SEO({
             name,
             url: SITE_URL,
             logo: `${SITE_URL}/images/rp-logo-full.png`,
-            contactPoint: {
-              '@type': 'ContactPoint',
-              email: 'sales@rpexotichomes.com',
-              contactType: 'sales',
-            },
+            email: SALES_EMAIL,
+            contactPoint: [
+              {
+                '@type': 'ContactPoint',
+                telephone: '+91-98290-50002',
+                contactType: 'customer service',
+                areaServed: ['IN'],
+                availableLanguage: ['en', 'hi'],
+              },
+              {
+                '@type': 'ContactPoint',
+                telephone: '+1-416-948-2577',
+                contactType: 'customer service',
+                areaServed: ['CA', 'US'],
+                availableLanguage: ['en'],
+              },
+            ],
+            address: [
+              {
+                '@type': 'PostalAddress',
+                streetAddress: 'R55 NRI Colony',
+                addressLocality: 'Jaipur',
+                addressRegion: 'Rajasthan',
+                addressCountry: 'IN',
+              },
+              {
+                '@type': 'PostalAddress',
+                streetAddress: '215 Port Darlington Rd',
+                addressLocality: 'Bowmanville',
+                addressRegion: 'ON',
+                addressCountry: 'CA',
+              },
+            ],
           },
         ])}
       </script>

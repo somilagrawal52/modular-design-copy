@@ -11,6 +11,7 @@ const routes = [
   { path: '/work', priority: '0.9', changefreq: 'weekly' },
   { path: '/system', priority: '0.8', changefreq: 'monthly' },
   { path: '/services', priority: '0.8', changefreq: 'monthly' },
+  { path: '/about', priority: '0.8', changefreq: 'monthly' },
   { path: '/contact', priority: '0.8', changefreq: 'monthly' },
   ...projectIds.map((id) => ({ path: `/work/${id}`, priority: '0.7', changefreq: 'monthly' })),
 ];

@@ -197,63 +197,41 @@ export default function Navbar() {
               className="mt-8 flex flex-col items-center gap-4 w-full max-w-xs text-center"
             >
               <div className="w-12 h-[1px] bg-gold/40" />
-              <div className="flex flex-col gap-2.5 w-full">
-                {/* India Actions */}
-                <div className="w-full text-left space-y-1">
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-stone/60 font-semibold block">
-                    Jaipur: {INDIA_CONTACT.phone}
+              <div className="flex flex-col gap-3 w-full">
+                {/* Indian Office */}
+                <div className="w-full text-left space-y-0.5">
+                  <span className="text-[9px] font-mono uppercase tracking-wider text-stone/50 font-semibold block">
+                    Indian Office (Jaipur)
                   </span>
-                  <div className="grid grid-cols-2 gap-2 w-full">
-                    <a
-                      href={INDIA_CONTACT.tel}
-                      onClick={() => setIsOpen(false)}
-                      className="inline-flex items-center justify-center gap-1.5 py-2 px-2 bg-stone text-light text-[11px] font-mono hover:bg-gold hover:text-ink transition-colors rounded-[2px] whitespace-nowrap"
-                    >
-                      <Phone size={11} className="text-gold shrink-0" /> Call Direct
-                    </a>
-                    <a
-                      href={INDIA_CONTACT.whatsapp}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => setIsOpen(false)}
-                      className="inline-flex items-center justify-center gap-1.5 py-2 px-2 bg-gold text-ink text-[11px] font-mono hover:bg-stone hover:text-light transition-colors rounded-[2px] whitespace-nowrap font-sans"
-                    >
-                      <MessageCircle size={11} className="shrink-0" /> WhatsApp
-                    </a>
-                  </div>
+                  <a
+                    href={INDIA_CONTACT.tel}
+                    onClick={() => setIsOpen(false)}
+                    className="text-xs font-mono font-bold text-stone hover:text-gold transition-colors block"
+                  >
+                    {INDIA_CONTACT.phone}
+                  </a>
                 </div>
 
-                {/* Canada Actions */}
-                <div className="w-full text-left space-y-1">
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-stone/60 font-semibold block">
-                    Bowmanville: {CANADA_CONTACT.phone}
+                {/* International Office */}
+                <div className="w-full text-left space-y-0.5">
+                  <span className="text-[9px] font-mono uppercase tracking-wider text-stone/50 font-semibold block">
+                    International Office (Canada)
                   </span>
-                  <div className="grid grid-cols-2 gap-2 w-full">
-                    <a
-                      href={CANADA_CONTACT.tel}
-                      onClick={() => setIsOpen(false)}
-                      className="inline-flex items-center justify-center gap-1.5 py-2 px-2 bg-stone text-light text-[11px] font-mono hover:bg-gold hover:text-ink transition-colors rounded-[2px] whitespace-nowrap"
-                    >
-                      <Phone size={11} className="text-gold shrink-0" /> Call Direct
-                    </a>
-                    <a
-                      href={CANADA_CONTACT.whatsapp}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => setIsOpen(false)}
-                      className="inline-flex items-center justify-center gap-1.5 py-2 px-2 bg-gold text-ink text-[11px] font-mono hover:bg-stone hover:text-light transition-colors rounded-[2px] whitespace-nowrap font-sans"
-                    >
-                      <MessageCircle size={11} className="shrink-0" /> WhatsApp
-                    </a>
-                  </div>
+                  <a
+                    href={CANADA_CONTACT.tel}
+                    onClick={() => setIsOpen(false)}
+                    className="text-xs font-mono font-bold text-stone hover:text-gold transition-colors block"
+                  >
+                    {CANADA_CONTACT.phone}
+                  </a>
                 </div>
 
                 <a
                   href={`mailto:${SALES_EMAIL}`}
                   onClick={() => setIsOpen(false)}
-                  className="inline-flex items-center justify-center gap-2 py-2 px-3 bg-gold text-stone text-[11px] sm:text-xs font-mono tracking-wider hover:bg-gold-text transition-colors rounded-[2px] font-semibold break-all"
+                  className="inline-flex items-center justify-center gap-2 py-2 px-3 bg-stone text-light text-[11px] font-mono tracking-wider hover:bg-gold hover:text-stone transition-colors rounded-[2px] font-semibold break-all"
                 >
-                  <Mail size={12} className="shrink-0" /> {SALES_EMAIL}
+                  <Mail size={12} className="shrink-0 text-gold" /> {SALES_EMAIL}
                 </a>
               </div>
               <span className="text-[10px] uppercase tracking-[0.1em] text-stone/50 font-mono">

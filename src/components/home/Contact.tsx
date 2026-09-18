@@ -217,7 +217,7 @@ export default function Contact() {
               </div>
 
               <div className="space-y-6">
-                <div className="p-5 bg-stone/[0.02] border border-stone/15 rounded-[2px]">
+                <div className="p-5 bg-stone/[0.03] rounded-[2px]">
                   <span className="text-[10px] font-mono uppercase tracking-[0.14em] text-gold-text font-semibold block mb-1.5">
                     Executive Advisory Email
                   </span>
@@ -239,7 +239,7 @@ export default function Contact() {
           <div className="lg:col-span-7 lg:pl-24">
             <ParallaxElement speed={-0.02}>
               <Reveal direction="left" delay={0.2}>
-                <div className="bg-light-secondary p-6 md:p-12 xl:p-16 border border-stone/15 relative">
+                <div className="bg-light-secondary p-6 md:p-12 xl:p-16 relative">
                   {/* Decorative Corner */}
                   <div className="absolute top-0 right-0 w-12 h-12 border-t border-r border-gold/20" />
 

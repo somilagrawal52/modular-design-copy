@@ -125,7 +125,7 @@ export default function ContactPage() {
           {/* Three B2B Advisory Pathways */}
           <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 pt-10 border-t border-stone/15">
             <Reveal direction="up" delay={0.1}>
-              <div className="bg-light-secondary p-7 border border-stone/15 rounded-[2px] h-full">
+              <div className="bg-light-secondary p-7 rounded-[2px] h-full">
                 <span className="text-[10px] font-mono uppercase tracking-[0.14em] text-gold font-semibold block mb-2">
                   Pathway 01
                 </span>
@@ -140,7 +140,7 @@ export default function ContactPage() {
             </Reveal>
 
             <Reveal direction="up" delay={0.2}>
-              <div className="bg-light-secondary p-7 border border-stone/15 rounded-[2px] h-full">
+              <div className="bg-light-secondary p-7 rounded-[2px] h-full">
                 <span className="text-[10px] font-mono uppercase tracking-[0.14em] text-gold font-semibold block mb-2">
                   Pathway 02
                 </span>
@@ -155,7 +155,7 @@ export default function ContactPage() {
             </Reveal>
 
             <Reveal direction="up" delay={0.3}>
-              <div className="bg-light-secondary p-7 border border-stone/15 rounded-[2px] h-full">
+              <div className="bg-light-secondary p-7 rounded-[2px] h-full">
                 <span className="text-[10px] font-mono uppercase tracking-[0.14em] text-gold font-semibold block mb-2">
                   Pathway 03
                 </span>
@@ -174,7 +174,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-24 md:mb-32">
           <div className="lg:col-span-7">
             <Reveal direction="right" delay={0.4}>
-              <div className="bg-light-secondary p-6 md:p-10 border border-stone/15 relative">
+              <div className="bg-light-secondary p-6 md:p-10 relative">
                 <div className="absolute top-0 right-0 w-16 h-16 border-t border-r border-gold/20" />
                 <div className="mb-8">
                   <span className="text-[11px] font-mono uppercase tracking-[0.12em] text-gold font-semibold block mb-1">
@@ -445,12 +445,12 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* DEDICATED PROMINENT BOXED INQUIRIES & ARCHITECTURAL ADVISORY CARD */}
+        {/* DEDICATED PROMINENT INQUIRIES & ARCHITECTURAL ADVISORY CARD */}
         <div className="pb-24 md:pb-32">
           <Reveal direction="up">
-            <div className="border border-stone/20 bg-light-secondary relative overflow-hidden shadow-sm rounded-[2px]">
+            <div className="bg-light-secondary relative overflow-hidden rounded-[2px]">
               {/* Refined Architectural Header Ribbon */}
-              <div className="bg-stone text-light px-4 sm:px-6 md:px-8 py-3.5 sm:py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-stone/20">
+              <div className="bg-stone text-light px-4 sm:px-6 md:px-8 py-3.5 sm:py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div className="flex items-center gap-2">
                   <ShieldCheck size={15} className="text-gold shrink-0" />
                   <span className="text-[11px] sm:text-xs uppercase tracking-[0.12em] sm:tracking-[0.14em] font-mono font-semibold text-light truncate">
@@ -491,145 +491,84 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Dual Office Grid — Two Studio Locations & Contact Lines */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10">
-                  {/* JAIPUR, INDIA */}
-                  <div className="p-3.5 sm:p-6 md:p-8 bg-stone/[0.02] border border-stone/15 relative flex flex-col justify-between rounded-[2px] shadow-sm">
-                    <div>
-                      <div className="pb-3 mb-4 border-b border-stone/15">
-                        <span className="text-xs font-mono uppercase tracking-wider text-stone font-semibold">
-                          Jaipur, India
+                {/* Studio Locations — Clean Vertical Architectural Ledger (Variant A) */}
+                <div className="space-y-8 pt-2">
+                  {/* INDIAN OFFICE */}
+                  <div className="space-y-3 pb-6">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <div className="flex items-center gap-2.5">
+                        <span className="text-xs font-mono uppercase tracking-[0.14em] text-stone font-bold">
+                          Indian Office
+                        </span>
+                        <span className="text-[10px] font-mono text-stone/40">
+                          ·
+                        </span>
+                        <span className="text-[11px] font-mono text-gold-text font-semibold uppercase tracking-wider">
+                          Jaipur, Rajasthan, India
                         </span>
                       </div>
+                      <span className="text-[10px] font-mono uppercase tracking-wider text-stone/50 font-light">
+                        {INDIA_CONTACT.hours}
+                      </span>
+                    </div>
 
-                      <h3 className="text-xl md:text-2xl font-display font-semibold text-stone mb-4 sm:mb-5">
-                        {INDIA_CONTACT.name}
-                      </h3>
+                    <div className="flex flex-wrap items-baseline gap-3 pt-1">
+                      <a
+                        href={INDIA_CONTACT.tel}
+                        className="text-xl sm:text-2xl md:text-3xl font-mono font-bold text-stone hover:text-gold transition-colors tracking-tight"
+                      >
+                        {INDIA_CONTACT.phone}
+                      </a>
+                    </div>
 
-                      <div className="space-y-4 pt-4 border-t border-stone/15">
-                        <div>
-                          <div className="flex items-center gap-2 mb-2">
-                            <div className="p-1.5 bg-stone/5 text-stone/70 border border-stone/15 rounded-[2px]">
-                              <Phone size={13} className="text-gold" />
-                            </div>
-                            <span className="text-[10px] font-mono uppercase tracking-wider text-stone/60 font-semibold">
-                              Direct Line & WhatsApp
-                            </span>
-                          </div>
-                          <div className="text-base sm:text-lg md:text-xl font-semibold font-mono text-stone mb-3 tracking-tight whitespace-nowrap">
-                            {INDIA_CONTACT.phone}
-                          </div>
-
-                          {/* Option 1 Dual-Action Architectural Buttons */}
-                          <div className="grid grid-cols-2 gap-2 sm:gap-2.5 max-w-md mb-2.5">
-                            <a
-                              href={INDIA_CONTACT.tel}
-                              className="inline-flex items-center justify-center gap-1.5 sm:gap-2 py-2.5 px-2 sm:px-3.5 bg-stone text-light text-[11px] sm:text-xs font-semibold uppercase tracking-[0.04em] sm:tracking-[0.08em] rounded-[2px] shadow-sm hover:bg-gold hover:text-ink transition-all duration-300 whitespace-nowrap"
-                            >
-                              <Phone size={12} className="shrink-0" />
-                              <span>Call Direct</span>
-                            </a>
-                            <a
-                              href={INDIA_CONTACT.whatsapp}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center justify-center gap-1.5 sm:gap-2 py-2.5 px-2 sm:px-3.5 bg-gold text-ink text-[11px] sm:text-xs font-semibold uppercase tracking-[0.04em] sm:tracking-[0.08em] rounded-[2px] shadow-sm hover:bg-stone hover:text-light transition-all duration-300 font-sans whitespace-nowrap"
-                              title="Chat on WhatsApp"
-                            >
-                              <MessageCircle size={12} className="shrink-0" />
-                              <span>WhatsApp</span>
-                            </a>
-                          </div>
-
-                          <span className="text-[11px] text-stone/60 block font-light">
-                            {INDIA_CONTACT.hours}
-                          </span>
-                        </div>
-
-                        <div className="pt-3 border-t border-stone/10">
-                          <div className="flex items-center gap-2 mb-1.5">
-                            <div className="p-1.5 bg-stone/5 text-stone/70 border border-stone/15 rounded-[2px]">
-                              <MapPin size={13} className="text-stone/50" />
-                            </div>
-                            <span className="text-[10px] font-mono uppercase tracking-wider text-stone/60 font-semibold">
-                              Indian Office Address
-                            </span>
-                          </div>
-                          <p className="text-xs sm:text-sm font-medium text-stone/85 leading-relaxed">
-                            {INDIA_CONTACT.address}
-                          </p>
-                        </div>
-                      </div>
+                    <div className="flex items-start gap-2 pt-1 text-xs sm:text-sm text-stone/75 font-light leading-relaxed">
+                      <MapPin
+                        size={14}
+                        className="text-stone/40 mt-0.5 shrink-0"
+                      />
+                      <span>{INDIA_CONTACT.address}</span>
                     </div>
                   </div>
 
-                  {/* BOWMANVILLE, CANADA */}
-                  <div className="p-3.5 sm:p-6 md:p-8 bg-stone/[0.02] border border-stone/15 relative flex flex-col justify-between rounded-[2px] shadow-sm">
-                    <div>
-                      <div className="pb-3 mb-4 border-b border-stone/15">
-                        <span className="text-xs font-mono uppercase tracking-wider text-stone font-semibold">
-                          Bowmanville, Canada
+                  {/* Signature Bronze Architectural Divider (Suggestion B) */}
+                  <div className="py-2">
+                    <div className="rule-metallic-bronze opacity-75" />
+                  </div>
+
+                  {/* INTERNATIONAL OFFICE */}
+                  <div className="space-y-3 pt-2 pb-2">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <div className="flex items-center gap-2.5">
+                        <span className="text-xs font-mono uppercase tracking-[0.14em] text-stone font-bold">
+                          International Office
+                        </span>
+                        <span className="text-[10px] font-mono text-stone/40">
+                          ·
+                        </span>
+                        <span className="text-[11px] font-mono text-stone/60 uppercase tracking-wider">
+                          Bowmanville, Ontario, Canada
                         </span>
                       </div>
+                      <span className="text-[10px] font-mono uppercase tracking-wider text-stone/50 font-light">
+                        {CANADA_CONTACT.hours}
+                      </span>
+                    </div>
 
-                      <h3 className="text-xl md:text-2xl font-display font-semibold text-stone mb-4 sm:mb-5">
-                        {CANADA_CONTACT.name}
-                      </h3>
+                    <div className="flex flex-wrap items-baseline gap-3 pt-1">
+                      <a
+                        href={CANADA_CONTACT.tel}
+                        className="text-xl sm:text-2xl md:text-3xl font-mono font-bold text-stone hover:text-gold transition-colors tracking-tight"
+                      >
+                        {CANADA_CONTACT.phone}
+                      </a>
+                    </div>
 
-                      <div className="space-y-4 pt-4 border-t border-stone/15">
-                        <div>
-                          <div className="flex items-center gap-2 mb-2">
-                            <div className="p-1.5 bg-stone/5 text-stone/70 border border-stone/15 rounded-[2px]">
-                              <Phone size={13} className="text-gold" />
-                            </div>
-                            <span className="text-[10px] font-mono uppercase tracking-wider text-stone/60 font-semibold">
-                              Direct Line & WhatsApp
-                            </span>
-                          </div>
-                          <div className="text-base sm:text-lg md:text-xl font-semibold font-mono text-stone mb-3 tracking-tight whitespace-nowrap">
-                            {CANADA_CONTACT.phone}
-                          </div>
-
-                          {/* Option 1 Dual-Action Architectural Buttons */}
-                          <div className="grid grid-cols-2 gap-2 sm:gap-2.5 max-w-md mb-2.5">
-                            <a
-                              href={CANADA_CONTACT.tel}
-                              className="inline-flex items-center justify-center gap-1.5 sm:gap-2 py-2.5 px-2 sm:px-3.5 bg-stone text-light text-[11px] sm:text-xs font-semibold uppercase tracking-[0.04em] sm:tracking-[0.08em] rounded-[2px] shadow-sm hover:bg-gold hover:text-ink transition-all duration-300 whitespace-nowrap"
-                            >
-                              <Phone size={12} className="shrink-0" />
-                              <span>Call Direct</span>
-                            </a>
-                            <a
-                              href={CANADA_CONTACT.whatsapp}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center justify-center gap-1.5 sm:gap-2 py-2.5 px-2 sm:px-3.5 bg-gold text-ink text-[11px] sm:text-xs font-semibold uppercase tracking-[0.04em] sm:tracking-[0.08em] rounded-[2px] shadow-sm hover:bg-stone hover:text-light transition-all duration-300 font-sans whitespace-nowrap"
-                              title="Chat on WhatsApp"
-                            >
-                              <MessageCircle size={12} className="shrink-0" />
-                              <span>WhatsApp</span>
-                            </a>
-                          </div>
-
-                          <span className="text-[11px] text-stone/60 block font-light">
-                            {CANADA_CONTACT.hours}
-                          </span>
-                        </div>
-
-                        <div className="pt-3 border-t border-stone/10">
-                          <div className="flex items-center gap-2 mb-1.5">
-                            <div className="p-1.5 bg-stone/5 text-stone/70 border border-stone/15 rounded-[2px]">
-                              <MapPin size={13} className="text-stone/50" />
-                            </div>
-                            <span className="text-[10px] font-mono uppercase tracking-wider text-stone/60 font-semibold">
-                              International Office Address
-                            </span>
-                          </div>
-                          <p className="text-xs sm:text-sm font-medium text-stone/85 leading-relaxed">
-                            {CANADA_CONTACT.address}
-                          </p>
-                        </div>
-                      </div>
+                    <div className="flex items-start gap-2 pt-1 text-xs sm:text-sm text-stone/75 font-light leading-relaxed">
+                      <MapPin
+                        size={14}
+                        className="text-stone/40 mt-0.5 shrink-0"
+                      />
+                      <span>{CANADA_CONTACT.address}</span>
                     </div>
                   </div>
                 </div>

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RP EXOTIC HOMES — Contact Redesign Draft (Option 1 + 3)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            stone: '#171819',
+            light: '#F8F8F6',
+            'light-secondary': '#F1EFEA',
+            gold: '#B18A47',
+            'gold-text': '#8F6927',
+            ink: '#0C0D0E',
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+            display: ['"Playfair Display"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #0E0F10; color: #E5E5E3; font-family: 'Plus Jakarta Sans', sans-serif; }
+    .gold-glow { box-shadow: 0 0 30px rgba(177, 138, 71, 0.15); }
+  </style>
+</head>
+<body class="p-4 sm:p-8 lg:p-12 min-h-screen">
+
+  <!-- Header Banner -->
+  <header class="max-w-6xl mx-auto mb-10 pb-8 border-b border-white/10">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <span class="inline-block w-2 h-2 rounded-full bg-[#B18A47]"></span>
+          <span class="text-xs font-mono uppercase tracking-[0.16em] text-[#B18A47]">Design Advisory Review</span>
+        </div>
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-display font-medium text-white tracking-tight">
+          Contact Redesign Draft: Option 1 + Option 3
+        </h1>
+        <p class="text-sm text-neutral-400 mt-2 max-w-2xl font-light">
+          Transitioning from aggressive e-commerce CTA buttons to a museum-grade architectural ledger with <strong class="text-white">India as the Primary Headquarters</strong> and understated atelier-grade links.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="#docket" class="text-xs uppercase tracking-wider font-mono px-3 py-2 bg-white/5 border border-white/15 hover:border-[#B18A47] hover:text-[#B18A47] transition-all rounded-[2px]">
+          1. Advisory Docket
+        </a>
+        <a href="#footer-preview" class="text-xs uppercase tracking-wider font-mono px-3 py-2 bg-white/5 border border-white/15 hover:border-[#B18A47] hover:text-[#B18A47] transition-all rounded-[2px]">
+          2. Footer Directory
+        </a>
+        <a href="#mobile-preview" class="text-xs uppercase tracking-wider font-mono px-3 py-2 bg-white/5 border border-white/15 hover:border-[#B18A47] hover:text-[#B18A47] transition-all rounded-[2px]">
+          3. Mobile Drawer
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECTION 1: THE CORE PROBLEM VS PROPOSED DRAFT -->
+  <section class="max-w-6xl mx-auto mb-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      
+      <!-- CURRENT: Why manager disliked it -->
+      <div class="bg-[#18191B] border border-red-500/30 p-6 sm:p-8 rounded-[2px] relative overflow-hidden">
+        <div class="absolute top-0 right-0 px-3 py-1 bg-red-500/20 text-red-400 font-mono text-[10px] uppercase tracking-widest border-b border-l border-red-500/30">
+          Current Style (Too Commercial)
+        </div>
+        <h3 class="text-base font-semibold text-white mb-2 flex items-center gap-2">
+          <span class="text-red-400 text-lg">✕</span> Current UI Weaknesses
+        </h3>
+        <ul class="text-xs text-neutral-400 space-y-2.5 font-light mb-6">
+          <li class="flex items-start gap-2">
+            <span class="text-red-400 font-bold">•</span>
+            <span><strong>Chunky dual buttons</strong> (<span class="bg-black px-1.5 py-0.5 text-white font-mono text-[10px]">Call</span> next to <span class="bg-[#B18A47] px-1.5 py-0.5 text-black font-mono text-[10px]">WhatsApp</span>) look like roadside contractor or retail lead-gen ads.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-red-400 font-bold">•</span>
+            <span><strong>Equal 50/50 visual weight</strong> between India and Canada dilutes Jaipur as the actual engineering & fabrication headquarters.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-red-400 font-bold">•</span>
+            <span><strong>Redundant UI clutter:</strong> phone number is shown, and then two colored buttons directly beneath repeat the exact same call-to-action.</span>
+          </li>
+        </ul>
+
+        <!-- Visual Sample of Current -->
+        <div class="bg-[#F8F8F6] text-[#171819] p-5 rounded-[2px] opacity-75">
+          <div class="text-[10px] font-mono uppercase tracking-wider text-neutral-500 mb-1">Jaipur, India</div>
+          <div class="text-lg font-bold text-neutral-900 mb-2">Rishi Pal Singh</div>
+          <div class="text-sm font-mono font-semibold mb-3">+91 98290 50002</div>
+          <div class="grid grid-cols-2 gap-2">
+            <div class="py-2 px-2 bg-[#171819] text-white text-[11px] font-semibold uppercase tracking-wider rounded-[2px] text-center">
+              📞 Call Direct
+            </div>
+            <div class="py-2 px-2 bg-[#B18A47] text-black text-[11px] font-semibold uppercase tracking-wider rounded-[2px] text-center font-bold">
+              💬 WhatsApp
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DRAFT: High-Luxury Architectural Solution -->
+      <div class="bg-[#18191B] border border-[#B18A47]/40 p-6 sm:p-8 rounded-[2px] relative overflow-hidden gold-glow">
+        <div class="absolute top-0 right-0 px-3 py-1 bg-[#B18A47]/20 text-[#B18A47] font-mono text-[10px] uppercase tracking-widest border-b border-l border-[#B18A47]/30">
+          Draft Solution (Option 1 + 3)
+        </div>
+        <h3 class="text-base font-semibold text-white mb-2 flex items-center gap-2">
+          <span class="text-[#B18A47] text-lg">✓</span> Architectural Elevation
+        </h3>
+        <ul class="text-xs text-neutral-400 space-y-2.5 font-light mb-6">
+          <li class="flex items-start gap-2">
+            <span class="text-[#B18A47] font-bold">•</span>
+            <span><strong>Clear Authority Hierarchy (Option 3):</strong> India is prominently framed as <em>Global Headquarters & Manufacturing Desk</em>. Canada acts as a refined <em>International Client Desk</em>.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-[#B18A47] font-bold">•</span>
+            <span><strong>Atelier Typographic Links (Option 1):</strong> Zero clunky colored boxes. Pristine monospace phone links paired with refined micro-arrow actions (<code>Call ↗</code> · <code>WhatsApp ↗</code>).</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-[#B18A47] font-bold">•</span>
+            <span><strong>Verified Live Status Beacon:</strong> Discreet green/gold active dot indicating live direct voice and WhatsApp desk availability.</span>
+          </li>
+        </ul>
+
+        <!-- Visual Sample of Drafted -->
+        <div class="bg-[#F8F8F6] text-[#171819] p-5 rounded-[2px] border-l-2 border-[#B18A47]">
+          <div class="flex items-center justify-between mb-1.5">
+            <span class="text-[10px] font-mono uppercase tracking-[0.14em] text-[#8F6927] font-semibold">
+              Primary Headquarters · Jaipur, India
+            </span>
+            <span class="inline-flex items-center gap-1.5 text-[9px] font-mono text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Desk Active
+            </span>
+          </div>
+          <div class="text-xl font-display font-semibold text-neutral-900 mb-1">Rishi Pal Singh</div>
+          <div class="text-xs text-neutral-600 mb-3 font-light">Managing Director & Executive Siting Advisory</div>
+          
+          <div class="pt-3 border-t border-neutral-200 flex flex-wrap items-baseline justify-between gap-2">
+            <a href="tel:+919829050002" class="text-base font-mono font-semibold tracking-tight text-neutral-900 hover:text-[#B18A47] transition-colors">
+              +91 98290 50002
+            </a>
+            <div class="flex items-center gap-3 text-xs font-mono">
+              <a href="tel:+919829050002" class="text-neutral-700 hover:text-[#B18A47] font-medium transition-colors inline-flex items-center gap-1 group">
+                Direct Call <span class="text-[#B18A47] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+              </a>
+              <span class="text-neutral-300">·</span>
+              <a href="https://wa.me/919829050002" target="_blank" class="text-neutral-700 hover:text-[#B18A47] font-medium transition-colors inline-flex items-center gap-1 group">
+                WhatsApp <span class="text-[#B18A47] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SECTION 2: FULL INTERACTIVE DRAFT (HOW IT LOOKS ON THE CONTACT PAGE) -->
+  <section id="docket" class="max-w-6xl mx-auto mb-20">
+    <div class="mb-6 flex items-center justify-between">
+      <div>
+        <span class="text-xs font-mono uppercase tracking-[0.14em] text-[#B18A47] font-semibold block mb-1">Draft Preview 01</span>
+        <h2 class="text-xl sm:text-2xl font-display font-medium text-white">
+          The Contact Page Executive Advisory Docket
+        </h2>
+      </div>
+      <span class="text-xs font-mono text-neutral-500 hidden sm:block">Replaces ContactPage.tsx Lines 450–610</span>
+    </div>
+
+    <!-- The Architectural Docket Container -->
+    <div class="bg-[#F8F8F6] text-[#171819] border border-stone/20 overflow-hidden rounded-[2px] shadow-2xl">
+      
+      <!-- Docket Ribbon -->
+      <div class="bg-[#171819] text-[#F8F8F6] px-6 py-4 flex flex-wrap items-center justify-between gap-4 border-b border-stone/20">
+        <div class="flex items-center gap-2.5">
+          <svg class="w-4 h-4 text-[#B18A47]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+          <span class="text-xs uppercase tracking-[0.16em] font-mono font-semibold text-white">
+            RP Exotic Homes · Executive Architectural Advisory
+          </span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="text-[11px] uppercase tracking-[0.12em] font-mono text-[#B18A47] font-medium">
+            Turnkey B2B Procurement · Pan-India Siting
+          </span>
+        </div>
+      </div>
+
+      <!-- Docket Body -->
+      <div class="p-6 sm:p-10 lg:p-14 space-y-10">
+
+        <!-- Top Row: General Commercial Desk Email -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-stone/15">
+          <div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="h-px w-6 bg-[#B18A47]"></span>
+              <span class="text-[10px] font-mono uppercase tracking-[0.14em] text-[#8F6927] font-semibold">
+                Direct Procurement & Project Feasibility
+              </span>
+            </div>
+            <a href="mailto:sales@rpexotichomes.com" class="text-2xl sm:text-3xl font-light hover:text-[#B18A47] transition-colors text-[#171819] font-sans tracking-tight">
+              sales@rpexotichomes.com
+            </a>
+          </div>
+          <div class="text-xs font-mono text-stone/70 md:text-right space-y-1 shrink-0">
+            <p class="text-[#8F6927] font-semibold flex items-center md:justify-end gap-1.5">
+              <span>✓</span> Direct Executive Consultation
+            </p>
+            <p class="text-stone/60">
+              Guaranteed Response Within 24 Business Hours
+            </p>
+          </div>
+        </div>
+
+        <!-- Two-Tier Hierarchy Grid: INDIA (Dominant 60%) + CANADA (Liaison 40%) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          
+          <!-- JAIPUR, INDIA (PRIMARY HEADQUARTERS & MANUFACTURING DESK) - 7 COLS -->
+          <div class="lg:col-span-7 bg-stone/[0.03] border-2 border-[#B18A47]/30 p-6 sm:p-8 rounded-[2px] relative flex flex-col justify-between">
+            <div class="absolute -top-3 left-6 px-2.5 py-0.5 bg-[#B18A47] text-white font-mono text-[9px] uppercase tracking-[0.14em] font-semibold rounded-[1px] shadow-sm">
+              Global Headquarters & Main Contact
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between pb-3 mb-4 border-b border-stone/15">
+                <span class="text-xs font-mono uppercase tracking-wider text-stone font-semibold">
+                  Jaipur, Rajasthan, India
+                </span>
+                <span class="inline-flex items-center gap-1.5 text-[10px] font-mono text-[#8F6927] font-semibold">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Live Consultation Desk
+                </span>
+              </div>
+
+              <div class="mb-4">
+                <h3 class="text-2xl sm:text-3xl font-display font-semibold text-stone">
+                  Rishi Pal Singh
+                </h3>
+                <p class="text-xs text-stone/60 font-mono tracking-wide uppercase mt-0.5">
+                  Managing Director · Executive Client Advisory
+                </p>
+              </div>
+
+              <p class="text-xs text-stone/75 leading-relaxed font-light mb-6">
+                Leading turnkey feasibility, micro-pier foundations, off-grid utilities, and commercial resort agreements across India and international territories.
+              </p>
+            </div>
+
+            <!-- Sleek Atelier Contact Strip (Option 1) -->
+            <div class="pt-5 border-t border-stone/15 space-y-4">
+              <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-3 bg-white p-4 rounded-[2px] border border-stone/15 shadow-sm">
+                <div>
+                  <span class="text-[10px] font-mono uppercase tracking-wider text-stone/50 block mb-0.5">
+                    Direct Line & Verified WhatsApp
+                  </span>
+                  <a href="tel:+919829050002" class="text-lg sm:text-xl font-mono font-semibold text-stone hover:text-[#B18A47] transition-colors tracking-tight">
+                    +91 98290 50002
+                  </a>
+                </div>
+
+                <!-- Clean Editorial Text Links With Hover Shift -->
+                <div class="flex items-center gap-4 text-xs font-mono pt-1 sm:pt-0">
+                  <a href="tel:+919829050002" class="inline-flex items-center gap-1 text-stone hover:text-[#B18A47] font-semibold transition-colors group">
+                    <span>Call Direct</span>
+                    <span class="text-[#B18A47] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+                  </a>
+                  <span class="text-stone/30">/</span>
+                  <a href="https://wa.me/919829050002" target="_blank" class="inline-flex items-center gap-1 text-stone hover:text-[#B18A47] font-semibold transition-colors group">
+                    <span>WhatsApp</span>
+                    <span class="text-[#B18A47] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-stone/70 pt-1 font-light">
+                <div>
+                  <span class="text-[10px] font-mono uppercase tracking-wider text-stone/50 block mb-0.5 font-semibold">Studio & Siting Atelier</span>
+                  <p class="leading-relaxed font-normal text-stone/85">R55 NRI Colony, Jaipur, Rajasthan, India</p>
+                </div>
+                <div>
+                  <span class="text-[10px] font-mono uppercase tracking-wider text-stone/50 block mb-0.5 font-semibold">Executive Hours</span>
+                  <p class="font-mono text-[11px] text-stone/75">Mon – Sat · 09:00 – 19:00 IST</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BOWMANVILLE, CANADA (INTERNATIONAL CLIENT DESK) - 5 COLS -->
+          <div class="lg:col-span-5 bg-stone/[0.015] border border-stone/15 p-6 sm:p-8 rounded-[2px] relative flex flex-col justify-between">
+            <div class="absolute -top-3 left-6 px-2.5 py-0.5 bg-stone/75 text-white font-mono text-[9px] uppercase tracking-[0.14em] font-semibold rounded-[1px]">
+              International Client Desk
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between pb-3 mb-4 border-b border-stone/15">
+                <span class="text-xs font-mono uppercase tracking-wider text-stone/70 font-semibold">
+                  Bowmanville, Ontario, Canada
+                </span>
+                <span class="text-[10px] font-mono text-stone/50 uppercase">
+                  EST Timezone
+                </span>
+              </div>
+
+              <div class="mb-4">
+                <h3 class="text-2xl font-display font-semibold text-stone">
+                  Praveer Singh
+                </h3>
+                <p class="text-xs text-stone/60 font-mono tracking-wide uppercase mt-0.5">
+                  International Business Liaison
+                </p>
+              </div>
+
+              <p class="text-xs text-stone/70 leading-relaxed font-light mb-6">
+                Direct liaison for North American developers, diaspora estate investors, and cross-border maritime shipping coordination.
+              </p>
+            </div>
+
+            <!-- Sleek Atelier Contact Strip (Option 1) -->
+            <div class="pt-5 border-t border-stone/15 space-y-4">
+              <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-3 bg-white/70 p-4 rounded-[2px] border border-stone/15">
+                <div>
+                  <span class="text-[10px] font-mono uppercase tracking-wider text-stone/50 block mb-0.5">
+                    Direct Line & WhatsApp
+                  </span>
+                  <a href="tel:+14169482577" class="text-lg font-mono font-semibold text-stone hover:text-[#B18A47] transition-colors tracking-tight">
+                    +1 (416) 948-2577
+                  </a>
+                </div>
+
+                <div class="flex items-center gap-4 text-xs font-mono pt-1 sm:pt-0">
+                  <a href="tel:+14169482577" class="inline-flex items-center gap-1 text-stone hover:text-[#B18A47] font-semibold transition-colors group">
+                    <span>Call</span>
+                    <span class="text-[#B18A47] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+                  </a>
+                  <span class="text-stone/30">/</span>
+                  <a href="https://wa.me/14169482577" target="_blank" class="inline-flex items-center gap-1 text-stone hover:text-[#B18A47] font-semibold transition-colors group">
+                    <span>WhatsApp</span>
+                    <span class="text-[#B18A47] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 gap-2 text-xs text-stone/70 pt-1 font-light">
+                <div>
+                  <span class="text-[10px] font-mono uppercase tracking-wider text-stone/50 block mb-0.5 font-semibold">Office Address</span>
+                  <p class="leading-relaxed font-normal text-stone/85 text-[11px]">215 Port Darlington Rd, Bowmanville, ON, Canada</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bottom Trust Strip -->
+        <div class="pt-6 border-t border-stone/15 flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-stone/60">
+          <div class="flex items-center gap-2">
+            <span class="text-[#B18A47]">●</span>
+            <span>Turnkey Manufacturing · 48-Hour Rapid Commissioning</span>
+          </div>
+          <div class="flex items-center gap-6">
+            <span>Seismic Zone IV Compliant</span>
+            <span>R-32 Multi-Layer Thermal Envelope</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SECTION 3: FOOTER DIRECTORY REDESIGN -->
+  <section id="footer-preview" class="max-w-6xl mx-auto mb-20">
+    <div class="mb-6 flex items-center justify-between">
+      <div>
+        <span class="text-xs font-mono uppercase tracking-[0.14em] text-[#B18A47] font-semibold block mb-1">Draft Preview 02</span>
+        <h2 class="text-xl sm:text-2xl font-display font-medium text-white">
+          Footer Directory Columns (No Cramped Button Grids)
+        </h2>
+      </div>
+      <span class="text-xs font-mono text-neutral-500 hidden sm:block">Replaces Footer.tsx Lines 166–225</span>
+    </div>
+
+    <!-- The 4-Column Footer Preview -->
+    <div class="bg-[#F8F8F6] text-[#171819] p-8 sm:p-12 rounded-[2px] border border-stone/20">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
+        
+        <!-- Col 1: Studio Vision (3 cols) -->
+        <div class="lg:col-span-3 space-y-4">
+          <div class="flex items-center gap-2.5">
+            <div class="w-7 h-7 bg-[#171819] text-[#B18A47] flex items-center justify-center font-serif text-sm font-bold">RP</div>
+            <span class="font-display font-semibold tracking-wider text-sm">RP EXOTIC HOMES</span>
+          </div>
+          <p class="text-xs text-stone/70 leading-relaxed font-light">
+            Precision modular capsules for high-luxury resorts, private sanctuaries, and panoramic hospitality enclaves.
+          </p>
+        </div>
+
+        <!-- Col 2: Navigation (2 cols) -->
+        <div class="lg:col-span-2 space-y-3">
+          <h4 class="text-xs font-mono uppercase tracking-widest text-stone font-semibold">Portfolio</h4>
+          <ul class="text-xs space-y-2 text-stone/70 font-medium">
+            <li><a href="#" class="hover:text-[#B18A47]">Capsule Collection</a></li>
+            <li><a href="#" class="hover:text-[#B18A47]">Technological System</a></li>
+            <li><a href="#" class="hover:text-[#B18A47]">Architectural Services</a></li>
+            <li><a href="#" class="hover:text-[#B18A47]">Studio & Monograph</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: JAIPUR HQ (Dominant, 4 cols) -->
+        <div class="lg:col-span-4 space-y-3 pl-0 lg:pl-4 border-t lg:border-t-0 lg:border-l border-stone/15 pt-6 lg:pt-0">
+          <div class="flex items-center gap-2">
+            <span class="text-[9px] font-mono uppercase tracking-widest bg-[#B18A47]/15 text-[#8F6927] px-2 py-0.5 rounded-[1px] font-semibold">
+              Primary Headquarters
+            </span>
+          </div>
+          <h4 class="text-xs font-mono uppercase tracking-[0.14em] text-stone font-bold">
+            Jaipur, India
+          </h4>
+          <div class="space-y-1.5">
+            <p class="text-sm font-semibold text-stone">Rishi Pal Singh</p>
+            
+            <!-- Sleek Typographic Phone + Direct Links -->
+            <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 pt-1">
+              <a href="tel:+919829050002" class="text-xs font-mono font-semibold text-stone hover:text-[#B18A47] transition-colors">
+                +91 98290 50002
+              </a>
+              <div class="flex items-center gap-2 text-[11px] font-mono">
+                <a href="tel:+919829050002" class="text-[#8F6927] hover:underline">Call ↗</a>
+                <span class="text-stone/30">·</span>
+                <a href="https://wa.me/919829050002" target="_blank" class="text-[#8F6927] hover:underline">WhatsApp ↗</a>
+              </div>
+            </div>
+
+            <p class="text-xs text-stone/65 font-light pt-1 leading-relaxed">
+              R55 NRI Colony, Jaipur, Rajasthan, India
+            </p>
+            <p class="text-[10px] font-mono text-stone/50">
+              Mon – Sat · 09:00 – 19:00 IST
+            </p>
+          </div>
+        </div>
+
+        <!-- Col 4: CANADA LIAISON (3 cols) -->
+        <div class="lg:col-span-3 space-y-3 border-t lg:border-t-0 lg:border-l border-stone/15 pt-6 lg:pt-0">
+          <div class="flex items-center gap-2">
+            <span class="text-[9px] font-mono uppercase tracking-widest bg-stone/5 text-stone/60 px-2 py-0.5 rounded-[1px] font-semibold">
+              International Liaison
+            </span>
+          </div>
+          <h4 class="text-xs font-mono uppercase tracking-[0.14em] text-stone/70 font-semibold">
+            Bowmanville, Canada
+          </h4>
+          <div class="space-y-1.5">
+            <p class="text-sm font-semibold text-stone/90">Praveer Singh</p>
+            
+            <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 pt-1">
+              <a href="tel:+14169482577" class="text-xs font-mono font-semibold text-stone hover:text-[#B18A47] transition-colors">
+                +1 (416) 948-2577
+              </a>
+              <div class="flex items-center gap-2 text-[11px] font-mono">
+                <a href="tel:+14169482577" class="text-[#8F6927] hover:underline">Call ↗</a>
+                <span class="text-stone/30">·</span>
+                <a href="https://wa.me/14169482577" target="_blank" class="text-[#8F6927] hover:underline">WhatsApp ↗</a>
+              </div>
+            </div>
+
+            <p class="text-xs text-stone/65 font-light pt-1 leading-relaxed">
+              215 Port Darlington Rd, Bowmanville, ON, Canada
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SECTION 4: MOBILE VIEW SIMULATION -->
+  <section id="mobile-preview" class="max-w-6xl mx-auto mb-20">
+    <div class="mb-6 flex items-center justify-between">
+      <div>
+        <span class="text-xs font-mono uppercase tracking-[0.14em] text-[#B18A47] font-semibold block mb-1">Draft Preview 03</span>
+        <h2 class="text-xl sm:text-2xl font-display font-medium text-white">
+          Mobile Drawer Experience (Eliminating 5 Stacked Buttons)
+        </h2>
+      </div>
+      <span class="text-xs font-mono text-neutral-500 hidden sm:block">Replaces Navbar.tsx Mobile Drawer</span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+      
+      <!-- Current Mobile Drawer (Cluttered) -->
+      <div class="bg-[#18191B] p-6 rounded-[2px] border border-red-500/30">
+        <span class="text-[10px] font-mono uppercase tracking-widest text-red-400 block mb-3 font-semibold">
+          Current Mobile Drawer (Crowded)
+        </span>
+        <div class="max-w-xs mx-auto bg-[#F8F8F6] text-[#171819] p-5 rounded-[2px] space-y-3">
+          <div class="text-[10px] font-mono uppercase text-neutral-500">Jaipur: +91 98290 50002</div>
+          <div class="grid grid-cols-2 gap-2">
+            <div class="py-2 text-[10px] bg-black text-white text-center font-mono">Call Direct</div>
+            <div class="py-2 text-[10px] bg-[#B18A47] text-black text-center font-mono font-bold">WhatsApp</div>
+          </div>
+          <div class="text-[10px] font-mono uppercase text-neutral-500 pt-2">Bowmanville: +1 (416) 948-2577</div>
+          <div class="grid grid-cols-2 gap-2">
+            <div class="py-2 text-[10px] bg-black text-white text-center font-mono">Call Direct</div>
+            <div class="py-2 text-[10px] bg-[#B18A47] text-black text-center font-mono font-bold">WhatsApp</div>
+          </div>
+          <div class="py-2 text-[11px] bg-[#B18A47] text-black text-center font-mono font-bold mt-2">sales@rpexotichomes.com</div>
+        </div>
+      </div>
+
+      <!-- Drafted Mobile Drawer (Pristine Luxury) -->
+      <div class="bg-[#18191B] p-6 rounded-[2px] border border-[#B18A47]/40 gold-glow">
+        <span class="text-[10px] font-mono uppercase tracking-widest text-[#B18A47] block mb-3 font-semibold">
+          Drafted Mobile Drawer (Calm & Elegant)
+        </span>
+        <div class="max-w-xs mx-auto bg-[#F8F8F6] text-[#171819] p-6 rounded-[2px] space-y-5">
+          <!-- India HQ Desk -->
+          <div class="pb-4 border-b border-stone/15">
+            <span class="text-[9px] font-mono uppercase tracking-widest text-[#8F6927] font-semibold block mb-0.5">
+              Primary Headquarters · Jaipur
+            </span>
+            <div class="font-display font-semibold text-sm">Rishi Pal Singh</div>
+            <div class="flex items-center justify-between gap-2 pt-2">
+              <a href="tel:+919829050002" class="text-xs font-mono font-bold text-stone">
+                +91 98290 50002
+              </a>
+              <div class="flex items-center gap-3 text-xs font-mono">
+                <a href="tel:+919829050002" class="text-stone hover:text-[#B18A47] font-semibold underline">Call</a>
+                <span class="text-stone/30">·</span>
+                <a href="https://wa.me/919829050002" target="_blank" class="text-[#8F6927] font-semibold underline">WhatsApp</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Canada Liaison Desk -->
+          <div class="pb-4 border-b border-stone/15">
+            <span class="text-[9px] font-mono uppercase tracking-widest text-stone/50 font-semibold block mb-0.5">
+              International Liaison · Canada
+            </span>
+            <div class="font-display font-semibold text-sm">Praveer Singh</div>
+            <div class="flex items-center justify-between gap-2 pt-2">
+              <a href="tel:+14169482577" class="text-xs font-mono font-bold text-stone">
+                +1 (416) 948-2577
+              </a>
+              <div class="flex items-center gap-3 text-xs font-mono">
+                <a href="tel:+14169482577" class="text-stone hover:text-[#B18A47] font-semibold underline">Call</a>
+                <span class="text-stone/30">·</span>
+                <a href="https://wa.me/14169482577" target="_blank" class="text-[#8F6927] font-semibold underline">WhatsApp</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <a href="mailto:sales@rpexotichomes.com" class="block text-center text-xs font-mono text-stone hover:text-[#B18A47] font-semibold py-2 bg-stone/5 rounded-[2px]">
+            sales@rpexotichomes.com ↗
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Summary of Approvals Footer -->
+  <footer class="max-w-6xl mx-auto pt-8 border-t border-white/10 text-center text-xs text-neutral-400 font-light">
+    <p>
+      RP EXOTIC HOMES · Design Proposal for Manager Review. No website source files modified.
+    </p>
+  </footer>
+
+</body>
+</html>

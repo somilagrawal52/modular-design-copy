@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { X, Maximize2 } from "lucide-react";
@@ -103,13 +105,13 @@ export default function ArchitecturalLightbox({
                 {specs && (
                   <div className="flex flex-wrap items-center gap-3 mt-1 text-xs font-mono text-light/70">
                     {specs.footprint && <span>Footprint: {specs.footprint}</span>}
-                    {specs.clearHeight && <span>· Ceiling: {specs.clearHeight}</span>}
-                    {specs.capacity && <span>· Capacity: {specs.capacity}</span>}
+                    {specs.clearHeight && <span>Â· Ceiling: {specs.clearHeight}</span>}
+                    {specs.capacity && <span>Â· Capacity: {specs.capacity}</span>}
                   </div>
                 )}
               </div>
               <div className="text-[11px] font-mono text-gold tracking-widest uppercase self-end sm:self-auto">
-                RP EXOTIC HOMES · MONOGRAPH ARCHIVE
+                RP EXOTIC HOMES Â· MONOGRAPH ARCHIVE
               </div>
             </div>
           </motion.div>

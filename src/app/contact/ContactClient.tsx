@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "motion/react";
 import { FormEvent, useState } from "react";
 import {
@@ -10,15 +12,15 @@ import {
   Phone,
   ShieldCheck,
 } from "lucide-react";
-import ParallaxElement from "../components/ParallaxElement";
-import ParallaxImage from "../components/ParallaxImage";
-import StaggerText from "../components/StaggerText";
-import Reveal from "../components/Reveal";
-import CinematicSection from "../components/CinematicSection";
-import SEO from "../components/SEO";
-import Magnetic from "../components/Magnetic";
-import { INDIA_CONTACT, CANADA_CONTACT, SALES_EMAIL } from "../config/siteMode";
-import { submitContactForm } from "../lib/contact";
+import ParallaxElement from "@/components/ParallaxElement";
+import ParallaxImage from "@/components/ParallaxImage";
+import StaggerText from "@/components/StaggerText";
+import Reveal from "@/components/Reveal";
+import CinematicSection from "@/components/CinematicSection";
+import SEO from "@/components/SEO";
+import Magnetic from "@/components/Magnetic";
+import { INDIA_CONTACT, CANADA_CONTACT, SALES_EMAIL } from "@/config/siteMode";
+import { submitContactForm } from "@/lib/contact";
 
 const inquiryTypes = [
   "Modular Space Capsule",

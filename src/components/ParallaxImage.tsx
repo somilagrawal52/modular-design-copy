@@ -1,3 +1,5 @@
+"use client";
+
 import { responsiveImageSrcSet } from "../lib/responsiveImages";
 
 interface ParallaxImageProps {

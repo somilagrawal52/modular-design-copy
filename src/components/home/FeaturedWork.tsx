@@ -1,8 +1,10 @@
+"use client";
+
 import React from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { PROJECTS } from "../../constants";
 import { ArrowUpRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import Reveal from "../Reveal";
 import ParallaxImage from "../ParallaxImage";
 import StaggerText from "../StaggerText";
@@ -27,7 +29,7 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
   const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["5deg", "-5deg"]);
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-5deg", "5deg"]);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const width = rect.width;
     const height = rect.height;
@@ -51,7 +53,7 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
       className={`group cursor-pointer ${index % 2 === 1 ? "md:mt-20" : ""}`}
     >
       <Link
-        to={`/work/${project.id}`}
+        href={`/work/${project.id}`}
         data-cursor="view"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
@@ -186,7 +188,7 @@ export default function FeaturedWork() {
           </div>
           <Reveal direction="left">
             <Link
-              to="/work"
+              href="/work"
               className="group flex min-h-11 items-center gap-4 text-xs uppercase tracking-[0.1em] font-semibold text-gold-text hover:text-gold transition-all duration-500 pb-1 border-b border-stone/20"
             >
               View models{" "}

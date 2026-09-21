@@ -6,8 +6,11 @@ export const MANAGER_OUTLINE_MODE = false;
 export const MANAGER_DEMO_MODE = MANAGER_OUTLINE_MODE;
 export const SITE_NAME = 'RP EXOTIC HOMES';
 export const SITE_STUDIO_NAME = 'RP EXOTIC HOMES';
-// Configure this per deployment (VITE_SITE_URL); the domain fallback is set to the official domain.
-export const SITE_URL = (import.meta.env.VITE_SITE_URL || 'https://www.rpexotichomes.com').replace(/\/$/, '');
+// Configure this per deployment; the domain fallback is set to the official domain.
+export const SITE_URL = (
+  (typeof process !== 'undefined' && (process.env.NEXT_PUBLIC_SITE_URL || process.env.VITE_SITE_URL)) ||
+  'https://www.rpexotichomes.com'
+).replace(/\/$/, '');
 export const EMAIL_DOMAIN = 'rpexotichomes.com';
 export const SALES_EMAIL = 'Sales@Rpexotichomes.com';
 export const siteContactEmail = (_mailbox?: string) => SALES_EMAIL;

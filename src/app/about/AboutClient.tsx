@@ -1,10 +1,12 @@
+"use client";
+
 import { ArrowUpRight, Compass, ShipWheel } from "lucide-react";
-import { Link } from "react-router-dom";
-import CinematicSection from "../components/CinematicSection";
-import ParallaxImage from "../components/ParallaxImage";
-import Reveal from "../components/Reveal";
-import SEO from "../components/SEO";
-import StaggerText from "../components/StaggerText";
+import Link from "next/link";
+import CinematicSection from "@/components/CinematicSection";
+import ParallaxImage from "@/components/ParallaxImage";
+import Reveal from "@/components/Reveal";
+import SEO from "@/components/SEO";
+import StaggerText from "@/components/StaggerText";
 
 const directorExperience = [
   {
@@ -168,7 +170,7 @@ export default function About() {
               responsibility to deliver solutions designed for the future.
             </p>
             <Link
-              to="/contact"
+              href="/contact"
               className="mt-10 inline-flex min-h-12 items-center gap-4 bg-gold px-7 py-3 text-xs font-semibold uppercase tracking-[0.1em] text-light transition-colors duration-300 hover:bg-gold-text shadow-sm"
             >
               Discuss your project <ArrowUpRight size={16} />

@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from 'react';
 import { motion, useSpring, AnimatePresence } from 'motion/react';
 
@@ -34,7 +36,7 @@ export default function CustomCursor() {
         target.closest('a') ||
         target.classList.contains('cursor-pointer');
 
-      setIsHovering(isInteractive);
+      setIsHovering(Boolean(isInteractive));
       
       const projectCard = target.closest('[data-cursor="view"]');
       setIsProjectHover(!!projectCard);

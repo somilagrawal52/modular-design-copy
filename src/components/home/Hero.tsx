@@ -1,7 +1,9 @@
+"use client";
+
 import { motion, useTransform, useSpring, useMotionValue } from "motion/react";
 import { useEffect } from "react";
 import { ArrowUpRight, Download } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import Reveal from "../Reveal";
 import StaggerText from "../StaggerText";
 import { MANAGER_DEMO_MODE, SITE_NAME } from "../../config/siteMode";
@@ -103,7 +105,7 @@ export default function Hero() {
           <Reveal delay={1.45}>
             <div className="mt-8 flex flex-wrap items-center gap-4 sm:gap-6 md:mt-10">
               <Link
-                to="/work"
+                href="/work"
                 className="group inline-flex min-h-12 items-center gap-4 bg-gold px-7 py-3 text-xs font-semibold uppercase tracking-[0.1em] text-light transition-colors duration-300 hover:bg-gold-text shadow-sm"
               >
                 View models

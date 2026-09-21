@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import {
   Anchor,
   ArrowUpRight,
@@ -14,11 +16,11 @@ import {
   Truck,
   Zap,
 } from "lucide-react";
-import CinematicSection from "../components/CinematicSection";
-import ParallaxImage from "../components/ParallaxImage";
-import Reveal from "../components/Reveal";
-import SEO from "../components/SEO";
-import StaggerText from "../components/StaggerText";
+import CinematicSection from "@/components/CinematicSection";
+import ParallaxImage from "@/components/ParallaxImage";
+import Reveal from "@/components/Reveal";
+import SEO from "@/components/SEO";
+import StaggerText from "@/components/StaggerText";
 
 interface AnatomyLayer {
   number: string;
@@ -256,7 +258,7 @@ export default function SystemPage() {
             </Reveal>
             <Reveal direction="up" delay={0.45}>
               <Link
-                to="/contact"
+                href="/contact"
                 className="mt-10 inline-flex min-h-11 items-center gap-4 border-b border-gold/60 pb-1 text-xs font-semibold uppercase tracking-[0.1em] text-gold-text transition-colors hover:border-stone hover:text-stone"
               >
                 Discuss a capsule system <ArrowUpRight size={16} />
@@ -803,7 +805,7 @@ export default function SystemPage() {
               model. Explore individual models for project-specific information.
             </p>
             <Link
-              to="/work"
+              href="/work"
               className="mt-8 inline-flex min-h-11 items-center gap-4 border-b border-gold/60 pb-1 text-xs font-semibold uppercase tracking-[0.1em] text-gold-text transition-colors hover:border-stone hover:text-stone"
             >
               View models <ArrowUpRight size={16} />

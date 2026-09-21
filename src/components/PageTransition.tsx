@@ -1,3 +1,5 @@
+"use client";
+
 import { motion, HTMLMotionProps } from 'motion/react';
 import { ReactNode, forwardRef } from 'react';
 import { SITE_NAME } from '../config/siteMode';
@@ -5,6 +7,8 @@ import { SITE_NAME } from '../config/siteMode';
 interface PageTransitionProps extends HTMLMotionProps<"div"> {
   children: ReactNode;
 }
+
+const TRANSITION_EASE = [0.76, 0, 0.24, 1] as const;
 
 const panelVariants = {
   initial: {
@@ -15,7 +19,7 @@ const panelVariants = {
     transition: {
       duration: 0.7,
       delay: i * 0.05,
-      ease: [0.76, 0, 0.24, 1],
+      ease: TRANSITION_EASE,
     },
   }),
   exit: (i: number) => ({
@@ -23,7 +27,7 @@ const panelVariants = {
     transition: {
       duration: 0.7,
       delay: (4 - i) * 0.05,
-      ease: [0.76, 0, 0.24, 1],
+      ease: TRANSITION_EASE,
     },
   }),
 };
@@ -42,7 +46,7 @@ const logoVariants = {
     letterSpacing: "1.2em",
     transition: {
       duration: 0.7,
-      ease: [0.76, 0, 0.24, 1],
+      ease: TRANSITION_EASE,
     },
   },
   exit: {
@@ -52,7 +56,7 @@ const logoVariants = {
     letterSpacing: "0.8em",
     transition: {
       duration: 0.7,
-      ease: [0.76, 0, 0.24, 1],
+      ease: TRANSITION_EASE,
     },
   },
 };
@@ -70,7 +74,7 @@ const contentVariants = {
     transition: {
       duration: 0.7,
       delay: 0.3,
-      ease: [0.76, 0, 0.24, 1],
+      ease: TRANSITION_EASE,
     },
   },
   exit: {
@@ -79,7 +83,7 @@ const contentVariants = {
     filter: 'blur(10px)',
     transition: {
       duration: 0.7,
-      ease: [0.76, 0, 0.24, 1],
+      ease: TRANSITION_EASE,
     },
   },
 };

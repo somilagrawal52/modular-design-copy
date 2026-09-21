@@ -1,16 +1,17 @@
+"use client";
+
 import { motion } from "motion/react";
 import React, { useState } from "react";
-import { PROJECTS } from "../constants";
-import { Link } from "react-router-dom";
+import { PROJECTS } from "../../constants";
+import Link from "next/link";
 import { ArrowDown, ArrowUpRight, Filter, Maximize2 } from "lucide-react";
-import Reveal from "../components/Reveal";
-import ParallaxImage from "../components/ParallaxImage";
-import StaggerText from "../components/StaggerText";
-import ParallaxElement from "../components/ParallaxElement";
-import CinematicSection from "../components/CinematicSection";
-import SEO from "../components/SEO";
-import { MANAGER_DEMO_MODE, demoItems } from "../config/siteMode";
-import ArchitecturalLightbox from "../components/ArchitecturalLightbox";
+import Reveal from "../../components/Reveal";
+import ParallaxImage from "../../components/ParallaxImage";
+import StaggerText from "../../components/StaggerText";
+import ParallaxElement from "../../components/ParallaxElement";
+import CinematicSection from "../../components/CinematicSection";
+import { MANAGER_DEMO_MODE, demoItems } from "../../config/siteMode";
+import ArchitecturalLightbox from "../../components/ArchitecturalLightbox";
 
 const CATEGORIES = [
   "All",
@@ -96,7 +97,7 @@ const WorkProjectCard: React.FC<{
         ease: [0.22, 1, 0.36, 1],
       }}
     >
-      <Link to={`/work/${project.id}`} className="block group/card h-full">
+      <Link href={`/work/${project.id}`} className="block group/card h-full">
         {/* Render container with generous whitespace & 16:10 wide architectural ratio */}
         <div className="relative overflow-hidden mb-7 rounded-[2px] bg-stone/5 transition-all duration-700 group-hover/card:shadow-[0_8px_32px_rgba(177,138,71,0.12)]">
           <div className="relative overflow-hidden aspect-[16/10]">
@@ -207,9 +208,9 @@ const WorkProjectCard: React.FC<{
       </Link>
     </motion.div>
   );
-}
+};
 
-export default function Work() {
+export default function WorkClient() {
   const [filter, setFilter] = useState(
     MANAGER_DEMO_MODE ? "Residential" : "All",
   );
@@ -242,10 +243,6 @@ export default function Work() {
 
   return (
     <div className="bg-light text-stone min-h-screen pt-28 md:pt-32 lg:pt-36 pb-24 md:pb-28 relative overflow-hidden">
-      <SEO
-        title="Capsule Models & Modular Applications"
-        description="Explore premium capsule models and modular applications for hospitality, private retreats, commercial spaces, workplaces, and community amenities."
-      />
       <CinematicSection parallax={false} minHeight={false} overlay={false}>
         <div className="site-container relative z-10">
           {/* Editorial Header */}
@@ -290,7 +287,7 @@ export default function Work() {
                         >
                           {category}
                           <span
-                    className={`absolute -right-3 -top-1 hidden text-[9px] opacity-40 sm:inline ${filter === category ? "text-gold-text" : "text-stone/50"}`}
+                            className={`absolute -right-3 -top-1 hidden text-[9px] opacity-40 sm:inline ${filter === category ? "text-gold-text" : "text-stone/50"}`}
                           >
                             {category === "All"
                               ? PROJECTS.length
@@ -318,7 +315,7 @@ export default function Work() {
               className="mb-24 md:mb-32"
             >
               <Link
-                to={`/work/${featuredProject.id}`}
+                href={`/work/${featuredProject.id}`}
                 className="block group/featured"
               >
                 <div className="relative overflow-hidden rounded-[2px] bg-stone/5 transition-shadow duration-700 group-hover/featured:shadow-[0_10px_40px_rgba(177,138,71,0.14)]">
@@ -401,7 +398,7 @@ export default function Work() {
           {/* Bottom CTA */}
           <div className="mt-16 md:mt-20 text-center">
             <Reveal direction="up">
-              <Link to="/contact" className="inline-block relative group">
+              <Link href="/contact" className="inline-block relative group">
                 <h2 className="type-section mb-4">
                   Find the right model.
                 </h2>

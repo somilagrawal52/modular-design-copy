@@ -1,3 +1,5 @@
+"use client";
+
 import Reveal from '../Reveal';
 import ParallaxImage from '../ParallaxImage';
 import StaggerText from '../StaggerText';

@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "motion/react";
 import CinematicSection from "../CinematicSection";
 import Reveal from "../Reveal";

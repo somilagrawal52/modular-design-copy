@@ -1,3 +1,5 @@
+"use client";
+
 import { FormEvent, useState } from "react";
 import { motion } from "motion/react";
 import { Send, Phone, MapPin, Mail, MessageCircle } from "lucide-react";

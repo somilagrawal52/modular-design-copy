@@ -1,3 +1,5 @@
+"use client";
+
 
 interface StaggerTextProps {
   text: string;

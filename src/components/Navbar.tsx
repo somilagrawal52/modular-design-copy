@@ -1,13 +1,16 @@
+"use client";
+
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, Phone, Mail, MessageCircle } from "lucide-react";
+import { Menu, X, Mail } from "lucide-react";
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Magnetic from "./Magnetic";
 import { SITE_NAME, SITE_STUDIO_NAME, INDIA_CONTACT, CANADA_CONTACT, SALES_EMAIL } from "../config/siteMode";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   // Prevent scroll when mobile menu is open
   useEffect(() => {
@@ -41,7 +44,7 @@ export default function Navbar() {
 
   return (
     <nav className="site-nav-shell fixed top-0 left-0 w-full z-[999] px-4 sm:px-6 lg:px-10 xl:px-16 py-3 md:py-4 flex justify-between items-center bg-light/90 backdrop-blur-xl border-b border-stone/15 shadow-[0_4px_20px_rgba(222,117,86,0.05)]">
-      <Link to="/" onClick={() => setIsOpen(false)}>
+      <Link href="/" onClick={() => setIsOpen(false)}>
         <Magnetic>
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -74,15 +77,15 @@ export default function Navbar() {
           >
             <Magnetic>
               <Link
-                to={link.href}
+                href={link.href}
                 aria-current={
-                  location.pathname === link.href ? "page" : undefined
+                  pathname === link.href ? "page" : undefined
                 }
-                className={`text-[13px] 2xl:text-sm uppercase tracking-[0.08em] font-medium transition-all duration-300 relative group px-2.5 py-3 whitespace-nowrap ${location.pathname === link.href ? "text-gold font-semibold" : "text-stone/80 hover:text-gold"}`}
+                className={`text-[13px] 2xl:text-sm uppercase tracking-[0.08em] font-medium transition-all duration-300 relative group px-2.5 py-3 whitespace-nowrap ${pathname === link.href ? "text-gold font-semibold" : "text-stone/80 hover:text-gold"}`}
               >
                 {link.name}
                 <span
-                  className={`absolute bottom-2 left-2.5 right-2.5 h-[2px] bg-gold transition-all duration-300 origin-left scale-x-0 group-hover:scale-x-100 ${location.pathname === link.href ? "scale-x-100" : ""}`}
+                  className={`absolute bottom-2 left-2.5 right-2.5 h-[2px] bg-gold transition-all duration-300 origin-left scale-x-0 group-hover:scale-x-100 ${pathname === link.href ? "scale-x-100" : ""}`}
                 />
               </Link>
             </Magnetic>
@@ -172,13 +175,13 @@ export default function Navbar() {
                   className="w-full text-center"
                 >
                   <Link
-                    to={link.href}
+                    href={link.href}
                     onClick={() => setIsOpen(false)}
                     aria-current={
-                      location.pathname === link.href ? "page" : undefined
+                      pathname === link.href ? "page" : undefined
                     }
                     className={`text-[clamp(2rem,9vw,2.75rem)] font-sans font-semibold tracking-[-0.03em] leading-none transition-all duration-300 block py-2.5 ${
-                      location.pathname === link.href
+                      pathname === link.href
                         ? "text-gold font-bold"
                         : "text-stone hover:text-gold"
                     }`}

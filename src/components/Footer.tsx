@@ -1,11 +1,9 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import {
   ArrowUpRight,
   Download,
-  Phone,
-  Mail,
-  MapPin,
-  MessageCircle,
 } from "lucide-react";
 import Reveal from "./Reveal";
 import {
@@ -152,7 +150,7 @@ export default function Footer() {
                     </a>
                   ) : (
                     <Link
-                      to={link.to}
+                      href={link.to}
                       className="text-xs uppercase tracking-[0.08em] text-stone/75 hover:text-gold transition-colors font-medium"
                     >
                       {link.label}

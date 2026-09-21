@@ -1,15 +1,17 @@
-import { SERVICES } from "../constants";
-import Reveal from "../components/Reveal";
-import ParallaxImage from "../components/ParallaxImage";
-import StaggerText from "../components/StaggerText";
-import ParallaxElement from "../components/ParallaxElement";
-import CinematicSection from "../components/CinematicSection";
-import ConceptToCommissioning from "../components/services/ConceptToCommissioning";
+"use client";
+
+import { SERVICES } from "@/constants";
+import Reveal from "@/components/Reveal";
+import ParallaxImage from "@/components/ParallaxImage";
+import StaggerText from "@/components/StaggerText";
+import ParallaxElement from "@/components/ParallaxElement";
+import CinematicSection from "@/components/CinematicSection";
+import ConceptToCommissioning from "@/components/services/ConceptToCommissioning";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
-import SEO from "../components/SEO";
-import { Link } from "react-router-dom";
-import { demoItems } from "../config/siteMode";
-import { responsiveImageSrcSet } from "../lib/responsiveImages";
+import SEO from "@/components/SEO";
+import Link from "next/link";
+import { demoItems } from "@/config/siteMode";
+import { responsiveImageSrcSet } from "@/lib/responsiveImages";
 
 const SERVICES_HERO_IMAGE = "/images/modular-residence-pool-hero.png";
 
@@ -67,7 +69,7 @@ export default function ServicesPage() {
 
             <div className="mt-8 flex flex-wrap items-center gap-4 sm:gap-6 md:mt-10">
               <Link
-                to="/contact"
+                href="/contact"
                 className="inline-flex min-h-12 items-center gap-3 bg-gold px-7 py-3 text-xs font-semibold uppercase tracking-[0.1em] text-light transition-colors duration-300 hover:bg-gold-text shadow-sm"
               >
                 Start your project
@@ -89,7 +91,7 @@ export default function ServicesPage() {
 
       {/* Services Showcase */}
       <div className="relative">
-        {visibleServices.map((service, i) => (
+        {visibleServices.map((service: any, i: number) => (
           <CinematicSection
             key={service.id}
             overlay={false}
@@ -162,7 +164,7 @@ export default function ServicesPage() {
 
                   {/* Decluttered Architectural Feature Badges */}
                   <div className="flex flex-wrap gap-2.5">
-                    {service.features.map((feature, j) => (
+                    {service.features.map((feature: any, j: number) => (
                       <Reveal
                         key={feature}
                         direction="up"
@@ -218,7 +220,7 @@ export default function ServicesPage() {
             <span className="text-xs uppercase tracking-[0.12em] text-stone/65 mb-6 block">
               From first idea to final installation.
             </span>
-            <Link to="/contact" className="group inline-block">
+            <Link href="/contact" className="group inline-block">
               <h2 className="type-section text-balance group-hover:text-gold transition-colors">
                 Discuss your{" "}
                 <span className="font-sans font-medium">project.</span>
@@ -226,7 +228,7 @@ export default function ServicesPage() {
             </Link>
             <div className="mt-8 flex justify-center">
               <Link
-                to="/contact"
+                href="/contact"
                 className="inline-flex min-h-12 items-center gap-3 bg-gold px-7 py-3 text-xs font-semibold uppercase tracking-[0.1em] text-light transition-colors duration-300 hover:bg-gold-text shadow-sm"
               >
                 Start your project

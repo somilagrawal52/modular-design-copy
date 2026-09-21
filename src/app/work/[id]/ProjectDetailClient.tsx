@@ -1,33 +1,36 @@
-import { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { PROJECTS } from '../constants';
-import { ArrowUpRight, Sun, Moon, Maximize2 } from 'lucide-react';
-import Reveal from '../components/Reveal';
-import ParallaxImage from '../components/ParallaxImage';
-import StaggerText from '../components/StaggerText';
-import ParallaxElement from '../components/ParallaxElement';
-import SEO from '../components/SEO';
-import NotFound from './NotFound';
-import { responsiveImageSrcSet } from '../lib/responsiveImages';
-import ArchitecturalLightbox from '../components/ArchitecturalLightbox';
+"use client";
 
-import CinematicSection from '../components/CinematicSection';
-import { MANAGER_DEMO_MODE, demoItems, siteContactEmail } from '../config/siteMode';
+import { useState } from 'react';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import { PROJECTS } from '../../../constants';
+import { ArrowUpRight, Sun, Moon, Maximize2 } from 'lucide-react';
+import Reveal from '../../../components/Reveal';
+import ParallaxImage from '../../../components/ParallaxImage';
+import StaggerText from '../../../components/StaggerText';
+import ParallaxElement from '../../../components/ParallaxElement';
+import { responsiveImageSrcSet } from '../../../lib/responsiveImages';
+import ArchitecturalLightbox from '../../../components/ArchitecturalLightbox';
+import CinematicSection from '../../../components/CinematicSection';
+import { MANAGER_DEMO_MODE, demoItems, siteContactEmail } from '../../../config/siteMode';
 
 const EXTRA_GALLERY_IMAGES: Record<string, string[]> = {
   'garden-pavilion': ['/images/garden-pavilion-extra.png'],
 };
 
-export default function ProjectDetail() {
-  const { id } = useParams();
+export default function ProjectDetailClient({ id }: { id: string }) {
   const [diurnalMode, setDiurnalMode] = useState<'day' | 'night'>('day');
   const [lightboxPlate, setLightboxPlate] = useState<{
     image: string;
     title: string;
     subtitle?: string;
   } | null>(null);
+
   const project = PROJECTS.find(p => p.id === id);
-  if (!project) return <NotFound />;
+  if (!project) {
+    notFound();
+  }
+
   const technicalSpecs = project.technicalSpecs ?? [];
   const projectWebpSrcSet = responsiveImageSrcSet(project.image);
   const productType = project.details.find((detail) => detail.label === 'Type')?.value ?? project.category;
@@ -48,11 +51,6 @@ export default function ProjectDetail() {
 
   return (
     <div className="bg-light text-stone min-h-screen">
-      <SEO 
-        title={project.title} 
-        description={project.description} 
-        image={project.image}
-      />
       {/* Hero */}
       <CinematicSection parallax={false} overlay={false} className="isolate h-[100svh] max-h-[960px] min-h-[680px] bg-light">
         <div className="absolute inset-0 overflow-hidden">
@@ -78,7 +76,7 @@ export default function ProjectDetail() {
         <div className="absolute bottom-16 md:bottom-24 left-[var(--layout-gutter)] right-[var(--layout-gutter)] z-20 max-w-5xl">
           <ParallaxElement speed={0.05}>
             <Reveal direction="right">
-              <Link to="/work" className="group inline-flex min-h-11 items-center gap-4 text-xs uppercase tracking-[0.12em] text-gold font-semibold mb-6 md:mb-8">
+              <Link href="/work" className="group inline-flex min-h-11 items-center gap-4 text-xs uppercase tracking-[0.12em] text-gold font-semibold mb-6 md:mb-8">
                 <div className="w-8 h-[1px] bg-gold group-hover:w-12 transition-all duration-300" />
                 Back to models
               </Link>
@@ -494,7 +492,7 @@ export default function ProjectDetail() {
               Feasibility assessments, bespoke configuration, turnkey CAPEX budgeting, and site logistics for commercial developers, boutique hoteliers, and architects.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5">
-              <Link to="/contact" className="group inline-flex min-h-12 items-center gap-4 bg-gold px-8 py-3.5 text-xs uppercase tracking-[0.12em] font-semibold text-ink transition-colors duration-300 hover:bg-stone hover:text-light shadow-sm">
+              <Link href="/contact" className="group inline-flex min-h-12 items-center gap-4 bg-gold px-8 py-3.5 text-xs uppercase tracking-[0.12em] font-semibold text-ink transition-colors duration-300 hover:bg-stone hover:text-light shadow-sm">
                 Initiate Project Advisory
                 <ArrowUpRight size={16} className="transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1" />
               </Link>

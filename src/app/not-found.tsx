@@ -1,6 +1,8 @@
+"use client";
+
 import { ArrowUpRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import SEO from '../components/SEO';
+import Link from 'next/link';
+import SEO from '@/components/SEO';
 
 export default function NotFound() {
   return (
@@ -18,14 +20,14 @@ export default function NotFound() {
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
           <Link
-            to="/"
+            href="/"
             className="group inline-flex min-h-12 items-center gap-3 bg-gold px-7 py-3 text-xs font-semibold uppercase tracking-[0.1em] text-light transition-colors duration-300 hover:bg-gold-text shadow-sm"
           >
             Return home
             <ArrowUpRight size={16} className="transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1" />
           </Link>
           <Link
-            to="/work"
+            href="/work"
             className="group inline-flex min-h-12 items-center gap-3 border border-stone/25 px-7 py-3 text-xs font-semibold uppercase tracking-[0.1em] text-stone transition-colors duration-300 hover:border-gold hover:text-gold"
           >
             View models

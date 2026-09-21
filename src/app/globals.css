@@ -1,18 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-brand: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-sans), "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-brand: var(--font-display), "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-sans), "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-sans), "Manrope", ui-sans-serif, system-ui, sans-serif;
 
   /* Keep body copy readable while preserving a calm, technical hierarchy. */
   --font-weight-light: 400;
   --font-weight-bold: 600;
 
-  /* High-Contrast Studio Monochrome: stark monochrome with maximum black-and-white contrast and antique bronze detailing. */
+  /* High-Contrast Studio Monochrome */
   --color-dark: #171819;
   --color-dark-secondary: #2A2C2D;
   --color-light: #FFFFFF;

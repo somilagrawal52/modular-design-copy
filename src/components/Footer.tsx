@@ -4,6 +4,9 @@ import Link from "next/link";
 import {
   ArrowUpRight,
   Download,
+  Facebook,
+  Instagram,
+  Linkedin,
 } from "lucide-react";
 import Reveal from "./Reveal";
 import {
@@ -11,6 +14,7 @@ import {
   CANADA_CONTACT,
   SALES_EMAIL,
   SITE_STUDIO_NAME,
+  SOCIAL_LINKS,
 } from "../config/siteMode";
 
 const navLinks = [
@@ -127,6 +131,37 @@ export default function Footer() {
                 <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
                 Turnkey Logistics & Global Commissioning
               </span>
+            </div>
+
+            {/* Social Media Channels */}
+            <div className="pt-2 flex items-center gap-2.5">
+              <a
+                href={SOCIAL_LINKS.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="RP Exotic Homes on Instagram"
+                className="w-8 h-8 rounded-[2px] border border-stone/20 bg-stone/5 flex items-center justify-center text-stone/70 hover:text-gold hover:border-gold hover:bg-gold/5 transition-all duration-300"
+              >
+                <Instagram size={15} />
+              </a>
+              <a
+                href={SOCIAL_LINKS.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="RP Exotic Homes on LinkedIn"
+                className="w-8 h-8 rounded-[2px] border border-stone/20 bg-stone/5 flex items-center justify-center text-stone/70 hover:text-gold hover:border-gold hover:bg-gold/5 transition-all duration-300"
+              >
+                <Linkedin size={15} />
+              </a>
+              <a
+                href={SOCIAL_LINKS.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="RP Exotic Homes on Facebook"
+                className="w-8 h-8 rounded-[2px] border border-stone/20 bg-stone/5 flex items-center justify-center text-stone/70 hover:text-gold hover:border-gold hover:bg-gold/5 transition-all duration-300"
+              >
+                <Facebook size={15} />
+              </a>
             </div>
           </div>
 

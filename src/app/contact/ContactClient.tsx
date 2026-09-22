@@ -5,7 +5,10 @@ import { FormEvent, useState } from "react";
 import {
   ArrowRight,
   Download,
+  Facebook,
   Globe,
+  Instagram,
+  Linkedin,
   Mail,
   MapPin,
   MessageCircle,
@@ -19,7 +22,7 @@ import Reveal from "@/components/Reveal";
 import CinematicSection from "@/components/CinematicSection";
 import SEO from "@/components/SEO";
 import Magnetic from "@/components/Magnetic";
-import { INDIA_CONTACT, CANADA_CONTACT, SALES_EMAIL } from "@/config/siteMode";
+import { INDIA_CONTACT, CANADA_CONTACT, SALES_EMAIL, SOCIAL_LINKS } from "@/config/siteMode";
 import { submitContactForm } from "@/lib/contact";
 
 const inquiryTypes = [
@@ -481,6 +484,39 @@ export default function ContactPage() {
                     >
                       {SALES_EMAIL}
                     </a>
+                    {/* Official Social Media Channels */}
+                    <div className="flex items-center gap-2.5 pt-3">
+                      <span className="text-[11px] font-mono text-stone/50 uppercase tracking-wider mr-1">
+                        Connect:
+                      </span>
+                      <a
+                        href={SOCIAL_LINKS.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="RP Exotic Homes on Instagram"
+                        className="w-7 h-7 rounded-[2px] border border-stone/20 flex items-center justify-center text-stone/70 hover:text-gold hover:border-gold transition-colors"
+                      >
+                        <Instagram size={13} />
+                      </a>
+                      <a
+                        href={SOCIAL_LINKS.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="RP Exotic Homes on LinkedIn"
+                        className="w-7 h-7 rounded-[2px] border border-stone/20 flex items-center justify-center text-stone/70 hover:text-gold hover:border-gold transition-colors"
+                      >
+                        <Linkedin size={13} />
+                      </a>
+                      <a
+                        href={SOCIAL_LINKS.facebook}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="RP Exotic Homes on Facebook"
+                        className="w-7 h-7 rounded-[2px] border border-stone/20 flex items-center justify-center text-stone/70 hover:text-gold hover:border-gold transition-colors"
+                      >
+                        <Facebook size={13} />
+                      </a>
+                    </div>
                   </div>
                   <div className="text-xs font-mono text-stone/70 md:text-right space-y-1 shrink-0">
                     <p className="text-gold-text font-semibold flex items-center md:justify-end gap-1.5">

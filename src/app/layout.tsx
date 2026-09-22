@@ -4,7 +4,14 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackgroundEffect from "@/components/BackgroundEffect";
-import { SITE_NAME, SITE_STUDIO_NAME, SITE_URL } from "@/config/siteMode";
+import {
+  SITE_NAME,
+  SITE_STUDIO_NAME,
+  SITE_URL,
+  SOCIAL_LINKS,
+  INDIA_CONTACT,
+  CANADA_CONTACT,
+} from "@/config/siteMode";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -85,8 +92,41 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: SITE_STUDIO_NAME,
+    url: SITE_URL,
+    logo: `${SITE_URL}/images/rp-monogram-emblem.png`,
+    sameAs: [
+      SOCIAL_LINKS.instagram,
+      SOCIAL_LINKS.linkedin,
+      SOCIAL_LINKS.facebook,
+    ],
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: INDIA_CONTACT.phone,
+        contactType: "sales",
+        areaServed: "IN",
+      },
+      {
+        "@type": "ContactPoint",
+        telephone: CANADA_CONTACT.phone,
+        contactType: "sales",
+        areaServed: "CA",
+      },
+    ],
+  };
+
   return (
     <html lang="en" className={`${manrope.variable} ${spaceGrotesk.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="bg-light text-stone font-sans selection:bg-gold selection:text-light antialiased min-h-screen flex flex-col">
         <div className="grain" aria-hidden="true" />
         <BackgroundEffect />

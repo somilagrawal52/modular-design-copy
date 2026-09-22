@@ -1,12 +1,19 @@
 "use client";
 
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, Mail } from "lucide-react";
+import { Menu, X, Mail, Instagram, Linkedin, Facebook } from "lucide-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Magnetic from "./Magnetic";
-import { SITE_NAME, SITE_STUDIO_NAME, INDIA_CONTACT, CANADA_CONTACT, SALES_EMAIL } from "../config/siteMode";
+import {
+  SITE_NAME,
+  SITE_STUDIO_NAME,
+  INDIA_CONTACT,
+  CANADA_CONTACT,
+  SALES_EMAIL,
+  SOCIAL_LINKS,
+} from "../config/siteMode";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -237,6 +244,38 @@ export default function Navbar() {
                   <Mail size={12} className="shrink-0 text-gold" /> {SALES_EMAIL}
                 </a>
               </div>
+
+              {/* Social Channels */}
+              <div className="flex items-center gap-3 pt-1">
+                <a
+                  href={SOCIAL_LINKS.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="RP Exotic Homes on Instagram"
+                  className="w-9 h-9 rounded-[2px] border border-stone/20 flex items-center justify-center text-stone/75 hover:text-gold hover:border-gold transition-colors"
+                >
+                  <Instagram size={15} />
+                </a>
+                <a
+                  href={SOCIAL_LINKS.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="RP Exotic Homes on LinkedIn"
+                  className="w-9 h-9 rounded-[2px] border border-stone/20 flex items-center justify-center text-stone/75 hover:text-gold hover:border-gold transition-colors"
+                >
+                  <Linkedin size={15} />
+                </a>
+                <a
+                  href={SOCIAL_LINKS.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="RP Exotic Homes on Facebook"
+                  className="w-9 h-9 rounded-[2px] border border-stone/20 flex items-center justify-center text-stone/75 hover:text-gold hover:border-gold transition-colors"
+                >
+                  <Facebook size={15} />
+                </a>
+              </div>
+
               <span className="text-[10px] uppercase tracking-[0.1em] text-stone/50 font-mono">
                 Jaipur, India • Bowmanville, Canada
               </span>

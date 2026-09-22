@@ -16,6 +16,12 @@ export const SALES_EMAIL = 'Sales@Rpexotichomes.com';
 export const siteContactEmail = (_mailbox?: string) => SALES_EMAIL;
 export const dreamRealtyEmail = siteContactEmail;
 
+export const SOCIAL_LINKS = {
+  instagram: 'https://www.instagram.com/rpexotichomes/',
+  linkedin: 'https://www.linkedin.com/company/rpexotichomes/',
+  facebook: 'https://www.facebook.com/share/19NEsP6gNT/',
+};
+
 export const INDIA_CONTACT = {
   region: 'Jaipur, India',
   city: 'Jaipur',

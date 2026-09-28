@@ -79,7 +79,7 @@ export default function Contact() {
         projectTypeMap[originalProjectType] || originalProjectType;
 
       const response = await fetch(
-        "https://modular-design-backend.vercel.app/api/contact",
+        (process.env.NEXT_PUBLIC_API_URL || "https://modular-design-backend.vercel.app") + "/api/contact",
         {
           method: "POST",
           headers: {
